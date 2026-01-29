@@ -1,0 +1,538 @@
+/* Home.css - JLL Inspired Corporate Style */
+
+:root {
+    --jll-red: #333333;
+    --jll-dark: #333333;
+    --jll-grey: #F5F5F5;
+    --jll-text: #282828;
+}
+
+.home-page {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--jll-text);
+    background-color: #fff;
+}
+
+/* =========================================
+   1. HERO SECTION (Davos Snow Theme)
+   ========================================= */
+.hero-section {
+    position: relative;
+    height: 700px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* Center content vertically */
+    overflow: visible;
+    /* Allow overlap at bottom */
+}
+
+/* Background Image: Snowy Mountain Town */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/davos-snow.jpg') center/cover no-repeat;
+    /* Replace with actual image path */
+    /* Fallback color if image missing */
+    background-color: #8faec5;
+    z-index: 1;
+}
+
+/* Gradient Overlay: Left-to-Right Fade (White -> Transparent) */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.9) 0%,
+            rgba(255, 255, 255, 0.6) 40%,
+            rgba(255, 255, 255, 0) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Hero Content Container (Left Aligned) */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* Left align text */
+    margin-top: -60px;
+    /* Slight offset up */
+}
+
+/* Headline: "Seeing opportunity in change" */
+.hero-title {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 56px;
+    font-weight: 600;
+    /* Regular/Semibold */
+    line-height: 1.1;
+    color: #1a1a1a;
+    /* Very Dark Gray */
+    margin-bottom: 32px;
+    max-width: 700px;
+}
+
+/* CTA Button: Dark Blue with Arrow */
+.hero-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #001325;
+    /* Deep Dark Blue */
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 4px;
+    /* Slightly rounded, not sharp */
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.hero-cta-btn:hover {
+    background-color: #002a4d;
+}
+
+/* Overlap Module: "Spotlight Stories" */
+.hero-overlap-module {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+}
+
+.overlap-container {
+    max-width: 1400px;
+    background: white;
+    margin: 0 auto;
+    padding: 24px 40px;
+    border-top-left-radius: 8px;
+    /* Visible top corners */
+    border-top-right-radius: 8px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+.overlap-title {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333333;
+    /* Neutral Accent */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    border-radius: 0;
+    /* JLL = Sharp Corners */
+}
+
+.btn-primary {
+    background-color: var(--jll-red);
+    color: #fff;
+    border: 2px solid var(--jll-red);
+}
+
+.btn-primary:hover {
+    background-color: #bb0610;
+    border-color: #bb0610;
+    color: #fff;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-outline:hover {
+    background-color: #fff;
+    color: var(--jll-dark);
+}
+
+/* =========================================
+   2. EXPLORE SECTION (Stats / JLL 3-Column)
+   ========================================= */
+.explore-section {
+    padding: 100px 0;
+    background: white;
+    /* Clean white background */
+}
+
+.explore-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* 1/3 text, 2/3 stats grid */
+    gap: 80px;
+}
+
+/* Left Column: Text Intro */
+.explore-intro h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #000;
+}
+
+.explore-intro p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    max-width: 320px;
+}
+
+/* Right Column: Stats Grid (Replacing Careers links) */
+.explore-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.explore-stat-item {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 24px;
+    padding-right: 24px;
+    transition: border-color 0.2s;
+}
+
+.explore-stat-item:hover {
+    border-top: 2px solid #333333;
+    /* Neutral hover accent */
+}
+
+.stat-number {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    /* Regular weight per JLL style */
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.stat-arrow {
+    font-size: 18px;
+    color: #333;
+}
+
+.stat-label {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    color: #444;
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+    .explore-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* =========================================
+   3. EXPERTISE SECTION (Feature Card Layout)
+   ========================================= */
+.section-padding {
+    padding: 100px 0;
+    background-color: #fcefe9;
+    /* Warm beige JLL background */
+}
+
+.expertise-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.feature-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Reverse layout for even items */
+.feature-card.reverse .feature-image {
+    order: 2;
+}
+
+.feature-card.reverse .feature-content {
+    order: 1;
+}
+
+/* Explicit Right Alignment Class */
+.feature-content.align-right {
+    text-align: right;
+    align-items: flex-end;
+}
+
+/* Image Styling */
+.feature-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 10 / 8;
+    object-fit: cover;
+    border-radius: 3px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Content Styling */
+.feature-content {
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.feature-eyebrow {
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.feature-title {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 42px;
+    font-weight: 400;
+    /* Lighter weight like screenshot */
+    color: #1a1a1a;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+.feature-title strong {
+    font-weight: 600;
+    color: #333333;
+    /* Bold word highlight */
+}
+
+.feature-desc {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 32px;
+}
+
+/* The Grey Button */
+.feature-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #e6e6e6;
+    /* Light grey background */
+    color: #1a1a1a;
+    padding: 14px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.2s;
+}
+
+.feature-btn:hover {
+    background-color: #d4d4d4;
+    transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+    .feature-card {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .feature-card.reverse .feature-image {
+        order: -1;
+        /* Always image top on mobile */
+    }
+
+    .feature-card.reverse .feature-content {
+        order: 0;
+    }
+
+    .feature-image img {
+        height: 300px;
+    }
+}
+
+/* =========================================
+   4. MORE TO EXPLORE (Summerland / Split Card)
+   ========================================= */
+.more-explore-section {
+    padding: 80px 0 120px;
+    background-color: #fbf8f5;
+    /* Light warm beige */
+}
+
+/* Header with Arrows */
+.explore-header {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.explore-header h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #000;
+}
+
+.explore-nav {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-arrow {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 4px;
+    /* Slightly rounded */
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #333;
+}
+
+.nav-arrow:hover {
+    background: #f0f0f0;
+    border-color: #ccc;
+}
+
+/* The Split Card */
+.explore-card-split {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    /* Space between image and content box */
+    align-items: stretch;
+}
+
+.ecs-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    /* Smooth rounded corners */
+    min-height: 400px;
+}
+
+.ecs-content {
+    background-color: #eef4f8;
+    /* JLL Light Blue/Grey from screenshot */
+    padding: 60px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.ecs-content h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #000;
+    margin-bottom: 24px;
+}
+
+.ecs-content p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 450px;
+}
+
+.ecs-arrow-link {
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    transition: transform 0.2s;
+    align-self: flex-start;
+}
+
+.ecs-arrow-link:hover {
+    transform: translateX(6px);
+}
+
+@media (max-width: 900px) {
+    .explore-card-split {
+        grid-template-columns: 1fr;
+    }
+
+    /* Carousel Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.4s ease-out forwards;
+    }
+
+    .ecs-image img {
+        height: 300px;
+    }
+}

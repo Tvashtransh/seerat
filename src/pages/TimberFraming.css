@@ -1,0 +1,241 @@
+/* TimberFraming.css - Apple Style */
+.timber-page {
+  background-color: var(--bg-color);
+  padding: 120px 0;
+}
+
+.timber-hero {
+  text-align: center;
+  margin-bottom: 120px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 120px;
+}
+
+.timber-hero h1 {
+  font-size: 56px;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.timber-hero span {
+  color: var(--accent-color);
+}
+
+.timber-hero p {
+  font-size: 24px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+
+/* Intro */
+.timber-intro {
+  max-width: 800px;
+  margin: 0 auto 120px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.timber-intro p {
+  font-size: 21px;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+/* Why Choose Grid */
+.timber-why {
+  background-color: var(--bg-secondary);
+  padding: 120px 0;
+}
+
+.timber-why h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 80px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.why-card {
+  text-align: center;
+}
+
+.why-card h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.why-card p {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Slider (Reused style) */
+.slider-wrapper {
+  max-width: 1000px;
+  margin: 120px auto;
+  position: relative;
+}
+
+.slider-monitor {
+  background: black;
+  padding: 10px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.slider-window {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  position: relative;
+  aspect-ratio: 16/10;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.slider-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.slider-btn:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.slider-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* Process Section */
+.timber-process {
+  max-width: 1200px;
+  margin: 120px auto;
+  padding: 0 20px;
+}
+
+.timber-process h2 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.process-card {
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.process-card h3 {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--accent-color);
+}
+
+.process-card p {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* Who We Serve */
+.timber-serve {
+  background-color: var(--bg-secondary);
+  padding: 120px 0;
+}
+
+.timber-serve h2 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.serve-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.serve-card {
+  text-align: center;
+  background: var(--white);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.serve-card h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.serve-card p {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+
+  .why-grid,
+  .process-grid,
+  .serve-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .timber-hero h1 {
+    font-size: 40px;
+  }
+}

@@ -1,0 +1,163 @@
+.granary-page {
+  background: #f7fafa;
+  color: #1e1e1e;
+}
+
+/* HERO */
+.granary-hero {
+  height: 20vh;
+   background: linear-gradient(180deg, #0ab3ba 0%, #ffffff 100%);
+  /* background: url("/images/granary-hero.jpg") center/cover no-repeat; */
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-overlay h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+}
+
+.hero-overlay p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+/* SECTIONS */
+.granary-section {
+  padding: 80px 8%;
+}
+
+.granary-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  animation: fadeUp 0.8s ease;
+}
+
+.granary-section.reverse .granary-content {
+  flex-direction: row-reverse;
+}
+
+.text h2 {
+  font-size: 2rem;
+  color: #0ab3ba;
+  margin-bottom: 8px;
+}
+
+.text span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.text p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.image img {
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.image img:hover {
+  transform: scale(2.03);
+}
+
+/* COMPLETION */
+.completion {
+  background: linear-gradient(180deg, #e9f7f8, #ffffff);
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .granary-content {
+    flex-direction: column;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2.4rem;
+  }
+}
+.project-page {
+  padding: 80px 20px;
+}
+
+.project-hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.project-hero h1 {
+  font-size: 42px;
+  color: #0ab3ba;
+}
+
+.project-section {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.project-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.project-section img {
+  width: 50%;
+  border-radius: 16px;
+}
+
+.project-text h2 {
+  font-size: 28px;
+}
+
+.project-text span {
+  color: #0ab3ba;
+  font-weight: 600;
+}
+
+.project-complete {
+  background: #f7fdfd;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .project-section {
+    flex-direction: column;
+  }
+
+  .project-section img {
+    width: 100%;
+  }
+}

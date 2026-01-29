@@ -1,0 +1,150 @@
+.home-services {
+  position: relative;
+  padding: 100px 24px;
+  background: linear-gradient(
+    to top,
+    #0ab3ba 0%,
+    rgba(10, 179, 186, 0.85) 35%,
+    rgba(10, 179, 186, 0.55) 65%,
+    rgba(10, 179, 186, 0.15) 100%
+  );
+  overflow: hidden;
+}
+
+/* Soft premium overlay (optional but recommended) */
+.home-services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    rgba(255, 255, 255, 0.15),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.home-services-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Content */
+.home-services-content {
+  animation: fadeUp 1s ease forwards;
+}
+
+.section-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.home-services-content h2 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.home-services-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 16px;
+}
+
+/* CTA Button */
+.services-cta {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 32px;
+  background-color: #ffffff;
+  color: #0ab3ba;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.services-cta:hover {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Cards */
+.home-services-cards {
+  display: grid;
+  gap: 22px;
+}
+
+.service-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.9s ease forwards;
+}
+
+.service-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.service-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.service-card h4 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #0a2540;
+}
+
+.service-card p {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-services-container {
+    grid-template-columns: 1fr;
+  }
+
+  .home-services-content h2 {
+    font-size: 32px;
+  }
+}

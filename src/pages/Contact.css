@@ -1,0 +1,153 @@
+/* Contact.css - Apple Style */
+.contact-page {
+  padding: 100px 0;
+  background-color: var(--bg-color);
+  min-height: 80vh;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+}
+
+/* Introduction Side */
+.contact-intro h1 {
+  font-size: 56px;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.contact-intro p {
+  font-size: 21px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+
+.contact-details {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 40px;
+}
+
+.contact-item {
+  margin-bottom: 24px;
+}
+
+.contact-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.contact-value {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.contact-hiring-note {
+  margin-top: 40px;
+  padding: 24px;
+  background-color: var(--bg-secondary);
+  border-radius: 18px;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+/* Form Side */
+.contact-form-wrapper {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  /* Standard label size */
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 16px;
+  font-size: 17px;
+  /* Large legible text */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* Subtle border */
+  border-radius: 12px;
+  background-color: var(--bg-secondary);
+  /* Slight contrast background */
+  font-family: inherit;
+  transition: all 0.2s ease;
+  color: var(--text-primary);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  background-color: var(--white);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15);
+  /* Blue focus ring */
+}
+
+.form-textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.form-submit-btn {
+  width: 100%;
+  padding: 18px;
+  font-size: 17px;
+  font-weight: 600;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-submit-btn:hover {
+  background-color: #0077ED;
+  /* Slightly lighter blue */
+  transform: scale(1.005);
+}
+
+.form-status {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+/* Hidden elements */
+.hidden {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-intro h1 {
+    font-size: 40px;
+  }
+}

@@ -1,0 +1,163 @@
+/* Services.css - Apple Style */
+.services-page {
+  padding: 120px 0;
+  background-color: var(--bg-color);
+}
+
+.services-hero {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 100px;
+}
+
+.services-hero h1 {
+  font-size: 56px;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.services-hero p {
+  font-size: 24px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+/* Prefab Section - Feature Grid */
+.prefab-section {
+  padding: 60px 0;
+  margin-bottom: 120px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.prefab-section h2 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.prefab-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.feature-card h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Framing Section - Bento Style */
+.framing-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto 100px;
+  padding: 0 20px;
+}
+
+.service-card {
+  background-color: var(--bg-secondary);
+  border-radius: 30px;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.service-card:hover {
+  transform: scale(1.02);
+  background-color: var(--white);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.service-card h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.service-card p {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 30px;
+  white-space: pre-line;
+  /* Preserves line breaks */
+}
+
+.link-btn {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-top: auto;
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+}
+
+/* Frame of Mind - Clean Text Section */
+.frameofmind-section {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  background-color: var(--bg-secondary);
+  border-radius: 40px;
+}
+
+.frameofmind-section h2 {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+.frameofmind-section p {
+  font-size: 21px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  text-align: left;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.frameofmind-section b {
+  color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .prefab-features {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .framing-section {
+    grid-template-columns: 1fr;
+  }
+
+  .services-hero h1 {
+    font-size: 40px;
+  }
+}

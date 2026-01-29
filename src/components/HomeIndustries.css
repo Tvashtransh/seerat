@@ -1,0 +1,152 @@
+.home-industries {
+  padding: 120px 24px;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 179, 186, 0.06),
+    rgba(10, 179, 186, 0.02),
+    #ffffff
+  );
+}
+
+.home-industries-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.industries-header {
+  max-width: 720px;
+  margin-bottom: 80px;
+}
+
+.industries-header .section-tag {
+  color: #0ab3ba;
+}
+
+.industries-header h2 {
+  font-size: 42px;
+  color: #0a2540;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.industries-header h2 span {
+  color: #0ab3ba;
+}
+
+.industries-header p {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* Grid */
+.industries-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+}
+
+/* Card */
+.industry-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.industry-card.reverse {
+  direction: rtl;
+}
+
+.industry-card.reverse .industry-content {
+  direction: ltr;
+}
+
+/* Image */
+.industry-image {
+  position: relative;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+  transition: transform 0.45s ease;
+}
+
+/* Teal overlay */
+.industry-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 179, 186, 0.45),
+    rgba(10, 179, 186, 0.15),
+    transparent
+  );
+}
+
+.industry-card:hover .industry-image {
+  transform: scale(1.06);
+}
+
+/* Content */
+.industry-content h3 {
+  font-size: 28px;
+  margin-bottom: 14px;
+  color: #0a2540;
+}
+
+.industry-content h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #0ab3ba;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+.industry-content p {
+  font-size: 15.5px;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+/* Highlight line */
+.industry-highlight {
+  font-weight: 600;
+  color: #0ab3ba;
+  margin-top: 10px;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .industry-card,
+  .industry-card.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .industry-image {
+    height: 260px;
+  }
+
+  .industries-header h2 {
+    font-size: 32px;
+  }
+}

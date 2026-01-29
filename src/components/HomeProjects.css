@@ -1,0 +1,123 @@
+.home-projects {
+  padding: 120px 24px;
+  background: linear-gradient(
+    to top,
+    #0ab3ba 0%,
+    rgba(10, 179, 186, 0.85) 35%,
+    rgba(10, 179, 186, 0.55) 65%,
+    rgba(10, 179, 186, 0.15) 100%
+  );
+}
+
+.home-projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.projects-header {
+  max-width: 720px;
+  margin-bottom: 70px;
+  color: #ffffff;
+}
+
+.section-tag {
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.projects-header h2 {
+  font-size: 42px;
+  margin: 12px 0;
+}
+
+.projects-header p {
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* Row */
+.projects-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Card */
+.project-card {
+  position: relative;
+  height: 360px;
+  border-radius: 26px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.25);
+  transform: translateY(0);
+  transition: transform 0.4s ease;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.25),
+    transparent
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  color: #ffffff;
+  transition: background 0.4s ease;
+}
+
+.project-overlay h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.project-overlay span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0ab3ba;
+}
+
+/* Hover */
+.project-card:hover {
+  transform: translateY(-12px) scale(1.03);
+}
+
+.project-card:hover .project-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(10, 179, 186, 0.85),
+    rgba(10, 179, 186, 0.35),
+    transparent
+  );
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .projects-row {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    height: 300px;
+  }
+
+  .projects-header h2 {
+    font-size: 34px;
+  }
+}

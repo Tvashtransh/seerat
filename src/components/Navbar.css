@@ -1,0 +1,195 @@
+/* Navbar.css */
+.navbar {
+  /* handled by global .glass-nav, but ensuring specific overrides */
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 1024px;
+  /* Matches global container */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  /* Not fixed initially, or could be sticky */
+  z-index: 1000;
+  border-bottom: 1px solid #e0e0e0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  /* px-8 equivalent */
+}
+
+/* ROW 1: UTILITY BAR */
+.navbar-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  /* border-bottom: 1px solid #f0f0f0; Removed per user request */
+  background-color: #ffffff !important;
+  /* Force White */
+}
+
+/* LEFT: BRAND */
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.jll-logo {
+  height: 80px;
+  /* Doubled from 40px */
+  width: auto;
+}
+
+.tagline {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 26px;
+  /* Doubled from 13px */
+  font-weight: 600;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 4px;
+}
+
+/* RIGHT: TOOLS */
+.utility-tools {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.region-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.search-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+}
+
+.contact-btn {
+  background-color: var(--jll-gray-bg);
+  color: #333;
+  padding: 10px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-btn:hover {
+  background-color: #dcdcdc;
+}
+
+/* ============================
+   ROW 2: NAVIGATION
+   ============================ */
+.navbar-bottom-row {
+  display: flex;
+  justify-content: center;
+  /* Centered */
+  align-items: center;
+  padding: 12px 0;
+  background-color: #ffffff !important;
+}
+
+.nav-links-center {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  /* Uppercase as requested */
+  position: relative;
+  transition: color 0.2s;
+}
+
+.nav-link.active {
+  color: #333;
+  font-weight: 700;
+}
+
+.nav-link:hover {
+  color: #333;
+}
+
+/* Mobile responsive adjustments */
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .navbar-bottom-row {
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .navbar-bottom-row.open {
+    display: flex;
+    /* Show when open */
+  }
+
+  .nav-links-center {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .tagline {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #333;
+  }
+}

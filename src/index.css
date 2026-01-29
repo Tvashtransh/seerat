@@ -1,0 +1,270 @@
+/* Global Design System - JLL Corporate Style */
+:root {
+  /* JLL Color Palette */
+  --bg-color: #ffffff;
+  /* Explicit White */
+  --bg-secondary: #f4f4f4;
+  /* Light Grey */
+  --text-primary: #333333;
+  /* Dark Grey */
+  --text-secondary: #555555;
+  --accent-color: #333333;
+  /* Neutral Accent (formerly Red) */
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Navbar */
+  --nav-height: auto;
+
+  /* Typography */
+  --font-main: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Source Sans Pro", sans-serif;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  /* Standard eased transition */
+}
+
+/* Force Light Mode - Disable Dark Mode interference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #555555;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  /* Tighter tracking like SF Pro */
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: 48px;
+  /* Default huge */
+  line-height: 1.08;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+p {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.47;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Animations - Key to the 'Feel' */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fadeUp 1s var(--transition-smooth) forwards;
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* Utilities */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container-large {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: 120px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 26px;
+  /* Slightly larger padding */
+  border-radius: 980px;
+  font-size: 17px;
+  font-weight: 400;
+  /* Apple uses lighter weights */
+  text-transform: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--text-primary);
+  color: var(--bg-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--text-secondary);
+  color: var(--white);
+  transform: scale(1.02);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--accent-color);
+  font-size: 17px;
+}
+
+.btn-secondary:hover {
+  text-decoration: underline;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--text-primary);
+  color: var(--text-primary);
+}
+
+.btn-outline:hover {
+  background: var(--text-primary);
+  color: var(--bg-color);
+}
+
+/* Glass Navbar Base */
+.glass-nav {
+  background-color: var(--glass-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  /* very subtle */
+}
+
+/* Grid Layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  .section-padding {
+    padding: 60px 0;
+  }
+}
