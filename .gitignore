@@ -17,16 +17,24 @@ dist-ssr
 
 # Large files
 zip/
-*.mp4
+*.zip
 *.MP4
-*.HEIC
-*.heic
+*.mp4
 *.MOV
 *.mov
+*.HEIC
+*.heic
 *.AVI
 *.avi
 *.mkv
 *.wmv
+*.dmg
+*.exe
+*.iso
+*.7z
+*.rar
+*.tar
+*.gz
 
 # Editor directories and files
 .vscode/*
