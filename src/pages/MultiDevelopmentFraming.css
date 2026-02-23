@@ -6,10 +6,9 @@
 
 .multi-hero {
   text-align: center;
-  margin-bottom: 120px;
-  max-width: 900px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 20px 120px;
+  padding: 0 var(--site-margin) 120px;
 }
 
 .multi-hero h1 {
@@ -30,10 +29,10 @@
 
 /* Intro Text */
 .multi-intro {
-  max-width: 700px;
+  max-width: var(--container-width);
   margin: 0 auto 120px;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 var(--site-margin);
 }
 
 .multi-intro p {
@@ -59,9 +58,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--site-margin);
 }
 
 .choose-card {
@@ -158,9 +157,9 @@
 
 /* Advantage Section - Two Column */
 .advantage {
-  max-width: 1000px;
+  max-width: var(--container-width);
   margin: 120px auto;
-  padding: 0 20px;
+  padding: 0 var(--site-margin);
 }
 
 .advantage h2 {

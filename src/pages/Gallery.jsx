@@ -16,16 +16,13 @@ export default function Gallery() {
   return (
     <div className="jll-gallery-page">
 
-      {/* JLL-Style Hero */}
-      <section className="jll-hero-gallery">
-        <div className="jll-hero-image-wrapper">
-          <img src="/hero-gallery.jpg" onError={(e) => e.target.src = '/project-type-2.png'} alt="Showcase" className="jll-hero-image" />
-        </div>
-        <div className="jll-hero-overlay-center">
-          <h1 className="jll-display-heading">Visual Showcase</h1>
-          <p className="jll-display-subheading">
-            A curated portfolio of precision-engineered wood framing across British Columbia's most ambitious builds.
-          </p>
+      {/* Cinematic Hero */}
+      <section
+        className="page-hero animate-fade-in"
+        style={{ backgroundImage: 'url(/gallery-hero.png)' }}
+      >
+        <div className="page-hero-content animate-fade-up delay-100">
+          <h1>Visual Showcase</h1>
         </div>
       </section>
 

@@ -13,15 +13,9 @@
 }
 
 .blog-container {
-    max-width: 100%;
+    max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 24px;
-}
-
-@media (min-width: 1200px) {
-    .blog-container {
-        padding: 0 var(--laptop-padding);
-    }
+    padding: 0 var(--site-margin);
 }
 
 /* Category */

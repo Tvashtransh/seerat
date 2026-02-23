@@ -11,7 +11,10 @@ export default function Culmena() {
         <div className="project-detail-page">
 
             {/* Hero */}
-            <section className="project-detail-hero animate-fade-up">
+            <section
+                className="project-detail-hero animate-fade-up"
+                style={{ backgroundImage: 'url(/culmena-assets/DJI_0953.JPG)' }}
+            >
                 <h1>CULMENA</h1>
                 <span className="project-location-tag">1292 Rosenburg, Coquitlam, British Columbia</span>
             </section>

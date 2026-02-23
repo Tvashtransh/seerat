@@ -1,4 +1,4 @@
-/* ProjectDetail.css - JLL Premium Project Theme */
+/* ProjectDetail.css - Standardized Project Theme */
 
 .project-detail-page {
     font-family: var(--font-main);
@@ -9,23 +9,50 @@
 
 /* --- Project Hero --- */
 .project-detail-hero {
-    background-color: #f5f5f7;
-    padding: 100px 0;
+    position: relative;
+    background-color: #1a1a1a;
+    background-size: cover;
+    background-position: center;
+    padding: 160px var(--site-margin);
     text-align: center;
-    border-bottom: 1px solid #e6e6e6;
     margin-bottom: 100px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project-detail-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Overlay */
+    z-index: 1;
+}
+
+.project-detail-hero>* {
+    position: relative;
+    z-index: 2;
 }
 
 .project-detail-hero h1 {
-    font-size: 56px;
-    font-weight: 800;
-    margin-bottom: 16px;
-    letter-spacing: -2px;
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #fff;
 }
 
 .project-location-tag {
     display: inline-block;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--accent-color);
@@ -36,19 +63,13 @@
 
 /* --- Content Sections --- */
 .project-content-section {
-    max-width: 100%;
+    max-width: var(--container-width);
     margin: 0 auto 120px;
-    padding: 0 40px;
+    padding: 0 var(--site-margin);
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-    gap: 100px;
+    gap: 80px;
     align-items: center;
-}
-
-@media (min-width: 1200px) {
-    .project-content-section {
-        padding: 0 var(--laptop-padding);
-    }
 }
 
 .project-content-section.reverse {
@@ -56,24 +77,24 @@
 }
 
 .project-text-block h2 {
-    font-size: 40px;
-    font-weight: 800;
-    margin-bottom: 12px;
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 700;
+    margin-bottom: 16px;
     color: #1a1a1a;
 }
 
 .project-subtitle {
     display: block;
-    font-size: 13px;
-    font-weight: 600;
-    color: #888;
+    font-size: 12px;
+    font-weight: 700;
+    color: #999;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 .project-text-block p {
-    font-size: 19px;
+    font-size: 16px;
     line-height: 1.7;
     color: #555;
     margin-bottom: 24px;
@@ -82,7 +103,7 @@
 /* --- Image Styling --- */
 .project-image-block {
     overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
     background: #f9f9fb;
     border-radius: var(--img-radius);
 }
@@ -91,11 +112,11 @@
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
 }
 
 .project-image-block:hover img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .project-content-section.reverse .project-image-block {
@@ -104,24 +125,24 @@
 
 /* --- Conclusion --- */
 .project-conclusion {
-    padding: 100px 40px;
-    max-width: 1200px;
+    padding: 100px var(--site-margin);
+    max-width: var(--container-width);
     margin: 0 auto;
     text-align: center;
 }
 
 .project-conclusion h2 {
-    font-size: 48px;
-    font-weight: 800;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
     margin-bottom: 40px;
 }
 
 .project-conclusion p {
-    font-size: 22px;
-    line-height: 1.6;
-    color: #444;
-    max-width: 850px;
-    margin: 0 auto 50px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 60px;
 }
 
 /* --- RESPONSIVE --- */
@@ -130,29 +151,22 @@
     .project-content-section,
     .project-content-section.reverse {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 40px;
         text-align: center;
+        margin-bottom: 80px;
     }
 
     .project-image-block {
         order: -1 !important;
     }
-
-    .project-detail-hero h1 {
-        font-size: 42px;
-    }
-
-    .project-text-block h2 {
-        font-size: 32px;
-    }
 }
 
 @media (max-width: 768px) {
     .project-detail-hero {
-        padding: 60px 20px;
+        padding: 80px var(--site-margin);
     }
 
-    .project-conclusion h2 {
-        font-size: 36px;
+    .project-conclusion {
+        padding: 60px var(--site-margin);
     }
 }

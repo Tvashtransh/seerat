@@ -21,7 +21,14 @@
 }
 
 .jll-footer-logo {
-  height: 44px;
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.jll-footer-logo:hover {
+  transform: scale(1.05);
 }
 
 .jll-footer-tagline {
@@ -119,7 +126,7 @@
 .jll-footer-bottom-container {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 var(--site-margin);
   display: flex;
   justify-content: space-between;
   align-items: center;

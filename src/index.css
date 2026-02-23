@@ -1,10 +1,10 @@
 /* Global Design System - JLL Corporate Style */
 :root {
-  /* JLL Color Palette */
-  --bg-color: #F9F3EE;
-  /* Explicit White */
-  --bg-secondary: #F0EDE9;
-  /* Warmer Cream-Grey */
+  /* JLL Color Palette - Updated to Warm White */
+  --bg-color: #FAFAFA;
+  /* Premium Warm White */
+  --bg-secondary: #F5F5F5;
+  /* Soft Grey-White */
   --text-primary: #333333;
   /* Dark Grey */
   --text-secondary: #555555;
@@ -12,7 +12,7 @@
   /* Premium Muted Bronze/Gold */
   --accent-hover: #967054;
   /* Deepened Bronze */
-  --white: #F9F3EE;
+  --white: #FAFAFA;
   --black: #000000;
 
   /* Navbar */
@@ -40,7 +40,7 @@
 /* Force Light Mode - Disable Dark Mode interference */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #F9F3EE;
+    --bg-color: #FAFAFA;
     --text-primary: #333333;
     --text-secondary: #555555;
   }
@@ -77,16 +77,18 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: #1a1a1a;
   margin: 0;
 }
 
 h1 {
-  font-size: clamp(32px, 4vw, 54px);
-  /* Reduced */
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 64px);
   line-height: 1.1;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -181,13 +183,74 @@ img {
   animation-delay: 0.3s;
 }
 
+/* --- UNIVERSAL PAGE HERO --- */
+.page-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  margin-top: 0;
+  /* Start from top of page */
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4));
+  z-index: 1;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  padding: 0 var(--site-margin);
+}
+
+.page-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 7vw, 90px) !important;
+  font-weight: 700;
+  margin-bottom: 24px !important;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: #fff !important;
+}
+
+.page-hero p {
+  font-size: clamp(18px, 1.8vw, 24px);
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.page-hero .btn-primary {
+  margin-top: 40px;
+}
+
 /* Utilities */
 .container,
 .jll-container,
 .ss-nav-container,
 .jll-footer-header,
-.jll-footer-container {
-  max-width: 100%;
+.jll-footer-container,
+.blog-container,
+.blog-header,
+.jll-service-header-content {
+  max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 var(--site-margin) !important;
 }

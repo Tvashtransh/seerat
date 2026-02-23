@@ -99,13 +99,13 @@ export default function Projects() {
   return (
     <div className="jll-projects-page">
 
-      {/* Hero Header */}
-      <section className="jll-projects-hero">
-        <div className="jll-projects-hero-content">
-          <h1 className="jll-display-heading">Our Portfolio</h1>
-          <p className="jll-display-subheading">
-            Showcasing excellence in wood framing across British Columbia. From custom homes to large-scale communities.
-          </p>
+      {/* Cinematic Hero Header */}
+      <section
+        className="page-hero animate-fade-in"
+        style={{ backgroundImage: 'url(/project-tsawwassen.jpg)' }}
+      >
+        <div className="page-hero-content animate-fade-up delay-100">
+          <h1>Our Portfolio</h1>
         </div>
       </section>
 

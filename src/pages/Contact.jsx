@@ -37,14 +37,13 @@ export default function Contact() {
   return (
     <div className="jll-contact-page">
 
-      {/* JLL-Style Header */}
-      <header className="jll-page-header">
-        <div className="jll-container">
-          <h1 className="jll-display-heading">Connect with Us</h1>
-          <p className="jll-display-subheading">
-            Whether you're developing a multi-family complex or building your dream home,
-            our specialized team is ready to provide the precision framing you need.
-          </p>
+      {/* Cinematic Hero Header */}
+      <header
+        className="page-hero animate-fade-in"
+        style={{ backgroundImage: 'url(/wood-framing.jpg)' }}
+      >
+        <div className="page-hero-content animate-fade-up delay-100">
+          <h1>Connect with Us</h1>
         </div>
       </header>
 

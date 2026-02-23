@@ -11,7 +11,10 @@ export default function BurnabyResidential() {
     <div className="project-detail-page">
 
       {/* Hero */}
-      <section className="project-detail-hero animate-fade-up">
+      <section
+        className="project-detail-hero animate-fade-up"
+        style={{ backgroundImage: 'url(/burnaby-assets/burnaby-1.jpg)' }}
+      >
         <h1>BURNABY RESIDENTIAL HOME</h1>
         <span className="project-location-tag">Garden Village, Burnaby, British Columbia</span>
       </section>

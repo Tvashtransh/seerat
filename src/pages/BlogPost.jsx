@@ -22,52 +22,17 @@ export default function BlogPost() {
 
     return (
         <article className="blog-post-page">
-            <header className="blog-post-header">
-                <div className="blog-container">
-                    {/* Category */}
-                    <span className="blog-category">{blog.category || "Client story"}</span>
-
-                    {/* Title */}
-                    <h1 className="blog-title">{blog.title}</h1>
-
-                    {/* Subtitle */}
-                    <p className="blog-subtitle">
-                        {blog.subtitle || "Our client, a large global bank, was faced with the challenge of complying with Covid-19 health & safety standards while still optimizing operations and saving costs."}
-                    </p>
-
-                    {/* Tags */}
-                    <div className="blog-tags">
-                        {blog.tags && blog.tags.map((tag, index) => (
-                            <span key={index} className="blog-tag">{tag}</span>
-                        ))}
-                    </div>
-
-                    {/* Meta Divider */}
-                    <div className="blog-meta-divider"></div>
-
-                    {/* Meta Info */}
-                    <div className="blog-meta-row">
-                        <div className="blog-meta-left">
-                            <div className="meta-item">
-                                <svg className="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <span>Listen to article</span>
-                            </div>
-                            <div className="meta-bullet">•</div>
-                            <div className="meta-item">
-                                <span>Read time: {blog.readTime || "2.7"} min</span>
-                            </div>
-                        </div>
-
-                        <div className="blog-meta-right">
-                            <button className="share-btn">
-                                Share
-                                <svg className="share-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18" height="18">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
-                                </svg>
-                            </button>
+            {/* Cinematic Hero */}
+            <header
+                className="page-hero animate-fade-in"
+                style={{ backgroundImage: `url(${blog.image})` }}
+            >
+                <div className="page-hero-content animate-fade-up delay-100">
+                    <span className="blog-category" style={{ color: 'var(--accent-color)', fontWeight: '700' }}>{blog.category || "Client story"}</span>
+                    <h1 style={{ color: '#fff', fontSize: 'clamp(32px, 5vw, 64px)' }}>{blog.title}</h1>
+                    <div className="blog-meta-row" style={{ color: 'rgba(255,255,255,0.9)', justifyContent: 'center', gap: '20px' }}>
+                        <div className="meta-item">
+                            <span>Read time: {blog.readTime || "2.7"} min</span>
                         </div>
                     </div>
                 </div>

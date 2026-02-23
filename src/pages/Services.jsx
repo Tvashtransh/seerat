@@ -42,17 +42,14 @@ export default function Services() {
   return (
     <div className="services-page">
 
-      {/* JLL-Style Hero Section */}
-      <section className="jll-hero">
-        <div className="jll-hero-image-wrapper">
-          <img src="/hero-services.jpg" onError={(e) => e.target.src = '/project-type-2.png'} alt="Construction Site" className="jll-hero-image" />
-        </div>
-        <div className="jll-hero-overlay">
-          <h1 className="jll-hero-title">Building with Precision & Purpose</h1>
-          <p className="jll-hero-subtitle">
-            Comprehensive wood framing services tailored to your project's unique demands. From concept to completion, we deliver excellence.
-          </p>
-          <Link to="/contact" className="jll-btn-primary">
+      {/* Cinematic Hero Section */}
+      <section
+        className="page-hero animate-fade-in"
+        style={{ backgroundImage: 'url(/wood-framing.jpg)' }}
+      >
+        <div className="page-hero-content animate-fade-up delay-100">
+          <h1>Building with Precision</h1>
+          <Link to="/contact" className="btn btn-primary">
             Get in Touch
           </Link>
         </div>

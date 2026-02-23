@@ -7,35 +7,12 @@
 }
 
 .jll-container {
-  max-width: 100%;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 var(--site-margin);
 }
 
-@media (min-width: 1200px) {
-  .jll-container {
-    padding: 0 var(--laptop-padding);
-  }
-}
-
-/* HEADER */
-.jll-service-header {
-  background-color: #f5f5f7;
-  padding: 80px 0;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.jll-service-header-content {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-@media (min-width: 1200px) {
-  .jll-service-header-content {
-    padding: 0 var(--laptop-padding);
-  }
-}
+/* HEADER - Standardized to .page-hero in index.css */
 
 .jll-breadcrumbs {
   font-size: 14px;

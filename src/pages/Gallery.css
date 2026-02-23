@@ -16,68 +16,13 @@
 }
 
 .jll-container {
-  max-width: 100%;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 40px;
-}
-
-@media (min-width: 1200px) {
-  .jll-container {
-    padding: 0 var(--laptop-padding);
-  }
+  padding: 0 var(--site-margin);
 }
 
 /* --- HERO --- */
-.jll-hero-gallery {
-  position: relative;
-  height: 60vh;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.jll-hero-image-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.jll-hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.85);
-}
-
-.jll-hero-overlay-center {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 60px;
-  backdrop-filter: blur(8px);
-  max-width: 900px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.jll-display-heading {
-  font-size: 56px;
-  font-weight: 800;
-  margin-bottom: 24px;
-  letter-spacing: -1px;
-}
-
-.jll-display-subheading {
-  font-size: 20px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9);
-}
+/* Standardized to .page-hero in index.css */
 
 /* --- CASE STUDIES --- */
 .jll-case-studies {

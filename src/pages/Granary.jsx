@@ -11,7 +11,10 @@ export default function Granary() {
     <div className="project-detail-page">
 
       {/* Hero */}
-      <section className="project-detail-hero animate-fade-up">
+      <section
+        className="project-detail-hero animate-fade-up"
+        style={{ backgroundImage: 'url(/granary-assets/granary-2.jpg)' }}
+      >
         <h1>THE GRANARY</h1>
         <span className="project-location-tag">Tsawwassen / Boundary Bay, British Columbia</span>
       </section>

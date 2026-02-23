@@ -11,7 +11,10 @@ export default function BoundaryBayBeach() {
     <div className="project-detail-page">
 
       {/* Hero */}
-      <section className="project-detail-hero animate-fade-up">
+      <section
+        className="project-detail-hero animate-fade-up"
+        style={{ backgroundImage: 'url(/boundarybay-assets/boundarybay-1.jpg)' }}
+      >
         <h1>BOUNDARY BAY RESIDENTIAL FRAMING</h1>
         <span className="project-location-tag">Delta / Boundary Bay Beach, British Columbia</span>
       </section>

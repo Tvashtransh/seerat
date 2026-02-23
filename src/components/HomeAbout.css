@@ -1,12 +1,12 @@
 .home-about {
-  padding: 100px 20px;
+  padding: 100px var(--site-margin);
   background: var(--bg-color);
   display: flex;
   justify-content: center;
 }
 
 .home-about-container {
-  max-width: 1150px;
+  max-width: var(--container-width);
   width: 100%;
   background: var(--bg-color);
   border-radius: 26px;

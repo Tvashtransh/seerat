@@ -38,29 +38,31 @@ function Navbar() {
   return (
     <header className={`ss-navbar ${scrolled ? 'scrolled' : ''} ${!visible ? 'ss-navbar-hidden' : ''}`}>
       <div className="ss-nav-container">
+        <div className="ss-nav-wrapper">
 
-        {/* ROW 1: BRANDING & UTILITIES */}
-        <div className="ss-nav-top">
+          {/* BRANDING */}
           <NavLink to="/" className="ss-nav-brand">
             <div className="ss-logo-wrapper">
               <img src="/logo.png" alt="Set Square Construction" className="ss-logo" />
-              <div className="ss-brand-divider"></div>
-              <span className="ss-slogan">SETSQUARE CONSTRUCTION</span>
+              <span className="ss-brand-name">SETSQUARE</span>
             </div>
           </NavLink>
 
-          <div className="ss-nav-utilities">
-            <div className="ss-utility-item ss-country-selector">
-              <img src="https://flagcdn.com/w20/ca.png" alt="Canada" className="ss-flag" />
-              <span>Canada</span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6" /></svg>
+          {/* MAIN NAVIGATION */}
+          <nav className={`ss-main-nav ${menuOpen ? 'active' : ''}`}>
+            <div className="ss-nav-links">
+              <NavLink to="/" className="ss-nav-link">HOME</NavLink>
+              <NavLink to="/services" className="ss-nav-link">SERVICES</NavLink>
+              <NavLink to="/projects" className="ss-nav-link">PROJECTS</NavLink>
+              <NavLink to="/gallery" className="ss-nav-link">GALLERY</NavLink>
+              <NavLink to="/why-us" className="ss-nav-link">WHY US</NavLink>
+              <NavLink to="/blog" className="ss-nav-link">BLOG</NavLink>
             </div>
+          </nav>
 
-            <button className="ss-utility-item ss-search-btn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            </button>
-
-            <NavLink to="/contact" className="ss-contact-cta">
+          {/* ACTIONS */}
+          <div className="ss-nav-actions">
+            <NavLink to="/contact" className="ss-nav-cta">
               Get a Quote
             </NavLink>
 
@@ -68,21 +70,8 @@ function Navbar() {
               <span className={`ss-burger ${menuOpen ? 'open' : ''}`}></span>
             </button>
           </div>
+
         </div>
-
-        {/* ROW 2: NAVIGATION LINKS */}
-        <nav className={`ss-nav-bottom ${menuOpen ? 'active' : ''}`}>
-          <div className="ss-nav-links">
-            <NavLink to="/" className="ss-nav-link">HOME</NavLink>
-            <NavLink to="/services" className="ss-nav-link">SERVICES</NavLink>
-            <NavLink to="/projects" className="ss-nav-link">PROJECTS</NavLink>
-            <NavLink to="/gallery" className="ss-nav-link">GALLERY</NavLink>
-            <NavLink to="/why-us" className="ss-nav-link">WHY US</NavLink>
-            <NavLink to="/blog" className="ss-nav-link">BLOG</NavLink>
-            <NavLink to="/contact" className="ss-nav-link">CONTACT</NavLink>
-          </div>
-        </nav>
-
       </div>
     </header>
   );

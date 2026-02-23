@@ -4,14 +4,17 @@ import "./Blog.css";
 
 export default function Blog() {
   return (
-    <section className="blog-page">
-      <div className="blog-container">
-        <div className="blog-header">
+    <div className="blog-page">
+      <section
+        className="page-hero animate-fade-in"
+        style={{ backgroundImage: 'url(/industry-multiplex.jpg)' }}
+      >
+        <div className="page-hero-content animate-fade-up delay-100">
           <h1>Our Blog</h1>
-          <p>
-            Insights, expertise, and industry knowledge from Setsquare Construction.
-          </p>
         </div>
+      </section>
+
+      <div className="blog-container" style={{ marginTop: '80px' }}>
 
         <div className="blog-grid">
           {blogs.map((blog) => (
@@ -29,7 +32,7 @@ export default function Blog() {
               </div>
 
               <div className="blog-content">
-                <h3 className="blog-title">{blog.title}</h3>
+                <h3 className="blog-card-title">{blog.title}</h3>
                 <p className="blog-excerpt">{blog.excerpt}</p>
 
                 <div className="blog-footer">
@@ -49,6 +52,6 @@ export default function Blog() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

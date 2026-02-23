@@ -6,10 +6,9 @@
 
 .timber-hero {
   text-align: center;
-  margin-bottom: 120px;
-  max-width: 900px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 20px 120px;
+  padding: 0 var(--site-margin) 120px;
 }
 
 .timber-hero h1 {
@@ -30,10 +29,10 @@
 
 /* Intro */
 .timber-intro {
-  max-width: 800px;
+  max-width: var(--container-width);
   margin: 0 auto 120px;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 var(--site-margin);
 }
 
 .timber-intro p {
@@ -58,9 +57,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--site-margin);
 }
 
 .why-card {
@@ -150,9 +149,9 @@
 
 /* Process Section */
 .timber-process {
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 120px auto;
-  padding: 0 20px;
+  padding: 0 var(--site-margin);
 }
 
 .timber-process h2 {
@@ -201,9 +200,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--site-margin);
 }
 
 .serve-card {

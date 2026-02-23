@@ -10,14 +10,13 @@ export default function WhyUs() {
   return (
     <div className="jll-whyus-page">
 
-      {/* Hero Section */}
-      <section className="jll-hero-small">
-        <div className="jll-hero-bg-wrapper">
-          <img src="/hero-about.jpg" onError={(e) => e.target.src = '/project-type-2.png'} alt="About Setsquare" />
-          <div className="jll-hero-overlay-center">
-            <h1>Built on Partnership</h1>
-            <p>20+ Years of framing excellence in British Columbia.</p>
-          </div>
+      {/* Cinematic Hero Section */}
+      <section
+        className="page-hero animate-fade-in"
+        style={{ backgroundImage: 'url(/whyus-about.jpg)' }}
+      >
+        <div className="page-hero-content animate-fade-up delay-100">
+          <h1>Built on Partnership</h1>
         </div>
       </section>
 

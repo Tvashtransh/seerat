@@ -10,17 +10,16 @@ export default function TimberFraming() {
   return (
     <div className="jll-service-detail-page">
 
-      {/* Hero / Header */}
-      <header className="jll-service-header">
-        <div className="jll-service-header-content">
-          <div className="jll-breadcrumbs">
-            <Link to="/">Home</Link> / <Link to="/services">Services</Link> / <span>Timber Framing</span>
+      {/* Cinematic Hero Section */}
+      <header
+        className="page-hero animate-fade-in"
+        style={{ backgroundImage: 'url(/timber1.jpg)' }}
+      >
+        <div className="page-hero-content animate-fade-up delay-100">
+          <div className="jll-breadcrumbs" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '16px' }}>
+            <Link to="/" style={{ color: '#fff' }}>Home</Link> / <Link to="/services" style={{ color: '#fff' }}>Services</Link> / <span>Timber Framing</span>
           </div>
           <h1>Timber Framing</h1>
-          <p className="jll-service-lead">
-            Marrying traditional craftsmanship with modern engineering.
-            We create exposed wood structures that define spaces and endure for generations.
-          </p>
         </div>
       </header>
 

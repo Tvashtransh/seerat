@@ -1,6 +1,6 @@
 .home-services {
   position: relative;
-  padding: 100px 24px;
+  padding: 100px var(--site-margin);
   background: linear-gradient(to top,
       var(--accent-color) 0%,
       rgba(181, 142, 107, 0.85) 35%,
@@ -22,7 +22,7 @@
 .home-services-container {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;

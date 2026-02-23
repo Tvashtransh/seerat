@@ -11,7 +11,10 @@ export default function SummerlandLakefront() {
     <div className="project-detail-page">
 
       {/* Hero */}
-      <section className="project-detail-hero animate-fade-up">
+      <section
+        className="project-detail-hero animate-fade-up"
+        style={{ backgroundImage: 'url(/summerland-assets/summerland-2.jpg)' }}
+      >
         <h1>SUMMERLAND LAKEFRONT</h1>
         <span className="project-location-tag">Summerland, Okanagan, British Columbia</span>
       </section>

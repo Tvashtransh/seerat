@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
-import { HiOutlineHome } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 export default function Home() {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
-  const [activeExpertise, setActiveExpertise] = useState(0);
   const [direction, setDirection] = useState("next"); // 'next' or 'prev'
 
-  const expertiseSectionRef = React.useRef(null);
+  useEffect(() => {
+    console.log("Home Layout Update: Unified Grid Active");
+  }, []);
 
   const heroSlides = [
     {
@@ -41,14 +41,6 @@ export default function Home() {
       label: "Timber"
     }
   ];
-
-  // Auto-rotate Hero
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentHeroIndex(prev => (prev + 1) % heroSlides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [heroSlides.length]);
 
   const projects = [
     {
@@ -98,6 +90,14 @@ export default function Home() {
     }
   ];
 
+  // Auto-rotate Hero
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentHeroIndex(prev => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [heroSlides.length]);
+
   const nextProject = () => {
     setDirection("next");
     setCurrentProjectIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
@@ -108,102 +108,72 @@ export default function Home() {
     setCurrentProjectIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!expertiseSectionRef.current) return;
-
-      const section = expertiseSectionRef.current;
-      const rect = section.getBoundingClientRect();
-      const sectionHeight = section.offsetHeight;
-
-      const scrollProgress = Math.min(Math.max(-rect.top / (sectionHeight - window.innerHeight), 0), 0.99);
-      const newIndex = Math.floor(scrollProgress * expertiseData.length);
-
-      setActiveExpertise(prev => {
-        if (prev !== newIndex) return newIndex;
-        return prev;
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [expertiseData.length]);
-
   const currentProject = projects[currentProjectIndex];
 
   return (
     <div className="jll-home-page">
 
-      <section className="ss-hero">
-
-        {/* === LAYER 1: Background Slides === */}
-        <div className="ss-hero-bg-wrapper">
-          {heroSlides.map((slide, index) => (
-            <div
-              key={index}
-              className={`ss-hero-bg ${index === currentHeroIndex ? "active" : ""}`}
-              style={{ backgroundImage: `url(${slide.image})` }}
-            />
-          ))}
+      <section className="ss-hero-premium">
+        {/* Background Video */}
+        <div className="ss-hero-video-wrapper">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="ss-hero-video"
+            poster="/hero-image.jpg"
+          >
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-architectural-model-in-a-modern-office-42774-large.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="ss-hero-overlay-refined" />
         </div>
 
-        {/* === LAYER 2: Multi-stop Gradient Overlay === */}
-        <div className="ss-hero-vignette" />
-
-        {/* === LAYER 3: Hero Content === */}
-        <div className="ss-hero-content">
-
-          {/* Top bar: eyebrow + phone */}
-          <div className="ss-hero-topbar">
-            <span className="ss-hero-eyebrow">
-              <span className="ss-hero-eyebrow-dot" />
-              BC's Premier Wood Framing Contractor
-            </span>
-            <a href="tel:6048327008" className="ss-hero-phone">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.71 3.35 2 2 0 0 1 3.68 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.65a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 15.92v1z" /></svg>
-              604-832-7008
-            </a>
-          </div>
-
-          {/* Main headline – animated key each slide change */}
-          <div className="ss-hero-headline-wrap">
-            <h1 className="ss-hero-title" key={currentHeroIndex}>
-              <span className="ss-hero-title-line word-1"
-                dangerouslySetInnerHTML={{ __html: heroSlides[currentHeroIndex].titleLine1 }}
-              />
-              <span className="ss-hero-title-line word-2"
-                dangerouslySetInnerHTML={{ __html: heroSlides[currentHeroIndex].titleLine2 }}
-              />
+        {/* Centered Content */}
+        <div className="ss-hero-content-centered">
+          <div className="ss-hero-text-minimal">
+            <span className="ss-hero-brand-eyebrow">SETSQUARE CONSTRUCTION</span>
+            <h1 className="ss-hero-main-title">
+              THE <br />
+              <span className="serif-font">SETSQUARE</span>
             </h1>
+            <p className="ss-hero-sub-minimal">
+              PRECISION FRAMING & MASTER CRAFTSMANSHIP
+            </p>
           </div>
+        </div>
 
-          {/* Sub-tagline */}
-          <p className="ss-hero-sub" key={`sub-${currentHeroIndex}`}>
-            {heroSlides[currentHeroIndex].subtitle}
-          </p>
-
-          {/* CTAs */}
-          <div className="ss-hero-ctas">
-            <Link to="/contact" className="ss-hero-btn-primary">
-              Request a Bid
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
-            </Link>
-            <Link to="/projects" className="ss-hero-btn-ghost">
-              View Projects
-            </Link>
-          </div>
-
-          <div className="ss-hero-bottom-strip">
-            <div className="ss-hero-location">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
-              Delta, BC &nbsp;·&nbsp; Metro Vancouver
+        {/* Bottom Search/Filter Bar (Apple/EMAAR Style) */}
+        <div className="ss-hero-bottom-filter">
+          <div className="ss-filter-pill">
+            <div className="ss-filter-item">
+              <span className="filter-label">PROJECT TYPE</span>
+              <div className="filter-select">
+                <span>All Projects</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M6 9l6 6 6-6" /></svg>
+              </div>
             </div>
+            <div className="ss-filter-divider" />
+            <div className="ss-filter-item">
+              <span className="filter-label">LOCATION</span>
+              <div className="filter-select">
+                <span>Metro Vancouver</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M6 9l6 6 6-6" /></svg>
+              </div>
+            </div>
+            <div className="ss-filter-divider" />
+            <div className="ss-filter-item">
+              <span className="filter-label">SCALE</span>
+              <div className="filter-select">
+                <span>Multi-Family</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M6 9l6 6 6-6" /></svg>
+              </div>
+            </div>
+            <button className="ss-filter-search-btn">
+              SEARCH PROJECTS
+            </button>
           </div>
-
         </div>
       </section>
 
@@ -217,7 +187,6 @@ export default function Home() {
                 delivering structural excellence across British Columbia.
               </p>
             </div>
-
             <div className="jll-stats-grid">
               <div className="jll-stat-item">
                 <span className="jll-stat-number">80+</span>
@@ -262,7 +231,6 @@ export default function Home() {
                     <span className="ss-author-role">Founder of Setsquare Construction</span>
                   </div>
                   <div className="ss-signature">
-                    {/* Placeholder for signature look */}
                     <span className="signature-text">Gurpreet Singh</span>
                   </div>
                 </div>
@@ -272,115 +240,91 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. EXPERTISE SECTION (Scroll-Linked Transitions) */}
-      <section className="jll-expertise-scroll-section" ref={expertiseSectionRef}>
-        <div className="expertise-sticky-wrapper">
-          <div className="jll-container">
-            <div className="expertise-tabs-container">
-
-              {/* 1. LEFT: Active Content */}
-              <div className="expertise-content-left">
-                <div className="expertise-icon-box">
-                  <HiOutlineHome className="expertise-icon" />
-                </div>
-                <h2 className="expertise-active-title">
-                  {expertiseData[activeExpertise].title}
-                </h2>
-                <p className="expertise-active-desc">
-                  {expertiseData[activeExpertise].description}
-                </p>
-                <Link to={expertiseData[activeExpertise].link} className="expertise-explore-btn">
-                  Explore More <span>&rarr;</span>
-                </Link>
-              </div>
-
-              {/* 2. CENTER: Main Image Display */}
-              <div className="expertise-display-main">
-                <div className="expertise-image-card">
-                  <img
-                    src={expertiseData[activeExpertise].image}
-                    alt={expertiseData[activeExpertise].title}
-                    key={activeExpertise}
-                    className="expertise-main-img fade-in"
-                  />
-
-                  <div className="expertise-image-label">
-                    <div className="label-content-inner">
-                      <span className="label-number">{expertiseData[activeExpertise].id}</span>
-                      <span className="label-text">{expertiseData[activeExpertise].title}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* 3. RIGHT: Indicators */}
-              <div className="expertise-vertical-tabs">
-                {expertiseData.map((item, index) => (
-                  <div
-                    key={item.id}
-                    className={`expertise-side-tab ${index === activeExpertise ? 'active' : ''}`}
-                  >
-
-                    <div className="tab-content">
-                      <span className="tab-number">{item.id}</span>
-                      <span className="tab-vertical-title">{item.title}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* 4. OUR STORY SECTION */}
-      <section className="ss-story-section">
+      <section className="ss-expertise-section">
         <div className="jll-container">
           <div className="jll-grid-header">
-            <span className="ss-story-eyebrow">OUR STORY</span>
-            <h2 className="ss-story-heading">Built from the ground up — frame by frame.</h2>
+            <span className="ss-story-eyebrow">OUR EXPERTISE</span>
+            <h2 className="ss-story-heading">Specialized framing for every project scale.</h2>
           </div>
 
-          <div className="ss-story-main-grid">
-            <div className="ss-story-text">
-              <p className="ss-story-body">
-                SetSquare Construction was founded with a single vision — to bring uncompromising
-                precision to wood frame construction in British Columbia. Starting with a small crew
-                and one townhome project in Delta, we grew through reputation alone.
-              </p>
-              <p className="ss-story-body">
-                Over two decades later, we've helped shape the skylines of communities across the
-                Lower Mainland, partnering with BC's most respected developers.
-              </p>
-              <Link to="/why-us" className="ss-story-cta">
-                Learn more about our heritage <span>&rarr;</span>
-              </Link>
-            </div>
-
-            <div className="ss-story-featured-img">
-              <img src="/frame-of-mind.jpg" alt="Our Legacy" />
-              <div className="ss-story-year-stamp">Est. 2004</div>
-            </div>
-          </div>
-
-          <div className="ss-story-milestones">
-            {[
-              { year: "2004", text: "Founded in Delta, BC" },
-              { year: "2008", text: "Multi-development expansion" },
-              { year: "2013", text: "Timber framing division launched" },
-              { year: "2019", text: "500+ units completed" },
-              { year: "Today", text: "Leading BC contractor" }
-            ].map((milestone, idx) => (
-              <div key={idx} className="ss-milestone-card">
-                <span className="ss-milestone-year">{milestone.year}</span>
-                <p className="ss-milestone-text">{milestone.text}</p>
+          <div className="ss-expertise-grid">
+            {expertiseData.map((item) => (
+              <div key={item.id} className="ss-expertise-card">
+                <div className="ss-expertise-img-wrap">
+                  <img src={item.image} alt={item.title} className="ss-expertise-image" />
+                  <div className="ss-expertise-number">{item.id}</div>
+                </div>
+                <div className="ss-expertise-content">
+                  <h3 className="ss-expertise-title">{item.title}</h3>
+                  <p className="ss-expertise-body">{item.description}</p>
+                  <Link to={item.link} className="ss-expertise-link">
+                    Explore services <span>&rarr;</span>
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 5. FEATURED PROJECT */}
+      <section className="ss-story-section">
+        <div className="jll-container">
+          <div className="ss-story-flex-layout">
+            {/* Visual Aspect */}
+            <div className="ss-story-visual-side">
+              <div className="ss-story-image-main">
+                <img src="/frame-of-mind.jpg" alt="Setsquare Legacy" />
+                <div className="ss-story-experience-chip">
+                  <span className="chip-value">20+</span>
+                  <span className="chip-label">Years of <br />Expertise</span>
+                </div>
+              </div>
+              <div className="ss-story-image-offset">
+                <img src="/whyus-about.jpg" alt="On-Site Detail" />
+              </div>
+            </div>
+
+            {/* Content Aspect */}
+            <div className="ss-story-content-side">
+              <span className="ss-story-eyebrow">OUR STORY</span>
+              <h2 className="ss-story-heading">Two decades of structural precision.</h2>
+
+              <div className="ss-story-punch-text">
+                <p>
+                  Founded in Delta, BC with a single crew and a vision for structural excellence,
+                  Setsquare has grown into BC's trusted framing partner.
+                </p>
+                <p>
+                  We don't just build structures; we frame the future of communities by partnering
+                  with the province's top developers to deliver quality at scale.
+                </p>
+              </div>
+
+              <div className="ss-story-stats-row">
+                <div className="ss-story-stat-card">
+                  <span className="stat-card-year">2004</span>
+                  <span className="stat-card-desc">Est. in Delta</span>
+                </div>
+                <div className="ss-story-stat-card">
+                  <span className="stat-card-year">500+</span>
+                  <span className="stat-card-desc">Units Framed</span>
+                </div>
+                <div className="ss-story-stat-card">
+                  <span className="stat-card-year">80+</span>
+                  <span className="stat-card-desc">Developments</span>
+                </div>
+              </div>
+
+              <Link to="/why-us" className="ss-story-modern-cta">
+                Discover Our Heritage
+                <div className="cta-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="jll-featured-carousel">
         <div className="jll-container">
@@ -395,7 +339,6 @@ export default function Home() {
               </button>
             </div>
           </div>
-
           <div className={`jll-featured-card-split ${direction}`} key={currentProject.id}>
             <div className="jll-featured-img">
               <img src={currentProject.image} alt={currentProject.title} />
@@ -403,7 +346,6 @@ export default function Home() {
             <div className="jll-featured-content-box">
               <h3>{currentProject.title}</h3>
               <p>{currentProject.desc}</p>
-
               <Link to={currentProject.link} className="jll-arrow-link-plain">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </Link>
@@ -418,7 +360,6 @@ export default function Home() {
           <Link to="/contact" className="jll-btn-white">Request a Consultation</Link>
         </div>
       </section>
-
-    </div >
+    </div>
   );
 }

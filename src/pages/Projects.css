@@ -15,30 +15,7 @@
 }
 
 /* --- HEADER --- */
-.jll-projects-hero {
-  background-color: var(--jll-slate);
-  padding: 80px 40px;
-  text-align: center;
-  border-bottom: 1px solid var(--jll-border);
-}
-
-.jll-projects-hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.jll-display-heading {
-  font-size: 48px;
-  font-weight: 800;
-  margin-bottom: 20px;
-  color: #1a1a1a;
-}
-
-.jll-display-subheading {
-  font-size: 20px;
-  color: #666;
-  line-height: 1.5;
-}
+/* Standardized to .page-hero in index.css */
 
 /* --- FILTER BAR --- */
 .jll-filter-bar-sticky {
@@ -49,19 +26,13 @@
 }
 
 .jll-filter-container {
-  max-width: 100%;
+  max-width: var(--container-width);
   margin: 0 auto;
   display: flex;
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
-  padding: 0 40px;
-}
-
-@media (min-width: 1200px) {
-  .jll-filter-container {
-    padding: 0 var(--laptop-padding);
-  }
+  padding: 0 var(--site-margin);
 }
 
 .jll-search-wrapper {
@@ -132,15 +103,9 @@
 
 /* --- GRID SECTION --- */
 .jll-projects-grid-section {
-  padding: 60px 40px;
-  max-width: 100%;
+  padding: 80px var(--site-margin);
+  max-width: var(--container-width);
   margin: 0 auto;
-}
-
-@media (min-width: 1200px) {
-  .jll-projects-grid-section {
-    padding: 60px var(--laptop-padding);
-  }
 }
 
 .jll-project-cards-grid {

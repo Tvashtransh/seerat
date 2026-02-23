@@ -7,61 +7,13 @@
 }
 
 .jll-container {
-  max-width: 100%;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 40px;
-}
-
-@media (min-width: 1200px) {
-  .jll-container {
-    padding: 0 var(--laptop-padding);
-  }
+  padding: 0 var(--site-margin);
 }
 
 /* HERO SMALL */
-.jll-hero-small {
-  height: 400px;
-  position: relative;
-  overflow: hidden;
-}
-
-.jll-hero-bg-wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.jll-hero-bg-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.jll-hero-overlay-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 2;
-  width: 90%;
-  max-width: 800px;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 40px;
-  backdrop-filter: blur(4px);
-}
-
-.jll-hero-overlay-center h1 {
-  font-size: 48px;
-  font-weight: 800;
-  margin-bottom: 16px;
-}
-
-.jll-hero-overlay-center p {
-  font-size: 20px;
-  font-weight: 500;
-}
+/* Standardized to .page-hero in index.css */
 
 /* NARRATIVE SECTION */
 .jll-narrative-section {

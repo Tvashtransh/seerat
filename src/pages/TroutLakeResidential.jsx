@@ -11,7 +11,10 @@ export default function TroutLakeResidential() {
     <div className="project-detail-page">
 
       {/* Hero */}
-      <section className="project-detail-hero animate-fade-up">
+      <section
+        className="project-detail-hero animate-fade-up"
+        style={{ backgroundImage: 'url(/troutlake-assets/troutlake-1.jpg)' }}
+      >
         <h1>TROUT LAKE RESIDENTIAL</h1>
         <span className="project-location-tag">East Vancouver, Lower Mainland, British Columbia</span>
       </section>

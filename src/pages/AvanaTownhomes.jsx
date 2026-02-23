@@ -11,7 +11,10 @@ export default function AvanaTownhomes() {
     <div className="project-detail-page">
 
       {/* Hero */}
-      <section className="project-detail-hero animate-fade-up">
+      <section
+        className="project-detail-hero animate-fade-up"
+        style={{ backgroundImage: 'url(/avana-assets/avana.jpg)' }}
+      >
         <h1>AVANA TOWNHOMES</h1>
         <span className="project-location-tag">Cottonwood Park, Burquitlam, Coquitlam, British Columbia</span>
       </section>
