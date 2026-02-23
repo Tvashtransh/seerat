@@ -1,13 +1,11 @@
 .home-services {
   position: relative;
   padding: 100px 24px;
-  background: linear-gradient(
-    to top,
-    #0ab3ba 0%,
-    rgba(10, 179, 186, 0.85) 35%,
-    rgba(10, 179, 186, 0.55) 65%,
-    rgba(10, 179, 186, 0.15) 100%
-  );
+  background: linear-gradient(to top,
+      var(--accent-color) 0%,
+      rgba(181, 142, 107, 0.85) 35%,
+      rgba(181, 142, 107, 0.55) 65%,
+      rgba(181, 142, 107, 0.15) 100%);
   overflow: hidden;
 }
 
@@ -16,10 +14,8 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    rgba(255, 255, 255, 0.15),
-    transparent 70%
-  );
+  background: radial-gradient(rgba(255, 255, 255, 0.15),
+      transparent 70%);
   pointer-events: none;
 }
 
@@ -68,8 +64,8 @@
   display: inline-block;
   margin-top: 24px;
   padding: 14px 32px;
-  background-color: #ffffff;
-  color: #0ab3ba;
+  background-color: var(--bg-color);
+  color: var(--accent-color);
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
@@ -90,9 +86,9 @@
 }
 
 .service-card {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(249, 243, 238, 0.95);
   padding: 28px;
-  border-radius: 18px;
+  border-radius: var(--img-radius);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   opacity: 0;
   transform: translateY(30px);
@@ -125,6 +121,7 @@
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

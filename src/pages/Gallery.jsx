@@ -14,64 +14,93 @@ export default function Gallery() {
   }, []);
 
   return (
-    <div className="gallery-page">
+    <div className="jll-gallery-page">
 
-      {/* Intro */}
-      <section className="gallery-hero animate-fade-up">
-        <h1>Our Portfolio</h1>
-        <p>
-          A visual journey through our precision wood framing,
-          from complex multi-family developments to custom single-family homes.
-        </p>
+      {/* JLL-Style Hero */}
+      <section className="jll-hero-gallery">
+        <div className="jll-hero-image-wrapper">
+          <img src="/hero-gallery.jpg" onError={(e) => e.target.src = '/project-type-2.png'} alt="Showcase" className="jll-hero-image" />
+        </div>
+        <div className="jll-hero-overlay-center">
+          <h1 className="jll-display-heading">Visual Showcase</h1>
+          <p className="jll-display-subheading">
+            A curated portfolio of precision-engineered wood framing across British Columbia's most ambitious builds.
+          </p>
+        </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="gallery-featured">
+      {/* Featured Case Studies - Large Layout */}
+      <section className="jll-case-studies">
+        <div className="jll-container">
 
-        {/* Project 1 */}
-        <div className="featured-project animate-fade-up delay-100">
-          <div className="project-visual">
-            <img src="/beforeafter1.png" alt="Multi-Residential Development" />
+          <div className="jll-case-study">
+            <div className="jll-case-study-visual">
+              <img src="/beforeafter1.png" alt="Multi-Residential Development" />
+              <div className="jll-case-badge">Multi-Family</div>
+            </div>
+            <div className="jll-case-study-content">
+              <span className="jll-case-location">Coquitlam, BC</span>
+              <h2 className="jll-case-title">Avana Townhomes</h2>
+              <p className="jll-case-desc">
+                Setsquare Construction proudly contributed to the construction of
+                Avana Townhomes at Cottonwood Park. This project resulted in the
+                creation of a vibrant community comprising 52 units, where efficiency
+                and structural integrity were the primary drivers.
+              </p>
+            </div>
           </div>
-          <div className="project-info">
-            <span className="project-location">Coquitlam, BC</span>
-            <h2>Avana Townhomes</h2>
-            <p>
-              Setsquare Construction proudly contributed to the construction of
-              Avana Townhomes at Cottonwood Park. This project resulted in the
-              creation of a vibrant community comprising 52 units.
-            </p>
+
+          <div className="jll-case-study reverse">
+            <div className="jll-case-study-content">
+              <span className="jll-case-location">Boundary Beach, Delta</span>
+              <h2 className="jll-case-title">Single-Family Transformation</h2>
+              <p className="jll-case-desc">
+                We played a key role in transforming a 1970's rancher into a
+                bright, spacious family home. Our precision framing aligned
+                perfectly with the unique modern design requirements, bringing a
+                contemporary vision to life with traditional wood framing expertise.
+              </p>
+            </div>
+            <div className="jll-case-study-visual">
+              <img src="/beforeafter2.png" alt="Single Family Residence" />
+              <div className="jll-case-badge">Custom Residential</div>
+            </div>
           </div>
+
         </div>
-
-        {/* Project 2 - Alt Layout */}
-        <div className="featured-project alt animate-fade-up delay-200">
-          <div className="project-info">
-            <span className="project-location">Boundary Beach, Delta</span>
-            <h2>Single-Family Transformation</h2>
-            <p>
-              We played a key role in transforming a 1970's rancher into a
-              bright, spacious family home. Our precision framing aligned
-              perfectly with the unique modern design requirements.
-            </p>
-          </div>
-          <div className="project-visual">
-            <img src="/beforeafter2.png" alt="Single Family Residence" />
-          </div>
-        </div>
-
       </section>
 
-      {/* Grid Gallery */}
-      <section className="gallery-grid-section">
-        <div className="container-large">
-          <h2 className="animate-fade-up">On Site Snapshots</h2>
-          <div className="gallery-masonry animate-fade-up delay-200">
+      {/* On-Site Grid - Refined Masonry */}
+      <section className="jll-gallery-grid-section">
+        <div className="jll-container">
+          <div className="jll-section-header">
+            <h2 className="jll-section-title">On-Site Progress</h2>
+            <p className="jll-section-desc">Behind the scenes of our active construction sites throughout the Lower Mainland.</p>
+          </div>
+
+          <div className="jll-gallery-masonry">
             {galleryImages.map((src, index) => (
-              <div key={index} className="gallery-item">
+              <div key={index} className="jll-gallery-item">
                 <img src={src} alt={`Project Snapshot ${index + 1}`} loading="lazy" />
+                <div className="jll-item-overlay">
+                  <span>Project View #{index + 1}</span>
+                </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="jll-gallery-cta">
+        <div className="jll-container">
+          <div className="jll-cta-content">
+            <h2>Building the Future of Wood Framing</h2>
+            <p>Work with a partner that values precision as much as you do.</p>
+            <div className="jll-cta-buttons">
+              <a href="/contact" className="jll-btn-primary">Request a Quote</a>
+              <a href="/services" className="jll-btn-outline">Our Services</a>
+            </div>
           </div>
         </div>
       </section>

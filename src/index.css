@@ -1,35 +1,46 @@
 /* Global Design System - JLL Corporate Style */
 :root {
   /* JLL Color Palette */
-  --bg-color: #ffffff;
+  --bg-color: #F9F3EE;
   /* Explicit White */
-  --bg-secondary: #f4f4f4;
-  /* Light Grey */
+  --bg-secondary: #F0EDE9;
+  /* Warmer Cream-Grey */
   --text-primary: #333333;
   /* Dark Grey */
   --text-secondary: #555555;
-  --accent-color: #333333;
-  /* Neutral Accent (formerly Red) */
-  --white: #ffffff;
+  --accent-color: #B58E6B;
+  /* Premium Muted Bronze/Gold */
+  --accent-hover: #967054;
+  /* Deepened Bronze */
+  --white: #F9F3EE;
   --black: #000000;
 
   /* Navbar */
   --nav-height: auto;
 
   /* Typography */
-  --font-main: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-display: "Source Sans Pro", sans-serif;
+  --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Outfit", sans-serif;
 
   /* Transitions */
-  --transition-fast: 0.2s ease;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-  /* Standard eased transition */
+
+  /* Radii */
+  --img-radius: 8px;
+  --card-radius: 16px;
+  --section-radius: 24px;
+
+  /* Spacing */
+  --section-padding: 80px;
+  --container-width: 1440px;
+  --site-margin: 130px;
 }
 
 /* Force Light Mode - Disable Dark Mode interference */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #ffffff;
+    --bg-color: #F9F3EE;
     --text-primary: #333333;
     --text-secondary: #555555;
   }
@@ -53,8 +64,9 @@ body {
   color: var(--text-primary);
   line-height: 1.5;
   font-weight: 400;
+  font-size: 16px;
+  /* Reduced from 17px */
   letter-spacing: -0.01em;
-  /* Tighter tracking like SF Pro */
   overflow-x: hidden;
 }
 
@@ -65,26 +77,34 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  color: var(--text-primary);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+  margin: 0;
 }
 
 h1 {
-  font-size: 48px;
-  /* Default huge */
-  line-height: 1.08;
-}
-
-h2 {
-  font-size: 40px;
+  font-size: clamp(32px, 4vw, 54px);
+  /* Reduced */
   line-height: 1.1;
 }
 
+h2 {
+  font-size: clamp(24px, 3vw, 38px);
+  /* Reduced */
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(20px, 2vw, 26px);
+  /* Reduced */
+  line-height: 1.3;
+}
+
 p {
-  font-size: 17px;
+  font-size: 16px;
   color: var(--text-secondary);
-  line-height: 1.47;
+  line-height: 1.6;
 }
 
 a {
@@ -162,20 +182,42 @@ img {
 }
 
 /* Utilities */
-.container {
-  max-width: 1024px;
+.container,
+.jll-container,
+.ss-nav-container,
+.jll-footer-header,
+.jll-footer-container {
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--site-margin) !important;
+}
+
+@media (max-width: 1440px) {
+  :root {
+    --site-margin: 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --site-margin: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --site-margin: 24px;
+  }
 }
 
 .container-large {
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--site-margin) !important;
 }
 
 .section-padding {
-  padding: 120px 0;
+  padding: var(--section-padding) 0;
 }
 
 .text-center {

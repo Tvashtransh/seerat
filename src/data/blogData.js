@@ -66,7 +66,7 @@ export const blogs = [
         excerpt:
             "Cutting corners in the early stages of a building project can set everything off balance. A framing contractor plays a critical role long...",
         date: "Apr 26, 2025",
-        image: "/blog-1.png",
+        image: "/project-type-12.png",
         tags: ["Framing", "Safety", "Construction"],
         readTime: 5.5
     },
@@ -113,7 +113,7 @@ export const blogs = [
         excerpt:
             "SetSquare Construction has seen prefab forming reshape the scene of construction timelines. Projects finish up to a month faster than...",
         date: "Apr 18, 2025",
-        image: "/blog-2.png",
+        image: "/project-type-2.png",
         tags: ["Prefab", "Stick Build", "Efficiency"],
         readTime: 4.1
     },
@@ -178,7 +178,7 @@ export const blogs = [
         excerpt:
             "Timber framing isn't just about putting up a structure—it's about creating something that lasts for generations. Choosing the right...",
         date: "Apr 7, 2025",
-        image: "/blog-3.png",
+        image: "/project-type-3.png",
         tags: ["Joinery", "Timber", "Technique"],
         readTime: 2.8
     },
@@ -249,7 +249,7 @@ export const blogs = [
         excerpt:
             "Vancouver didn’t become one of Canada’s most admired cities overnight. Every beam, nail, and joint played a role in shaping the skyline...",
         date: "Mar 25, 2025",
-        image: "/blog-4.png",
+        image: "/project-type-4.png",
         tags: ["Vancouver", "Urban Development", "History"],
         readTime: 3.2
     },
@@ -320,7 +320,7 @@ export const blogs = [
         excerpt:
             "A solid structure starts with expert framing, yet many homeowners overlook just how important this step is. Whether building from the...",
         date: "Mar 16, 2025",
-        image: "/blog-5.png",
+        image: "/project-type-5.png",
         tags: ["Hiring", "Tips", "Contractors"],
         readTime: 3.0
     },
@@ -379,7 +379,7 @@ export const blogs = [
         excerpt:
             "Engineered wood products like Cross-Laminated Timber (CLT) and Glued Laminated Timber (Glulam) are reshaping the scene of multi-family...",
         date: "Mar 7, 2025",
-        image: "/blog-6.png",
+        image: "/project-type-6.png",
         tags: ["Multi-Family", "Sustainability", "CLT"],
         readTime: 5.0
     },
@@ -432,7 +432,7 @@ export const blogs = [
         excerpt:
             "Timber frame homes are experiencing a remarkable resurgence in Vancouver's housing market, combining centuries-old building techniques...",
         date: "Feb 25, 2025",
-        image: "/blog-7.png",
+        image: "/project-type-7.png",
         tags: ["Timber Frame", "Design", "Vancouver"],
         readTime: 3.8
     },
@@ -503,7 +503,7 @@ export const blogs = [
         excerpt:
             "Quality construction starts with a strong foundation, and timber framing is no exception. The difference between a professionally built...",
         date: "Feb 18, 2025",
-        image: "/blog-8.png",
+        image: "/project-type-8.png",
         tags: ["Engineering", "Strength", "Durability"],
         readTime: 2.5
     },
@@ -574,7 +574,7 @@ export const blogs = [
         excerpt:
             "Construction framing is the backbone of any building. Without a solid structure, walls can shift, floors can weaken, and the entire...",
         date: "Feb 7, 2025",
-        image: "/blog-9.png",
+        image: "/project-type-9.png",
         tags: ["Advice", "Planning", "Safety"],
         readTime: 3.1
     },
@@ -639,7 +639,7 @@ export const blogs = [
         excerpt:
             "The commercial construction landscape is undergoing a significant transformation, with wood framing emerging as a formidable alternative...",
         date: "Jan 27, 2025",
-        image: "/blog-10.png",
+        image: "/project-type-10.png",
         tags: ["Commercial", "Wood Framing", "Trends"],
         readTime: 4.5
     },
@@ -716,7 +716,7 @@ export const blogs = [
         excerpt:
             "Strong framing is the backbone of any successful construction project. Whether you're building a cozy single-family home or a sprawling...",
         date: "Jan 9, 2025",
-        image: "/blog-11.png",
+        image: "/project-type-11.png",
         tags: ["Construction", "Framing", "Development"],
         readTime: 2.9
     },
@@ -775,7 +775,7 @@ export const blogs = [
         excerpt:
             "The construction industry is witnessing a significant shift towards sustainable and efficient building practices, with wood framing...",
         date: "Dec 30, 2024",
-        image: "/blog-12.png",
+        image: "/project-type-12.png",
         tags: ["Multi-Family", "Selection", "Expertise"],
         readTime: 4.2
     },

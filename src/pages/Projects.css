@@ -1,362 +1,310 @@
-/* Projects.css - JLL Client Stories Layout */
-.projects-page {
-  font-family: 'Source Sans Pro', sans-serif;
+/* Projects.css - JLL Inspired Theme */
+
+:root {
+  --jll-red: #cc0000;
+  /* Keeping JLL red reference, but using Teal */
+  --jll-bronze: var(--accent-color);
+  --jll-slate: #f5f5f7;
+  --jll-border: #e6e6e6;
+}
+
+.jll-projects-page {
+  font-family: var(--font-main);
   color: #333;
-  padding-bottom: 100px;
+  background-color: var(--bg-color);
 }
 
-/* ================== HEADER SECTION ================== */
-.projects-header-bg {
-  background-color: #EEF0F2;
-  /* JLL Light Grey */
-  padding: 60px 0 80px;
+/* --- HEADER --- */
+.jll-projects-hero {
+  background-color: var(--jll-slate);
+  padding: 80px 40px;
+  text-align: center;
+  border-bottom: 1px solid var(--jll-border);
 }
 
-.projects-container {
-  max-width: 1400px;
+.jll-projects-hero-content {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 40px;
 }
 
-.breadcrumb {
-  font-size: 13px;
-  color: #555;
-  margin-bottom: 40px;
-  display: block;
-  text-decoration: none;
-}
-
-.breadcrumb:hover {
-  text-decoration: underline;
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 60px;
-}
-
-.header-title h1 {
+.jll-display-heading {
   font-size: 48px;
-  font-weight: 400;
-  /* Thin, elegant weight like screenshot */
-  color: #000;
-  margin: 0;
-  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #1a1a1a;
 }
 
-.header-desc {
-  max-width: 600px;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #444;
+.jll-display-subheading {
+  font-size: 20px;
+  color: #666;
+  line-height: 1.5;
 }
 
-/* ================== FILTER BAR ================== */
-.filter-bar-container {
-  background-color: #fff;
-  border-bottom: 1px solid #e0e0e0;
+/* --- FILTER BAR --- */
+.jll-filter-bar-sticky {
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--jll-border);
   padding: 20px 0;
-  position: sticky;
-  top: 0;
-  /* Or below navbar if fixed */
-  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.filter-bar {
-  max-width: 1400px;
+.jll-filter-container {
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
-  /* Handle small screens */
+  padding: 0 40px;
 }
 
-/* Label */
-.filter-label {
-  font-size: 13px;
-  color: #666;
-  width: 100%;
-  margin-bottom: 8px;
-  display: block;
+@media (min-width: 1200px) {
+  .jll-filter-container {
+    padding: 0 var(--laptop-padding);
+  }
 }
 
-/* Input Group */
-.search-input-wrapper {
+.jll-search-wrapper {
   position: relative;
   flex: 1;
   min-width: 250px;
 }
 
-.search-icon {
+.jll-search-icon {
   position: absolute;
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: #999;
-  font-size: 14px;
+  color: #888;
 }
 
-.filter-search-input {
+.jll-search-input {
   width: 100%;
-  padding: 12px 12px 12px 36px;
-  border: 1px solid #ddd;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid var(--jll-border);
   border-radius: 4px;
-  /* Slight round */
-  font-size: 14px;
-  background: #f9f9f9;
-  outline: none;
+  font-size: 16px;
   transition: border-color 0.2s;
 }
 
-.filter-search-input:focus {
-  border-color: #333;
-  /* Neutral focus */
-  background: #fff;
+.jll-search-input:focus {
+  outline: none;
+  border-color: var(--jll-bronze);
 }
 
-/* Dropdowns */
-.filter-group {
+.jll-filter-group {
   display: flex;
-  gap: 12px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-.filter-btn {
-  background: #EEF0F2;
-  border: none;
-  padding: 12px 20px;
+.jll-select-wrapper {
+  position: relative;
+}
+
+.jll-select {
+  appearance: none;
+  padding: 12px 40px 12px 16px;
+  border: 1px solid var(--jll-border);
   border-radius: 4px;
-  /* Slight round */
+  background-color: var(--bg-color);
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px top 50%;
+  background-size: 10px auto;
   font-size: 14px;
-  color: #333;
+  font-weight: 500;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: background 0.2s;
+  min-width: 160px;
 }
 
-.filter-btn:hover {
-  background: #e0e0e0;
+.jll-select:focus {
+  border-color: var(--jll-bronze);
+  outline: none;
 }
 
-.chevron {
-  font-size: 10px;
+.jll-results-count {
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 600;
   color: #666;
 }
 
-.search-action-btn {
-  background-color: #000;
-  /* Solid Black */
-  color: #fff;
-  border: none;
-  padding: 12px 32px;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: opacity 0.2s;
+/* --- GRID SECTION --- */
+.jll-projects-grid-section {
+  padding: 60px 40px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
-/* Filter Button Active State */
-.filter-btn.active {
-  background-color: #333;
-  color: #fff;
+@media (min-width: 1200px) {
+  .jll-projects-grid-section {
+    padding: 60px var(--laptop-padding);
+  }
 }
 
-/* Dropdown Menu */
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  /* Below button */
-  left: 0;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  min-width: 180px;
-  z-index: 1000;
-  margin-top: 8px;
-  overflow: hidden;
-}
-
-.dropdown-item {
-  padding: 10px 16px;
-  cursor: pointer;
-  font-size: 14px;
-  color: #333;
-  transition: background 0.2s;
-}
-
-.dropdown-item:hover {
-  background-color: #f4f4f4;
-}
-
-/* Search Button Button */
-.search-action-btn:hover {
-  opacity: 0.8;
-}
-
-/* ================== RESULTS GRID ================== */
-.projects-results {
-  max-width: 1400px;
-  margin: 60px auto 0;
-  padding: 0 40px;
-}
-
-.project-grid {
+.jll-project-cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* 4 Columns per screenshot */
+  /* 4 Cards per row */
   gap: 30px;
 }
 
-/* Card Style */
-.project-card {
+/* --- CARD DESIGN (JLL Blog Style) --- */
+.jll-project-card {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
-  background: #fff;
+  text-decoration: none;
+  background: var(--bg-color);
+  border-radius: var(--img-radius);
+  /* Rounded card */
+  padding: 24px;
+  /* Inner padding */
+  transition: background-color 0.2s;
+  /* Color change only, no zoom */
   height: 100%;
-  /* Full height to align arrows */
+}
+
+.jll-project-card:hover {
+  background-color: var(--bg-secondary);
+  /* Light Bronze Hover */
+  box-shadow: none;
+  transform: none;
+}
+
+.jll-project-image-container {
+  height: 200px;
   position: relative;
-  padding-bottom: 40px;
-  /* Space for arrow */
+  overflow: hidden;
+  border-radius: var(--img-radius);
+  /* Rounded image */
+  margin-bottom: 20px;
 }
 
-.project-card-image {
+.jll-project-image {
   width: 100%;
-  aspect-ratio: 16/9;
-  /* Standard landscape ratio */
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
-  /* Slightly more rounded */
-  margin-bottom: 24px;
-  transition: transform 0.3s;
 }
 
-.project-card:hover .project-card-image {
-  transform: translateY(-5px);
-}
-
-.project-content {
-  flex: 1;
+.jll-project-details {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
-.project-title {
-  font-size: 18px;
-  /* Slightly larger heading */
-  font-weight: 500;
-  color: #000;
-  line-height: 1.4;
-  margin-bottom: 16px;
-  min-height: 50px;
-  /* Align titles */
+.jll-project-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  line-height: 1.3;
 }
 
-.project-desc {
+.jll-project-desc {
   font-size: 14px;
   line-height: 1.6;
   color: #555;
   margin-bottom: 24px;
   display: -webkit-box;
-  /* Limit lines */
-  line-clamp: 4;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* Tags Container */
-.project-tags {
+/* Tags */
+.jll-project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-bottom: 24px;
   margin-top: auto;
-  /* Push to bottom of content area */
+  /* Push tags to bottom of flex container */
 }
 
-.project-tag {
-  background-color: #EEF0F2;
-  /* Light Grey/Blue Tag */
+.jll-project-tag {
+  background-color: #f2f2f2;
   color: #333;
   font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 2px;
   font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 2px;
 }
 
-.card-arrow {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 20px;
-  color: #333;
+/* Arrow */
+.jll-card-arrow {
+  align-self: flex-end;
+  /* Right aligned */
+  color: #1a1a1a;
   transition: transform 0.2s;
+  user-select: none;
 }
 
-.project-card:hover .card-arrow {
+.jll-project-card:hover .jll-card-arrow {
   transform: translateX(4px);
 }
 
-/* MODAL (Reused logic, updated style) */
-.project-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  /* Simpler dark overlay */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  padding: 20px;
-}
-
-.project-modal-content {
-  background: white;
-  padding: 40px;
-  max-width: 600px;
-  width: 100%;
-  position: relative;
-  border-radius: 8px;
-  /* Sharper */
-}
-
+/* Responsive */
 @media (max-width: 1200px) {
-  .project-grid {
+  .jll-project-cards-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 900px) {
-  .project-grid {
+  .jll-project-cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .project-grid {
+  .jll-project-cards-grid {
     grid-template-columns: 1fr;
   }
+}
 
-  .header-content {
-    flex-direction: column;
-    gap: 20px;
-  }
 
-  .filter-bar {
+
+/* No Results */
+.jll-no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.jll-btn-reset {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  margin-top: 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .jll-filter-container {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .filter-group {
-    overflow-x: auto;
-    padding-bottom: 10px;
+  .jll-results-count {
+    margin-left: 0;
+    text-align: right;
+  }
+}
+
+@media (max-width: 768px) {
+  .jll-projects-grid-section {
+    padding: 40px 20px;
+  }
+
+  .jll-project-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .jll-display-heading {
+    font-size: 36px;
   }
 }

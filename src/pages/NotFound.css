@@ -43,7 +43,7 @@
     background: #1a1a1a;
     color: #ffffff;
     padding: 14px 32px;
-    border-radius: 8px;
+    border-radius: var(--img-radius);
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;

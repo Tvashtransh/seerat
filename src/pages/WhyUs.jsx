@@ -1,131 +1,125 @@
 import React, { useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./WhyUs.css";
 
 export default function WhyUs() {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="whyus-page">
+    <div className="jll-whyus-page">
 
-      {/* Hero */}
-      <section className="whyus-hero animate-fade-up">
-        <h1>Why Setsquare?</h1>
-        <p>
-          Over 20 years of hands-on expertise building foundation and framing
-          solutions that define skylines and support communities.
-        </p>
-      </section>
-
-      {/* About Section */}
-      <section className="feature-row animate-fade-up delay-100">
-        <div className="feature-text">
-          <h2>Built on partnership.</h2>
-          <p>
-            Brothers Nav & Gurpreet combined their strengths to establish Setsquare Construction
-            with a simple mission: uncompromising quality.
-          </p>
-          <p>
-            Together, they leverage extensive expertise to pioneer innovative wood framing projects,
-            from single-family residential builds to expansive multi-community developments
-            across British Columbia.
-          </p>
-          <NavLink to="/contact" className="btn btn-primary" style={{ marginTop: '10px' }}>
-            Let's Work Together
-          </NavLink>
-        </div>
-        <div className="feature-image">
-          <img src="/whyus-about.jpg" alt="About Setsquare" />
+      {/* Hero Section */}
+      <section className="jll-hero-small">
+        <div className="jll-hero-bg-wrapper">
+          <img src="/hero-about.jpg" onError={(e) => e.target.src = '/project-type-2.png'} alt="About Setsquare" />
+          <div className="jll-hero-overlay-center">
+            <h1>Built on Partnership</h1>
+            <p>20+ Years of framing excellence in British Columbia.</p>
+          </div>
         </div>
       </section>
 
-      {/* Values Grid Section */}
-      <section className="values-grid-section animate-fade-up">
-        <div className="container-large">
-          <h2 className="section-title">Our Frame of Mind</h2>
+      {/* Narrative Section */}
+      <section className="jll-narrative-section">
+        <div className="jll-container">
+          <div className="jll-narrative-grid">
+            <div className="jll-narrative-text">
+              <span className="jll-eyebrow">Our Story</span>
+              <h2>A Legacy of Uncompromising Quality</h2>
+              <p>
+                Founded by brothers Nav & Gurpreet, Setsquare Construction was established with a singular mission:
+                to bring a higher standard of precision to the wood framing industry.
+              </p>
+              <p>
+                What started as a small, family-run operation has grown into one of the Lower Mainland's most trusted framing partners.
+                Our success isn't just measured in square footage, but in the enduring relationships we've built with developers,
+                architects, and homeowners who demand the best.
+              </p>
+              <div className="jll-signature-block">
+                <p className="jll-quote">"We don't just frame structures; we frame trust."</p>
+              </div>
+            </div>
+            <div className="jll-narrative-image">
+              <img src="/whyus-about.jpg" onError={(e) => e.target.src = '/project-type-3.png'} alt="Nav and Gurpreet" />
+              <div className="jll-image-caption">Nav & Gurpreet - Founders</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <div className="values-grid">
-            {/* Row 1: Text - Image - Text */}
-            <div className="value-card text-card bg-beige">
+      {/* Values Section - "Frame of Mind" */}
+      <section className="jll-values-stripe">
+        <div className="jll-container">
+          <div className="jll-section-header-center">
+            <h2>Our Frame of Mind</h2>
+            <p className="jll-lead-center">The core principles that guide every beam we place.</p>
+          </div>
+
+          <div className="jll-values-row">
+            <div className="jll-value-col">
+              <div className="jll-value-number">01</div>
               <h3>Partnering</h3>
-              <p>We build lasting relationships with premier developers, builders, and general contractors who value precision.</p>
-              <div className="card-arrow">&rarr;</div>
+              <p>We build lasting relationships. We view every project as a collaboration, working seamlessly with general contractors to solve problems before they arise.</p>
             </div>
-
-            <div className="value-card image-card">
-              <img src="/culmena-assets/DJI_0953.JPG" alt="Partnering" />
-            </div>
-
-            <div className="value-card text-card bg-beige">
+            <div className="jll-value-col">
+              <div className="jll-value-number">02</div>
               <h3>Delivering</h3>
-              <p>Consistent, dependable execution. We don't just frame structures; we frame trust with every beam we place.</p>
-              <div className="card-arrow">&rarr;</div>
+              <p>Consistency is our currency. From the first chalk line to the final inspection, we deliver dependable results that keep your schedule on track.</p>
             </div>
-
-            {/* Row 2: Image - Text - Image */}
-            <div className="value-card image-card">
-              <img src="/granary-assets/granary-1.jpg" alt="Delivering" />
-            </div>
-
-            <div className="value-card text-card bg-beige">
+            <div className="jll-value-col">
+              <div className="jll-value-number">03</div>
               <h3>Investing</h3>
-              <p>We prioritize advanced safety training and innovative methods to foster an exceptional, high-performance team.</p>
-              <div className="card-arrow">&rarr;</div>
-            </div>
-
-            <div className="value-card image-card">
-              <img src="/burnaby-assets/burnaby-1.jpg" alt="Investing" />
+              <p>We invest in our people. Through advanced safety training and skill development, we foster a high-performance culture that takes pride in craftsmanship.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Clients */}
-      <section className="clients-section">
-        <div className="container-large">
-          <h2 className="animate-fade-up">Trusted Partners</h2>
-          <div className="clients-grid animate-fade-up delay-100">
-
-            <div className="client-card">
-              <img src="/bluecity-logo.png" alt="BlueCity" />
-              <span className="client-name">BlueCity Construction</span>
-              <NavLink to="/granary" className="client-project">The Granary</NavLink>
-            </div>
-
-            <div className="client-card">
-              <img src="/squarefoot-logo.png" alt="Square Foot" />
-              <span className="client-name">Square Foot Construction</span>
-              <NavLink to="/summerland-lakefront" className="client-project">Summerland Lakefront</NavLink>
-            </div>
-
-            <div className="client-card">
-              <img src="/tatla-logo.png" alt="Tatla" />
-              <span className="client-name">Tatla Developments</span>
-              <NavLink to="/avana-townhomes" className="client-project">Avana Townhomes</NavLink>
-            </div>
-
-            <div className="client-card">
-              <img src="/newvision-logo.png" alt="New Vision" />
-              <span className="client-name">New Vision Projects</span>
-              <NavLink to="/boundary-bay-beach" className="client-project">Boundary Bay Home</NavLink>
-            </div>
-
-            <div className="client-card">
-              <img src="/wallmark-logo.png" alt="Wallmark" />
-              <span className="client-name">Wallmark Custom Homes</span>
-              <NavLink to="/burnaby-residential" className="client-project">Residential Projects</NavLink>
-            </div>
-
-            <div className="client-card">
-              <img src="/jdl-logo.png" alt="JDL" />
-              <span className="client-name">JDL Homes</span>
-              <span className="client-project">Multiple Projects</span>
-            </div>
-
+      {/* Partners / Clients Section */}
+      <section className="jll-partners-section">
+        <div className="jll-container">
+          <div className="jll-split-header">
+            <h2>Trusted Partners</h2>
+            <Link to="/projects" className="jll-link-arrow">View Our Work &rarr;</Link>
           </div>
+
+          <div className="jll-partners-grid">
+            {/* Partner Logos */}
+            <div className="jll-partner-card">
+              <img src="/bluecity-logo.png" alt="BlueCity Construction" />
+              <span>BlueCity Construction</span>
+            </div>
+            <div className="jll-partner-card">
+              <img src="/squarefoot-logo.png" alt="Square Foot Construction" />
+              <span>Square Foot Construction</span>
+            </div>
+            <div className="jll-partner-card">
+              <img src="/tatla-logo.png" alt="Tatla Developments" />
+              <span>Tatla Developments</span>
+            </div>
+            <div className="jll-partner-card">
+              <img src="/newvision-logo.png" alt="New Vision Projects" />
+              <span>New Vision Projects</span>
+            </div>
+            <div className="jll-partner-card">
+              <img src="/wallmark-logo.png" alt="Wallmark Custom Homes" />
+              <span>Wallmark Custom Homes</span>
+            </div>
+            <div className="jll-partner-card">
+              <img src="/jdl-logo.png" alt="JDL Homes" />
+              <span>JDL Homes</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Band */}
+      <section className="jll-cta-band">
+        <div className="jll-container">
+          <h2>Ready to start your next project?</h2>
+          <Link to="/contact" className="jll-btn-white">Contact Us</Link>
         </div>
       </section>
 

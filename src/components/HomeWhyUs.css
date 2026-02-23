@@ -1,6 +1,6 @@
 .home-whyus {
   padding: 120px 24px;
-  background-color: #ffffff;
+  background-color: var(--bg-color);
 }
 
 .home-whyus-container {
@@ -18,7 +18,7 @@
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
-  color: #0ab3ba;
+  color: var(--accent-color);
 }
 
 .whyus-header h2 {
@@ -42,13 +42,11 @@
 
 /* Card */
 .whyus-card {
-  background: linear-gradient(
-    to top,
-    #0ab3ba 0%,
-    rgba(10, 179, 186, 0.85) 35%,
-    rgba(10, 179, 186, 0.55) 65%,
-    rgba(10, 179, 186, 0.15) 100%
-  );
+  background: linear-gradient(to top,
+      var(--accent-color) 0%,
+      rgba(181, 142, 107, 0.85) 35%,
+      rgba(181, 142, 107, 0.55) 65%,
+      rgba(181, 142, 107, 0.15) 100%);
   padding: 36px 28px;
   border-radius: 22px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
@@ -58,10 +56,21 @@
   animation: fadeUp 0.8s ease both;
 }
 
-.whyus-card:nth-child(1) { animation-delay: 0.1s; }
-.whyus-card:nth-child(2) { animation-delay: 0.2s; }
-.whyus-card:nth-child(3) { animation-delay: 0.3s; }
-.whyus-card:nth-child(4) { animation-delay: 0.4s; }
+.whyus-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.whyus-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.whyus-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.whyus-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
 /* Icon */
 .whyus-icon {
@@ -85,7 +94,7 @@
 /* Hover */
 .whyus-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 30px 60px rgba(10, 179, 186, 0.25);
+  box-shadow: 0 30px 60px rgba(181, 142, 107, 0.25);
 }
 
 /* Animation */
@@ -94,6 +103,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

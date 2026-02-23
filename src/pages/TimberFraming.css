@@ -95,7 +95,7 @@
 .slider-window {
   width: 100%;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: var(--img-radius);
   position: relative;
   aspect-ratio: 16/10;
 }

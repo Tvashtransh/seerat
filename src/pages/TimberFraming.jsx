@@ -1,115 +1,111 @@
-import React, { useState, useEffect } from "react";
-import "./TimberFraming.css";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./ResidentialFraming.css"; // Shared JLL Theme
 
 export default function TimberFraming() {
-  const images = [
-    "/timber1.jpg", "/timber2.jpg",
-    "/timber3.jpg", "/timber4.jpg",
-  ];
-
-  const [current, setCurrent] = useState(0);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const next = () => {
-    if (current < images.length - 1) setCurrent(current + 1);
-  };
-
-  const prev = () => {
-    if (current > 0) setCurrent(current - 1);
-  };
-
   return (
-    <div className="timber-page">
+    <div className="jll-service-detail-page">
 
-      {/* Hero */}
-      <section className="timber-hero animate-fade-up">
-        <h1>Timber <span>Framing</span></h1>
-        <p>Building Dreams, One Frame at a Time.</p>
-      </section>
-
-      {/* Intro */}
-      <section className="timber-intro animate-fade-up delay-100">
-        <p>
-          With years of expertise in crafting sturdy, beautiful structures for both residential homes and multi-family dwellings, we're here to turn your vision into reality.
-        </p>
-      </section>
-
-      {/* Why Choose */}
-      <section className="timber-why">
-        <h2 className="animate-fade-up">Why Choose Timber Framing?</h2>
-        <div className="why-grid animate-fade-up delay-100">
-          <div className="why-card">
-            <h3>Energy Efficiency</h3>
-            <p>Our timber frames create a tight envelope, significantly reducing energy costs.</p>
+      {/* Hero / Header */}
+      <header className="jll-service-header">
+        <div className="jll-service-header-content">
+          <div className="jll-breadcrumbs">
+            <Link to="/">Home</Link> / <Link to="/services">Services</Link> / <span>Timber Framing</span>
           </div>
-          <div className="why-card">
-            <h3>Rapid Construction</h3>
-            <p>Watch your dream home rise faster than traditional building methods allow.</p>
-          </div>
-          <div className="why-card">
-            <h3>Superior ROI</h3>
-            <p>Invest in a structure that stands the test of time, both in durability and value.</p>
-          </div>
+          <h1>Timber Framing</h1>
+          <p className="jll-service-lead">
+            Marrying traditional craftsmanship with modern engineering.
+            We create exposed wood structures that define spaces and endure for generations.
+          </p>
         </div>
-      </section>
+      </header>
 
-      {/* Slider */}
-      <div className="slider-wrapper animate-fade-up">
-        <div className="slider-monitor">
-          <div className="slider-window">
-            <div className="slider-track" style={{ transform: `translateX(-${current * 100}%)` }}>
-              {images.map((img, index) => (
-                <div className="slide" key={index}>
-                  <img src={img} alt={`Timber Framing ${index + 1}`} />
-                </div>
-              ))}
+      {/* Main Content Area */}
+      <div className="jll-service-body">
+        <div className="jll-container">
+          <div className="jll-service-layout">
+
+            {/* Left Column: Content */}
+            <div className="jll-service-main">
+              <section className="jll-content-block">
+                <h2>The Art of Exposed Structure</h2>
+                <p>
+                  Timber framing is more than just construction; it's an architectural statement.
+                  At Setsquare Construction, we combine the aesthetic warmth of heavy timber with the structural precision required by modern building codes.
+                </p>
+                <p>
+                  Whether you are envisioning a grand entrance for a mountain resort, a hybrid timber frame home, or decorative accents for a commercial project,
+                  our artisans select and craft each beam to ensure both beauty and strength.
+                </p>
+              </section>
+
+              <section className="jll-content-block">
+                <h3>Our Process</h3>
+                <ul className="jll-capabilities-list">
+                  <li><strong>Design Consultation:</strong> Collaborating with architects to detail joinery and connections that match your vision.</li>
+                  <li><strong>Precision Fabrication:</strong> Off-site or on-site cutting of timbers with millimetre accuracy.</li>
+                  <li><strong>Raise Day:</strong> Efficient assembly of the frame, often completed in a fraction of the time of stick framing.</li>
+                  <li><strong>Finishing:</strong> Expert application of stains and finishes to protect and highlight the wood grain.</li>
+                </ul>
+              </section>
+
+              <section className="jll-image-gallery-grid">
+                <img src="/timber1.jpg" onError={(e) => e.target.src = '/project-type-2.png'} alt="Timber Frame 1" />
+                <img src="/timber2.jpg" onError={(e) => e.target.src = '/project-type-3.png'} alt="Timber Frame 2" />
+              </section>
             </div>
-          </div>
-        </div>
 
-        <div className="slider-controls">
-          <button className="slider-btn" onClick={prev} disabled={current === 0}>‹</button>
-          <button className="slider-btn" onClick={next} disabled={current === images.length - 1}>›</button>
+            {/* Right Column: Sidebar */}
+            <aside className="jll-service-sidebar">
+              <div className="jll-sidebar-card">
+                <h4>Benefits</h4>
+                <div className="jll-sidebar-stat">
+                  <span className="stat-val">Legacy</span>
+                  <span className="stat-label">Timeless Appeal</span>
+                </div>
+                <div className="jll-sidebar-stat">
+                  <span className="stat-val">R-Value</span>
+                  <span className="stat-label">Superior Insulation</span>
+                </div>
+              </div>
+
+              <div className="jll-sidebar-contact">
+                <h4>Build Something Unique</h4>
+                <p>Have a timber frame project in mind?</p>
+                <Link to="/contact" className="jll-btn-primary full-width">
+                  Consult an Expert
+                </Link>
+              </div>
+            </aside>
+
+          </div>
         </div>
       </div>
 
-      {/* Process */}
-      <section className="timber-process animate-fade-up">
-        <h2>Our Process</h2>
-        <div className="process-grid">
-          <div className="process-card">
-            <h3>Design Consultation</h3>
-            <p>We start by understanding your vision, working closely with you to create a design that matches your dreams and needs.</p>
-          </div>
-          <div className="process-card">
-            <h3>Precision Crafting</h3>
-            <p>Our skilled artisans carefully select and prepare each timber, ensuring perfect fits and joints.</p>
-          </div>
-          <div className="process-card">
-            <h3>On-Site Assembly</h3>
-            <p>Watch in awe as your structure takes shape, with our expert team efficiently raising the frame on your property.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Who We Serve */}
-      <section className="timber-serve">
-        <h2 className="animate-fade-up">Who We Serve</h2>
-        <div className="serve-grid animate-fade-up delay-100">
-          <div className="serve-card">
-            <h3>Property Developers</h3>
-            <p>Create unique, standout projects that attract discerning buyers.</p>
-          </div>
-          <div className="serve-card">
-            <h3>Rural Homebuilders</h3>
-            <p>Blend traditional craftsmanship with modern living in picturesque settings.</p>
-          </div>
-          <div className="serve-card">
-            <h3>Luxury Homeowners</h3>
-            <p>Elevate your living space with the unmatched beauty and strength of timber framing.</p>
+      {/* Advantage / Capabilities */}
+      <section className="jll-advantage-section">
+        <div className="jll-container">
+          <h2>Who We Serve</h2>
+          <div className="jll-advantage-grid">
+            <div className="jll-advantage-item">
+              <span className="advantage-icon">01</span>
+              <h3>Luxury Homeowners</h3>
+              <p>Elevate your living space with the unmatched status and beauty of heavy timber.</p>
+            </div>
+            <div className="jll-advantage-item">
+              <span className="advantage-icon">02</span>
+              <h3>Commercial Resorts</h3>
+              <p>Create welcoming, grand spaces for lodges, clubhouses, and restaurants.</p>
+            </div>
+            <div className="jll-advantage-item">
+              <span className="advantage-icon">03</span>
+              <h3>Developers</h3>
+              <p>Add standout features to entryways and common areas to increase property value.</p>
+            </div>
           </div>
         </div>
       </section>

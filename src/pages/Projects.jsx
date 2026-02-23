@@ -1,265 +1,198 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./Projects.css";
 
-const projectItems = [
+const initialProjectItems = [
   {
     id: 1,
     title: "The Granary at Southlands",
     category: "Community Development",
-    location: "Tsawwassen, BC",
-    image: "/project-type-1.png",
-    description: "Setsquare framed The Granary, Southlands' hub, blending a concrete parkade, wood-framed floors, and a ground-floor Four Winds space."
+    location: "Tsawwassen, Delta, BC",
+    filterLocation: "Delta",
+    image: "/granary-assets/granary-1.jpg",
+    description: "Southlands' marketing hub featuring a concrete parkade, wood-framed floors, and retail space.",
+    link: "/granary"
   },
   {
     id: 2,
     title: "Summerland Lakefront Custom",
     category: "Custom Residential",
-    location: "Summerland, BC",
+    location: "Summerland, Interior, BC",
+    filterLocation: "Interior, BC",
     image: "/project-type-2.png",
-    description: "Crafted in the heart of a newly subdivided lakeside community. Our wood framing expertise played a crucial role in bringing to life a spacious home."
+    description: "A spacious lakeside home crafted in the heart of a newly subdivided community.",
+    link: "/summerland-lakefront"
   },
   {
     id: 3,
     title: "100-Mile House Waterfront",
     category: "Timber Framing",
-    location: "Interior BC",
+    location: "100-Mile House, Interior, BC",
+    filterLocation: "Interior, BC",
     image: "/project-type-3.png",
-    description: "Perched by the water near 100-Mile House, our wood framing work takes centre stage in a grand residential build spanning over 5000 sq.ft."
+    description: "Grand residential build spanning over 5000 sq.ft perched by the water.",
+    link: "/summerland-lakefront" // Linked to Summerland as per original code logic
   },
   {
     id: 4,
     title: "Avana Townhomes",
     category: "Multi-Family",
-    location: "Coquitlam, BC",
+    location: "Burquitlam, Coquitlam, BC",
+    filterLocation: "Coquitlam",
     image: "/project-type-4.png",
-    description: "Nestled beside Cottonwood Park, Avana's 52 townhomes are a testament to thoughtful framing work."
+    description: "52 townhomes nestled beside Cottonwood Park, showcasing thoughtful framing work.",
+    link: "/avana-townhomes"
   },
   {
     id: 5,
     title: "Boundary Bay Beach Home",
     category: "Custom Residential",
-    location: "Delta, BC",
+    location: "Boundary Bay, Delta, BC",
+    filterLocation: "Delta",
     image: "/project-type-5.png",
-    description: "Pivotal role in shaping a single-family home in the charming neighbourhood of Boundary Beach, Delta."
+    description: "Pivotal role in shaping a single-family home in the charming neighbourhood of Boundary Beach.",
+    link: "/boundary-bay-beach" // Corrected link
   },
   {
     id: 6,
     title: "Garden Village Home",
     category: "Residential",
     location: "Burnaby, BC",
+    filterLocation: "Burnaby",
     image: "/project-type-6.png",
-    description: "In the thriving Garden Village community of Burnaby, our wood framing expertise was showcased in a welcoming home."
+    description: "Welcoming home in the thriving Garden Village community of Burnaby.",
+    link: "/burnaby-residential"
   },
+  {
+    id: 7,
+    title: "Culmena Townhomes",
+    category: "Townhouse Community",
+    location: "1292 Rosenburg, Coquitlam, BC",
+    filterLocation: "Coquitlam",
+    image: "/project-type-4.png",
+    description: "Exciting new development featuring 107 modern townhome units at 1292 Rosenburg.",
+    link: "/culmena"
+  }
 ];
 
 export default function Projects() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [locationFilter, setLocationFilter] = useState("");
-  const [showLocationDropdown, setShowLocationDropdown] = useState(false);
-
-  // Consolidated Project Data with Links and standardized Locations for filtering
-  const projectItems = [
-    {
-      id: 1,
-      title: "The Granary at Southlands",
-      category: "Community Development",
-      location: "Tsawwassen, Delta, BC",
-      filterLocation: "Delta",
-      image: "/project-type-1.png",
-      description: "Setsquare framed The Granary, Southlands' hub, blending a concrete parkade, wood-framed floors, and a ground-floor Four Winds space.",
-      link: "/granary"
-    },
-    {
-      id: 2,
-      title: "Summerland Lakefront Custom",
-      category: "Custom Residential",
-      location: "Summerland, Interior, BC",
-      filterLocation: "Interior, BC",
-      image: "/project-type-2.png",
-      description: "Crafted in the heart of a newly subdivided lakeside community. Our wood framing expertise played a crucial role in bringing to life a spacious home.",
-      link: "/summerland-lakefront"
-    },
-    {
-      id: 3,
-      title: "100-Mile House Waterfront",
-      category: "Timber Framing",
-      location: "100-Mile House, Interior, BC",
-      filterLocation: "Interior, BC",
-      image: "/project-type-3.png",
-      description: "Perched by the water near 100-Mile House, our wood framing work takes centre stage in a grand residential build spanning over 5000 sq.ft.",
-      link: "/summerland-lakefront" // Reusing page as per user flow or create new if distinct? User linked 100-mile to Summerland logic previously.
-    },
-    {
-      id: 4,
-      title: "Avana Townhomes",
-      category: "Multi-Family",
-      location: "Burquitlam, Coquitlam, BC",
-      filterLocation: "Coquitlam",
-      image: "/project-type-4.png",
-      description: "Nestled beside Cottonwood Park, Avana's 52 townhomes are a testament to thoughtful framing work.",
-      link: "/avana-townhomes"
-    },
-    {
-      id: 5,
-      title: "Boundary Bay Beach Home",
-      category: "Custom Residential",
-      location: "Boundary Bay, Delta, BC",
-      filterLocation: "Delta",
-      image: "/project-type-5.png",
-      description: "Pivotal role in shaping a single-family home in the charming neighbourhood of Boundary Beach, Delta.",
-      link: "/boundary-bay-beach-home"
-    },
-    {
-      id: 6,
-      title: "Garden Village Home",
-      category: "Residential",
-      location: "Burnaby, BC",
-      filterLocation: "Burnaby",
-      image: "/project-type-6.png",
-      description: "In the thriving Garden Village community of Burnaby, our wood framing expertise was showcased in a welcoming home.",
-      link: "/burnaby-residential"
-    },
-    {
-      id: 7,
-      title: "Culmena Townhomes",
-      category: "Townhouse Community",
-      location: "1292 Rosenburg, Coquitlam, BC",
-      filterLocation: "Coquitlam",
-      image: "/project-type-4.png", // Using similar image type for now
-      description: "Culmena, located at 1292 Rosenburg, is an exciting new development featuring 107 modern townhome units.",
-      link: "/culmena"
-    }
-  ];
+  const [locationFilter, setLocationFilter] = useState("All");
+  const [categoryFilter, setCategoryFilter] = useState("All");
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleLocationSelect = (loc) => {
-    setLocationFilter(loc === "All" ? "" : loc);
-    setShowLocationDropdown(false);
-  };
-
-  const filteredProjects = projectItems.filter((project) => {
+  const filteredProjects = initialProjectItems.filter((project) => {
     const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       project.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesLocation = locationFilter ? project.filterLocation === locationFilter : true;
-    return matchesSearch && matchesLocation;
+    const matchesLocation = locationFilter === "All" || project.filterLocation === locationFilter;
+    const matchesCategory = categoryFilter === "All" || project.category === categoryFilter;
+
+    return matchesSearch && matchesLocation && matchesCategory;
   });
 
+  const locations = ["All", "Delta", "Coquitlam", "Burnaby", "Vancouver", "Interior, BC"];
+  const categories = ["All", "Multi-Family", "Custom Residential", "Community Development", "Timber Framing"];
+
   return (
-    <div className="projects-page">
+    <div className="jll-projects-page">
 
-      {/* 1. HEADER SECTION (Light Grey) */}
-      <div className="projects-header-bg">
-        <div className="projects-container">
-          <NavLink to="/" className="breadcrumb">Home</NavLink>
-
-          <div className="header-content">
-            <div className="header-title">
-              <h1>Our Projects</h1>
-            </div>
-            <div className="header-desc">
-              <p>
-                Across British Columbia, we partner with developers and homeowners to create
-                lasting structures. Explore our portfolio, illustrating how we're building
-                the future of framing with precision and integrity.
-              </p>
-            </div>
-          </div>
+      {/* Hero Header */}
+      <section className="jll-projects-hero">
+        <div className="jll-projects-hero-content">
+          <h1 className="jll-display-heading">Our Portfolio</h1>
+          <p className="jll-display-subheading">
+            Showcasing excellence in wood framing across British Columbia. From custom homes to large-scale communities.
+          </p>
         </div>
-      </div>
+      </section>
 
-      {/* 2. FILTER BAR (Sticky) */}
-      <div className="filter-bar-container">
-        <div className="filter-bar">
+      {/* Filter Bar */}
+      <section className="jll-filter-bar-sticky">
+        <div className="jll-filter-container">
 
-          {/* Keywords Search */}
-          <div className="search-input-wrapper">
-            <label className="filter-label">Keywords</label>
-            <i className="search-icon">🔍</i>
+          <div className="jll-search-wrapper">
+            <span className="jll-search-icon">
+              <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            </span>
             <input
               type="text"
-              placeholder="Search by keywords"
-              className="filter-search-input"
+              placeholder="Keyword search..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              className="jll-search-input"
             />
           </div>
 
-          {/* Dropdown Group */}
-          <div className="filter-group">
-
-            {/* Location Dropdown */}
-            <div className="dropdown-wrapper" style={{ position: 'relative' }}>
-              <button
-                className={`filter-btn ${locationFilter ? 'active' : ''}`}
-                onClick={() => setShowLocationDropdown(!showLocationDropdown)}
+          <div className="jll-filter-group">
+            <div className="jll-select-wrapper">
+              <select
+                value={locationFilter}
+                onChange={(e) => setLocationFilter(e.target.value)}
+                className="jll-select"
               >
-                {locationFilter || "Location"} <span className="chevron">▼</span>
-              </button>
-
-              {showLocationDropdown && (
-                <div className="dropdown-menu">
-                  <div className="dropdown-item" onClick={() => handleLocationSelect("All")}>All Locations</div>
-                  <div className="dropdown-item" onClick={() => handleLocationSelect("Delta")}>Delta</div>
-                  <div className="dropdown-item" onClick={() => handleLocationSelect("Coquitlam")}>Coquitlam</div>
-                  <div className="dropdown-item" onClick={() => handleLocationSelect("Burnaby")}>Burnaby</div>
-                  <div className="dropdown-item" onClick={() => handleLocationSelect("Vancouver")}>Vancouver</div>
-                  <div className="dropdown-item" onClick={() => handleLocationSelect("Interior, BC")}>Interior, BC</div>
-                </div>
-              )}
+                {locations.map(loc => <option key={loc} value={loc}>{loc === "All" ? "All Locations" : loc}</option>)}
+              </select>
             </div>
 
-            <button className="filter-btn">
-              Services <span className="chevron">▼</span>
-            </button>
-            <button className="filter-btn">
-              Property types <span className="chevron">▼</span>
-            </button>
+            <div className="jll-select-wrapper">
+              <select
+                value={categoryFilter}
+                onChange={(e) => setCategoryFilter(e.target.value)}
+                className="jll-select"
+              >
+                {categories.map(cat => <option key={cat} value={cat}>{cat === "All" ? "All Sectors" : cat}</option>)}
+              </select>
+            </div>
           </div>
 
-          {/* Search Button */}
-          <button className="search-action-btn">
-            Search
-          </button>
+          <div className="jll-results-count">
+            {filteredProjects.length} Result{filteredProjects.length !== 1 ? 's' : ''}
+          </div>
 
         </div>
-      </div>
+      </section>
 
-      {/* 3. RESULTS GRID */}
-      <div className="projects-results">
-        <div className="project-grid">
+      {/* Projects Grid */}
+      <section className="jll-projects-grid-section">
+        <div className="jll-project-cards-grid">
           {filteredProjects.map((project) => (
-            <NavLink
-              to={project.link || "#"}
-              key={project.id}
-              className="project-card"
-            >
-              <img src={project.image} alt={project.title} className="project-card-image" />
+            <Link to={project.link} key={project.id} className="jll-project-card">
+              <div className="jll-project-image-container">
+                <img src={project.image} alt={project.title} className="jll-project-image" />
+              </div>
+              <div className="jll-project-details">
+                <h3 className="jll-project-title">{project.title}</h3>
+                <p className="jll-project-desc">{project.description}</p>
 
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-desc">{project.description}</p>
+                {/* JLL Style Tags */}
+                <div className="jll-project-tags">
+                  <span className="jll-project-tag">{project.category}</span>
+                  {project.location && <span className="jll-project-tag">{project.location.split(',')[0]}</span>}
+                </div>
 
-                <div className="project-tags">
-                  <span className="project-tag">{project.category}</span>
-                  <span className="project-tag">{project.location}</span>
+                <div className="jll-card-arrow">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
               </div>
-
-              <div className="card-arrow">&rarr;</div>
-            </NavLink>
+            </Link>
           ))}
 
           {filteredProjects.length === 0 && (
-            <div style={{ gridColumn: "1 / -1", textAlign: "center", padding: "40px" }}>
+            <div className="jll-no-results">
               <h3>No projects found matching your criteria.</h3>
+              <button
+                className="jll-btn-reset"
+                onClick={() => { setSearchTerm(""); setLocationFilter("All"); setCategoryFilter("All"); }}
+              >
+                Clear Filters
+              </button>
             </div>
           )}
         </div>
-      </div>
+      </section>
 
     </div>
   );

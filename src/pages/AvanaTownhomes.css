@@ -10,7 +10,7 @@
 .project-hero h1 {
   font-size: 42px;
   font-weight: 700;
-  color: #0ab3ba;
+  color: var(--accent-color);
 }
 
 .project-hero p {
@@ -37,7 +37,7 @@
 .project-text span {
   display: inline-block;
   margin-bottom: 14px;
-  color: #0ab3ba;
+  color: var(--accent-color);
   font-weight: 600;
 }
 
@@ -48,8 +48,8 @@
 
 .project-section img {
   width: 20%;
-  border-radius: 18px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  border-radius: var(--img-radius);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
   transition: transform 0.4s ease;
 }
 
@@ -58,13 +58,11 @@
 }
 
 .project-complete {
-  background: linear-gradient(
-    180deg,
-    rgba(10,179,186,0.08),
-    rgba(10,179,186,0.02)
-  );
+  background: linear-gradient(180deg,
+      rgba(181, 142, 107, 0.08),
+      rgba(181, 142, 107, 0.02));
   padding: 60px;
-  border-radius: 22px;
+  border-radius: var(--img-radius);
   text-align: center;
 }
 
@@ -73,7 +71,7 @@
 }
 
 .project-complete span {
-  color: #0ab3ba;
+  color: var(--accent-color);
   font-weight: 600;
 }
 
@@ -96,10 +94,11 @@
     font-size: 32px;
   }
 }
-.project-complete img{
+
+.project-complete img {
   width: 20%;
   border-radius: 18px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
   transition: transform 0.4s ease;
 }
 

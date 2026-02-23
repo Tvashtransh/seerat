@@ -1,137 +1,158 @@
-/* ProjectDetail.css - Unified Apple Style for all Projects */
+/* ProjectDetail.css - JLL Premium Project Theme */
+
 .project-detail-page {
+    font-family: var(--font-main);
+    color: #1a1a1a;
     background-color: var(--bg-color);
-    padding: 120px 0;
+    padding-bottom: 120px;
 }
 
-/* Project Hero */
+/* --- Project Hero --- */
 .project-detail-hero {
+    background-color: #f5f5f7;
+    padding: 100px 0;
     text-align: center;
-    max-width: 900px;
-    margin: 0 auto 120px;
-    padding: 0 20px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 100px;
 }
 
 .project-detail-hero h1 {
     font-size: 56px;
-    line-height: 1.05;
+    font-weight: 800;
     margin-bottom: 16px;
-    letter-spacing: -0.015em;
+    letter-spacing: -2px;
 }
 
 .project-location-tag {
     display: inline-block;
-    font-size: 19px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
     color: var(--accent-color);
-    background: rgba(0, 113, 227, 0.1);
-    padding: 8px 20px;
-    border-radius: 30px;
+    letter-spacing: 2px;
+    padding: 8px 0;
+    border-bottom: 2px solid var(--accent-color);
 }
 
-/* Content Sections */
+/* --- Content Sections --- */
 .project-content-section {
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto 120px;
     padding: 0 40px;
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
+    gap: 100px;
     align-items: center;
+}
+
+@media (min-width: 1200px) {
+    .project-content-section {
+        padding: 0 var(--laptop-padding);
+    }
 }
 
 .project-content-section.reverse {
     grid-template-columns: 1.2fr 1fr;
 }
 
-.project-text-block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .project-text-block h2 {
-    font-size: 32px;
-    margin-bottom: 8px;
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #1a1a1a;
 }
 
 .project-subtitle {
-    font-size: 15px;
-    text-transform: uppercase;
-    color: var(--text-secondary);
+    display: block;
+    font-size: 13px;
     font-weight: 600;
-    margin-bottom: 24px;
-    letter-spacing: 0.05em;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
 }
 
 .project-text-block p {
     font-size: 19px;
-    line-height: 1.6;
-    color: var(--text-secondary);
+    line-height: 1.7;
+    color: #555;
     margin-bottom: 24px;
 }
 
+/* --- Image Styling --- */
 .project-image-block {
-    border-radius: 24px;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    background: var(--bg-secondary);
-    transition: transform 0.5s ease;
-}
-
-.project-content-section.reverse .project-image-block {
-    order: -1;
-}
-
-.project-image-block:hover {
-    transform: scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+    background: #f9f9fb;
+    border-radius: var(--img-radius);
 }
 
 .project-image-block img {
     width: 100%;
     height: auto;
     display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Conclusion / Final Section */
+.project-image-block:hover img {
+    transform: scale(1.05);
+}
+
+.project-content-section.reverse .project-image-block {
+    order: -1;
+}
+
+/* --- Conclusion --- */
 .project-conclusion {
-    background-color: var(--bg-secondary);
     padding: 100px 40px;
-    border-radius: 40px;
     max-width: 1200px;
-    margin: 0 auto 60px;
+    margin: 0 auto;
     text-align: center;
 }
 
 .project-conclusion h2 {
-    font-size: 40px;
+    font-size: 48px;
+    font-weight: 800;
     margin-bottom: 40px;
 }
 
 .project-conclusion p {
-    font-size: 21px;
+    font-size: 22px;
     line-height: 1.6;
-    color: var(--text-secondary);
-    max-width: 800px;
-    margin: 0 auto 30px;
+    color: #444;
+    max-width: 850px;
+    margin: 0 auto 50px;
 }
 
-/* Responsive */
+/* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
 
     .project-content-section,
     .project-content-section.reverse {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 50px;
         text-align: center;
     }
 
     .project-image-block {
         order: -1 !important;
-        /* Always show image first on mobile */
     }
 
     .project-detail-hero h1 {
-        font-size: 40px;
+        font-size: 42px;
+    }
+
+    .project-text-block h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-detail-hero {
+        padding: 60px 20px;
+    }
+
+    .project-conclusion h2 {
+        font-size: 36px;
     }
 }

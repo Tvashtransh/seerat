@@ -1,217 +1,168 @@
-/* Footer.css - JLL Corporate Style */
-.footer {
-  background-color: #ffffff;
-  color: #333;
-  padding: 60px 0 30px;
-  font-family: 'Source Sans Pro', sans-serif;
-  border-top: 1px solid #e0e0e0;
+/* Footer.css - Standardized Professional Theme */
+.jll-footer {
+  background-color: var(--bg-color);
+  color: #1a1a1a;
+  padding-top: 100px;
+  font-family: var(--font-main);
+  border-top: 1px solid #e8e2d9;
 }
 
-/* ================== TOP BAR ================== */
-.footer-top-bar {
-  max-width: 1400px;
+.jll-footer-header {
   margin: 0 auto 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jll-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.jll-footer-logo {
+  height: 44px;
+}
+
+.jll-footer-tagline {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* --- MAIN GRID --- */
+.jll-footer-container {
+  margin: 0 auto;
+}
+
+.jll-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.jll-footer-heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.jll-footer-intro {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 320px;
+}
+
+/* Links List */
+.jll-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.jll-footer-links li {
+  margin-bottom: 14px;
+}
+
+.jll-footer-links a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #555;
+  font-weight: 400;
+  transition: color var(--transition-fast);
+}
+
+.jll-footer-links a:hover {
+  color: var(--accent-color);
+}
+
+/* Socials */
+.jll-footer-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.jll-social-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  background-color: var(--bg-secondary);
+  border-radius: 50%;
+  font-size: 16px;
+  transition: all 0.3s var(--transition-smooth);
+}
+
+.jll-social-icon:hover {
+  color: #ffffff;
+  background-color: var(--accent-color);
+  transform: translateY(-4px);
+}
+
+/* --- BOTTOM BAR --- */
+.jll-footer-bottom {
+  background-color: var(--bg-secondary);
+  padding: 40px 0;
+}
+
+.jll-footer-bottom-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.footer-brand-section {
+.jll-bottom-links {
   display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.footer-logo {
-  height: 32px;
-  width: auto;
-}
-
-.footer-tagline {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #333;
-  margin-top: 4px;
-}
-
-.back-to-top-btn {
-  width: 40px;
-  height: 40px;
-  background: #f4f4f4;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
-}
-
-.back-to-top-btn:hover {
-  background: #e0e0e0;
-}
-
-.arrow-up {
-  font-size: 16px;
-  color: #333;
-}
-
-/* ================== MAIN COLUMNS ================== */
-.footer-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  /* Brand column wider */
-  gap: 60px;
-}
-
-.footer-column {
-  display: flex;
-  flex-direction: column;
-}
-
-/* INTRO / BRAND COL STYLES */
-.brand-col {
-  padding-right: 40px;
-}
-
-.footer-intro {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 24px;
-  max-width: 320px;
-}
-
-.subscribe-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #f0f3f5;
-  /* Specific light grey in screenshot */
-  color: #333;
-  padding: 12px 24px;
-  border-radius: 4px;
-  border: none;
-  font-weight: 600;
-  font-size: 13px;
-  cursor: pointer;
-  margin-bottom: 32px;
-  width: fit-content;
-  transition: background 0.2s;
-}
-
-.subscribe-btn:hover {
-  background-color: #e0e4e7;
-}
-
-.footer-socials {
-  display: flex;
-  gap: 16px;
-}
-
-.social-icon {
-  width: 32px;
-  height: 32px;
-  background-color: #333;
-  /* Dark circle */
-  color: white;
-  /* Icon color */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-/* LINK COLUMNS STYLES */
-.footer-heading {
-  font-size: 13px;
-  color: #767676;
-  /* Muted grey heading */
-  font-weight: 400;
-  /* Regular weight */
-  margin-bottom: 24px;
-}
-
-.footer-link {
-  font-size: 14px;
-  color: #333;
-  /* Darker link text */
-  text-decoration: none;
-  margin-bottom: 16px;
-  line-height: 1.4;
-  transition: color 0.2s;
-}
-
-.footer-link:hover {
-  color: #333;
-  /* Neutral Hover */
-}
-
-/* ================== BOTTOM BAR ================== */
-.footer-bottom {
-  max-width: 1400px;
-  margin: 60px auto 0;
-  padding: 40px 40px 0;
-  border-top: 0;
-  display: flex;
-  align-items: center;
   gap: 32px;
 }
 
-.interest-label {
+.jll-bottom-links a {
   font-size: 13px;
-  color: #767676;
-}
-
-.interest-links {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.interest-links a {
-  font-size: 13px;
-  color: #333;
+  color: #666;
   text-decoration: none;
-  font-weight: 600;
+  transition: color 0.2s;
 }
 
-.interest-links a:hover {
-  color: #333;
+.jll-bottom-links a:hover {
+  color: #1a1a1a;
 }
 
-/* RESPONISVE */
+.jll-copyright {
+  font-size: 13px;
+  color: #666;
+}
+
 @media (max-width: 1024px) {
-  .footer-container {
+  .jll-footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 60px;
   }
 }
 
-@media (max-width: 768px) {
-  .footer-top-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .footer-container {
+@media (max-width: 640px) {
+  .jll-footer-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .footer-bottom {
+  .jll-footer-header,
+  .jll-footer-bottom-container {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 24px;
   }
 }

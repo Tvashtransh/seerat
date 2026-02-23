@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { FaFacebookF, FaInstagram, FaXTwitter, FaWhatsapp } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa";
 import "./Footer.css";
 
 export default function Footer() {
@@ -10,76 +12,113 @@ export default function Footer() {
   };
 
   return (
-    <footer className="footer">
+    <footer className="jll-footer">
 
-      {/* 1. TOP BAR: Logo + Back to Top */}
-      <div className="footer-top-bar">
-        <div className="footer-brand-section">
-          <img src="/logo.png" alt="Set Square" className="footer-logo" />
-          <span className="footer-tagline">SEE A BRIGHTER WAY</span>
+      {/* 1. TOP HEADER: Logo + Tagline + Scroll Top */}
+      <div className="jll-footer-header">
+        <div className="jll-footer-brand">
+          <img src="/logo.png" alt="Set Square" className="jll-footer-logo" />
+          <span className="jll-footer-tagline">PRECISION FRAMING EXPERTS</span>
         </div>
-        <button onClick={scrollToTop} className="back-to-top-btn">
-          <span className="arrow-up">↑</span>
+        <button onClick={scrollToTop} className="jll-scroll-top-btn">
+          <span>&uarr;</span>
         </button>
       </div>
 
-      <div className="footer-container">
+      <div className="jll-footer-container">
 
-        {/* Column 1: Intro & CTA */}
-        <div className="footer-column brand-col">
-          <p className="footer-intro">
-            There's the conventional way of doing things. And then, there's the Set Square way.
-            A more innovative, intelligent and human way. Find out how you can see a brighter way with Set Square.
-          </p>
+        {/* 2. MAIN GRID */}
+        <div className="jll-footer-grid">
 
-          <button className="subscribe-btn">
-            Subscribe now <span>&rarr;</span>
-          </button>
+          {/* Col 1: Brand Info */}
+          <div className="jll-footer-col brand-col">
+            <p className="jll-footer-intro">
+              There's the conventional way of doing things. And then, there's the SetSquare way.
+              A more innovative, intelligent and human way to build.
+            </p>
 
-          <div className="footer-socials">
-            <a href="#" className="social-icon">f</a>
-            <a href="#" className="social-icon">in</a>
-            <a href="#" className="social-icon">ig</a>
+            <button className="jll-subscribe-btn">
+              Subscribe now <span>&rarr;</span>
+            </button>
+
+            <div className="jll-footer-socials">
+              <a href="#" className="jll-social-icon"><FaFacebookF /></a>
+              <a href="#" className="jll-social-icon"><FaInstagram /></a>
+              <a href="#" className="jll-social-icon"><FaXTwitter /></a>
+              <a href="#" className="jll-social-icon"><FaWhatsapp /></a>
+              <a href="mailto:info@setsquareconstruction.ca" className="jll-social-icon"><FaEnvelope /></a>
+            </div>
           </div>
+
+          {/* Col 2: How can we help? */}
+          <div className="jll-footer-col">
+            <h4 className="jll-footer-heading">How can we help?</h4>
+            <ul className="jll-footer-links">
+              <li><NavLink to="/multi-development-framing">Multi-Family Framing</NavLink></li>
+              <li><NavLink to="/residential-framing">Custom Residential</NavLink></li>
+              <li><NavLink to="/timber-framing">Timber Framing</NavLink></li>
+              <li><NavLink to="/contact">Request a Bid</NavLink></li>
+              <li><NavLink to="/services">View Capabilities</NavLink></li>
+            </ul>
+          </div>
+
+          {/* Col 3: Careers (Simplified for SetSquare) */}
+          <div className="jll-footer-col">
+            <h4 className="jll-footer-heading">Join our team</h4>
+            <ul className="jll-footer-links">
+              <li><NavLink to="/contact">Work at SetSquare</NavLink></li>
+              <li><NavLink to="/why-us">Meet our people</NavLink></li>
+              <li><NavLink to="/contact">Subcontractor Opportunities</NavLink></li>
+            </ul>
+          </div>
+
+          {/* Col 4: Corporate Info */}
+          <div className="jll-footer-col">
+            <h4 className="jll-footer-heading">Company Info</h4>
+            <ul className="jll-footer-links">
+              <li><NavLink to="/why-us">About SetSquare</NavLink></li>
+              <li><NavLink to="/projects">Our Projects</NavLink></li>
+              <li><a href="mailto:info@setsquareconstruction.ca">info@setsquareconstruction.ca</a></li>
+              <li><a href="tel:6048327008">604-832-7008</a></li>
+              <li style={{ fontSize: '14px', color: '#555', marginTop: '10px', lineHeight: '1.5' }}>
+                11739 82A Avenue<br />
+                Delta, BC V4C 2E5
+              </li>
+            </ul>
+          </div>
+
         </div>
 
-        {/* Column 2: Our Services */}
-        <div className="footer-column">
-          <h3 className="footer-heading">Our Services</h3>
-          <NavLink to="/services" className="footer-link">Overview</NavLink>
-          <NavLink to="/multi-development-framing" className="footer-link">Multi-Family Framing</NavLink>
-          <NavLink to="/residential-framing" className="footer-link">Custom Residential</NavLink>
-          <NavLink to="/timber-framing" className="footer-link">Timber Framing</NavLink>
-          <NavLink to="/contact" className="footer-link">Request a Bid</NavLink>
-        </div>
-
-        {/* Column 3: Company */}
-        <div className="footer-column">
-          <h3 className="footer-heading">Company</h3>
-          <NavLink to="/projects" className="footer-link">Our Projects</NavLink>
-          <NavLink to="/why-us" className="footer-link">Why Set Square?</NavLink>
-          <NavLink to="/gallery" className="footer-link">Gallery</NavLink>
-          <NavLink to="/contact" className="footer-link">Contact Us</NavLink>
-        </div>
-
-        {/* Column 4: Contact Info */}
-        <div className="footer-column">
-          <h3 className="footer-heading">Contact Info</h3>
-          <a href="tel:6048327008" className="footer-link">604-832-7008</a>
-          <a href="mailto:info@setsquareconstruction.ca" className="footer-link">info@setsquareconstruction.ca</a>
-          <span className="footer-link" style={{ cursor: 'default', color: '#555' }}>
-            11739 82A Avenue<br />Delta, BC V4C 2E5
-          </span>
+        {/* 3. ALSO OF INTEREST STRIP (SEO Links) */}
+        <div className="jll-interest-strip">
+          <span className="jll-interest-label">Also of Interest:</span>
+          <div className="jll-interest-links">
+            <NavLink to="/granary">The Granary Project</NavLink>
+            <NavLink to="/avana-townhomes">Avana Townhomes</NavLink>
+            <NavLink to="/timber-framing">BC Timber Construction</NavLink>
+            <NavLink to="/services">Vancouver Framing Services</NavLink>
+          </div>
         </div>
 
       </div>
 
-      {/* BOTTOM BAR: Copyright */}
-      <div className="footer-bottom">
-        <span className="interest-label">© {currentYear} Set Square Construction Ltd.</span>
-        <div className="interest-links">
-          <NavLink to="/privacy">Privacy Policy</NavLink>
-          <NavLink to="/terms">Terms of Service</NavLink>
+      {/* 4. BOTTOM BAR */}
+      <div className="jll-footer-bottom">
+        <div className="jll-footer-bottom-container">
+          <div className="jll-bottom-links">
+            <NavLink to="/privacy">Privacy statement</NavLink>
+            <NavLink to="/terms">Terms of use</NavLink>
+            <NavLink to="/cookies">Cookies</NavLink>
+            <NavLink to="/sitemap">Sitemap</NavLink>
+          </div>
+
+          <div className="jll-bottom-right">
+            <span className="jll-copyright">Copyright {currentYear} Set Square Construction Ltd.</span>
+            <div className="jll-region-select-small">
+              <img src="https://flagcdn.com/w20/ca.png" alt="Canada" />
+              <span>Canada</span>
+            </div>
+          </div>
         </div>
       </div>
 

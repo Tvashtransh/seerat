@@ -2,8 +2,39 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Services.css";
 
-export default function Services() {
+// Service Data for cleaner rendering
+const servicesList = [
+  {
+    id: 1,
+    title: "Multi-Development Framing",
+    description: "Tailored framing solutions for large-scale community developments and multi-unit projects across the Lower Mainland.",
+    link: "/multi-development-framing",
+    image: "/project-type-13.png"
+  },
+  {
+    id: 2,
+    title: "Residential Wood Framing",
+    description: "Dependable and precise framing for single-family homes and custom residential builds throughout British Columbia.",
+    link: "/residential-framing",
+    image: "/project-type-3.png"
+  },
+  {
+    id: 3,
+    title: "Timber Framing",
+    description: "Marrying traditional craftsmanship with modern engineering to create stunning exposed timber structures.",
+    link: "/timber-framing",
+    image: "/project-type-2.png"
+  },
+  {
+    id: 4,
+    title: "Commercial Wood Framing",
+    description: "Executing large-scale commercial projects with the experience and capacity to handle complex structural requirements.",
+    link: "/contact", // Redirects to contact as there is no dedicated page yet
+    image: "/blog-10.png"
+  }
+];
 
+export default function Services() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -11,125 +42,104 @@ export default function Services() {
   return (
     <div className="services-page">
 
-      {/* HERO / INTRO */}
-      <div className="services-hero animate-fade-up">
-        <h1>Wood Framing Services</h1>
-        <p>
-          We offer a multitude of wood framing services to suit your needs.
-          Our team is able and ready — put our experience to work.
-        </p>
-
-        <Link to="/contact" className="btn btn-primary">
-          Get a Quote
-        </Link>
-      </div>
-
-      {/* ON-SITE PREFAB */}
-      <div className="prefab-section animate-fade-up delay-100">
-        <h2>On-Site Prefab Services</h2>
-        <div className="container" style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 60px' }}>
-          <p style={{ fontSize: '21px', color: 'var(--text-secondary)' }}>
-            We specialize in delivering high-quality, efficient prefab solutions
-            tailored to your needs. Our experienced team ensures a smooth
-            installation process.
+      {/* JLL-Style Hero Section */}
+      <section className="jll-hero">
+        <div className="jll-hero-image-wrapper">
+          <img src="/hero-services.jpg" onError={(e) => e.target.src = '/project-type-2.png'} alt="Construction Site" className="jll-hero-image" />
+        </div>
+        <div className="jll-hero-overlay">
+          <h1 className="jll-hero-title">Building with Precision & Purpose</h1>
+          <p className="jll-hero-subtitle">
+            Comprehensive wood framing services tailored to your project's unique demands. From concept to completion, we deliver excellence.
           </p>
+          <Link to="/contact" className="jll-btn-primary">
+            Get in Touch
+          </Link>
         </div>
+      </section>
 
-        <div className="prefab-features">
-          <div className="feature-card">
-            <h3>Custom Designs</h3>
-            <p>
-              Our experts work closely with you to create framing solutions
-              that reflect your style, preferences, and project needs.
-            </p>
-          </div>
-
-          <div className="feature-card">
-            <h3>Professional Installation</h3>
-            <p>
-              Skilled craftsmen ensure flawless execution, structural integrity,
-              and reliable results on every build.
-            </p>
-          </div>
-
-          <div className="feature-card">
-            <h3>Quality Materials</h3>
-            <p>
-              We use only premium materials to ensure durability, longevity,
-              and peace of mind for years to come.
-            </p>
+      {/* Intro Stats / Statement */}
+      <section className="jll-intro-section">
+        <div className="jll-container">
+          <div className="jll-intro-grid">
+            <div className="jll-intro-text">
+              <h2 className="jll-section-title">Our Expertise</h2>
+              <p>
+                We offer a multitude of wood framing services to suit your needs.
+                Our team is able and ready — put our experience to work.
+                Whether it's a quaint residential build or expansive community development,
+                Setsquare Construction is steadfast on specific core principles.
+              </p>
+            </div>
+            <div className="jll-intro-stats">
+              <div className="jll-stat-item">
+                <span className="jll-stat-number">15+</span>
+                <span className="jll-stat-label">Years Experience</span>
+              </div>
+              <div className="jll-stat-item">
+                <span className="jll-stat-number">100+</span>
+                <span className="jll-stat-label">Projects Completed</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* FRAMING SERVICES */}
-      <div className="framing-section">
+      {/* Main Services Stacked Section */}
+      <section className="jll-services-stack-section">
+        <div className="jll-container">
+          <div className="jll-feature-stack">
+            {servicesList.map((service, index) => (
+              <div key={service.id} className={`jll-feature-row ${index % 2 !== 0 ? "reverse" : ""}`}>
+                <div className="jll-feature-image rounded">
+                  <img src={service.image} alt={service.title} />
+                </div>
+                <div className="jll-feature-content">
+                  <span className="jll-eyebrow">Service Excellence</span>
+                  <h3 className="jll-feature-heading">
+                    {service.title}
+                  </h3>
+                  <p className="jll-feature-desc">
+                    {service.description}
+                  </p>
+                  <Link to={service.link} className="jll-btn-card">
+                    Explore Service <span>&rarr;</span>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        <ServiceCard
-          title="Multi-Development Framing"
-          text={`Explore our multi-development wood framing services, tailored for large-scale projects in and throughout the Lower Mainland.
+      {/* Frame of Mind / Values Section */}
+      <section className="jll-values-section">
+        <div className="jll-container">
+          <div className="jll-values-wrapper">
+            <div className="jll-values-content">
+              <h2 className="jll-values-title">Frame of Mind</h2>
+              <ul className="jll-values-list">
+                <li>
+                  <strong>Partnering</strong> with premier developers, builders, and general contractors.
+                </li>
+                <li>
+                  <strong>Delivering</strong> consistent, dependable, trusted experience, skills and solutions.
+                </li>
+                <li>
+                  <strong>Investing</strong> in advanced, innovative and safe training methods.
+                </li>
+              </ul>
+              <Link to="/why-us" className="jll-btn-outline">
+                Discover Our Story
+              </Link>
+            </div>
+            <div className="jll-values-image">
+              <img src="/project-type-3.png" alt="Team at Work" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-We work with developers and general contractors on mid to large-scale community developments and are happy to provide references from past builds.`}
-
-          link="/multi-development-framing"
-        />
-
-        <ServiceCard
-          title="Residential Wood Framing"
-          text={`Our journey started small and we've grown into a team known for our dependable framing solutions.
-
-Whether you're a homeowner or a builder, we've got you covered. We offer straightforward and effective wood framing solutions throughout Vancouver, Tsawwassen and Delta, Burnaby, Richmond, Coquitlam and throughout British Columbia.`}
-          link="/residential-framing"
-        />
-
-        <ServiceCard
-          title="Timber Framing"
-          text={`Our service marries traditional craftsmanship with cutting-edge technology, offering the best of both worlds. 
-
-We honor the ancient art of timber framing while embracing modern advancements to enhance efficiency and durability.`}
-          link="/timber-framing"
-        />
-
-        <ServiceCard
-          title="Commercial Wood Framing"
-          text={`We have the experience, capacity and skills to execute large-scale commercial projects. 
-
-Although our roots are in Delta, our expertise spans across British Columbia, with our dedicated crews traveling extensively to craft custom wood frame structures.`}
-          link="/contact"
-        />
-
-      </div>
-
-      {/* FRAME OF MIND */}
-      <div className="frameofmind-section">
-        <h2>Frame of Mind</h2>
-        <p>
-          Whether it's a quaint residential build or expansive community development, Setsquare Construction is steadfast on: <br /><br />
-          <b>Partnering</b> with premier developers, builders, and general contractors. <br /><br />
-          <b>Delivering</b> consistent, dependable, trusted experience, skills and solutions for each project. <br /><br />
-          <b>Investing </b>in advanced, innovative and safe training methods, while fostering an exceptional team.
-        </p>
-
-        <Link to="/why-us" className="btn btn-outline" style={{ marginTop: '20px' }}>
-          Learn More About Us
-        </Link>
-      </div>
-
-    </div>
-  );
-}
-
-/* REUSABLE CARD COMPONENT */
-function ServiceCard({ title, text, link }) {
-  return (
-    <div className="service-card animate-fade-up">
-      <div>
-        <h3>{title}</h3>
-        <p>{text}</p>
-      </div>
-      <Link to={link || "/contact"} className="link-btn">
-        Learn More →
-      </Link>
     </div>
   );
 }

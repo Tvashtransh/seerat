@@ -1,200 +1,297 @@
-/* ResidentialFraming.css - Apple Style */
-.residential-page {
+/* ResidentialFraming.css (and template for other services) - JLL Style */
+
+.jll-service-detail-page {
+  font-family: var(--font-main);
+  color: #333;
   background-color: var(--bg-color);
-  padding: 120px 0;
 }
 
-.res-hero {
-  text-align: center;
-  margin-bottom: 120px;
-  max-width: 900px;
+.jll-container {
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 20px 120px;
+  padding: 0 40px;
 }
 
-.res-hero h1 {
-  font-size: 56px;
-  line-height: 1.05;
+@media (min-width: 1200px) {
+  .jll-container {
+    padding: 0 var(--laptop-padding);
+  }
+}
+
+/* HEADER */
+.jll-service-header {
+  background-color: #f5f5f7;
+  padding: 80px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.jll-service-header-content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (min-width: 1200px) {
+  .jll-service-header-content {
+    padding: 0 var(--laptop-padding);
+  }
+}
+
+.jll-breadcrumbs {
+  font-size: 14px;
+  color: #666;
   margin-bottom: 24px;
 }
 
-.res-hero span {
+.jll-breadcrumbs a {
+  color: #666;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.jll-breadcrumbs a:hover {
+  text-decoration: underline;
   color: var(--accent-color);
 }
 
-.res-hero p {
-  font-size: 24px;
-  line-height: 1.45;
-  color: var(--text-secondary);
-}
-
-/* Intro */
-.res-intro {
+.jll-service-header h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 24px;
   max-width: 800px;
-  margin: 0 auto 120px;
-  text-align: center;
-  padding: 0 20px;
 }
 
-.res-intro p {
-  font-size: 21px;
-  line-height: 1.6;
-  color: var(--text-primary);
-}
-
-/* Signature Services - Grid similar to WhyChoose */
-.signature-services {
-  background-color: var(--bg-secondary);
-  padding: 120px 0;
-}
-
-.signature-services h2 {
-  text-align: center;
-  font-size: 40px;
-  margin-bottom: 80px;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.service-card {
-  text-align: center;
-}
-
-.service-card h3 {
-  font-size: 24px;
-  margin-bottom: 16px;
-}
-
-.service-card p {
-  font-size: 17px;
-  color: var(--text-secondary);
+.jll-service-lead {
+  font-size: 22px;
   line-height: 1.5;
+  color: #4a4a4a;
+  max-width: 800px;
 }
 
-/* Slider (Reused style basically) */
-.slider-wrapper {
-  max-width: 1000px;
-  margin: 120px auto;
-  position: relative;
+/* BODY LAYOUT */
+.jll-service-body {
+  padding: 80px 0;
 }
 
-.slider-monitor {
-  background: black;
-  padding: 10px;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+.jll-service-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 80px;
 }
 
-.slider-window {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 14px;
-  position: relative;
-  aspect-ratio: 16/10;
+/* MAIN CONTENT */
+.jll-content-block {
+  margin-bottom: 60px;
 }
 
-.slider-track {
-  display: flex;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+.jll-content-block h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1a1a1a;
 }
 
-.slide {
-  min-width: 100%;
+.jll-content-block h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a1a1a;
 }
 
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.jll-content-block p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 24px;
 }
 
-.slider-controls {
-  display: flex;
-  justify-content: center;
+.jll-capabilities-list {
+  list-style: none;
+  padding: 0;
+}
+
+.jll-capabilities-list li {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  padding-left: 20px;
+  border-left: 3px solid var(--accent-color);
+}
+
+.jll-capabilities-list strong {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.jll-image-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   margin-top: 40px;
 }
 
-.slider-btn {
-  background: rgba(0, 0, 0, 0.05);
-  border: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  cursor: pointer;
+.jll-image-gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: var(--img-radius);
+}
+
+/* SIDEBAR */
+.jll-sidebar-card {
+  background: #f9f9fb;
+  padding: 30px;
+  border: 1px solid #eee;
+  margin-bottom: 40px;
+}
+
+.jll-sidebar-card h4,
+.jll-sidebar-contact h4 {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  color: #1a1a1a;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.jll-sidebar-stat {
+  margin-bottom: 24px;
+}
+
+.stat-val {
+  display: block;
   font-size: 24px;
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
+  font-weight: 700;
+  color: #1a1a1a;
 }
 
-.slider-btn:hover:not(:disabled) {
-  background: rgba(0, 0, 0, 0.1);
-  transform: scale(1.1);
+.stat-label {
+  font-size: 14px;
+  color: #666;
 }
 
-.slider-btn:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
-
-/* Advantage - Three Column Grid for Residential */
-.res-advantage {
-  max-width: 1200px;
-  margin: 120px auto;
-  padding: 0 20px;
-}
-
-.res-advantage h2 {
-  font-size: 40px;
+.jll-sidebar-contact {
+  background: #1a1a1a;
+  padding: 40px 30px;
+  color: white;
   text-align: center;
-  margin-bottom: 80px;
 }
 
-.advantage-grid {
+.jll-sidebar-contact h4 {
+  color: white;
+  border-bottom-color: #555;
+  margin-bottom: 16px;
+}
+
+.jll-sidebar-contact p {
+  color: #ccc;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.jll-btn-primary {
+  background-color: var(--accent-color);
+  color: #1a1a1a;
+  padding: 14px 24px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.jll-btn-primary.full-width {
+  display: block;
+  text-align: center;
+}
+
+.jll-btn-primary:hover {
+  background-color: var(--bg-color);
+}
+
+/* ADVANTAGE */
+.jll-advantage-section {
+  background-color: #f5f5f7;
+  padding: 100px 0;
+}
+
+.jll-advantage-section h2 {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.jll-advantage-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
-.advantage-card {
-  padding-top: 24px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+.jll-advantage-item {
+  background: var(--bg-color);
+  padding: 40px;
+  border-top: 4px solid transparent;
+  transition: all 0.3s ease;
 }
 
-.advantage-card h3 {
-  font-size: 19px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: var(--accent-color);
+.jll-advantage-item:hover {
+  border-top-color: var(--accent-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transform: translateY(-5px);
 }
 
-.advantage-card p {
-  font-size: 17px;
-  line-height: 1.5;
-  color: var(--text-secondary);
+.advantage-icon {
+  font-size: 40px;
+  font-weight: 800;
+  color: #e0e0e0;
+  display: block;
+  margin-bottom: 20px;
 }
 
-/* Mobile */
-@media (max-width: 900px) {
+.jll-advantage-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
 
-  .services-grid,
-  .advantage-grid {
+.jll-advantage-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .jll-service-layout {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
   }
 
-  .res-hero h1 {
-    font-size: 40px;
+  .jll-sidebar-contact {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .jll-service-header h1 {
+    font-size: 36px;
+  }
+
+  .jll-advantage-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .jll-image-gallery-grid {
+    grid-template-columns: 1fr;
   }
 }

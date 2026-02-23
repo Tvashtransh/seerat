@@ -25,10 +25,8 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.55),
-    rgba(0, 0, 0, 0.55)
-  );
+  background: linear-gradient(rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55));
   z-index: 2;
   pointer-events: none;
 }
@@ -37,7 +35,7 @@
 .hero-content {
   position: relative;
   z-index: 5;
-  background: rgba(255, 255, 255, 0.808);
+  background: rgba(249, 243, 238, 0.808);
   padding: 50px 60px;
   border-radius: 28px;
   max-width: 900px;
@@ -50,7 +48,7 @@
 .hero-top-text {
   font-size: 16px;
   font-weight: 600;
-  color: #0ab3ba;
+  color: var(--accent-color);
   letter-spacing: 1.5px;
   margin-bottom: 10px;
 }
@@ -79,32 +77,32 @@
 
 .btn-primary {
   padding: 14px 34px;
-  background-color: #0ab3ba;
+  background-color: var(--accent-color);
   color: #ffffff;
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
-  border: 2px solid #0ab3ba;
+  border: 2px solid var(--accent-color);
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #089aa1;
+  background-color: var(--accent-hover);
 }
 
 .btn-outline {
   padding: 14px 34px;
-  background-color: #ffffff;
-  color: #0ab3ba;
+  background-color: var(--bg-color);
+  color: var(--accent-color);
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
-  border: 2px solid #0ab3ba;
+  border: 2px solid var(--accent-color);
   transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-  background-color: #0ab3ba;
+  background-color: var(--accent-color);
   color: #ffffff;
 }
 
@@ -122,6 +120,7 @@
     flex-direction: column;
   }
 }
+
 .hero-subtitle {
   font-size: 28px;
   font-weight: 800;
@@ -131,7 +130,7 @@
 }
 
 .hero-subtitle span {
-  color: #0ab3ba;
+  color: var(--accent-color);
 }
 
 .hero-description {
@@ -141,4 +140,3 @@
   max-width: 720px;
   margin: 0 auto 36px;
 }
-

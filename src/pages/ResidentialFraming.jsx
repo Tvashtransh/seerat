@@ -1,114 +1,111 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./ResidentialFraming.css";
 
 export default function ResidentialFraming() {
-  const images = [
-    "/res1.jpg", "/res2.jpg", "/res3.jpg",
-    "/res4.jpg", "/res5.jpg", "/res6.jpg",
-  ];
-
-  const [current, setCurrent] = useState(0);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const next = () => {
-    if (current < images.length - 1) setCurrent(current + 1);
-  };
-
-  const prev = () => {
-    if (current > 0) setCurrent(current - 1);
-  };
-
   return (
-    <div className="residential-page">
+    <div className="jll-service-detail-page">
 
-      {/* Hero */}
-      <section className="res-hero animate-fade-up">
-        <h1>Residential <span>Framing</span></h1>
-        <p>Elevate Your Vision.</p>
-      </section>
-
-      {/* Intro */}
-      <section className="res-intro animate-fade-up delay-100">
-        <p>
-          At Setsquare Construction, we don't just build frames; we craft the foundations of your dreams.
-          Specializing in residential framing, we bring your architectural visions to life with precision,
-          passion, and unparalleled expertise.
-        </p>
-      </section>
-
-      {/* Signature Services */}
-      <section className="signature-services">
-        <h2 className="animate-fade-up">Our Signature Services</h2>
-        <div className="services-grid animate-fade-up delay-100">
-          <div className="service-card">
-            <h3>New Home Construction</h3>
-            <p>
-              Transform empty lots into vibrant communities. Our team excels in framing multi-unit residential projects, ensuring each structure is built to last.
-            </p>
+      {/* Hero / Header */}
+      <header className="jll-service-header">
+        <div className="jll-service-header-content">
+          <div className="jll-breadcrumbs">
+            <Link to="/">Home</Link> / <Link to="/services">Services</Link> / <span>Residential Framing</span>
           </div>
-
-          <div className="service-card">
-            <h3>Additions & Renovations</h3>
-            <p>
-              Breathe new life into existing spaces. Whether you're expanding a single unit or renovating an entire complex, our experts ensure seamless integration.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <h3>Post-and-Beam Structures</h3>
-            <p>
-              Blend natural beauty with modern living. Our timber framing services create stunning, eco-friendly structures that stand the test of time.
-            </p>
-          </div>
+          <h1>Residential Framing</h1>
+          <p className="jll-service-lead">
+            Precision-engineered wood framing for single-family homes and custom residential projects.
+            We bring architectural visions to life with unmatched accuracy.
+          </p>
         </div>
-      </section>
+      </header>
 
-      {/* Slider */}
-      <div className="slider-wrapper animate-fade-up">
-        <div className="slider-monitor">
-          <div className="slider-window">
-            <div className="slider-track" style={{ transform: `translateX(-${current * 100}%)` }}>
-              {images.map((img, index) => (
-                <div className="slide" key={index}>
-                  <img src={img} alt={`Residential Framing ${index + 1}`} />
-                </div>
-              ))}
+      {/* Main Content Area */}
+      <div className="jll-service-body">
+        <div className="jll-container">
+          <div className="jll-service-layout">
+
+            {/* Left Column: Content */}
+            <div className="jll-service-main">
+              <section className="jll-content-block">
+                <h2>Crafting Foundations for Living</h2>
+                <p>
+                  At Setsquare Construction, we understand that a home is more than just a structure—it's a personalized space designed for life.
+                  Our residential framing services focus on the critical balance between structural integrity and design flexibility.
+                </p>
+                <p>
+                  Whether working on a bespoke luxury estate or a high-efficiency single-family development, our team applies the same rigour
+                  and attention to detail. We collaborate closely with architects and homeowners to ensure every beam and stud aligns perfectly with the vision.
+                </p>
+              </section>
+
+              <section className="jll-content-block">
+                <h3>Our Capabilities</h3>
+                <ul className="jll-capabilities-list">
+                  <li><strong>New Home Construction:</strong> Complete framing solutions from foundation to roof for new builds.</li>
+                  <li><strong>Complex Roof Systems:</strong> Expertise in truss and hand-cut roof framing for unique architectural styles.</li>
+                  <li><strong>Additions & Renovations:</strong> Seamlessly integrating new structures with existing frames.</li>
+                  <li><strong>Architectural Features:</strong> Specialized framing for vaulted ceilings, window walls, and custom details.</li>
+                </ul>
+              </section>
+
+              <section className="jll-image-gallery-grid">
+                <img src="/res1.jpg" onError={(e) => e.target.src = '/project-type-6.png'} alt="Residential Frame 1" />
+                <img src="/res2.jpg" onError={(e) => e.target.src = '/project-type-2.png'} alt="Residential Frame 2" />
+              </section>
             </div>
-          </div>
-        </div>
 
-        <div className="slider-controls">
-          <button className="slider-btn" onClick={prev} disabled={current === 0}>‹</button>
-          <button className="slider-btn" onClick={next} disabled={current === images.length - 1}>›</button>
+            {/* Right Column: Sidebar */}
+            <aside className="jll-service-sidebar">
+              <div className="jll-sidebar-card">
+                <h4>At a Glance</h4>
+                <div className="jll-sidebar-stat">
+                  <span className="stat-val">Fast</span>
+                  <span className="stat-label">Turnaround Times</span>
+                </div>
+                <div className="jll-sidebar-stat">
+                  <span className="stat-val">Precision</span>
+                  <span className="stat-label">Laser-Level Accuracy</span>
+                </div>
+              </div>
+
+              <div className="jll-sidebar-contact">
+                <h4>Start Your Project</h4>
+                <p>Ready to discuss your residential build?</p>
+                <Link to="/contact" className="jll-btn-primary full-width">
+                  Request a Consultation
+                </Link>
+              </div>
+            </aside>
+
+          </div>
         </div>
       </div>
 
-      {/* Advantage */}
-      <section className="res-advantage animate-fade-up">
-        <h2>The Setsquare Advantage</h2>
-        <div className="advantage-grid">
-          <div className="advantage-card">
-            <h3>Specialized Techniques</h3>
-            <p>
-              Our team employs cutting-edge framing methods, ensuring superior quality and efficiency.
-            </p>
-          </div>
-
-          <div className="advantage-card">
-            <h3>Faster Completion Times</h3>
-            <p>
-              We understand time is money. Our streamlined processes mean your project is completed swiftly without compromising on quality.
-            </p>
-          </div>
-
-          <div className="advantage-card">
-            <h3>Custom Design Capabilities</h3>
-            <p>
-              Your vision is unique, and so are our solutions. We work closely with architects and designers to bring even the most ambitious concepts to life.
-            </p>
+      {/* The Setsquare Advantage */}
+      <section className="jll-advantage-section">
+        <div className="jll-container">
+          <h2>The Setsquare Advantage</h2>
+          <div className="jll-advantage-grid">
+            <div className="jll-advantage-item">
+              <span className="advantage-icon">01</span>
+              <h3>Specialized Techniques</h3>
+              <p>Employing cutting-edge framing methods for superior quality and structural resilience.</p>
+            </div>
+            <div className="jll-advantage-item">
+              <span className="advantage-icon">02</span>
+              <h3>Efficiency & Speed</h3>
+              <p>Streamlined workflows that keep your project on schedule without cutting corners.</p>
+            </div>
+            <div className="jll-advantage-item">
+              <span className="advantage-icon">03</span>
+              <h3>Code Compliance</h3>
+              <p>Rigorous adherence to BC Building Codes and local municipal standards.</p>
+            </div>
           </div>
         </div>
       </section>

@@ -13,10 +13,15 @@
 }
 
 .blog-container {
-    max-width: 800px;
-    /* Reading width */
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 24px;
+}
+
+@media (min-width: 1200px) {
+    .blog-container {
+        padding: 0 var(--laptop-padding);
+    }
 }
 
 /* Category */
@@ -136,7 +141,7 @@
 
 .blog-image-hero {
     margin-bottom: 40px;
-    border-radius: 12px;
+    border-radius: var(--img-radius);
     overflow: hidden;
 }
 
@@ -212,8 +217,6 @@
 /* Main Content Area */
 .blog-main-content {
     width: 100%;
-    max-width: 800px;
-    /* Reading width inside the column */
 }
 
 /* Value Highlight Box */
@@ -221,7 +224,7 @@
     background-color: #FAF3EC;
     /* Light peach/beige */
     padding: 48px;
-    border-radius: 16px;
+    border-radius: var(--img-radius);
     margin-bottom: 60px;
     margin-top: 24px;
 }
@@ -233,7 +236,7 @@
     margin-bottom: 16px;
     line-height: 1;
     color: #0F172A;
-    font-family: serif;
+    font-family: var(--font-display);
     /* If you have a serif font, otherwise default */
 }
 

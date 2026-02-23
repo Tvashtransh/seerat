@@ -1,13 +1,11 @@
 .home-cta {
   padding: 80px 20px;
   text-align: center;
-  background: linear-gradient(
-    to top,
-    #0ab3ba 0%,
-    rgba(10, 179, 186, 0.85) 35%,
-    rgba(10, 179, 186, 0.55) 65%,
-    rgba(10, 179, 186, 0.15) 100%
-  );
+  background: linear-gradient(to top,
+      var(--accent-color) 0%,
+      rgba(181, 142, 107, 0.85) 35%,
+      rgba(181, 142, 107, 0.55) 65%,
+      rgba(181, 142, 107, 0.15) 100%);
   color: #fff;
 }
 
@@ -15,8 +13,8 @@
   margin-top: 20px;
   display: inline-block;
   padding: 14px 32px;
-  background-color: #fff;
-  color: #0ab3ba;
+  background-color: var(--bg-color);
+  color: var(--accent-color);
   border-radius: 30px;
   font-weight: 700;
   text-decoration: none;

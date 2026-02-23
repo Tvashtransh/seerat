@@ -1,121 +1,111 @@
-import React, { useState, useEffect } from "react";
-import "./MultiDevelopmentFraming.css";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./ResidentialFraming.css"; // Reusing the JLL Service Detail Theme
 
 export default function MultiDevelopmentFraming() {
-  const images = [
-    "/multi1.jpg", "/multi2.jpg", "/multi3.jpg",
-    "/multi4.jpg", "/multi5.jpg", "/multi6.jpg",
-  ];
-
-  const [current, setCurrent] = useState(0);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const next = () => {
-    if (current < images.length - 1) setCurrent(current + 1);
-  };
-
-  const prev = () => {
-    if (current > 0) setCurrent(current - 1);
-  };
-
   return (
-    <div className="multi-page">
+    <div className="jll-service-detail-page">
 
-      {/* Hero */}
-      <section className="multi-hero animate-fade-up">
-        <h1>
-          Multi-Development <span>Framing</span>
-        </h1>
-        <p>Building Efficiency into Every Frame.</p>
-      </section>
-
-      {/* Intro */}
-      <section className="multi-intro animate-fade-up delay-100">
-        <p>
-          At Setsquare Construction, we're revolutionizing the construction
-          industry with our cutting-edge multi-development framing services.
-        </p>
-        <p>
-          Our innovative approach combines efficiency, cost-effectiveness,
-          and customization to deliver unparalleled results for residential
-          complexes and mixed-use developments.
-        </p>
-      </section>
-
-      {/* Why Choose Grid */}
-      <section className="why-choose">
-        <h2 className="animate-fade-up">Why Choose Setsquare?</h2>
-        <div className="choose-grid animate-fade-up delay-100">
-          <div className="choose-card">
-            <h3>Efficiency</h3>
-            <p>
-              Our streamlined processes ensure rapid project completion
-              without compromising on quality.
-            </p>
+      {/* Hero / Header */}
+      <header className="jll-service-header">
+        <div className="jll-service-header-content">
+          <div className="jll-breadcrumbs">
+            <Link to="/">Home</Link> / <Link to="/services">Services</Link> / <span>Multi-Development Framing</span>
           </div>
-
-          <div className="choose-card">
-            <h3>Cost-Effectiveness</h3>
-            <p>
-              Innovative techniques optimize resources, saving time and money
-              without cutting corners.
-            </p>
-          </div>
-
-          <div className="choose-card">
-            <h3>Customization</h3>
-            <p>
-              Tailored framing solutions to meet your project’s unique needs,
-              regardless of scale or complexity.
-            </p>
-          </div>
+          <h1>Multi-Development Framing</h1>
+          <p className="jll-service-lead">
+            Large-scale wood framing solutions for residential complexes, townhomes, and mixed-use communities.
+            Efficiency at scale without compromise.
+          </p>
         </div>
-      </section>
+      </header>
 
-      {/* Slider */}
-      <div className="slider-wrapper animate-fade-up">
-        <div className="slider-monitor">
-          <div className="slider-window">
-            <div
-              className="slider-track"
-              style={{ transform: `translateX(-${current * 100}%)` }}
-            >
-              {images.map((img, index) => (
-                <div className="slide" key={index}>
-                  <img src={img} alt={`Multi Development ${index + 1}`} />
-                </div>
-              ))}
+      {/* Main Content Area */}
+      <div className="jll-service-body">
+        <div className="jll-container">
+          <div className="jll-service-layout">
+
+            {/* Left Column: Content */}
+            <div className="jll-service-main">
+              <section className="jll-content-block">
+                <h2>Scaling Excellence with Wood</h2>
+                <p>
+                  At Setsquare Construction, we specialize in the unique demands of multi-unit residential developments.
+                  From 50-unit townhome complexes to sprawling mixed-use communities, our team brings the manpower and management expertise required to deliver on time and on budget.
+                </p>
+                <p>
+                  We understand that in large-scale development, efficiency is currency. Our systematic approach to framing ensures rapid deployment,
+                  minimal waste, and seamless coordination with other trades on busy job sites.
+                </p>
+              </section>
+
+              <section className="jll-content-block">
+                <h3>Project Capabilities</h3>
+                <ul className="jll-capabilities-list">
+                  <li><strong>Townhome Complexes:</strong> High-volume framing with consistent quality control across all units.</li>
+                  <li><strong>Mixed-Use Buildings:</strong> Integrating residential wood framing with concrete and steel commercial podiums.</li>
+                  <li><strong>Apartment Buildings:</strong> Up to 6-storey wood frame construction expertise.</li>
+                  <li><strong>Project Management:</strong> Dedicated site supervisors ensuring safety and schedule adherence.</li>
+                </ul>
+              </section>
+
+              <section className="jll-image-gallery-grid">
+                <img src="/multi1.jpg" onError={(e) => e.target.src = '/project-type-4.png'} alt="Multi Framing 1" />
+                <img src="/multi2.jpg" onError={(e) => e.target.src = '/project-type-10.png'} alt="Multi Framing 2" />
+              </section>
             </div>
-          </div>
-        </div>
 
-        <div className="slider-controls">
-          <button className="slider-btn" onClick={prev} disabled={current === 0}>‹</button>
-          <button className="slider-btn" onClick={next} disabled={current === images.length - 1}>›</button>
+            {/* Right Column: Sidebar */}
+            <aside className="jll-service-sidebar">
+              <div className="jll-sidebar-card">
+                <h4>Key Benefits</h4>
+                <div className="jll-sidebar-stat">
+                  <span className="stat-val">Scale</span>
+                  <span className="stat-label">Large Crew Capacity</span>
+                </div>
+                <div className="jll-sidebar-stat">
+                  <span className="stat-val">Value</span>
+                  <span className="stat-label">Cost-Effective Solutions</span>
+                </div>
+              </div>
+
+              <div className="jll-sidebar-contact">
+                <h4>Partner With Us</h4>
+                <p>Planning a new development? Let's discuss your framing needs.</p>
+                <Link to="/contact" className="jll-btn-primary full-width">
+                  Get a Bid
+                </Link>
+              </div>
+            </aside>
+
+          </div>
         </div>
       </div>
 
-      {/* Advantage */}
-      <section className="advantage animate-fade-up">
-        <h2>The Setsquare Advantage</h2>
-        <div className="advantage-grid">
-          <div className="advantage-card">
-            <h3>Our Expertise in Action</h3>
-            <p>
-              Whether you're developing a sprawling residential complex or a
-              dynamic mixed-use property, our framing services exceed expectations.
-            </p>
-          </div>
-
-          <div className="advantage-card">
-            <h3>Residential Complexes</h3>
-            <p>
-              We bring architectural visions to life with sturdy, efficient,
-              and aesthetically pleasing structures that stand the test of time.
-            </p>
+      {/* The Setsquare Advantage */}
+      <section className="jll-advantage-section">
+        <div className="jll-container">
+          <h2>Why Developers Choose Setsquare</h2>
+          <div className="jll-advantage-grid">
+            <div className="jll-advantage-item">
+              <span className="advantage-icon">01</span>
+              <h3>Efficiency</h3>
+              <p>Streamlined processes ensure rapid project completion, helping you meet occupancy dates.</p>
+            </div>
+            <div className="jll-advantage-item">
+              <span className="advantage-icon">02</span>
+              <h3>Scalability</h3>
+              <p>The ability to ramp up manpower to meet aggressive schedules on large sites.</p>
+            </div>
+            <div className="jll-advantage-item">
+              <span className="advantage-icon">03</span>
+              <h3>Safety Leaders</h3>
+              <p>Rigorous safety protocols that protect our team and your liability on site.</p>
+            </div>
           </div>
         </div>
       </section>
