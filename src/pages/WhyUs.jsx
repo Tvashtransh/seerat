@@ -28,7 +28,7 @@ export default function WhyUs() {
               <span className="jll-eyebrow">Our Story</span>
               <h2>A Legacy of Uncompromising Quality</h2>
               <p>
-                Founded by brothers Nav & Gurpreet, Setsquare Construction was established with a singular mission:
+                Founded by brothers Narwinder Singh & Gurpreet Singh, Setsquare Construction was established with a singular mission:
                 to bring a higher standard of precision to the wood framing industry.
               </p>
               <p>
@@ -41,8 +41,8 @@ export default function WhyUs() {
               </div>
             </div>
             <div className="jll-narrative-image">
-              <img src="/whyus-about.jpg" onError={(e) => e.target.src = '/project-type-3.png'} alt="Nav and Gurpreet" />
-              <div className="jll-image-caption">Nav & Gurpreet - Founders</div>
+              <img src="/whyus-about.jpg" onError={(e) => e.target.src = '/project-type-3.png'} alt="Narwinder Singh and Gurpreet Singh" />
+              <div className="jll-image-caption">Narwinder & Gurpreet Singh - Founders</div>
             </div>
           </div>
         </div>

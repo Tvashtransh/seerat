@@ -124,7 +124,7 @@ export default function Home() {
             className="ss-hero-video"
             poster="/hero-image.jpg"
           >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-architectural-model-in-a-modern-office-42774-large.mp4" type="video/mp4" />
+            <source src="/culmena-assets/DJI_0964.MP4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="ss-hero-overlay-refined" />
@@ -226,12 +226,18 @@ export default function Home() {
                   developments in British Columbia.
                 </p>
                 <div className="ss-about-author">
-                  <div className="ss-author-info">
-                    <span className="ss-author-name">Gurpreet Singh</span>
-                    <span className="ss-author-role">Founder of Setsquare Construction</span>
+                  <div className="ss-founders-row" style={{ display: 'flex', gap: '40px' }}>
+                    <div className="ss-author-info">
+                      <span className="ss-author-name">Narwinder Singh</span>
+                      <span className="ss-author-role">Co-Founder</span>
+                    </div>
+                    <div className="ss-author-info">
+                      <span className="ss-author-name">Gurpreet Singh</span>
+                      <span className="ss-author-role">Co-Founder</span>
+                    </div>
                   </div>
                   <div className="ss-signature">
-                    <span className="signature-text">Gurpreet Singh</span>
+                    <span className="signature-text">N. Singh & G. Singh</span>
                   </div>
                 </div>
               </div>

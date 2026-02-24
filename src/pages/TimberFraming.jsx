@@ -13,7 +13,7 @@ export default function TimberFraming() {
       {/* Cinematic Hero Section */}
       <header
         className="page-hero animate-fade-in"
-        style={{ backgroundImage: 'url(/timber1.jpg)' }}
+        style={{ backgroundImage: 'url(/granary-assets/granary-4.jpg)' }}
       >
         <div className="page-hero-content animate-fade-up delay-100">
           <div className="jll-breadcrumbs" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '16px' }}>
@@ -53,8 +53,8 @@ export default function TimberFraming() {
               </section>
 
               <section className="jll-image-gallery-grid">
-                <img src="/timber1.jpg" onError={(e) => e.target.src = '/project-type-2.png'} alt="Timber Frame 1" />
-                <img src="/timber2.jpg" onError={(e) => e.target.src = '/project-type-3.png'} alt="Timber Frame 2" />
+                <img src="/granary-assets/granary-1.jpg" onError={(e) => e.target.src = '/project-type-2.png'} alt="Granary Timber Project" />
+                <img src="/timber1.jpg" onError={(e) => e.target.src = '/project-type-3.png'} alt="Exposed Wood Joinery" />
               </section>
             </div>
 

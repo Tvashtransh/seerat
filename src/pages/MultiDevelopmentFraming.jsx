@@ -13,7 +13,7 @@ export default function MultiDevelopmentFraming() {
       {/* Cinematic Hero Section */}
       <header
         className="page-hero animate-fade-in"
-        style={{ backgroundImage: 'url(/multi1.jpg)' }}
+        style={{ backgroundImage: 'url(/culmena-assets/DJI_0953.JPG)' }}
       >
         <div className="page-hero-content animate-fade-up delay-100">
           <div className="jll-breadcrumbs" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '16px' }}>
@@ -53,8 +53,8 @@ export default function MultiDevelopmentFraming() {
               </section>
 
               <section className="jll-image-gallery-grid">
-                <img src="/multi1.jpg" onError={(e) => e.target.src = '/project-type-4.png'} alt="Multi Framing 1" />
-                <img src="/multi2.jpg" onError={(e) => e.target.src = '/project-type-10.png'} alt="Multi Framing 2" />
+                <img src="/culmena-assets/DJI_0961.JPG" onError={(e) => e.target.src = '/project-type-4.png'} alt="Culmena Multi-Family Site" />
+                <img src="/culmena-assets/DJI_0970.JPG" onError={(e) => e.target.src = '/project-type-10.png'} alt="Construction Progress" />
               </section>
             </div>
 

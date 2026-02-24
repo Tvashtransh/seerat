@@ -13,7 +13,7 @@ export default function ResidentialFraming() {
       {/* Cinematic Hero Section */}
       <header
         className="page-hero animate-fade-in"
-        style={{ backgroundImage: 'url(/res1.jpg)' }}
+        style={{ backgroundImage: 'url(/boundarybay-assets/boundarybay-1.jpg)' }}
       >
         <div className="page-hero-content animate-fade-up delay-100">
           <div className="jll-breadcrumbs" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '16px' }}>
@@ -53,8 +53,8 @@ export default function ResidentialFraming() {
               </section>
 
               <section className="jll-image-gallery-grid">
-                <img src="/res1.jpg" onError={(e) => e.target.src = '/project-type-6.png'} alt="Residential Frame 1" />
-                <img src="/res2.jpg" onError={(e) => e.target.src = '/project-type-2.png'} alt="Residential Frame 2" />
+                <img src="/summerland-1.jpg" onError={(e) => e.target.src = '/project-type-6.png'} alt="Luxury Residential Framing" />
+                <img src="/troutlake-1.jpg" onError={(e) => e.target.src = '/project-type-2.png'} alt="Custom Home Construction" />
               </section>
             </div>
 
