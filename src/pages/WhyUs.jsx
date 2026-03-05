@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import HomeCTA from "../components/HomeCTA";
 import "./WhyUs.css";
 
 export default function WhyUs() {
@@ -114,13 +115,7 @@ export default function WhyUs() {
         </div>
       </section>
 
-      {/* CTA Band */}
-      <section className="jll-cta-band">
-        <div className="jll-container">
-          <h2>Ready to start your next project?</h2>
-          <Link to="/contact" className="jll-btn-white">Contact Us</Link>
-        </div>
-      </section>
+      <HomeCTA />
 
     </div>
   );

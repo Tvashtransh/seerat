@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import HomeCTA from "../components/HomeCTA";
 import "./ResidentialFraming.css"; // Reusing the JLL Service Detail Theme
 
 export default function MultiDevelopmentFraming() {
@@ -72,13 +73,6 @@ export default function MultiDevelopmentFraming() {
                 </div>
               </div>
 
-              <div className="jll-sidebar-contact">
-                <h4>Partner With Us</h4>
-                <p>Planning a new development? Let's discuss your framing needs.</p>
-                <Link to="/contact" className="jll-btn-primary full-width">
-                  Get a Bid
-                </Link>
-              </div>
             </aside>
 
           </div>
@@ -108,6 +102,8 @@ export default function MultiDevelopmentFraming() {
           </div>
         </div>
       </section>
+
+      <HomeCTA />
 
     </div>
   );

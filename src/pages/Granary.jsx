@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ProjectStackGallery from "../components/ProjectStackGallery";
 import "./ProjectDetail.css";
 
 export default function Granary() {
@@ -13,7 +14,7 @@ export default function Granary() {
       {/* Hero */}
       <section
         className="project-detail-hero animate-fade-up"
-        style={{ backgroundImage: 'url(/granary-assets/granary-2.jpg)' }}
+        style={{ backgroundImage: 'url("/granary after/LAP0658_MotivGranary_0061.webp")' }}
       >
         <h1>THE GRANARY</h1>
         <span className="project-location-tag">Tsawwassen / Boundary Bay, British Columbia</span>
@@ -31,9 +32,11 @@ export default function Granary() {
             atop a concrete parkade and ground floor.
           </p>
         </div>
-        <div className="project-image-block">
-          <img src="/granary-assets/granary-1.jpg" alt="The Granary Task" />
-        </div>
+        <ProjectStackGallery
+          images={[
+            "/granary after/southlands-the-granary-woonerf.jpg", "/granary-assets/granary-1.jpg", "/granary-assets/granary-2.jpg", "/granary after/the-granary-at-southlands-british-columbia-canada-housing-m050525-a-2.webp"
+          ]}
+        />
       </section>
 
       {/* Section 2: Framing It Up */}
@@ -76,11 +79,19 @@ export default function Granary() {
           Today, it stands as a bustling hub where the community gathers, grounded in the rich agricultural
           tradition of the area.
         </p>
-        <div className="project-image-block" style={{ marginTop: '40px' }}>
-          <img src="/granary-assets/granary-4.jpg" alt="Granary Completion" />
-        </div>
+
+        <ProjectStackGallery
+          images={[
+            "/granary after/LAP0658_MotivGranary_0072.webp",
+            "/granary after/LAP0658_MotivGranary_0118.webp",
+            "/granary after/LAP0658_MotivGranary_0155.webp"
+          ]}
+        />
+
       </section>
 
     </div>
   );
 }
+
+

@@ -1,11 +1,11 @@
 /* Services.css - JLL Inspired Theme */
 
 :root {
-  --jll-black: #1a1a1a;
-  --jll-gray-dark: #333333;
-  --jll-gray-medium: #666666;
-  --jll-gray-light: #f4f4f4;
-  --jll-white: #F9F3EE;
+  --jll-black: var(--text-primary);
+  --jll-gray-dark: var(--text-primary);
+  --jll-gray-medium: var(--text-secondary);
+  --jll-gray-light: var(--bg-secondary);
+  --jll-white: var(--bg-color);
   --jll-accent: var(--accent-color);
   /* Premium Bronze */
   --jll-font-sans: var(--font-main);
@@ -71,7 +71,7 @@
 }
 
 .jll-stat-item {
-  border-left: 1px solid #e0e0e0;
+  border-left: 1px solid var(--bg-secondary);
   padding-left: 24px;
 }
 
@@ -95,7 +95,7 @@
 /* --- SERVICES STACK SECTION --- */
 .jll-services-stack-section {
   padding: 100px 0 140px;
-  background-color: #fcf8f5;
+  background-color: var(--bg-secondary);
   /* Warm Beige to match Expertise section */
 }
 
@@ -174,8 +174,8 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: #e6e6e6;
-  color: #1a1a1a;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
   padding: 14px 24px;
   font-weight: 600;
   font-size: 15px;
@@ -185,7 +185,7 @@
 }
 
 .jll-btn-card:hover {
-  background-color: #d4d4d4;
+  background-color: var(--text-secondary);
   gap: 15px;
 }
 
@@ -334,3 +334,5 @@
     height: 300px;
   }
 }
+
+

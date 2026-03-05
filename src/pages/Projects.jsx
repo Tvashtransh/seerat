@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
+import HomeCTA from "../components/HomeCTA";
 import "./Projects.css";
 
 const initialProjectItems = [
@@ -157,27 +158,30 @@ export default function Projects() {
 
       {/* Projects Grid */}
       <section className="jll-projects-grid-section">
-        <div className="jll-project-cards-grid">
+        <div className="ss-proj-list">
           {filteredProjects.map((project) => (
-            <Link to={project.link} key={project.id} className="jll-project-card">
-              <div className="jll-project-image-container">
-                <img src={project.image} alt={project.title} className="jll-project-image" />
+            <div key={project.id} className="ss-proj-item">
+              <div className="ss-proj-tags">
+                <span className="ss-proj-tag-dark">SETSQUARE PROJECTS</span>
+                <span className="ss-proj-tag-outline">{project.category.toUpperCase()}</span>
               </div>
-              <div className="jll-project-details">
-                <h3 className="jll-project-title">{project.title}</h3>
-                <p className="jll-project-desc">{project.description}</p>
-
-                {/* JLL Style Tags */}
-                <div className="jll-project-tags">
-                  <span className="jll-project-tag">{project.category}</span>
-                  {project.location && <span className="jll-project-tag">{project.location.split(',')[0]}</span>}
+              <div className="ss-proj-body">
+                <div className="ss-proj-img-wrap">
+                  <Link to={project.link}>
+                    <img src={project.image} alt={project.title} />
+                  </Link>
                 </div>
-
-                <div className="jll-card-arrow">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <div className="ss-proj-content">
+                  <h2 className="ss-proj-title">
+                    <Link to={project.link}>{project.title.toUpperCase()}</Link>
+                  </h2>
+                  <p className="ss-proj-desc">{project.description}</p>
+                  <Link to={project.link} className="ss-proj-btn">
+                    VIEW PROJECT DETAILS
+                  </Link>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
 
           {filteredProjects.length === 0 && (
@@ -193,6 +197,8 @@ export default function Projects() {
           )}
         </div>
       </section>
+
+      <HomeCTA />
 
     </div>
   );

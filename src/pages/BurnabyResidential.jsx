@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ProjectStackGallery from "../components/ProjectStackGallery";
 import "./ProjectDetail.css";
 
 export default function BurnabyResidential() {
@@ -30,9 +31,14 @@ export default function BurnabyResidential() {
             enjoyed framing up this beautiful home which integrates seamlessly into the warm Garden Village Community.
           </p>
         </div>
-        <div className="project-image-block">
-          <img src="/burnaby-assets/burnaby-1.jpg" alt="Burnaby Task" />
-        </div>
+        <ProjectStackGallery 
+        images={[
+          "/burnaby-assets/burnaby-1.jpg",
+          "/burnaby-assets/burnaby-2.jpg",
+          "/burnaby-assets/burnaby-3.jpg",
+          "/burnaby-assets/burnaby-4.jpg"
+        ]}
+      />
       </section>
 
       {/* Section 2: Framing It Up */}
@@ -73,10 +79,18 @@ export default function BurnabyResidential() {
           with Wallmark Homes. We're grateful to add this beautiful home to our portfolio, showcasing
           our wood framing that aligned with the vision of Wallmark Homes.
         </p>
-        <div className="project-image-block" style={{ marginTop: '40px' }}>
-          <img src="/burnaby-assets/burnaby-4.jpg" alt="Burnaby Completion" />
-        </div>
+        
+      <ProjectStackGallery 
+        images={[
+          "/burnaby-assets/burnaby-1.jpg",
+          "/burnaby-assets/burnaby-2.jpg",
+          "/burnaby-assets/burnaby-3.jpg",
+          "/burnaby-assets/burnaby-4.jpg"
+        ]}
+      />
+    
       </section>
+
 
     </div>
   );

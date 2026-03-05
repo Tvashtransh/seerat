@@ -2,11 +2,11 @@
 
 :root {
   --jll-bronze: var(--accent-color);
-  --jll-black: #1a1a1a;
-  --jll-gray-dark: #333;
-  --jll-gray-medium: #666;
-  --jll-gray-light: #f5f5f7;
-  --jll-border: #e6e6e6;
+  --jll-black: var(--text-primary);
+  --jll-gray-dark: var(--text-primary);
+  --jll-gray-medium: var(--text-secondary);
+  --jll-gray-light: var(--bg-secondary);
+  --jll-border: var(--bg-secondary);
 }
 
 .jll-gallery-page {
@@ -244,3 +244,5 @@
     flex-direction: column;
   }
 }
+
+

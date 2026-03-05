@@ -2,7 +2,7 @@
 
 .project-detail-page {
     font-family: var(--font-main);
-    color: #1a1a1a;
+    color: var(--text-primary);
     background-color: var(--bg-color);
     padding-bottom: 120px;
 }
@@ -10,13 +10,13 @@
 /* --- Project Hero --- */
 .project-detail-hero {
     position: relative;
-    background-color: #1a1a1a;
+    background-color: var(--text-primary);
     background-size: cover;
     background-position: center;
     padding: 160px var(--site-margin);
     text-align: center;
     margin-bottom: 100px;
-    color: #fff;
+    color: var(--white);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,7 +47,7 @@
     margin-bottom: 24px;
     letter-spacing: -0.02em;
     text-transform: uppercase;
-    color: #fff;
+    color: var(--white);
 }
 
 .project-location-tag {
@@ -80,14 +80,14 @@
     font-size: clamp(28px, 3vw, 42px);
     font-weight: 700;
     margin-bottom: 16px;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .project-subtitle {
     display: block;
     font-size: 12px;
     font-weight: 700;
-    color: #999;
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 24px;
@@ -96,7 +96,7 @@
 .project-text-block p {
     font-size: 16px;
     line-height: 1.7;
-    color: #555;
+    color: var(--text-secondary);
     margin-bottom: 24px;
 }
 
@@ -104,7 +104,7 @@
 .project-image-block {
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-    background: #f9f9fb;
+    background: var(--bg-secondary);
     border-radius: var(--img-radius);
 }
 
@@ -140,7 +140,7 @@
 .project-conclusion p {
     font-size: 18px;
     line-height: 1.7;
-    color: #555;
+    color: var(--text-secondary);
     max-width: 800px;
     margin: 0 auto 60px;
 }
@@ -170,3 +170,5 @@
         padding: 60px var(--site-margin);
     }
 }
+
+

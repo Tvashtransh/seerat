@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ProjectStackGallery from "../components/ProjectStackGallery";
 import "./ProjectDetail.css";
 
 export default function TroutLakeResidential() {
@@ -30,9 +31,14 @@ export default function TroutLakeResidential() {
             of the heart of the vibrant and welcoming community in East Vancouver.
           </p>
         </div>
-        <div className="project-image-block">
-          <img src="/troutlake-assets/troutlake-1.jpg" alt="Trout Lake Task" />
-        </div>
+        <ProjectStackGallery 
+        images={[
+          "/troutlake-assets/troutlake-1.jpg",
+          "/troutlake-assets/troutlake-2.jpg",
+          "/troutlake-assets/troutlake-3.jpg",
+          "/troutlake-assets/troutlake-4.jpg"
+        ]}
+      />
       </section>
 
       {/* Section 2: Framing It Up */}
@@ -77,10 +83,18 @@ export default function TroutLakeResidential() {
           The East Vancouver home project represents a noteworthy addition to our portfolio, showcasing
           our expertise in framing residential builds.
         </p>
-        <div className="project-image-block" style={{ marginTop: '40px' }}>
-          <img src="/troutlake-assets/troutlake-4.jpg" alt="Completion" />
-        </div>
+        
+      <ProjectStackGallery 
+        images={[
+          "/troutlake-assets/troutlake-1.jpg",
+          "/troutlake-assets/troutlake-2.jpg",
+          "/troutlake-assets/troutlake-3.jpg",
+          "/troutlake-assets/troutlake-4.jpg"
+        ]}
+      />
+    
       </section>
+
 
     </div>
   );

@@ -1,21 +1,159 @@
-.home-cta {
-  padding: 80px var(--site-margin);
-  text-align: center;
-  background: linear-gradient(to top,
-      var(--accent-color) 0%,
-      rgba(181, 142, 107, 0.85) 35%,
-      rgba(181, 142, 107, 0.55) 65%,
-      rgba(181, 142, 107, 0.15) 100%);
-  color: #fff;
+.ss-large-cta {
+  background-color: #f7f3f0;
+  /* Warm beige like the image */
+  padding: 120px 0;
+  width: 100%;
 }
 
-.cta-btn {
-  margin-top: 20px;
-  display: inline-block;
-  padding: 14px 32px;
-  background-color: var(--bg-color);
-  color: var(--accent-color);
-  border-radius: 30px;
-  font-weight: 700;
-  text-decoration: none;
+.ss-large-cta-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
 }
+
+/* Left Side */
+.ss-large-cta-left {
+  flex: 0 0 35%;
+  /* Around 35% width for the large text side */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* push buttons to bottom */
+}
+
+.ss-cta-big-text {
+  font-family: var(--font-display, "Times New Roman", serif);
+  font-size: clamp(48px, 5vw, 68px);
+  line-height: 1.1;
+  font-weight: 400;
+  color: #8C5140;
+  /* Earhy red/bronze matching image feel but fitting theme */
+  margin-bottom: 40px;
+}
+
+/* Right Side - Steps Grid */
+.ss-large-cta-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.ss-cta-step {
+  display: flex;
+  flex-direction: column;
+}
+
+.ss-step-number {
+  font-size: 13px;
+  font-family: var(--font-main, sans-serif);
+  color: #8C5140;
+  margin-bottom: 24px;
+}
+
+.ss-step-title {
+  font-family: var(--font-display, "Times New Roman", serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: #8C5140;
+  margin-bottom: 16px;
+}
+
+.ss-step-desc {
+  font-family: var(--font-main, sans-serif);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #8C5140;
+  font-weight: 400;
+}
+
+/* Buttons */
+.ss-cta-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 60px;
+  /* spacing to push them below */
+}
+
+.ss-cta-btn-solid,
+.ss-cta-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ss-cta-btn-solid {
+  background-color: #8C5140;
+  color: var(--white);
+}
+
+.ss-cta-btn-solid:hover {
+  background-color: #6d3e30;
+}
+
+.ss-cta-btn-outline {
+  background-color: transparent;
+  color: #8C5140;
+  border: 1px solid #8C5140;
+}
+
+.ss-cta-btn-outline:hover {
+  background-color: #8C5140;
+  color: var(--white);
+}
+
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .ss-large-cta-grid {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .ss-large-cta-left {
+    flex: none;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: flex;
+    grid-column: 1 / -1;
+    /* span full width of the right grid */
+  }
+}
+
+@media (max-width: 768px) {
+  .ss-large-cta-right {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ss-cta-buttons {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .ss-cta-btn-solid,
+  .ss-cta-btn-outline {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+

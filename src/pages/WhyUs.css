@@ -2,7 +2,7 @@
 
 .jll-whyus-page {
   font-family: var(--font-main);
-  color: #333;
+  color: var(--text-primary);
   background-color: var(--bg-color);
 }
 
@@ -41,13 +41,13 @@
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 32px;
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 .jll-narrative-text p {
   font-size: 18px;
   line-height: 1.7;
-  color: #555;
+  color: var(--text-secondary);
   margin-bottom: 24px;
 }
 
@@ -60,8 +60,7 @@
 .jll-quote {
   font-size: 22px;
   font-weight: 600;
-  color: #1a1a1a;
-  font-style: italic;
+  color: var(--text-primary);
 }
 
 .jll-narrative-image {
@@ -77,14 +76,13 @@
 .jll-image-caption {
   margin-top: 12px;
   font-size: 14px;
-  color: #888;
+  color: var(--text-secondary);
   text-align: right;
-  font-style: italic;
 }
 
 /* VALUES STRIPE */
 .jll-values-stripe {
-  background-color: #f5f5f7;
+  background-color: var(--bg-secondary);
   padding: 100px 0;
 }
 
@@ -102,7 +100,7 @@
 
 .jll-lead-center {
   font-size: 20px;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .jll-values-row {
@@ -126,7 +124,7 @@
 .jll-value-number {
   font-size: 48px;
   font-weight: 800;
-  color: #e0e0e0;
+  color: var(--bg-secondary);
   margin-bottom: 24px;
 }
 
@@ -134,13 +132,13 @@
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 16px;
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 .jll-value-col p {
   font-size: 16px;
   line-height: 1.6;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 /* PARTNERS SECTION */
@@ -153,7 +151,7 @@
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 60px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--bg-secondary);
   padding-bottom: 20px;
 }
 
@@ -208,12 +206,12 @@
 .jll-partner-card span {
   font-size: 14px;
   font-weight: 600;
-  color: #333;
+  color: var(--text-primary);
 }
 
 /* CTA BAND */
 .jll-cta-band {
-  background-color: #1a1a1a;
+  background-color: var(--text-primary);
   padding: 80px 0;
   text-align: center;
 }
@@ -228,7 +226,7 @@
 .jll-btn-white {
   display: inline-block;
   background-color: var(--bg-color);
-  color: #1a1a1a;
+  color: var(--text-primary);
   padding: 16px 40px;
   font-weight: 700;
   text-decoration: none;
@@ -236,7 +234,7 @@
 }
 
 .jll-btn-white:hover {
-  background-color: #e0e0e0;
+  background-color: var(--bg-secondary);
 }
 
 /* RESPONSIVE */
@@ -262,3 +260,5 @@
     gap: 16px;
   }
 }
+
+

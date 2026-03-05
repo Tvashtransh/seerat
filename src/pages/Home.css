@@ -2,7 +2,7 @@
 
 .jll-home-page {
     font-family: var(--font-main);
-    color: #1a1a1a;
+    color: var(--text-primary);
     background-color: var(--bg-color);
 }
 
@@ -32,36 +32,89 @@
    HERO SECTION PREMIUM — Apple/EMAAR Architectural Style
    ==================================================== */
 
-.ss-hero-premium {
+.ss-hero-scroll-container {
     position: relative;
-    width: 100%;
+    height: 200vh;
+    z-index: 10;
+}
+
+.ss-hero-sticky {
+    position: sticky;
+    top: 0;
     height: 100vh;
     overflow: hidden;
-    background: #000;
+    background-color: var(--bg-color);
+    /* Matches the rest of the page 'beige' feel */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 100%;
+}
+
+.ss-hero-bg-text-container {
+    position: absolute;
+    top: 15vh;
+    bottom: 12vh;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ss-hero-bg-text {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 12vw, 150px);
+    line-height: 0.8;
+    color: var(--text-primary);
+    /* refined dark brown/grey */
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    opacity: 1;
+    /* Initially visible, though covered by video */
+    transform-origin: center;
+    transition: transform 0.1s linear;
+}
+
+.ss-hero-bg-text span {
+    display: inline-block;
 }
 
 .ss-hero-video-wrapper {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: 2;
+    overflow: hidden;
+    will-change: clip-path;
+    /* Optimized for the scroll shrink effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .ss-hero-video {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+    z-index: 0;
 }
 
 .ss-hero-overlay-refined {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.4) 100%);
-    z-index: 2;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.5) 100%);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .ss-hero-content-centered {
@@ -75,7 +128,7 @@
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.3em;
-    color: #fff;
+    color: var(--white);
     text-transform: uppercase;
     margin-bottom: 20px;
     display: block;
@@ -86,15 +139,14 @@
     font-size: clamp(60px, 12vw, 140px);
     line-height: 0.85;
     font-weight: 400;
-    color: #fff;
+    color: var(--white);
     margin: 0;
     letter-spacing: -0.02em;
     text-transform: uppercase;
 }
 
 .serif-font {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
+    font-family: var(--font-display);
     text-transform: none;
     display: block;
     font-size: 1.1em;
@@ -150,7 +202,7 @@
 .filter-label {
     font-size: 10px;
     font-weight: 700;
-    color: #888;
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 4px;
@@ -162,18 +214,18 @@
     gap: 10px;
     font-size: 14px;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .ss-filter-divider {
     width: 1px;
     height: 40px;
-    background: #eee;
+    background: var(--bg-secondary);
 }
 
 .ss-filter-search-btn {
-    background: #1a1a1a;
-    color: #fff;
+    background: var(--text-primary);
+    color: var(--white);
     border: none;
     padding: 18px 40px;
     border-radius: 100px;
@@ -269,13 +321,13 @@
     font-weight: 400;
     /* Light/Normal weight */
     margin-bottom: 30px;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .jll-explore-desc {
     font-size: 18px;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-primary);
     max-width: 480px;
 }
 
@@ -288,14 +340,14 @@
 .jll-stat-item {
     display: flex;
     flex-direction: column;
-    border-left: 1px solid #e6e6e6;
+    border-left: 1px solid var(--bg-secondary);
     padding-left: 24px;
 }
 
 .jll-stat-number {
     font-size: clamp(36px, 4vw, 48px);
     font-weight: 400;
-    color: #1a1a1a;
+    color: var(--text-primary);
     line-height: 1;
     margin-bottom: 8px;
 }
@@ -304,7 +356,7 @@
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #666;
+    color: var(--text-secondary);
     font-weight: 600;
 }
 
@@ -332,7 +384,7 @@
 }
 
 .ss-about-card {
-    background-color: #1a1a1a;
+    background-color: var(--text-primary);
     /* Sophisticated dark grey/black */
     border-radius: var(--section-radius);
     /* Large rounded corners as requested */
@@ -380,7 +432,7 @@
     font-size: 52px;
     line-height: 1.1;
     font-weight: 500;
-    color: #fff;
+    color: var(--white);
     margin: 0;
 }
 
@@ -408,7 +460,7 @@
 .ss-author-name {
     font-size: 20px;
     font-weight: 600;
-    color: #fff;
+    color: var(--white);
 }
 
 .ss-author-role {
@@ -509,13 +561,16 @@
 /* Visual Side - Overlapping Images */
 .ss-story-visual-side {
     position: relative;
-    padding-bottom: 60px;
+    padding-bottom: 100px;
+    /* extra space for parallax travel */
+    overflow: visible;
 }
 
 .ss-story-image-main {
     position: relative;
     width: 85%;
-    height: 540px;
+    height: 580px;
+    /* slightly taller for parallax buffer */
     border-radius: var(--card-radius);
     overflow: hidden;
     z-index: 2;
@@ -538,7 +593,8 @@
     bottom: -40px;
     right: 0;
     width: 50%;
-    height: 300px;
+    height: 320px;
+    /* slightly taller for parallax buffer */
     border-radius: var(--card-radius);
     overflow: hidden;
     z-index: 3;
@@ -557,7 +613,7 @@
     top: 40px;
     left: -30px;
     background: var(--accent-color);
-    color: #fff;
+    color: var(--white);
     padding: 25px 35px;
     border-radius: var(--img-radius);
     display: flex;
@@ -600,7 +656,7 @@
 .ss-story-heading {
     font-size: clamp(32px, 4vw, 48px);
     line-height: 1.15;
-    color: #1a1a1a;
+    color: var(--text-primary);
     font-weight: 600;
 }
 
@@ -613,7 +669,7 @@
 .ss-story-punch-text p {
     font-size: 17px;
     line-height: 1.7;
-    color: #555;
+    color: var(--text-secondary);
     margin: 0;
 }
 
@@ -622,7 +678,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 30px 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--bg-secondary);
     margin-top: 10px;
 }
 
@@ -637,7 +693,7 @@
 }
 
 .ss-story-stat-card:hover {
-    background: #fff;
+    background: var(--white);
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
@@ -645,14 +701,14 @@
 .stat-card-year {
     font-size: 24px;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--text-primary);
     font-family: var(--font-display);
 }
 
 .stat-card-desc {
     font-size: 13px;
     font-weight: 500;
-    color: #888;
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -664,7 +720,7 @@
     gap: 20px;
     font-size: 16px;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--text-primary);
     text-decoration: none;
     margin-top: 10px;
     transition: all 0.3s;
@@ -674,8 +730,8 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #1a1a1a;
-    color: #fff;
+    background: var(--text-primary);
+    color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -775,7 +831,7 @@
     bottom: 0;
     left: 0;
     background: var(--accent-color);
-    color: #fff;
+    color: var(--white);
     font-size: 14px;
     font-weight: 700;
     padding: 12px 20px;
@@ -792,13 +848,13 @@
 .ss-expertise-title {
     font-size: 24px;
     font-weight: 500;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .ss-expertise-body {
     font-size: 16px;
     line-height: 1.6;
-    color: #555;
+    color: var(--text-secondary);
 }
 
 .ss-expertise-link {
@@ -807,7 +863,7 @@
     gap: 10px;
     font-size: 14px;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     transition: color 0.3s;
@@ -842,7 +898,7 @@
 /* --- FEATURED CAROUSEL (More to Explore) --- */
 .jll-featured-carousel {
     padding: 100px 0;
-    background-color: #F8F9FA;
+    background-color: var(--bg-secondary);
     /* Warm White */
 }
 
@@ -857,7 +913,7 @@
 .jll-section-title-plain {
     font-size: 32px;
     font-weight: 500;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .jll-carousel-nav {
@@ -872,7 +928,7 @@
     height: 48px;
     border: none;
     background: #eef4f8;
-    color: #555;
+    color: var(--text-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -884,8 +940,8 @@
 }
 
 .jll-nav-square:hover {
-    background: #1a1a1a;
-    color: #ffffff;
+    background: var(--text-primary);
+    color: var(--white);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -1045,20 +1101,20 @@
     font-weight: 600;
     line-height: 1.25;
     margin-bottom: 20px;
-    color: #1a1a1a;
+    color: var(--text-primary);
 }
 
 .jll-featured-content-box p {
     font-size: 17px;
     line-height: 1.6;
-    color: #555;
+    color: var(--text-secondary);
     margin-bottom: auto;
     /* Push arrow to bottom */
 }
 
 .jll-arrow-link-plain {
     margin-top: 40px;
-    color: #1a1a1a;
+    color: var(--text-primary);
     transition: transform 0.2s;
     display: inline-block;
 }
@@ -1068,12 +1124,42 @@
     color: var(--accent-color);
 }
 
+/* --- Carousel Dot Indicators --- */
+.jll-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 32px;
+}
+
+.jll-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: var(--bg-secondary);
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.jll-dot.active {
+    background: var(--accent-color);
+    width: 28px;
+    border-radius: 4px;
+}
+
+.jll-dot:hover:not(.active) {
+    background: #aaa;
+    transform: scale(1.2);
+}
+
 /* --- CTA STRIP --- */
 .jll-cta-strip {
     position: relative;
     padding: 120px 0;
     color: white;
-    background-color: #1a1a1a;
+    background-color: var(--text-primary);
     overflow: hidden;
 }
 
@@ -1117,7 +1203,7 @@
     font-size: clamp(32px, 5vw, 52px);
     font-weight: 700;
     margin-bottom: 50px;
-    color: #FFFFFF !important;
+    color: var(--white) !important;
     /* Force explicit white */
     font-family: var(--font-display);
     max-width: 800px;
@@ -1128,8 +1214,8 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    background: #FFFFFF;
-    color: #1a1a1a;
+    background: var(--white);
+    color: var(--text-primary);
     padding: 24px 50px;
     text-decoration: none;
     font-weight: 800;
@@ -1143,7 +1229,7 @@
 
 .jll-btn-white:hover {
     background: var(--accent-color);
-    color: #FFFFFF;
+    color: var(--white);
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
@@ -1152,7 +1238,7 @@
 .jll-btn-primary {
     display: inline-block;
     background: var(--accent-color);
-    color: #1a1a1a;
+    color: var(--text-primary);
     padding: 18px 40px;
     font-weight: 700;
     text-decoration: none;
@@ -1160,22 +1246,22 @@
 }
 
 .jll-btn-primary:hover {
-    background: #1a1a1a;
+    background: var(--text-primary);
     color: white;
 }
 
 .jll-btn-outline {
     display: inline-block;
-    border: 2px solid #1a1a1a;
+    border: 2px solid var(--text-primary);
     padding: 14px 34px;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--text-primary);
     text-decoration: none;
     transition: all 0.2s;
 }
 
 .jll-btn-outline:hover {
-    background: #1a1a1a;
+    background: var(--text-primary);
     color: white;
 }
 
@@ -1210,3 +1296,128 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* --- ON-SITE PROGRESS HORIZONTAL SCROLL --- */
+.ss-horiz-section {
+    position: relative;
+    height: 350vh;
+    /* Scrollable height to drive the animation */
+    background: var(--bg-color);
+}
+
+.ss-horiz-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ss-horiz-left {
+    width: 35%;
+    flex-shrink: 0;
+    padding: 0 4vw 0 6vw;
+    z-index: 5;
+    background: var(--bg-color);
+    /* ensures text is readable and overlays the scroll if needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ss-horiz-title {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 4vw, 70px);
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.ss-horiz-desc {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 400px;
+    font-weight: 400;
+}
+
+.ss-horiz-right-wrapper {
+    flex: 1;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.ss-horiz-right {
+    display: flex;
+    gap: 3vw;
+    padding-right: 10vw;
+    will-change: transform;
+}
+
+.ss-horiz-card {
+    width: 32vw;
+    height: 70vh;
+    flex-shrink: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.ss-horiz-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .ss-horiz-left {
+        width: 45%;
+    }
+
+    .ss-horiz-card {
+        width: 45vw;
+        height: 60vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .ss-horiz-sticky {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 10vh;
+    }
+
+    .ss-horiz-right-wrapper {
+        width: 100%;
+        height: auto;
+    }
+
+    .ss-horiz-left {
+        width: 100%;
+        padding: 0 24px;
+        height: auto;
+        margin-bottom: 40px;
+    }
+
+    .ss-horiz-title {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .ss-horiz-card {
+        width: 75vw;
+        height: 50vh;
+    }
+
+    .ss-horiz-right {
+        padding-left: 24px;
+    }
+}
+
+

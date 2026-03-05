@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ProjectStackGallery from "../components/ProjectStackGallery";
 import "./ProjectDetail.css";
 
 export default function BoundaryBayBeach() {
@@ -29,9 +30,14 @@ export default function BoundaryBayBeach() {
             charming neighbourhood of Boundary Bay, Delta.
           </p>
         </div>
-        <div className="project-image-block">
-          <img src="/boundarybay-assets/boundarybay-1.jpg" alt="Boundary Bay Task" />
-        </div>
+        <ProjectStackGallery 
+        images={[
+          "/boundarybay-assets/boundarybay-1.jpg",
+          "/boundarybay-assets/boundarybay-2.jpg",
+          "/boundarybay-assets/boundarybay-3.jpg",
+          "/boundarybay-assets/boundarybay-4.jpg"
+        ]}
+      />
       </section>
 
       {/* Section 2: Framing It Up */}
@@ -73,10 +79,18 @@ export default function BoundaryBayBeach() {
           is a structurally sound and aesthetically pleasing home that stands as a testament to our
           commitment to quality residential construction.
         </p>
-        <div className="project-image-block" style={{ marginTop: '40px' }}>
-          <img src="/boundarybay-assets/boundarybay-4.jpg" alt="Boundary Bay Completion" />
-        </div>
+        
+      <ProjectStackGallery 
+        images={[
+          "/boundarybay-assets/boundarybay-1.jpg",
+          "/boundarybay-assets/boundarybay-2.jpg",
+          "/boundarybay-assets/boundarybay-3.jpg",
+          "/boundarybay-assets/boundarybay-4.jpg"
+        ]}
+      />
+    
       </section>
+
 
     </div>
   );

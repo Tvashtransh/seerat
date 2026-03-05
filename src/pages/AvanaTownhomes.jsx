@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ProjectStackGallery from "../components/ProjectStackGallery";
 import "./ProjectDetail.css";
 
 export default function AvanaTownhomes() {
@@ -13,7 +14,7 @@ export default function AvanaTownhomes() {
       {/* Hero */}
       <section
         className="project-detail-hero animate-fade-up"
-        style={{ backgroundImage: 'url(/avana-assets/avana.jpg)' }}
+        style={{ backgroundImage: 'url("/avana after/avana-aerial.jpg")' }}
       >
         <h1>AVANA TOWNHOMES</h1>
         <span className="project-location-tag">Cottonwood Park, Burquitlam, Coquitlam, British Columbia</span>
@@ -30,9 +31,14 @@ export default function AvanaTownhomes() {
             testament to thoughtful design and community integration.
           </p>
         </div>
-        <div className="project-image-block">
-          <img src="/avana-assets/avana.jpg" alt="Avana Task" />
-        </div>
+        <ProjectStackGallery
+          images={[
+            "/avana after/avana-courtyard.jpg",
+            "/avana-assets/avana1.jpg",
+            "/avana-assets/avana2.jpg",
+            "/avana after/avana-kitchen.jpg"
+          ]}
+        />
       </section>
 
       {/* Section 2: Framing It Up */}
@@ -74,10 +80,18 @@ export default function AvanaTownhomes() {
           These 52 townhomes now stand ready to welcome families, offering easy access to the Skytrain,
           YMCA, and Cottonwood Park.
         </p>
-        <div className="project-image-block" style={{ marginTop: '40px' }}>
-          <img src="/avana-assets/avana3.jpg" alt="Avana Completion" />
-        </div>
+
+        <ProjectStackGallery
+          images={[
+            "/avana after/avana.jpg",
+            "/avana after/avana-living.jpg",
+            "/avana after/avana-aerial.jpg",
+            "/avana after/avana-courtyard.jpg"
+          ]}
+        />
+
       </section>
+
 
     </div>
   );

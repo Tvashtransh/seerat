@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import HomeCTA from "../components/HomeCTA";
 import "./Gallery.css";
 
 const galleryImages = [
@@ -88,19 +89,7 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="jll-gallery-cta">
-        <div className="jll-container">
-          <div className="jll-cta-content">
-            <h2>Building the Future of Wood Framing</h2>
-            <p>Work with a partner that values precision as much as you do.</p>
-            <div className="jll-cta-buttons">
-              <a href="/contact" className="jll-btn-primary">Request a Quote</a>
-              <a href="/services" className="jll-btn-outline">Our Services</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeCTA />
 
     </div>
   );

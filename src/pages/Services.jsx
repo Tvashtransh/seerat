@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import HomeCTA from "../components/HomeCTA";
 import "./Services.css";
 
 // Service Data for cleaner rendering
@@ -136,6 +137,8 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      <HomeCTA />
 
     </div>
   );

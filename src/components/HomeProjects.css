@@ -16,7 +16,7 @@
 .projects-header {
   max-width: 720px;
   margin-bottom: 70px;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .section-tag {
@@ -74,7 +74,7 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: 28px;
-  color: #ffffff;
+  color: var(--white);
   transition: background 0.4s ease;
 }
 
@@ -115,3 +115,5 @@
     font-size: 34px;
   }
 }
+
+

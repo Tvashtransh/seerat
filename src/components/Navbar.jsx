@@ -9,16 +9,19 @@ function Navbar() {
   const lastScrollY = useRef(0);
   const location = useLocation();
 
+  // Only the homepage has a dark image hero — all other pages have a light background
+  const isHomePage = location.pathname === "/";
+
   useEffect(() => {
+    // Reset scroll state on route change
+    setScrolled(window.scrollY > 20);
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Determine direction and visibility
       if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-        // Scrolling DOWN and past threshold -> Hide
         setVisible(false);
       } else {
-        // Scrolling UP -> Show
         setVisible(true);
       }
 
@@ -28,15 +31,18 @@ function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   // Close menu on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
 
+  // On non-home pages, always show the dark/scrolled state
+  const isScrolledOrSubpage = scrolled || !isHomePage;
+
   return (
-    <header className={`ss-navbar ${scrolled ? 'scrolled' : ''} ${!visible ? 'ss-navbar-hidden' : ''}`}>
+    <header className={`ss-navbar ${isScrolledOrSubpage ? 'scrolled' : ''} ${!visible ? 'ss-navbar-hidden' : ''}`}>
       <div className="ss-nav-container">
         <div className="ss-nav-wrapper">
 

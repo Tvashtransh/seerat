@@ -1,11 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
+import HomeCTA from "../components/HomeCTA";
 import "./Home.css";
 
 export default function Home() {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
   const [direction, setDirection] = useState("next"); // 'next' or 'prev'
+
+  // Casino counter refs
+  const statsRef = useRef(null);
+  const counterRefs = useRef([]);
+  const statsAnimated = useRef(false);
+
+  // Auto-slide ref
+  const autoSlideRef = useRef(null);
+
+  // Parallax refs – Our Story section
+  const storyRef = useRef(null);
+  const storyImgMain = useRef(null);
+  const storyImgOff = useRef(null);
+  const storyChip = useRef(null);
+  const storyContent = useRef(null);
+  const rafRef = useRef(null);
+
+  // Hero Parallax refs
+  const heroVideoRef = useRef(null);
+  const heroContentRef = useRef(null);
+  const heroFilterRef = useRef(null);
+  const heroBgTextRef = useRef(null);
+
+  // Horizontal scroll refs
+  const horizontalSectionRef = useRef(null);
+  const horizontalScrollContainerRef = useRef(null);
 
   useEffect(() => {
     console.log("Home Layout Update: Unified Grid Active");
@@ -98,14 +125,202 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [heroSlides.length]);
 
+  // ── Casino counter animation ──────────────────────────────────────
+  useEffect(() => {
+    const statsSection = statsRef.current;
+    if (!statsSection) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !statsAnimated.current) {
+          statsAnimated.current = true;
+          counterRefs.current.forEach((el) => {
+            if (!el) return;
+            const target = parseInt(el.dataset.target, 10);
+            const suffix = el.dataset.suffix || "";
+            const duration = 1800; // ms
+            const frameDuration = 1000 / 60;
+            const totalFrames = Math.round(duration / frameDuration);
+            let frame = 0;
+
+            const counter = setInterval(() => {
+              frame++;
+              const progress = frame / totalFrames;
+
+              if (frame < totalFrames - 10) {
+                // Casino scramble: rapid random numbers
+                const scrambled = Math.floor(Math.random() * (target + 1));
+                el.textContent = scrambled + suffix;
+              } else {
+                // Ease into final value
+                const eased = Math.round(
+                  target * (1 - Math.pow(1 - progress, 4))
+                );
+                el.textContent = Math.min(eased, target) + suffix;
+              }
+
+              if (frame >= totalFrames) {
+                el.textContent = target + "+";
+                clearInterval(counter);
+              }
+            }, frameDuration);
+          });
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(statsSection);
+    return () => observer.disconnect();
+  }, []);
+
+  // ── Our Story Parallax (scroll-driven, rAF) ─────────────────────
+  useEffect(() => {
+    const handleScroll = () => {
+      if (rafRef.current) return; // already queued
+      rafRef.current = requestAnimationFrame(() => {
+        rafRef.current = null;
+        const section = storyRef.current;
+        if (!section) return;
+
+        const rect = section.getBoundingClientRect();
+        const winH = window.innerHeight;
+        // progress: 0 when section top hits bottom of viewport, 1 when it leaves top
+        const progress = 1 - rect.bottom / (winH + rect.height);
+        const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+        const p = clamp(progress, 0, 1);
+
+        // Main image → drifts UP  (-40px total travel)
+        if (storyImgMain.current)
+          storyImgMain.current.style.transform = `translateY(${-40 * p}px)`;
+
+        // Offset image → drifts DOWN  (+50px total travel, opposite direction)
+        if (storyImgOff.current)
+          storyImgOff.current.style.transform = `translateY(${50 * p}px)`;
+
+        // Experience chip → subtle horizontal drift
+        if (storyChip.current)
+          storyChip.current.style.transform = `translate(${-15 * p}px, ${-20 * p}px)`;
+
+        // Content side → gentle vertical float + fade in from right
+        if (storyContent.current) {
+          const visibleP = clamp((p - 0.05) / 0.5, 0, 1); // starts slightly after scroll begins
+          storyContent.current.style.transform = `translateY(${-25 * p}px)`;
+          storyContent.current.style.opacity = `${0.4 + 0.6 * visibleP}`;
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // run once on mount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
+
+  // ── Hero Shrink on Scroll ─────────────────────────────────────────
+  useEffect(() => {
+    const handleHeroScroll = () => {
+      if (!heroVideoRef.current) return;
+
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      // Calculate progress (0 to 1) across the first 100vh
+      const progress = Math.min(Math.max(scrollY / windowHeight, 0), 1);
+
+      // Shrink video wrapper into a portrait shape
+      const insetY = progress * 10;
+      const insetX = progress * 32.5;
+      const radius = progress * 16; // up to 16px border radius
+
+      heroVideoRef.current.style.clipPath = `inset(${insetY}vh ${insetX}vw round ${radius}px)`;
+
+      // Fade out foreground text
+      if (heroContentRef.current) {
+        // Fade out quickly in the first 30% of scroll
+        const textOpacity = Math.max(1 - (progress * 3), 0);
+        heroContentRef.current.style.opacity = textOpacity;
+      }
+
+      // Fade out filter
+      if (heroFilterRef.current) {
+        const filterOpacity = Math.max(1 - (progress * 4), 0);
+        heroFilterRef.current.style.opacity = filterOpacity;
+      }
+
+      // Reveal background text slowly (it's already behind, but we can add a slight parallax or fade)
+      if (heroBgTextRef.current) {
+        // Option to add subtle scale or just let it sit there
+        heroBgTextRef.current.style.transform = `scale(${1 + progress * 0.05})`;
+      }
+    };
+
+    window.addEventListener("scroll", handleHeroScroll, { passive: true });
+    handleHeroScroll(); // initial state
+
+    return () => {
+      window.removeEventListener("scroll", handleHeroScroll);
+    };
+  }, []);
+
+  // ── Auto-slide "More to explore" every 4s ─────────────────────────
+  const startAutoSlide = useCallback(() => {
+    clearInterval(autoSlideRef.current);
+    autoSlideRef.current = setInterval(() => {
+      setDirection("next");
+      setCurrentProjectIndex((prev) =>
+        prev === projects.length - 1 ? 0 : prev + 1
+      );
+    }, 4000);
+  }, [projects.length]);
+
+  useEffect(() => {
+    startAutoSlide();
+    return () => clearInterval(autoSlideRef.current);
+  }, [startAutoSlide]);
+
+  // ── Horizontal Scroll for On-Site Progress ────────────────────────
+  useEffect(() => {
+    const handleHorizScroll = () => {
+      if (!horizontalSectionRef.current || !horizontalScrollContainerRef.current) return;
+
+      const rect = horizontalSectionRef.current.getBoundingClientRect();
+      const windowH = window.innerHeight;
+
+      // Calculate scrollable distance inside this section
+      const scrollableDistance = rect.height - windowH;
+      if (scrollableDistance <= 0) return;
+
+      // Calculate progress (0 when top is at top of viewport, 1 when bottom is at bottom of viewport)
+      let scrolled = -rect.top;
+      let progress = scrolled / scrollableDistance;
+      progress = Math.max(0, Math.min(1, progress));
+
+      const scroller = horizontalScrollContainerRef.current;
+      const wrapper = scroller.parentElement;
+      const maxTranslateX = Math.max(0, scroller.scrollWidth - wrapper.clientWidth);
+
+      scroller.style.transform = `translateX(${-progress * maxTranslateX}px)`;
+    };
+
+    window.addEventListener("scroll", handleHorizScroll, { passive: true });
+    handleHorizScroll();
+
+    return () => window.removeEventListener("scroll", handleHorizScroll);
+  }, []);
+
   const nextProject = () => {
     setDirection("next");
     setCurrentProjectIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
+    startAutoSlide(); // reset timer on manual nav
   };
 
   const prevProject = () => {
     setDirection("prev");
     setCurrentProjectIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
+    startAutoSlide(); // reset timer on manual nav
   };
 
   const currentProject = projects[currentProjectIndex];
@@ -113,66 +328,79 @@ export default function Home() {
   return (
     <div className="jll-home-page">
 
-      <section className="ss-hero-premium">
-        {/* Background Video */}
-        <div className="ss-hero-video-wrapper">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="ss-hero-video"
-            poster="/hero-image.jpg"
-          >
-            <source src="/culmena-assets/DJI_0964.MP4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="ss-hero-overlay-refined" />
-        </div>
+      <section className="ss-hero-scroll-container">
+        <div className="ss-hero-premium ss-hero-sticky">
 
-        {/* Centered Content */}
-        <div className="ss-hero-content-centered">
-          <div className="ss-hero-text-minimal">
-            <span className="ss-hero-brand-eyebrow">SETSQUARE CONSTRUCTION</span>
-            <h1 className="ss-hero-main-title">
-              THE <br />
-              <span className="serif-font">SETSQUARE</span>
+          {/* Background Text (Revealed on scroll) */}
+          <div className="jll-container ss-hero-bg-text-container" ref={heroBgTextRef}>
+            <h1 className="ss-hero-bg-text">
+              {"SETSQUARE".split("").map((c, i) => <span key={`s1-${i}`}>{c}</span>)}
             </h1>
-            <p className="ss-hero-sub-minimal">
-              PRECISION FRAMING & MASTER CRAFTSMANSHIP
-            </p>
+            <h1 className="ss-hero-bg-text">
+              {"CONSTRUCTION".split("").map((c, i) => <span key={`s2-${i}`}>{c}</span>)}
+            </h1>
           </div>
-        </div>
 
-        {/* Bottom Search/Filter Bar (Apple/EMAAR Style) */}
-        <div className="ss-hero-bottom-filter">
-          <div className="ss-filter-pill">
-            <div className="ss-filter-item">
-              <span className="filter-label">PROJECT TYPE</span>
-              <div className="filter-select">
-                <span>All Projects</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M6 9l6 6 6-6" /></svg>
+          {/* Foreground Video Wrapper */}
+          <div className="ss-hero-video-wrapper" ref={heroVideoRef}>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="ss-hero-video"
+              poster="/hero-image.jpg"
+            >
+              <source src="/culmena-assets/DJI_0964.MP4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="ss-hero-overlay-refined" />
+
+            {/* Centered Content */}
+            <div className="ss-hero-content-centered" ref={heroContentRef}>
+              <div className="ss-hero-text-minimal">
+                <span className="ss-hero-brand-eyebrow">SETSQUARE CONSTRUCTION</span>
+                <h1 className="ss-hero-main-title">
+                  THE <br />
+                  <span className="serif-font">SETSQUARE</span>
+                </h1>
+                <p className="ss-hero-sub-minimal">
+                  PRECISION FRAMING & MASTER CRAFTSMANSHIP
+                </p>
               </div>
             </div>
-            <div className="ss-filter-divider" />
-            <div className="ss-filter-item">
-              <span className="filter-label">LOCATION</span>
-              <div className="filter-select">
-                <span>Metro Vancouver</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M6 9l6 6 6-6" /></svg>
+
+            {/* Bottom Search/Filter Bar */}
+            <div className="ss-hero-bottom-filter" ref={heroFilterRef}>
+              <div className="ss-filter-pill">
+                <div className="ss-filter-item">
+                  <span className="filter-label">PROJECT TYPE</span>
+                  <div className="filter-select">
+                    <span>All Projects</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M6 9l6 6 6-6" /></svg>
+                  </div>
+                </div>
+                <div className="ss-filter-divider" />
+                <div className="ss-filter-item">
+                  <span className="filter-label">LOCATION</span>
+                  <div className="filter-select">
+                    <span>Metro Vancouver</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M6 9l6 6 6-6" /></svg>
+                  </div>
+                </div>
+                <div className="ss-filter-divider" />
+                <div className="ss-filter-item">
+                  <span className="filter-label">SCALE</span>
+                  <div className="filter-select">
+                    <span>Multi-Family</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M6 9l6 6 6-6" /></svg>
+                  </div>
+                </div>
+                <button className="ss-filter-search-btn">
+                  SEARCH PROJECTS
+                </button>
               </div>
             </div>
-            <div className="ss-filter-divider" />
-            <div className="ss-filter-item">
-              <span className="filter-label">SCALE</span>
-              <div className="filter-select">
-                <span>Multi-Family</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M6 9l6 6 6-6" /></svg>
-              </div>
-            </div>
-            <button className="ss-filter-search-btn">
-              SEARCH PROJECTS
-            </button>
           </div>
         </div>
       </section>
@@ -187,21 +415,41 @@ export default function Home() {
                 delivering structural excellence across British Columbia.
               </p>
             </div>
-            <div className="jll-stats-grid">
+            <div className="jll-stats-grid" ref={statsRef}>
               <div className="jll-stat-item">
-                <span className="jll-stat-number">80+</span>
+                <span
+                  className="jll-stat-number"
+                  ref={(el) => (counterRefs.current[0] = el)}
+                  data-target="80"
+                  data-suffix="+"
+                >80+</span>
                 <span className="jll-stat-label">Projects Completed</span>
               </div>
               <div className="jll-stat-item">
-                <span className="jll-stat-number">20+</span>
+                <span
+                  className="jll-stat-number"
+                  ref={(el) => (counterRefs.current[1] = el)}
+                  data-target="20"
+                  data-suffix="+"
+                >20+</span>
                 <span className="jll-stat-label">Years of Expertise</span>
               </div>
               <div className="jll-stat-item">
-                <span className="jll-stat-number">500+</span>
+                <span
+                  className="jll-stat-number"
+                  ref={(el) => (counterRefs.current[2] = el)}
+                  data-target="500"
+                  data-suffix="+"
+                >500+</span>
                 <span className="jll-stat-label">Units Framed</span>
               </div>
               <div className="jll-stat-item">
-                <span className="jll-stat-number">10+</span>
+                <span
+                  className="jll-stat-number"
+                  ref={(el) => (counterRefs.current[3] = el)}
+                  data-target="10"
+                  data-suffix="+"
+                >10+</span>
                 <span className="jll-stat-label">Trusted Developers</span>
               </div>
             </div>
@@ -275,23 +523,27 @@ export default function Home() {
 
       <section className="ss-story-section">
         <div className="jll-container">
-          <div className="ss-story-flex-layout">
+          <div className="ss-story-flex-layout" ref={storyRef}>
             {/* Visual Aspect */}
             <div className="ss-story-visual-side">
-              <div className="ss-story-image-main">
+              <div className="ss-story-image-main" ref={storyImgMain} style={{ willChange: 'transform', transition: 'transform 0.1s linear' }}>
                 <img src="/frame-of-mind.jpg" alt="Setsquare Legacy" />
-                <div className="ss-story-experience-chip">
+                <div className="ss-story-experience-chip" ref={storyChip} style={{ willChange: 'transform', transition: 'transform 0.12s linear' }}>
                   <span className="chip-value">20+</span>
                   <span className="chip-label">Years of <br />Expertise</span>
                 </div>
               </div>
-              <div className="ss-story-image-offset">
+              <div className="ss-story-image-offset" ref={storyImgOff} style={{ willChange: 'transform', transition: 'transform 0.15s linear' }}>
                 <img src="/whyus-about.jpg" alt="On-Site Detail" />
               </div>
             </div>
 
             {/* Content Aspect */}
-            <div className="ss-story-content-side">
+            <div
+              className="ss-story-content-side"
+              ref={storyContent}
+              style={{ willChange: 'transform, opacity', transition: 'transform 0.1s linear, opacity 0.1s linear' }}
+            >
               <span className="ss-story-eyebrow">OUR STORY</span>
               <h2 className="ss-story-heading">Two decades of structural precision.</h2>
 
@@ -332,6 +584,48 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="ss-horiz-section" ref={horizontalSectionRef}>
+        <div className="ss-horiz-sticky">
+          {/* Left Fixed Content */}
+          <div className="ss-horiz-left">
+            <h2 className="ss-horiz-title">
+              On-Site <br />
+              Progress
+            </h2>
+            <p className="ss-horiz-desc">
+              Watch our developments take shape. From the foundations up, precision framing is the unseen backbone of every great project we build alongside our developer partners.
+            </p>
+          </div>
+
+          {/* Right Scrolling Container */}
+          <div className="ss-horiz-right-wrapper">
+            <div className="ss-horiz-right" ref={horizontalScrollContainerRef}>
+              {/* Using project images for progress frames */}
+              <div className="ss-horiz-card">
+                <img src="/1292 Rosenberg/dji_fly_20250306_160944_857_1741306346825_photo_optimized.jpg" alt="Site Progress 1" />
+              </div>
+              <div className="ss-horiz-card">
+                <img src="/granary-assets/granary-1.jpg" alt="Site Progress 2" />
+              </div>
+              <div className="ss-horiz-card">
+                <img src="/boundarybay-assets/boundarybay-1.jpg" alt="Site Progress 3" />
+              </div>
+              <div className="ss-horiz-card">
+                <img src="/project-type-4.png" alt="Site Progress 4" />
+              </div>
+              <div className="ss-horiz-card">
+                <img src="/culmena-assets/DJI_0953.JPG" alt="Site Progress 5" />
+              </div>
+              <div className="ss-horiz-card">
+                <img src="/project-type-3.png" alt="Site Progress 6" />
+              </div>
+              {/* Added a spacer to ensure the last card easily reaches the center or left before scroll ends if desired */}
+              <div style={{ width: '10vw', flexShrink: 0 }} />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="jll-featured-carousel">
         <div className="jll-container">
           <div className="jll-section-header flex-between">
@@ -357,15 +651,26 @@ export default function Home() {
               </Link>
             </div>
           </div>
+
+          {/* Dot indicators */}
+          <div className="jll-carousel-dots">
+            {projects.map((_, i) => (
+              <button
+                key={i}
+                className={`jll-dot${i === currentProjectIndex ? " active" : ""}`}
+                onClick={() => {
+                  setDirection(i > currentProjectIndex ? "next" : "prev");
+                  setCurrentProjectIndex(i);
+                  startAutoSlide();
+                }}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="jll-cta-strip">
-        <div className="jll-container content-center">
-          <h2>Looking for a dependable framing partner?</h2>
-          <Link to="/contact" className="jll-btn-white">Request a Consultation</Link>
-        </div>
-      </section>
+      <HomeCTA />
     </div>
   );
 }

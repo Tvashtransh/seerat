@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ProjectStackGallery from "../components/ProjectStackGallery";
 import "./ProjectDetail.css";
 
 export default function Culmena() {
@@ -29,9 +30,11 @@ export default function Culmena() {
                         Designed by Tangerine Developments, this impressive project will feature 107 modern townhome units.
                     </p>
                 </div>
-                <div className="project-image-block">
-                    <img src="/culmena-assets/DJI_0953.JPG" alt="Culmena Development" />
-                </div>
+                <ProjectStackGallery 
+        images={[
+          "/culmena-assets/DJI_0953.JPG"
+        ]}
+      />
             </section>
 
             {/* Section 2: Progress */}
@@ -48,6 +51,7 @@ export default function Culmena() {
                     <img src="/culmena-assets/DJI_0968.JPG" alt="Culmena Progress" />
                 </div>
             </section>
+
 
         </div>
     );

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import HomeCTA from "../components/HomeCTA";
 import "./ResidentialFraming.css"; // Shared JLL Theme
 
 export default function TimberFraming() {
@@ -72,13 +73,6 @@ export default function TimberFraming() {
                 </div>
               </div>
 
-              <div className="jll-sidebar-contact">
-                <h4>Build Something Unique</h4>
-                <p>Have a timber frame project in mind?</p>
-                <Link to="/contact" className="jll-btn-primary full-width">
-                  Consult an Expert
-                </Link>
-              </div>
             </aside>
 
           </div>
@@ -108,6 +102,8 @@ export default function TimberFraming() {
           </div>
         </div>
       </section>
+
+      <HomeCTA />
 
     </div>
   );

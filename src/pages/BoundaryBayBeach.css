@@ -15,7 +15,7 @@
 
 .project-hero p {
   margin-top: 10px;
-  color: #555;
+  color: var(--text-secondary);
 }
 
 .project-section {
@@ -113,3 +113,5 @@
     font-size: 30px;
   }
 }
+
+

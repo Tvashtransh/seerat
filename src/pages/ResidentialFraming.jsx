@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import HomeCTA from "../components/HomeCTA";
 import "./ResidentialFraming.css";
 
 export default function ResidentialFraming() {
@@ -72,13 +73,6 @@ export default function ResidentialFraming() {
                 </div>
               </div>
 
-              <div className="jll-sidebar-contact">
-                <h4>Start Your Project</h4>
-                <p>Ready to discuss your residential build?</p>
-                <Link to="/contact" className="jll-btn-primary full-width">
-                  Request a Consultation
-                </Link>
-              </div>
             </aside>
 
           </div>
@@ -108,6 +102,8 @@ export default function ResidentialFraming() {
           </div>
         </div>
       </section>
+
+      <HomeCTA />
 
     </div>
   );

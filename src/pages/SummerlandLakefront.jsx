@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ProjectStackGallery from "../components/ProjectStackGallery";
 import "./ProjectDetail.css";
 
 export default function SummerlandLakefront() {
@@ -29,9 +30,14 @@ export default function SummerlandLakefront() {
             wood framing a spectacular residential home which features a dock for lakeside enjoyment.
           </p>
         </div>
-        <div className="project-image-block">
-          <img src="/summerland-assets/summerland-1.jpg" alt="Summerland Task" />
-        </div>
+        <ProjectStackGallery 
+        images={[
+          "/summerland-assets/summerland-2.jpg",
+          "/summerland-assets/summerland-1.jpg",
+          "/summerland-assets/summerland-3.jpg",
+          "/summerland-assets/summerland-4.jpg"
+        ]}
+      />
       </section>
 
       {/* Section 2: Framing It Up */}
@@ -73,10 +79,17 @@ export default function SummerlandLakefront() {
           Square Foot Construction. This distinctive home, complete with a dock, stands as a
           beautiful addition to the lakeside, ready to be enjoyed for years to come.
         </p>
-        <div className="project-image-block" style={{ marginTop: '40px' }}>
-          <img src="/summerland-assets/summerland-4.jpg" alt="Summerland Completion" />
-        </div>
+        
+      <ProjectStackGallery 
+        images={[
+          "/summerland-assets/summerland-2.jpg",
+          "/summerland-assets/summerland-3.jpg",
+          "/summerland-assets/summerland-4.jpg"
+        ]}
+      />
+    
       </section>
+
 
     </div>
   );

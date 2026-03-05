@@ -15,7 +15,7 @@
 
 .project-hero p {
   margin-top: 10px;
-  color: #555;
+  color: var(--text-secondary);
 }
 
 .project-section {
@@ -105,3 +105,5 @@
 .project-complete img:hover {
   transform: scale(2.03);
 }
+
+

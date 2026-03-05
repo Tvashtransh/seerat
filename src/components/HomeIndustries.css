@@ -16,7 +16,7 @@
 }
 
 .industries-header h2 {
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 24px;
 }
 
@@ -62,7 +62,7 @@
 /* Content */
 .industry-content h3 {
   margin-bottom: 20px;
-  color: #1a1a1a;
+  color: var(--text-primary);
   position: relative;
 }
 
@@ -90,3 +90,5 @@
     height: 320px;
   }
 }
+
+
