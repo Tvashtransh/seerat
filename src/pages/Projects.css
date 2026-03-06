@@ -1,7 +1,7 @@
 /* Projects.css - JLL Inspired Theme */
 
 :root {
-  --jll-red: #cc0000;
+  --jll-red: var(--accent-color);
   /* Keeping JLL red reference, but using Teal */
   --jll-bronze: var(--accent-color);
   --jll-slate: var(--bg-secondary);
@@ -128,7 +128,7 @@
 }
 
 .ss-proj-tag-dark {
-  background: #0b1c2c;
+  background: var(--text-primary);
   color: var(--white);
   font-size: 11px;
   font-weight: 700;
@@ -140,8 +140,8 @@
 
 .ss-proj-tag-outline {
   background: transparent;
-  color: #0b1c2c;
-  border: 1px solid #d1d5db;
+  color: var(--text-primary);
+  border: 1px solid var(--text-secondary);
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -209,7 +209,7 @@
 }
 
 .ss-proj-btn {
-  background: #0b1c2c;
+  background: var(--text-primary);
   color: var(--white);
   font-size: 12px;
   font-weight: 700;
@@ -301,5 +301,7 @@
     font-size: 36px;
   }
 }
+
+
 
 

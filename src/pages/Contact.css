@@ -127,7 +127,7 @@
   border: 1px solid var(--bg-secondary);
   border-radius: 0;
   /* Sharp JLL corners */
-  background: #fcfcfc;
+  background: var(--bg-color);
   font-family: inherit;
   transition: all 0.2s;
 }
@@ -175,13 +175,13 @@
 }
 
 .jll-form-status.success {
-  background: #e8f5e9;
-  color: #2e7d32;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .jll-form-status.error {
-  background: #ffebee;
-  color: #c62828;
+  background: var(--bg-secondary);
+  color: var(--accent-color);
 }
 
 /* RESPONSIVE */
@@ -215,5 +215,7 @@
     margin: 0 auto;
   }
 }
+
+
 
 

@@ -1,5 +1,5 @@
 .granary-page {
-  background: #f7fafa;
+  background: var(--bg-color);
   color: var(--text-primary);
 }
 
@@ -81,7 +81,7 @@
 
 /* COMPLETION */
 .completion {
-  background: linear-gradient(180deg, #e9f7f8, var(--bg-color));
+  background: linear-gradient(180deg, var(--bg-secondary), var(--bg-color));
 }
 
 /* ANIMATION */
@@ -148,7 +148,7 @@
 }
 
 .project-complete {
-  background: #f7fdfd;
+  background: var(--bg-secondary);
   padding: 50px;
   border-radius: var(--img-radius);
   text-align: center;
@@ -163,5 +163,7 @@
     width: 100%;
   }
 }
+
+
 
 

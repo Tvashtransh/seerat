@@ -106,12 +106,12 @@
 .service-card h4 {
   font-size: 20px;
   margin-bottom: 8px;
-  color: #0a2540;
+  color: var(--text-primary);
 }
 
 .service-card p {
   font-size: 15px;
-  color: #475569;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
@@ -145,5 +145,7 @@
     font-size: 32px;
   }
 }
+
+
 
 

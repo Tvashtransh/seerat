@@ -927,7 +927,7 @@
     /* Slightly larger for better touch/click */
     height: 48px;
     border: none;
-    background: #eef4f8;
+    background: var(--bg-secondary);
     color: var(--text-secondary);
     display: flex;
     align-items: center;
@@ -1150,7 +1150,7 @@
 }
 
 .jll-dot:hover:not(.active) {
-    background: #aaa;
+    background: var(--text-secondary);
     transform: scale(1.2);
 }
 
@@ -1419,5 +1419,7 @@
         padding-left: 24px;
     }
 }
+
+
 
 

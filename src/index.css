@@ -73,7 +73,7 @@ h6 {
   font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin: 0;
 }
 
@@ -211,7 +211,7 @@ img {
   margin-bottom: 20px !important;
   text-transform: none;
   letter-spacing: normal;
-  color: #111 !important;
+  color: var(--text-primary) !important;
   /* Force dark text instead of white */
 }
 
@@ -220,7 +220,7 @@ img {
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
-  color: #555 !important;
+  color: var(--text-secondary) !important;
 }
 
 .page-hero .btn-primary {
