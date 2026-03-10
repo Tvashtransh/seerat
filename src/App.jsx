@@ -23,6 +23,11 @@ import BlogPost from "./pages/BlogPost";
 import Culmena from "./pages/Culmena";
 import NotFound from "./pages/NotFound";
 
+import PrefabServices from "./pages/PrefabServices";
+import CustomDesigns from "./pages/CustomDesigns";
+import ProfessionalInstallation from "./pages/ProfessionalInstallation";
+import QualityMaterials from "./pages/QualityMaterials";
+
 function App() {
   useEffect(() => {
     const lenis = new Lenis({
@@ -71,6 +76,12 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPost />} />
         <Route path="/culmena" element={<Culmena />} />
+        
+        <Route path="/on-site-prefab-services" element={<PrefabServices />} />
+        <Route path="/custom-designs" element={<CustomDesigns />} />
+        <Route path="/professional-installation" element={<ProfessionalInstallation />} />
+        <Route path="/quality-materials" element={<QualityMaterials />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

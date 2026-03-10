@@ -58,7 +58,15 @@ function Navbar() {
           <nav className={`ss-main-nav ${menuOpen ? 'active' : ''}`}>
             <div className="ss-nav-links">
               <NavLink to="/" className="ss-nav-link">HOME</NavLink>
-              <NavLink to="/services" className="ss-nav-link">SERVICES</NavLink>
+              <div className="ss-nav-dropdown-wrapper">
+                <NavLink to="/services" className="ss-nav-link">SERVICES</NavLink>
+                <div className="ss-nav-dropdown-menu">
+                  <NavLink to="/multi-development-framing" className="ss-nav-dropdown-link">Multi Development Framing</NavLink>
+                  <NavLink to="/residential-framing" className="ss-nav-dropdown-link">Residential Framing</NavLink>
+                  <NavLink to="/timber-framing" className="ss-nav-dropdown-link">Timber Framing</NavLink>
+                  <NavLink to="/on-site-prefab-services" className="ss-nav-dropdown-link">Prefabs</NavLink>
+                </div>
+              </div>
               <NavLink to="/projects" className="ss-nav-link">PROJECTS</NavLink>
               <NavLink to="/gallery" className="ss-nav-link">GALLERY</NavLink>
               <NavLink to="/why-us" className="ss-nav-link">WHY US</NavLink>

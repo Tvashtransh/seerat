@@ -376,137 +376,145 @@
 }
 
 /* ====================================================
-   ABOUT HOME CARD SECTION
+   ABOUT MESSAGE SECTION (CEO PHOTO STYLE)
    ==================================================== */
-.ss-about-home {
-    padding: var(--section-padding) 0;
-    background-color: var(--bg-secondary);
+.ss-about-message-section {
+    position: relative;
+    padding: 140px 0;
+    color: var(--white);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
 }
 
-.ss-about-card {
-    background-color: var(--text-primary);
-    /* Sophisticated dark grey/black */
-    border-radius: var(--section-radius);
-    /* Large rounded corners as requested */
-    padding: 60px;
-    color: var(--bg-color);
-    /* Light beige text on dark bg */
-    overflow: hidden;
+.ss-message-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8, 15, 30, 0.7) 0%, rgba(8, 15, 30, 0.85) 100%);
+    z-index: 1;
 }
 
-.ss-about-card-inner {
-    display: flex;
-    align-items: center;
-    gap: 80px;
-}
-
-.ss-about-image-col {
-    flex: 1;
-    max-width: 480px;
-}
-
-.ss-about-img {
-    width: 100%;
-    height: 520px;
-    object-fit: cover;
-    border-radius: var(--card-radius);
-    /* Matching the card's organic feel */
-}
-
-.ss-about-content-col {
-    flex: 1.2;
+.ss-about-message-section .jll-container {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-}
-
-.ss-about-eyebrow {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.ss-about-title {
-    font-size: 52px;
-    line-height: 1.1;
-    font-weight: 500;
-    color: var(--white);
-    margin: 0;
-}
-
-.ss-about-desc {
-    font-size: 18px;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 20px;
-}
-
-.ss-about-author {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 30px;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+}
+
+.ss-message-content {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.ss-message-title {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 500;
+    margin-bottom: 80px;
+    letter-spacing: 0.5px;
+}
+
+.ss-message-body {
+    position: relative;
+    font-size: 22px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 20px 80px;
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+.ss-quote-mark {
+    position: absolute;
+    font-size: 160px;
+    line-height: 0.8;
+    color: var(--white);
+    font-family: var(--font-main), sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    opacity: 0.9;
+}
+
+.ss-quote-mark.top-quote {
+    top: -40px;
+    left: 0;
+}
+
+.ss-quote-mark.bottom-quote {
+    bottom: -60px;
+    right: 0;
+}
+
+.ss-message-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.ss-founders-row {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
 }
 
 .ss-author-info {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    text-align: center;
 }
 
 .ss-author-name {
     font-size: 20px;
     font-weight: 600;
-    color: var(--white);
+    letter-spacing: 0.5px;
 }
 
 .ss-author-role {
     font-size: 14px;
     color: var(--accent-color);
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.ss-signature {
-    opacity: 0.8;
-}
-
-.signature-text {
+.signature-text-light {
     font-family: 'Dancing Script', cursive;
-    font-size: 32px;
-    color: var(--accent-color);
-}
-
-@media (max-width: 1024px) {
-    .ss-about-card-inner {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .ss-about-card {
-        padding: 40px;
-        border-radius: 60px;
-    }
-
-    .ss-about-image-col {
-        max-width: 100%;
-    }
-
-    .ss-about-img {
-        height: 400px;
-    }
-
-    .ss-about-title {
-        font-size: 36px;
-    }
+    font-size: 36px;
+    color: var(--white);
+    opacity: 0.9;
 }
 
 @media (max-width: 768px) {
-    .ss-about-card {
-        padding: 30px;
-        border-radius: 40px;
+    .ss-about-message-section {
+        padding: 80px 0;
+    }
+    
+    .ss-message-body {
+        padding: 40px 20px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .ss-quote-mark {
+        font-size: 80px;
+    }
+
+    .ss-quote-mark.top-quote {
+        top: -10px;
+        left: 10px;
+    }
+
+    .ss-quote-mark.bottom-quote {
+        bottom: -30px;
+        right: 10px;
+    }
+
+    .ss-founders-row {
+        gap: 40px;
+        flex-direction: column;
     }
 }
 
@@ -813,17 +821,41 @@
     border-radius: var(--card-radius);
     overflow: hidden;
     aspect-ratio: 4 / 3;
+    cursor: pointer;
+}
+
+.ss-expertise-img-base,
+.ss-expertise-img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ss-expertise-img-base {
+    z-index: 1;
+}
+
+.ss-expertise-img-hover {
+    z-index: 2;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.ss-expertise-card:hover .ss-expertise-img-hover {
+    clip-path: inset(0 0 0 0);
 }
 
 .ss-expertise-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform var(--transition-smooth);
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .ss-expertise-card:hover .ss-expertise-image {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .ss-expertise-number {
@@ -1418,8 +1450,317 @@
     .ss-horiz-right {
         padding-left: 24px;
     }
+
 }
 
+/* ====================================================
+   TELHA CLARKE STYLE EXPERTISE REPLICA
+   ==================================================== */
+.tc-expertise-replica {
+    padding: 150px 0;
+    background-color: var(--white);
+    color: var(--text-primary);
+}
 
+.tc-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
 
+.tc-header {
+    margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+}
 
+.tc-heading {
+    font-size: clamp(60px, 8vw, 130px);
+    line-height: 0.95;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.01em;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-family: var(--font-display);
+}
+
+.tc-heading.tc-italic {
+    font-style: normal;
+    padding-left: 15%;
+    color: var(--text-primary);
+}
+
+.tc-text-reveal {
+    display: block;
+    transform: translateY(110%);
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+    will-change: transform;
+}
+
+.tc-in-view .tc-text-reveal {
+    transform: translateY(0);
+}
+
+.tc-projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+
+.tc-project-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tc-project-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+.tc-project-link:hover {
+    opacity: 0.95;
+}
+
+.tc-project-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.tc-project-image-wrap {
+    flex: 0 0 66.666%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 1.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.tc-in-view.tc-project-item .tc-project-image-wrap {
+    clip-path: inset(0 0 0 0);
+}
+
+.tc-project-image-inner {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.15);
+    transition: transform 1.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.tc-in-view.tc-project-item .tc-project-image-inner {
+    transform: scale(1);
+}
+
+.tc-project-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.tc-project-link:hover img {
+    transform: scale(1.05);
+}
+
+.tc-project-info {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding-top: 20px;
+    width: 66.666%; /* Match the image width so it aligns cleanly under it */
+}
+
+.tc-project-number {
+    font-size: 18px;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+.tc-project-title-wrap {
+    overflow: hidden;
+}
+
+.tc-project-title {
+    font-size: clamp(24px, 3vw, 42px);
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-family: var(--font-display);
+    color: var(--text-primary);
+}
+
+.tc-project-desc-wrap {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding-bottom: 0;
+}
+
+.tc-project-desc {
+    font-size: clamp(16px, 1.35vw, 22px);
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+    font-family: var(--font-main);
+    text-align: justify;
+}
+
+.tc-project-action {
+    overflow: hidden;
+}
+
+.tc-project-action .tc-text-reveal {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-primary);
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s;
+}
+
+.tc-action-arrow {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    font-size: 20px;
+}
+
+.tc-project-link:hover .tc-action-arrow {
+    transform: translateX(10px);
+}
+
+/* Stagger transition delays */
+.tc-project-item .tc-text-reveal {
+    transition-delay: 0.1s;
+}
+
+.tc-in-view.tc-project-item .tc-project-title-wrap .tc-text-reveal {
+    transition-delay: 0.3s;
+}
+
+.tc-in-view.tc-project-item .tc-project-desc-wrap .tc-text-reveal {
+    transition-delay: 0.4s;
+}
+
+.tc-in-view.tc-project-item .tc-project-number .tc-text-reveal {
+    transition-delay: 0.2s;
+}
+
+@media (max-width: 1024px) {
+    .tc-project-top-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .tc-project-image-wrap {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+    
+    .tc-project-desc-wrap {
+        padding-top: 30px;
+        padding-bottom: 0px;
+    }
+    
+    .tc-project-info {
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tc-expertise-replica {
+        padding: 80px 0;
+    }
+    
+    .tc-header {
+        margin-bottom: 60px;
+    }
+    
+    .tc-projects-list {
+        gap: 80px;
+    }
+    
+    .tc-project-image-wrap {
+        width: 100%;
+        aspect-ratio: 4/5;
+    }
+}
+
+/* ====================================================
+   OVERRIDE FOR ABOUT MESSAGE TEXT CONTRAST 
+   ==================================================== */
+.ss-message-overlay {
+    background: linear-gradient(180deg, rgba(8, 8, 8, 0.70) 0%, rgba(8, 8, 8, 0.95) 100%) !important;
+}
+.ss-message-title, .ss-author-name, .signature-text-light {
+    color: #ffffff !important;
+}
+.ss-message-body p {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+.ss-author-role {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+.ss-quote-mark {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* ====================================================
+   THE SETSQUARE STANDARD (DISSOCIATED DESIGN)
+   ==================================================== */
+.ss-standard-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+/* Alternating rows logic */
+.tc-project-item:nth-child(even) .ss-standard-layout {
+    flex-direction: row-reverse;
+}
+
+.ss-standard-text-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ss-standard-desc {
+    padding-bottom: 0 !important; /* override tc-project stuff */
+    max-width: none !important;
+}
+
+.ss-standard-image-side {
+    flex: 0 0 45%;
+}
+
+.ss-standard-image-wrap {
+    width: 100% !important;
+    aspect-ratio: 4/5 !important;
+    flex: none !important;
+}
+
+@media (max-width: 1024px) {
+    .ss-standard-layout {
+        flex-direction: column !important;
+    }
+    
+    .ss-standard-image-side {
+        width: 100%;
+        margin-top: 30px;
+    }
+}

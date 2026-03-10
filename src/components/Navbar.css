@@ -122,6 +122,59 @@
   width: 100%;
 }
 
+/* DROPDOWN */
+.ss-nav-dropdown-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* Add invisible padding-bottom to keep hover active between link and dropdown */
+  padding-bottom: 25px;
+  margin-bottom: -25px;
+}
+
+.ss-nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: var(--bg-secondary);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  border-radius: 4px;
+  /* Prevent clicking when hidden */
+  pointer-events: none;
+}
+
+.ss-nav-dropdown-wrapper:hover .ss-nav-dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.ss-nav-dropdown-link {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-primary);
+  padding: 12px 24px;
+  transition: all 0.2s ease;
+  text-align: center;
+  font-family: var(--font-display);
+}
+
+.ss-nav-dropdown-link:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  color: var(--accent-color);
+}
+
 /* ACTIONS */
 .ss-nav-actions {
   display: flex;
@@ -235,6 +288,39 @@
 
   .ss-menu-toggle {
     display: block;
+  }
+
+  .ss-nav-dropdown-wrapper {
+    flex-direction: column;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    align-items: flex-start;
+  }
+
+  .ss-nav-dropdown-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none !important;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 10px 0 0 20px;
+    min-width: unset;
+    visibility: visible;
+    opacity: 1;
+    display: none;
+  }
+
+  .ss-nav-dropdown-wrapper:hover .ss-nav-dropdown-menu {
+    display: flex;
+  }
+
+  .ss-nav-dropdown-link {
+    text-align: left;
+    padding: 8px 0;
+    font-size: 18px;
+    color: var(--text-primary);
   }
 
   .ss-nav-cta {

@@ -33,10 +33,16 @@ export default function Home() {
   // Horizontal scroll refs
   const horizontalSectionRef = useRef(null);
   const horizontalScrollContainerRef = useRef(null);
+  const tcWorksRef = useRef(null);
 
   useEffect(() => {
     console.log("Home Layout Update: Unified Grid Active");
   }, []);
+
+  const heroVideos = [
+    "/culmena-assets/latest 1.mp4",
+    "/culmena-assets/latest 2.mp4"
+  ];
 
   const heroSlides = [
     {
@@ -98,7 +104,8 @@ export default function Home() {
       id: "01",
       title: "Multi-Development Framing",
       description: "Tailored framing solutions for large-scale community developments and multi-unit projects across the Lower Mainland.",
-      image: "/multi1.jpg",
+      image: "/project-type-14.png",
+      hoverImage: "/culmena-assets/DJI_0950.JPG",
       link: "/multi-development-framing"
     },
     {
@@ -106,6 +113,7 @@ export default function Home() {
       title: "Residential Wood Framing",
       description: "Dependable and precise framing for single-family homes and custom residential builds throughout British Columbia.",
       image: "/res1.jpg",
+      hoverImage: "/culmena-assets/DJI_0961.JPG",
       link: "/residential-framing"
     },
     {
@@ -113,17 +121,47 @@ export default function Home() {
       title: "Timber Framing",
       description: "Marrying traditional craftsmanship with modern engineering to create stunning exposed timber structures.",
       image: "/timber1.jpg",
+      hoverImage: "/granary-assets/granary-1.jpg",
       link: "/timber-framing"
+    },
+    {
+      id: "04",
+      title: "On-Site Prefab Services",
+      description: "We specialize in delivering high-quality, efficient prefab solutions tailored to your needs. Our experienced team ensures a smooth installation process.",
+      image: "/project-type-14.png",
+      hoverImage: "/culmena-assets/DJI_0953.JPG",
+      link: "/on-site-prefab-services"
+    }
+  ];
+
+  const standardsData = [
+    {
+      id: "01",
+      title: "Custom Designs",
+      description: "Our team of experts will work closely with you to create custom framing designs that reflect your style and preferences. From traditional to modern, we have the expertise to bring your ideas to reality, ensuring a unique and personalized touch to your home.",
+      image: "/res1.jpg",
+    },
+    {
+      id: "02",
+      title: "Professional Installation",
+      description: "At Setsquare Construction, we guarantee professional and reliable installation services for all your framing needs. Our skilled craftsmen pay attention to every detail, ensuring a flawless finish that enhances the beauty and structural integrity of your home.",
+      image: "/timber1.jpg",
+    },
+    {
+      id: "03",
+      title: "Quality Materials",
+      description: "Using only the finest quality materials, we ensure that your home framing is not only visually appealing but also durable and long-lasting. Our commitment to excellence means that your investment in our services will stand the test of time, providing you with peace of mind and satisfaction.",
+      image: "/culmena-assets/DJI_0953.JPG",
     }
   ];
 
   // Auto-rotate Hero
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentHeroIndex(prev => (prev + 1) % heroSlides.length);
-    }, 5000);
+      setCurrentHeroIndex(prev => (prev + 1) % 2); // Cycle between the 2 latest videos
+    }, 8000); // 8 seconds per video
     return () => clearInterval(timer);
-  }, [heroSlides.length]);
+  }, []);
 
   // ── Casino counter animation ──────────────────────────────────────
   useEffect(() => {
@@ -281,6 +319,30 @@ export default function Home() {
     return () => clearInterval(autoSlideRef.current);
   }, [startAutoSlide]);
 
+  // ── Telha Clarke Replica Animation ──────────────────────────────
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("tc-in-view");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (tcWorksRef.current) {
+      const header = tcWorksRef.current.querySelector('.tc-header');
+      if (header) observer.observe(header);
+      
+      const items = tcWorksRef.current.querySelectorAll('.tc-project-item');
+      items.forEach(item => observer.observe(item));
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   // ── Horizontal Scroll for On-Site Progress ────────────────────────
   useEffect(() => {
     const handleHorizScroll = () => {
@@ -344,14 +406,16 @@ export default function Home() {
           {/* Foreground Video Wrapper */}
           <div className="ss-hero-video-wrapper" ref={heroVideoRef}>
             <video
+              key={heroVideos[currentHeroIndex]}
               autoPlay
               muted
               loop
               playsInline
               className="ss-hero-video"
               poster="/hero-image.jpg"
+              onLoadedData={(e) => e.target.play()}
             >
-              <source src="/culmena-assets/DJI_0964.MP4" type="video/mp4" />
+              <source src={heroVideos[currentHeroIndex]} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <div className="ss-hero-overlay-refined" />
@@ -361,11 +425,22 @@ export default function Home() {
               <div className="ss-hero-text-minimal">
                 <span className="ss-hero-brand-eyebrow">SETSQUARE CONSTRUCTION</span>
                 <h1 className="ss-hero-main-title">
-                  THE <br />
-                  <span className="serif-font">SETSQUARE</span>
+                  {currentHeroIndex === 0 ? (
+                    <>
+                      THE <br />
+                      <span className="serif-font">SETSQUARE</span>
+                    </>
+                  ) : (
+                    <>
+                      PRECISION <br />
+                      <span className="serif-font">FRAMING</span>
+                    </>
+                  )}
                 </h1>
                 <p className="ss-hero-sub-minimal">
-                  PRECISION FRAMING & MASTER CRAFTSMANSHIP
+                  {currentHeroIndex === 0 
+                    ? "PRECISION FRAMING & MASTER CRAFTSMANSHIP"
+                    : "DELIVERING STRUCTURAL EXCELLENCE ACROSS BC"}
                 </p>
               </div>
             </div>
@@ -457,37 +532,35 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="ss-about-home">
+      <section className="ss-about-message-section" style={{ backgroundImage: `url('/culmena-assets/DJI_0953.JPG')` }}>
+        <div className="ss-message-overlay"></div>
         <div className="jll-container">
-          <div className="ss-about-card">
-            <div className="ss-about-card-inner">
-              <div className="ss-about-image-col">
-                <img src="/whyus-about.jpg" alt="Our Team" className="ss-about-img" />
-              </div>
-              <div className="ss-about-content-col">
-                <span className="ss-about-eyebrow">ABOUT US</span>
-                <h2 className="ss-about-title">A team of reliable and experienced Contractors</h2>
-                <p className="ss-about-desc">
-                  Setsquare Construction brings together decades of structural framing expertise and
-                  unwavering commitment to quality. Our teams are composed of highly skilled
-                  professionals who understand the complexities of large-scale wood frame
-                  developments in British Columbia.
-                </p>
-                <div className="ss-about-author">
-                  <div className="ss-founders-row" style={{ display: 'flex', gap: '40px' }}>
-                    <div className="ss-author-info">
-                      <span className="ss-author-name">Narwinder Singh</span>
-                      <span className="ss-author-role">Co-Founder</span>
-                    </div>
-                    <div className="ss-author-info">
-                      <span className="ss-author-name">Gurpreet Singh</span>
-                      <span className="ss-author-role">Co-Founder</span>
-                    </div>
-                  </div>
-                  <div className="ss-signature">
-                    <span className="signature-text">N. Singh & G. Singh</span>
-                  </div>
+          <div className="ss-message-content">
+            <h2 className="ss-message-title">A team of reliable and experienced Contractors</h2>
+            <div className="ss-message-body">
+              <span className="ss-quote-mark top-quote">"</span>
+              <p>
+                Setsquare Construction brings together decades of structural framing expertise and
+                unwavering commitment to quality. Our teams are composed of highly skilled
+                professionals who understand the complexities of large-scale wood frame
+                developments in British Columbia.
+              </p>
+              <span className="ss-quote-mark bottom-quote">"</span>
+            </div>
+            
+            <div className="ss-message-author">
+              <div className="ss-founders-row">
+                <div className="ss-author-info">
+                  <span className="ss-author-name">Narwinder Singh</span>
+                  <span className="ss-author-role">Co-Founder</span>
                 </div>
+                <div className="ss-author-info">
+                  <span className="ss-author-name">Gurpreet Singh</span>
+                  <span className="ss-author-role">Co-Founder</span>
+                </div>
+              </div>
+              <div className="ss-signature">
+                <span className="signature-text-light">N. Singh & G. Singh</span>
               </div>
             </div>
           </div>
@@ -505,7 +578,12 @@ export default function Home() {
             {expertiseData.map((item) => (
               <div key={item.id} className="ss-expertise-card">
                 <div className="ss-expertise-img-wrap">
-                  <img src={item.image} alt={item.title} className="ss-expertise-image" />
+                  <div className="ss-expertise-img-base">
+                    <img src={item.image} alt={item.title} className="ss-expertise-image" />
+                  </div>
+                  <div className="ss-expertise-img-hover">
+                    <img src={item.hoverImage} alt={`${item.title} Hover`} className="ss-expertise-image" />
+                  </div>
                   <div className="ss-expertise-number">{item.id}</div>
                 </div>
                 <div className="ss-expertise-content">
@@ -514,6 +592,51 @@ export default function Home() {
                   <Link to={item.link} className="ss-expertise-link">
                     Explore services <span>&rarr;</span>
                   </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── THE SETSQUARE STANDARD REPLICA ── */}
+      <section className="tc-expertise-replica" ref={tcWorksRef}>
+        <div className="jll-container">
+          <div className="tc-header">
+            <h2 className="tc-heading">
+              <span className="tc-text-reveal">The Setsquare</span>
+            </h2>
+            <h2 className="tc-heading tc-italic">
+              <span className="tc-text-reveal">Standard</span>
+            </h2>
+          </div>
+          
+          <div className="tc-projects-list">
+            {standardsData.map((item) => (
+              <div className="tc-project-item ss-standard-row" key={item.id}>
+                <div className="ss-standard-layout">
+                  <div className="ss-standard-text-side">
+                    <div className="tc-project-number">
+                      <span className="tc-text-reveal">{item.id}</span>
+                    </div>
+                    <div className="tc-project-title-wrap">
+                      <h3 className="tc-project-title">
+                        <span className="tc-text-reveal">{item.title}</span>
+                      </h3>
+                    </div>
+                    <div className="tc-project-desc-wrap ss-standard-desc">
+                      <p className="tc-project-desc">
+                        <span className="tc-text-reveal">{item.description}</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="ss-standard-image-side">
+                    <div className="tc-project-image-wrap ss-standard-image-wrap">
+                      <div className="tc-project-image-inner">
+                         <img src={item.image} alt={item.title} />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
