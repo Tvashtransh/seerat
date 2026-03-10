@@ -430,22 +430,11 @@ export default function Home() {
               <div className="ss-hero-text-minimal">
                 <span className="ss-hero-brand-eyebrow">SETSQUARE CONSTRUCTION</span>
                 <h1 className="ss-hero-main-title">
-                  {currentHeroIndex === 0 ? (
-                    <>
-                      THE <br />
-                      <span className="serif-font">SETSQUARE</span>
-                    </>
-                  ) : (
-                    <>
-                      PRECISION <br />
-                      <span className="serif-font">FRAMING</span>
-                    </>
-                  )}
+                  THE <br />
+                  <span className="serif-font">SETSQUARE</span>
                 </h1>
                 <p className="ss-hero-sub-minimal">
-                  {currentHeroIndex === 0 
-                    ? "PRECISION FRAMING & MASTER CRAFTSMANSHIP"
-                    : "DELIVERING STRUCTURAL EXCELLENCE ACROSS BC"}
+                  PRECISION FRAMING & MASTER CRAFTSMANSHIP
                 </p>
               </div>
             </div>
