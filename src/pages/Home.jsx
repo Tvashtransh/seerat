@@ -304,6 +304,8 @@ export default function Home() {
   }, []);
 
   // ── Auto-slide "More to explore" every 4s ─────────────────────────
+  // Auto-slide "More to explore" removed as requested
+  /* 
   const startAutoSlide = useCallback(() => {
     clearInterval(autoSlideRef.current);
     autoSlideRef.current = setInterval(() => {
@@ -318,6 +320,9 @@ export default function Home() {
     startAutoSlide();
     return () => clearInterval(autoSlideRef.current);
   }, [startAutoSlide]);
+  */
+
+  const startAutoSlide = () => {}; // No-op to prevent breakages if called elsewhere
 
   // ── Telha Clarke Replica Animation ──────────────────────────────
   useEffect(() => {
@@ -718,6 +723,10 @@ export default function Home() {
             <p className="ss-horiz-desc">
               Watch our developments take shape. From the foundations up, precision framing is the unseen backbone of every great project we build alongside our developer partners.
             </p>
+            <Link to="/gallery" className="ss-horiz-btn">
+              Explore More
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </Link>
           </div>
 
           {/* Right Scrolling Container */}
@@ -762,7 +771,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className={`jll-featured-card-split ${direction}`} key={currentProject.id}>
+          <div className="jll-featured-card-split">
             <div className="jll-featured-img">
               <img src={currentProject.image} alt={currentProject.title} />
             </div>

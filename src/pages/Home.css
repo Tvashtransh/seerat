@@ -1373,6 +1373,32 @@
     color: var(--text-secondary);
     max-width: 400px;
     font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.ss-horiz-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+}
+
+.ss-horiz-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.ss-horiz-btn:hover {
+    color: var(--accent-color);
+}
+
+.ss-horiz-btn:hover svg {
+    transform: translateX(8px);
 }
 
 .ss-horiz-right-wrapper {
