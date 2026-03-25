@@ -1,10 +1,10 @@
-ï»¿export const blogs = [
+export const blogs = [
     {
         id: 1,
         title: "Why Hiring a Licensed Framing Contractor Matters",
         category: "Construction Insights",
         subtitle: "The decision most homeowners regret making cheaply",
-        intro: "Cutting corners in the early stages of a building project can set everything off balance. A framing contractor plays a critical role long before drywall and paint bring a home to life. Behind those finished walls is a skeleton that needs precision, knowledge, and accountability to stand strong. Thatâ€™s where hiring a licensed framing contractor becomes a game-changerâ€”someone who doesnâ€™t just swing a hammer, but sets the foundation for everything that follows.",
+        intro: "Cutting corners in the early stages of a building project can set everything off balance. A framing contractor plays a critical role long before drywall and paint bring a home to life. Behind those finished walls is a skeleton that needs precision, knowledge, and accountability to stand strong. That’s where hiring a licensed framing contractor becomes a game-changer—someone who doesn’t just swing a hammer, but sets the foundation for everything that follows.",
         highlightBox: "Framing is invisible once the drywall goes up - which is precisely why it demands your full attention before it disappears.",
         highlightTitle: "What You Cannot See Matters Most",
         contentSections: [
@@ -12,61 +12,61 @@
                 id: "precision",
                 title: "The Frame is the Building's Memory",
                 sidebarTitle: "Structural Memory",
-                content: "Framing isnâ€™t just about nailing wood together. A licensed contractor understands how load paths work, how to balance weight distribution, and how to make a structure last. Without proper framing, walls can shift, doors wonâ€™t close properly, and floors may creak under pressure. This is where skilled professionals shineâ€”they know how to build it right the first time.\n\nA licensed framing contractor uses tools and techniques developed over years of training and jobsite experience. Whether itâ€™s aligning beams perfectly or reinforcing joists in high-stress areas, each move is backed by knowledge and standards. Their work isnâ€™t just solidâ€”itâ€™s built to stay that way."
+                content: "Framing isn’t just about nailing wood together. A licensed contractor understands how load paths work, how to balance weight distribution, and how to make a structure last. Without proper framing, walls can shift, doors won’t close properly, and floors may creak under pressure. This is where skilled professionals shine—they know how to build it right the first time.\n\nA licensed framing contractor uses tools and techniques developed over years of training and jobsite experience. Whether it’s aligning beams perfectly or reinforcing joists in high-stress areas, each move is backed by knowledge and standards. Their work isn’t just solid—it’s built to stay that way."
             },
             {
                 id: "compliance",
                 title: "Building Codes Exist Because Someone Got It Wrong",
                 sidebarTitle: "Why Codes Matter",
-                content: "Each region has building codes that must be followed, and they arenâ€™t optional. A licensed framing contractor knows these regulations inside and out. That means fewer inspection issues and no surprise halts during construction. Meeting those codes isnâ€™t just a checkboxâ€”itâ€™s what keeps homes safe for years.\n\nIgnoring these requirements or guessing through them leads to costly mistakes. A licensed contractor takes responsibility for following the code, submitting required documents, and making sure everything passes on the first try. It saves time, reduces stress, and protects everyone involved in the project."
+                content: "Each region has building codes that must be followed, and they aren’t optional. A licensed framing contractor knows these regulations inside and out. That means fewer inspection issues and no surprise halts during construction. Meeting those codes isn’t just a checkbox—it’s what keeps homes safe for years.\n\nIgnoring these requirements or guessing through them leads to costly mistakes. A licensed contractor takes responsibility for following the code, submitting required documents, and making sure everything passes on the first try. It saves time, reduces stress, and protects everyone involved in the project."
             },
             {
                 id: "liability",
                 title: "An Unlicensed Crew Leaves You Holding the Risk",
                 sidebarTitle: "Who Bears the Risk",
-                content: "This is the part that catches homeowners off guard. If an unlicensed worker injures themselves on your property â€” even if you hired them through a third party â€” that liability can land directly on you. We've seen families face legal headaches they never saw coming because they didn't ask whether their framing crew carried Workers' Compensation coverage.\n\nA licensed contractor carries Worksafe BC coverage for their team and general liability insurance for the work itself. It's not paperwork for the sake of paperwork. It's the difference between a claim being handled professionally and a bill that shows up at your door after the fact."
+                content: "This is the part that catches homeowners off guard. If an unlicensed worker injures themselves on your property — even if you hired them through a third party — that liability can land directly on you. We've seen families face legal headaches they never saw coming because they didn't ask whether their framing crew carried Workers' Compensation coverage.\n\nA licensed contractor carries Worksafe BC coverage for their team and general liability insurance for the work itself. It's not paperwork for the sake of paperwork. It's the difference between a claim being handled professionally and a bill that shows up at your door after the fact."
             },
             {
                 id: "value",
                 title: "When You Sell, the Frame Comes With It",
                 sidebarTitle: "Resale Reality",
-                content: "Buyers today are getting sharper. Inspectors are thorough. When a home goes on the market, a good inspector doesn't just look at the cosmetics â€” they look at what's behind the walls. If framing was done without permits, or the permits don't match the work, that becomes a negotiating point. Or a deal-breaker.\n\nConstruction done by a licensed framing contractor with proper permits creates a paper trail that follows your home for life. It's part of its value â€” a documented history that tells the next buyer: this was built right, by someone accountable, with someone checking the work."
+                content: "Buyers today are getting sharper. Inspectors are thorough. When a home goes on the market, a good inspector doesn't just look at the cosmetics — they look at what's behind the walls. If framing was done without permits, or the permits don't match the work, that becomes a negotiating point. Or a deal-breaker.\n\nConstruction done by a licensed framing contractor with proper permits creates a paper trail that follows your home for life. It's part of its value — a documented history that tells the next buyer: this was built right, by someone accountable, with someone checking the work."
             },
             {
                 id: "expertise",
                 title: "Framing is a Specialty - Not a Side Skill",
                 sidebarTitle: "It's a Real Trade",
-                content: "Framing has its own set of rules. Itâ€™s not the same as general carpentry or renovation work. Licensed framing contractors spend years learning the ins and outs of structural construction. From wood framing to engineered trusses, they understand how to work with different systems and designs.\n\nThis expertise translates into fewer delays and smarter solutions on site. They know how to spot structural issues before they grow and how to adjust to site conditions in real time. Their experience adds value by preventing costly redos and providing rock-solid results."
+                content: "Framing has its own set of rules. It’s not the same as general carpentry or renovation work. Licensed framing contractors spend years learning the ins and outs of structural construction. From wood framing to engineered trusses, they understand how to work with different systems and designs.\n\nThis expertise translates into fewer delays and smarter solutions on site. They know how to spot structural issues before they grow and how to adjust to site conditions in real time. Their experience adds value by preventing costly redos and providing rock-solid results."
             },
             {
                 id: "risk",
                 title: "Risk Reduction Through Proven Structural Methods",
                 sidebarTitle: "Risk Reduction",
-                content: "Cutting corners during framing can lead to long-term structural risks. A licensed contractor doesn't rely on guessworkâ€”they use methods that are proven to last. Whether it's using hurricane clips, blocking to prevent twisting, or securing shear walls, their techniques reduce future damage.\n\nThat extra layer of security matters. Storms, shifts in soil, or settling can stress a poorly framed structure. Professional framers use materials correctly and install reinforcements where needed. Their skill helps avoid problems like sagging beams or cracked drywall that come from improper support."
+                content: "Cutting corners during framing can lead to long-term structural risks. A licensed contractor doesn't rely on guesswork—they use methods that are proven to last. Whether it's using hurricane clips, blocking to prevent twisting, or securing shear walls, their techniques reduce future damage.\n\nThat extra layer of security matters. Storms, shifts in soil, or settling can stress a poorly framed structure. Professional framers use materials correctly and install reinforcements where needed. Their skill helps avoid problems like sagging beams or cracked drywall that come from improper support."
             },
             {
                 id: "estimation",
                 title: "Accurate Material Estimations Minimizing Budget Overruns",
                 sidebarTitle: "Material Estimation",
-                content: "Material waste eats away at budgets fast. A licensed framing contractor knows how to estimate materials precisely, based on project scope and structural plans. That accuracy keeps costs under control and limits the need for last-minute trips to the hardware store.\n\nThey also understand how to order efficiently, reduce overages, and plan for cuts and shrinkage. That level of detail not only helps with budgeting but also keeps timelines intact. Homeowners donâ€™t have to worry about delays from missing pieces or costly bulk orders that go unused."
+                content: "Material waste eats away at budgets fast. A licensed framing contractor knows how to estimate materials precisely, based on project scope and structural plans. That accuracy keeps costs under control and limits the need for last-minute trips to the hardware store.\n\nThey also understand how to order efficiently, reduce overages, and plan for cuts and shrinkage. That level of detail not only helps with budgeting but also keeps timelines intact. Homeowners don’t have to worry about delays from missing pieces or costly bulk orders that go unused."
             },
             {
                 id: "accountability",
                 title: "Professional Accountability Ensuring Timely Project Delivery",
                 sidebarTitle: "Accountability",
-                content: "Timelines in construction matter. A framing delay causes a domino effectâ€”plumbers, electricians, drywall teams all get pushed back. Licensed framing contractors run jobs on schedule because they treat it like a business. They communicate clearly, show up on time, and deliver what they promised.\n\nIf problems arise, they handle them professionally. That accountability helps homeowners stay on track, and it protects the integrity of the whole build. With a licensed pro managing the frame, the rest of the project runs more smoothly."
+                content: "Timelines in construction matter. A framing delay causes a domino effect—plumbers, electricians, drywall teams all get pushed back. Licensed framing contractors run jobs on schedule because they treat it like a business. They communicate clearly, show up on time, and deliver what they promised.\n\nIf problems arise, they handle them professionally. That accountability helps homeowners stay on track, and it protects the integrity of the whole build. With a licensed pro managing the frame, the rest of the project runs more smoothly."
             },
             {
                 id: "conclusion",
                 title: "The Best Time to Get It Right is Before the Walls Close",
                 sidebarTitle: "Get It Right First",
-                content: "Framing is the backbone of your building projectâ€”donâ€™t take shortcuts. A licensed professional offers the kind of skill, precision, and accountability that transforms a construction plan into a solid, lasting structure. At Setsquare Contractor, framing is done with intention and expertise. We bring years of hands-on experience to every beam, post, and joist we touch.\n\nWhether you're planning a new build or adding to an existing structure, our team ensures itâ€™s done safely, efficiently, and to code. We donâ€™t just meet expectationsâ€”we raise the bar with every project. Our licensed framing team takes pride in delivering clean, precise work that sets the foundation for everything that comes next.\n\nContact us today to learn how Setsquare Contractor can frame your project with confidence, skill, and the professional touch it deserves. Letâ€™s make sure your next build stands strong from the very first nail."
+                content: "Framing is the backbone of your building project—don’t take shortcuts. A licensed professional offers the kind of skill, precision, and accountability that transforms a construction plan into a solid, lasting structure. At Setsquare Contractor, framing is done with intention and expertise. We bring years of hands-on experience to every beam, post, and joist we touch.\n\nWhether you're planning a new build or adding to an existing structure, our team ensures it’s done safely, efficiently, and to code. We don’t just meet expectations—we raise the bar with every project. Our licensed framing team takes pride in delivering clean, precise work that sets the foundation for everything that comes next.\n\nContact us today to learn how Setsquare Contractor can frame your project with confidence, skill, and the professional touch it deserves. Let’s make sure your next build stands strong from the very first nail."
             }
         ],
         excerpt:
-            "We've seen it more times than we'd like to admit. A homeowner saves a few thousand dollars using an unlicensed crew â€” and six months later they're tearing out walls to fix what should have been right from day one.",
+            "We've seen it more times than we'd like to admit. A homeowner saves a few thousand dollars using an unlicensed crew — and six months later they're tearing out walls to fix what should have been right from day one.",
         date: "Apr 26, 2025",
-        image: "/project-type-12.png",
+        image: "/project-type-assets/project-type-12.png",
         tags: ["Framing", "Safety", "Construction"],
         readTime: 5.5
     },
@@ -113,7 +113,7 @@
         excerpt:
             "Prefab vs. stick build is one of those debates that sounds more complicated than it needs to be. Here's how we actually think about it when a client puts the question to us.",
         date: "Apr 18, 2025",
-        image: "/project-type-2.png",
+        image: "/project-type-assets/project-type-2.png",
         tags: ["Prefab", "Stick Build", "Efficiency"],
         readTime: 4.1
     },
@@ -122,63 +122,63 @@
         title: "What is Joinery?",
         category: "Craftsmanship",
         subtitle: "The craft hidden inside every wall that holds your home together",
-        intro: "Timber framing isn't just about putting up a structureâ€”it's about creating something that lasts for generations. Choosing the right contractor makes all the difference between a solid build and one that falls short over time. Thereâ€™s more to it than just price or availability. If you're planning a timber frame project, knowing what to look for will save you headaches, time, and money.",
-        highlightBox: "Joinery is the soul of timber framing. Itâ€™s what holds the structure together without relying heavily on metal fasteners.",
+        intro: "Timber framing isn't just about putting up a structure—it's about creating something that lasts for generations. Choosing the right contractor makes all the difference between a solid build and one that falls short over time. There’s more to it than just price or availability. If you're planning a timber frame project, knowing what to look for will save you headaches, time, and money.",
+        highlightBox: "Joinery is the soul of timber framing. It’s what holds the structure together without relying heavily on metal fasteners.",
         highlightTitle: "Built to Outlast Everything",
         contentSections: [
             {
                 id: "craftsmanship",
                 title: "What Joinery Actually Is - And Why It Matters",
                 sidebarTitle: "Shear Walls",
-                content: "Joinery is the soul of timber framing. Itâ€™s what holds the structure together without relying heavily on metal fasteners. A true craftsman understands how to cut and fit each joint so it locks naturally, using age-old techniques with modern precision. If a contractor can walk you through different types of jointsâ€”like mortise and tenon or dovetailâ€”thatâ€™s a good sign they know their craft inside and out.\n\nQuality joinery isnâ€™t just about looks. It directly affects how the structure handles weight, weather, and time. An experienced framing contractor will focus on how each joint functions under stress and how the wood moves over the years. Ask to see examples of their joinery work up close. A good builder takes pride in the small details that hold big things together."
+                content: "Joinery is the soul of timber framing. It’s what holds the structure together without relying heavily on metal fasteners. A true craftsman understands how to cut and fit each joint so it locks naturally, using age-old techniques with modern precision. If a contractor can walk you through different types of joints—like mortise and tenon or dovetail—that’s a good sign they know their craft inside and out.\n\nQuality joinery isn’t just about looks. It directly affects how the structure handles weight, weather, and time. An experienced framing contractor will focus on how each joint functions under stress and how the wood moves over the years. Ask to see examples of their joinery work up close. A good builder takes pride in the small details that hold big things together."
             },
             {
                 id: "experience",
                 title: "The Most Common Joints and What They Do",
                 sidebarTitle: "Common Joints",
-                content: "No two timber frames are the same. A contractor who only works from cookie-cutter plans might not be the right fit for your vision. You want someone whoâ€™s worked with unique layouts, different wood types, and custom design challenges. That kind of hands-on experience is what brings a truly one-of-a-kind build to life.\n\nLook for a team thatâ€™s seen the whole processâ€”from raw timber to finished frame. A solid framing company wonâ€™t just follow instructionsâ€”theyâ€™ll think critically, troubleshoot issues, and suggest better solutions when they see them. Youâ€™ll know theyâ€™ve been through enough builds when they ask the right questions early on, not after mistakes have already happened."
+                content: "No two timber frames are the same. A contractor who only works from cookie-cutter plans might not be the right fit for your vision. You want someone who’s worked with unique layouts, different wood types, and custom design challenges. That kind of hands-on experience is what brings a truly one-of-a-kind build to life.\n\nLook for a team that’s seen the whole process—from raw timber to finished frame. A solid framing company won’t just follow instructions—they’ll think critically, troubleshoot issues, and suggest better solutions when they see them. You’ll know they’ve been through enough builds when they ask the right questions early on, not after mistakes have already happened."
             },
             {
                 id: "transparency",
                 title: "How Joinery Differs from Modern Fastener-Based Framing",
                 sidebarTitle: "Joinery vs. Fasteners",
-                content: "Thereâ€™s nothing worse than vague pricing. If a contractor canâ€™t clearly explain where your money is going, thatâ€™s a red flag. A reliable timber framing professional will break down the cost of materials, labor, and logistics in a way that makes sense. You should never have to guess whether the numbers are accurate.\n\nMaterial sourcing is just as important. Ask where the timber comes from, how itâ€™s graded, and whether itâ€™s kiln-dried or green. A contractor who values transparency will walk you through these choices without pressure or upselling. This kind of honesty builds trustâ€”and trust builds better projects."
+                content: "There’s nothing worse than vague pricing. If a contractor can’t clearly explain where your money is going, that’s a red flag. A reliable timber framing professional will break down the cost of materials, labor, and logistics in a way that makes sense. You should never have to guess whether the numbers are accurate.\n\nMaterial sourcing is just as important. Ask where the timber comes from, how it’s graded, and whether it’s kiln-dried or green. A contractor who values transparency will walk you through these choices without pressure or upselling. This kind of honesty builds trust—and trust builds better projects."
             },
             {
                 id: "portfolio",
                 title: "Why It's Disappearing - And Why That's a Problem",
                 sidebarTitle: "A Disappearing Craft",
-                content: "You wouldnâ€™t hire a chef whoâ€™s never cooked a steak, so donâ€™t hire a builder who canâ€™t show their work. A strong portfolio reveals more than pretty photosâ€”it shows consistency, attention to detail, and a clear understanding of structure. You should be able to see a range of past projects that reflect different styles and build complexities.\n\nDonâ€™t just flip through pictures. Ask questions about the challenges on each job and how the contractor solved them. A seasoned framing contractor will be proud to explain the process behind every beam and brace. Their work should speak for itself, but their insight should back it up just as confidently."
+                content: "You wouldn’t hire a chef who’s never cooked a steak, so don’t hire a builder who can’t show their work. A strong portfolio reveals more than pretty photos—it shows consistency, attention to detail, and a clear understanding of structure. You should be able to see a range of past projects that reflect different styles and build complexities.\n\nDon’t just flip through pictures. Ask questions about the challenges on each job and how the contractor solved them. A seasoned framing contractor will be proud to explain the process behind every beam and brace. Their work should speak for itself, but their insight should back it up just as confidently."
             },
             {
                 id: "collaboration",
                 title: "Joinery in a Modern Context",
                 sidebarTitle: "Modern Context",
-                content: "Timber framing is often part of a bigger design dream. Whether you're working with an architect or sketching it yourself, the builder needs to respect the vision. A good contractor doesnâ€™t bulldoze through your ideasâ€”we listen, adjust, and collaborate. Your preferences should shape the build, not disappear under standard procedures.\n\nThat said, collaboration isnâ€™t about agreeing to everything. It's about dialogue. The right framing company will offer alternatives when needed and help guide design decisions with practical insight. We respect your goals while making sure the structure stays solid, efficient, and beautiful. This balance leads to better outcomesâ€”and less regret."
+                content: "Timber framing is often part of a bigger design dream. Whether you're working with an architect or sketching it yourself, the builder needs to respect the vision. A good contractor doesn’t bulldoze through your ideas—we listen, adjust, and collaborate. Your preferences should shape the build, not disappear under standard procedures.\n\nThat said, collaboration isn’t about agreeing to everything. It's about dialogue. The right framing company will offer alternatives when needed and help guide design decisions with practical insight. We respect your goals while making sure the structure stays solid, efficient, and beautiful. This balance leads to better outcomes—and less regret."
             },
             {
                 id: "standards",
                 title: "Reading a Building's Joinery - What to Look For",
                 sidebarTitle: "What to Look For",
-                content: "Every region has its own rules. If your contractor isnâ€™t up to speed on local codes, you could be facing delays, fines, or worseâ€”unsafe construction. Make sure your builder knows the specific standards for structural timber work in your area, from load requirements to fire resistance.\n\nAn informed timber framing expert will handle the permit process smoothly and ensure inspections pass without drama. We also consider factors like wind loads, snow loads, and seismic activity if it applies. You donâ€™t want someone learning on the job. The best builders walk onto your site already prepared."
+                content: "Every region has its own rules. If your contractor isn’t up to speed on local codes, you could be facing delays, fines, or worse—unsafe construction. Make sure your builder knows the specific standards for structural timber work in your area, from load requirements to fire resistance.\n\nAn informed timber framing expert will handle the permit process smoothly and ensure inspections pass without drama. We also consider factors like wind loads, snow loads, and seismic activity if it applies. You don’t want someone learning on the job. The best builders walk onto your site already prepared."
             },
             {
                 id: "reliability",
                 title: "How to Find a Contractor Who Actually Understands Joinery",
                 sidebarTitle: "Finding the Right Crew",
-                content: "Past clients are your secret weapon. Theyâ€™ve already seen how the contractor works under pressure, how they communicate, and whether they show up on time. Look for honest reviews, not just five-star ratings. Itâ€™s okay to hear a story about a hiccupâ€”what matters is how the contractor handled it.\n\nReliability doesnâ€™t stop after the final nail. A quality framing contractor will offer support even after the job is done. Whether itâ€™s answering questions about settling or making small adjustments, our commitment lasts beyond the build. Thatâ€™s what sets apart short-term builders from long-term professionals."
+                content: "Past clients are your secret weapon. They’ve already seen how the contractor works under pressure, how they communicate, and whether they show up on time. Look for honest reviews, not just five-star ratings. It’s okay to hear a story about a hiccup—what matters is how the contractor handled it.\n\nReliability doesn’t stop after the final nail. A quality framing contractor will offer support even after the job is done. Whether it’s answering questions about settling or making small adjustments, our commitment lasts beyond the build. That’s what sets apart short-term builders from long-term professionals."
             },
             {
                 id: "trust",
                 title: "Setsquare and the Standard We Hold Our Joinery To",
                 sidebarTitle: "Our Standard",
-                content: "When youâ€™re building something as meaningful as a timber frame home, barn, or structure, you need more than just a crew with toolsâ€”you need a team with vision, skill, and respect for your investment. Thatâ€™s where Setsquare Construction steps in. With a rich portfolio and a hands-on approach, weâ€™ve earned our name through hard work and results that last.\n\nSetsquare Construction doesnâ€™t cut corners. From the first handshake to the final beam, we put your goals front and center while keeping every joint tight and every detail sharp. We understand that building with timber is as much about tradition as it is about precision. If youâ€™re ready to bring your dream space to life, weâ€™re the team who can do it right.\n\nContact us today to start a conversation with Setsquare Construction. Whether youâ€™re in the early design stage or ready to break ground, our team is ready to guide you through the process with care and clarity. Let your timber frame build stand tallâ€”for generations to come"
+                content: "When you’re building something as meaningful as a timber frame home, barn, or structure, you need more than just a crew with tools—you need a team with vision, skill, and respect for your investment. That’s where Setsquare Construction steps in. With a rich portfolio and a hands-on approach, we’ve earned our name through hard work and results that last.\n\nSetsquare Construction doesn’t cut corners. From the first handshake to the final beam, we put your goals front and center while keeping every joint tight and every detail sharp. We understand that building with timber is as much about tradition as it is about precision. If you’re ready to bring your dream space to life, we’re the team who can do it right.\n\nContact us today to start a conversation with Setsquare Construction. Whether you’re in the early design stage or ready to break ground, our team is ready to guide you through the process with care and clarity. Let your timber frame build stand tall—for generations to come"
             }
         ],
         excerpt:
             "Most people have walked through a timber frame building without understanding why it feels different. The answer lives in the joints - the craft of joinery that holds the whole thing together.",
         date: "Apr 7, 2025",
-        image: "/project-type-3.png",
+        image: "/project-type-assets/project-type-3.png",
         tags: ["Joinery", "Timber", "Technique"],
         readTime: 2.8
     },
@@ -187,7 +187,7 @@
         title: "Building Vancouver From the Ground Up",
         category: "Local Focus",
         subtitle: "What the city's construction boom looks like from inside the frame",
-        intro: "Vancouver didnâ€™t become one of Canadaâ€™s most admired cities overnight. Every beam, nail, and joint played a role in shaping the skyline and character that people now recognize around the world. While high-rises and glass towers might dominate the postcard view, the real story begins at the frameâ€”the bones of every building that make it all possible. And behind those bones is a world of creativity, history, and craft that most never see.",
+        intro: "Vancouver didn’t become one of Canada’s most admired cities overnight. Every beam, nail, and joint played a role in shaping the skyline and character that people now recognize around the world. While high-rises and glass towers might dominate the postcard view, the real story begins at the frame—the bones of every building that make it all possible. And behind those bones is a world of creativity, history, and craft that most never see.",
         highlightBox: "Vancouver is one of the most intensely built cities in North America. The pace of new development here is relentless - and wood framing is doing the structural heavy lifting on most of it.",
         highlightTitle: "Built in Wood",
         contentSections: [
@@ -195,59 +195,59 @@
                 id: "skyline",
                 title: "Why Vancouver Builds in Wood When Other Cities Don't",
                 sidebarTitle: "Why Wood?",
-                content: "Timber framing has a long-standing history that dates back centuries, but itâ€™s playing a surprisingly modern role in shaping todayâ€™s Vancouver. Builders and architects alike are returning to this classic construction style to bring warmth and strength to contemporary design. With its visible wooden beams and interlocking joints, this technique blends structural integrity with artistic expression in a way that steel and concrete simply can't.\n\nAcross the city, new builds are using these time-honored techniques in bold waysâ€”from boutique hotels and mixed-use spaces to luxury homes in the hills. The result? A skyline that feels alive, grounded in craftsmanship yet forward-thinking in design. Timber framing isnâ€™t just for rustic cabins anymoreâ€”itâ€™s taking center stage in some of Vancouverâ€™s most innovative builds."
+                content: "Timber framing has a long-standing history that dates back centuries, but it’s playing a surprisingly modern role in shaping today’s Vancouver. Builders and architects alike are returning to this classic construction style to bring warmth and strength to contemporary design. With its visible wooden beams and interlocking joints, this technique blends structural integrity with artistic expression in a way that steel and concrete simply can't.\n\nAcross the city, new builds are using these time-honored techniques in bold ways—from boutique hotels and mixed-use spaces to luxury homes in the hills. The result? A skyline that feels alive, grounded in craftsmanship yet forward-thinking in design. Timber framing isn’t just for rustic cabins anymore—it’s taking center stage in some of Vancouver’s most innovative builds."
             },
             {
                 id: "precision",
                 title: "What a Frame Actually Has to Survive Here",
                 sidebarTitle: "Survive Vancouver",
-                content: "In a city that blends natural beauty with modern design, the smallest mistakes in construction can stand out. Thatâ€™s where a skilled framing contractor makes all the difference. Framing is more than assembling woodâ€”itâ€™s the structure that ensures every line is level, every angle true, and every load properly supported. A slight miscalculation can lead to issues that echo throughout the building process.\n\nPrecision work begins with deep knowledge, a trained eye, and a steady hand. Every measurement, cut, and connection must be flawless because everything elseâ€”drywall, plumbing, roofingâ€”depends on it. A top-notch framing contractor in Vancouver doesnâ€™t just show up with tools; we bring the experience and attention to detail that keeps projects on time and on point."
+                content: "In a city that blends natural beauty with modern design, the smallest mistakes in construction can stand out. That’s where a skilled framing contractor makes all the difference. Framing is more than assembling wood—it’s the structure that ensures every line is level, every angle true, and every load properly supported. A slight miscalculation can lead to issues that echo throughout the building process.\n\nPrecision work begins with deep knowledge, a trained eye, and a steady hand. Every measurement, cut, and connection must be flawless because everything else—drywall, plumbing, roofing—depends on it. A top-notch framing contractor in Vancouver doesn’t just show up with tools; we bring the experience and attention to detail that keeps projects on time and on point."
             },
             {
                 id: "blueprints",
                 title: "The Sequence Nobody Talks About",
                 sidebarTitle: "Build Sequence",
-                content: "A blueprint is just a vision on paper until the right framing company steps in to bring it to life. Weâ€™re the bridge between imagination and physical space, translating lines and symbols into solid wood and lasting structure. Every door opening, window frame, and stair landing begins with their handsâ€”and their ability to read a plan with expert precision.\n\nWhat separates a trusted framing company from the rest isnâ€™t just technical skill; itâ€™s our ability to communicate, collaborate, and adapt as the project unfolds. Whether working with architects, developers, or homeowners, the best companies in Vancouver know how to balance creative design with structural requirements, ensuring the final build is both beautiful and functional."
+                content: "A blueprint is just a vision on paper until the right framing company steps in to bring it to life. We’re the bridge between imagination and physical space, translating lines and symbols into solid wood and lasting structure. Every door opening, window frame, and stair landing begins with their hands—and their ability to read a plan with expert precision.\n\nWhat separates a trusted framing company from the rest isn’t just technical skill; it’s our ability to communicate, collaborate, and adapt as the project unfolds. Whether working with architects, developers, or homeowners, the best companies in Vancouver know how to balance creative design with structural requirements, ensuring the final build is both beautiful and functional."
             },
             {
                 id: "sustainability",
-                title: "Sustainable Timber Framing Changing Vancouverâ€™s Architectural Landscape",
+                title: "Sustainable Timber Framing Changing Vancouver’s Architectural Landscape",
                 sidebarTitle: "Mass Timber Shift",
-                content: "As sustainability becomes more than a buzzword, timber framing is finding its place as an eco-friendly alternative in urban construction. Wood is a renewable resource, and when sourced responsibly, it leaves a lighter environmental footprint than steel or concrete. In Vancouver, where green building is increasingly expected, builders are turning to timber framing as a way to meet both design and environmental goals.\n\nBut itâ€™s not just about materialsâ€”itâ€™s about smart practices. From reducing waste on-site to sourcing locally harvested lumber, todayâ€™s timber framing methods align with the cityâ€™s commitment to greener building. As more residents demand sustainability, this approach offers a beautiful solution that also protects the forests surrounding the city."
+                content: "As sustainability becomes more than a buzzword, timber framing is finding its place as an eco-friendly alternative in urban construction. Wood is a renewable resource, and when sourced responsibly, it leaves a lighter environmental footprint than steel or concrete. In Vancouver, where green building is increasingly expected, builders are turning to timber framing as a way to meet both design and environmental goals.\n\nBut it’s not just about materials—it’s about smart practices. From reducing waste on-site to sourcing locally harvested lumber, today’s timber framing methods align with the city’s commitment to greener building. As more residents demand sustainability, this approach offers a beautiful solution that also protects the forests surrounding the city."
             },
             {
                 id: "innovation",
                 title: "What the Density Push Means for Framing",
                 sidebarTitle: "Density & Framing",
-                content: "Beyond the polished finishes and designer furniture, the soul of a home lies in its frame. Timber frame homes in Vancouver are more than cozy retreatsâ€”theyâ€™re structural works of art that tell a story from the inside out. Builders carefully select each beam, often leaving them exposed as architectural features that add character and warmth to a space.\n\nBehind the scenes, these homes rely on precision engineering to balance aesthetics and function. Hidden joints, mortise-and-tenon connections, and carefully calculated loads ensure strength without sacrificing beauty. For homeowners who want something special, timber framing offers both durability and distinctionâ€”something ordinary construction methods canâ€™t quite replicate."
+                content: "Beyond the polished finishes and designer furniture, the soul of a home lies in its frame. Timber frame homes in Vancouver are more than cozy retreats—they’re structural works of art that tell a story from the inside out. Builders carefully select each beam, often leaving them exposed as architectural features that add character and warmth to a space.\n\nBehind the scenes, these homes rely on precision engineering to balance aesthetics and function. Hidden joints, mortise-and-tenon connections, and carefully calculated loads ensure strength without sacrificing beauty. For homeowners who want something special, timber framing offers both durability and distinction—something ordinary construction methods can’t quite replicate."
             },
             {
                 id: "heritage",
                 title: "Heritage Buildings: The Hardest Framing Work in the City",
                 sidebarTitle: "Heritage Work",
-                content: "Some of Vancouverâ€™s most cherished buildings stand today because of the care and expertise behind their restoration. Restoring heritage properties often means working with original materials and techniques, which is where timber framing shines. Its traditional construction style is uniquely suited for breathing life back into old buildings while preserving their historic value.\n\nFraming specialists take extra steps to match the old with the newâ€”sourcing similar lumber, mimicking joinery methods, and reinforcing structures without disrupting their original charm. In doing so, we protect the cityâ€™s architectural legacy while ensuring these spaces meet todayâ€™s safety and performance standards. Itâ€™s a delicate balance, and only the most knowledgeable hands can pull it off successfully."
+                content: "Some of Vancouver’s most cherished buildings stand today because of the care and expertise behind their restoration. Restoring heritage properties often means working with original materials and techniques, which is where timber framing shines. Its traditional construction style is uniquely suited for breathing life back into old buildings while preserving their historic value.\n\nFraming specialists take extra steps to match the old with the new—sourcing similar lumber, mimicking joinery methods, and reinforcing structures without disrupting their original charm. In doing so, we protect the city’s architectural legacy while ensuring these spaces meet today’s safety and performance standards. It’s a delicate balance, and only the most knowledgeable hands can pull it off successfully."
             },
             {
                 id: "communities",
-                title: "Framing Contractors Building Vancouverâ€™s Future Neighborhoods",
+                title: "Framing Contractors Building Vancouver’s Future Neighborhoods",
                 sidebarTitle: "The Crews",
-                content: "As the city grows, so does the need for smart, livable neighborhoodsâ€”and framing contractors are leading the charge from the ground up. Professionals lay the foundation, quite literally, for what future communities will look and feel like. Every new development, whether it's a cluster of townhomes or a towering mixed-use building, begins with the framing crew setting the tone.\n\nTodayâ€™s Vancouver framing contractors are not just buildersâ€”theyâ€™re part of a bigger vision. We work with architects and developers to ensure structural integrity supports urban planning goals like walkability, energy efficiency, and community integration. The decisions they make affect how homes stand, how spaces flow, and how neighborhoods come to life."
+                content: "As the city grows, so does the need for smart, livable neighborhoods—and framing contractors are leading the charge from the ground up. Professionals lay the foundation, quite literally, for what future communities will look and feel like. Every new development, whether it's a cluster of townhomes or a towering mixed-use building, begins with the framing crew setting the tone.\n\nToday’s Vancouver framing contractors are not just builders—they’re part of a bigger vision. We work with architects and developers to ensure structural integrity supports urban planning goals like walkability, energy efficiency, and community integration. The decisions they make affect how homes stand, how spaces flow, and how neighborhoods come to life."
             },
             {
                 id: "craftsmanship",
-                title: "Exceptional Wood Craftsmanship Redefining Vancouverâ€™s Urban Spaces",
+                title: "Exceptional Wood Craftsmanship Redefining Vancouver’s Urban Spaces",
                 sidebarTitle: "Shear Walls",
-                content: "In a world of prefab and fast builds, thereâ€™s something refreshing about exceptional wood craftsmanship. Itâ€™s becoming a quiet movement across Vancouverâ€”one where detail, durability, and artistry matter just as much as deadlines. From soaring lobby beams in commercial buildings to intricate facades on downtown condos, the beauty of skilled timber work is making a comeback.\n\nThis isnâ€™t just nostalgia. Itâ€™s a deliberate choice to value quality and permanence in a fast-changing city. Builders embrace the warmth and texture of wood in ways that soften the cityâ€™s sharp lines and bring a human touch to towering structures. Itâ€™s proof that even in a concrete jungle, natural materials still have the power to impressâ€”and endure."
+                content: "In a world of prefab and fast builds, there’s something refreshing about exceptional wood craftsmanship. It’s becoming a quiet movement across Vancouver—one where detail, durability, and artistry matter just as much as deadlines. From soaring lobby beams in commercial buildings to intricate facades on downtown condos, the beauty of skilled timber work is making a comeback.\n\nThis isn’t just nostalgia. It’s a deliberate choice to value quality and permanence in a fast-changing city. Builders embrace the warmth and texture of wood in ways that soften the city’s sharp lines and bring a human touch to towering structures. It’s proof that even in a concrete jungle, natural materials still have the power to impress—and endure."
             },
             {
                 id: "vision",
-                title: "Bring Your Vision to Life with Setsquare Constructionâ€”Vancouverâ€™s Go-To Experts for Framing Excellence and Wood Craftsmanship",
+                title: "Bring Your Vision to Life with Setsquare Construction—Vancouver’s Go-To Experts for Framing Excellence and Wood Craftsmanship",
                 sidebarTitle: "Our Role",
-                content: "If youâ€™re planning to build, renovate, or develop in Vancouver, it all starts with the frameâ€”and you deserve the best. Setsquare Construction brings unmatched experience, passion, and precision to every project. As a trusted framing contractor and expert in timber framing, our team has helped shape some of the most impressive spaces across the city. Whether youâ€™re working on a single custom home or a multi-phase urban development, we bring your blueprints to life with skill and pride. Looking for a framing company that knows Vancouver inside and out? Contact us today to learn how Setsquare Construction can help build your visionâ€”one beam at a time."
+                content: "If you’re planning to build, renovate, or develop in Vancouver, it all starts with the frame—and you deserve the best. Setsquare Construction brings unmatched experience, passion, and precision to every project. As a trusted framing contractor and expert in timber framing, our team has helped shape some of the most impressive spaces across the city. Whether you’re working on a single custom home or a multi-phase urban development, we bring your blueprints to life with skill and pride. Looking for a framing company that knows Vancouver inside and out? Contact us today to learn how Setsquare Construction can help build your vision—one beam at a time."
             }
         ],
         excerpt:
-            "Vancouver didnâ€™t become one of Canadaâ€™s most admired cities overnight. Every beam, nail, and joint played a role in shaping the skyline...",
+            "Vancouver didn’t become one of Canada’s most admired cities overnight. Every beam, nail, and joint played a role in shaping the skyline...",
         date: "Mar 25, 2025",
         image: "/project-type-4.png",
         tags: ["Vancouver", "Urban Development", "History"],
@@ -266,13 +266,13 @@
                 id: "traits",
                 title: "Start with Their Actual Work, Not Their Website",
                 sidebarTitle: "Their Real Work",
-                content: "A quality timber framing company prioritizes craftsmanship, using the best materials and techniques to ensure structural integrity. The best professionals take precision seriously, measuring and cutting every piece to fit seamlessly within the overall design. They also understand wood properties, knowing which types work best for strength and durability. Without this level of expertise, a homeâ€™s framework can become weak over time, leading to costly repairs.\n\nBeyond skill, professionalism sets apart a great framing company. Punctuality, organization, and attention to detail make a noticeable difference in any construction project. Top-tier professionals communicate clearly with homeowners, ensuring the process remains smooth and stress-free. They also prioritize job site safety, following strict guidelines to protect both workers and the property."
+                content: "A quality timber framing company prioritizes craftsmanship, using the best materials and techniques to ensure structural integrity. The best professionals take precision seriously, measuring and cutting every piece to fit seamlessly within the overall design. They also understand wood properties, knowing which types work best for strength and durability. Without this level of expertise, a home’s framework can become weak over time, leading to costly repairs.\n\nBeyond skill, professionalism sets apart a great framing company. Punctuality, organization, and attention to detail make a noticeable difference in any construction project. Top-tier professionals communicate clearly with homeowners, ensuring the process remains smooth and stress-free. They also prioritize job site safety, following strict guidelines to protect both workers and the property."
             },
             {
                 id: "selection",
                 title: "What References Can Actually Tell You",
                 sidebarTitle: "Real References",
-                content: "Choosing the right timber framing expert starts with research. Homeowners should explore online reviews, ask for referrals, and visit completed projects when possible. Looking beyond the surface and investigating a contractorâ€™s reputation ensures a project stays on track and meets quality expectations. A strong professional background speaks volumes about reliability and attention to detail.\n\nInterviewing potential contractors is equally important. Asking about previous work, preferred materials, and building techniques helps homeowners gauge expertise. A trustworthy contractor provides clear answers, demonstrating confidence in their methods. By comparing multiple professionals, homeowners can find a skilled expert who aligns with their vision and budget."
+                content: "Choosing the right timber framing expert starts with research. Homeowners should explore online reviews, ask for referrals, and visit completed projects when possible. Looking beyond the surface and investigating a contractor’s reputation ensures a project stays on track and meets quality expectations. A strong professional background speaks volumes about reliability and attention to detail.\n\nInterviewing potential contractors is equally important. Asking about previous work, preferred materials, and building techniques helps homeowners gauge expertise. A trustworthy contractor provides clear answers, demonstrating confidence in their methods. By comparing multiple professionals, homeowners can find a skilled expert who aligns with their vision and budget."
             },
             {
                 id: "indicators",
@@ -302,25 +302,25 @@
                 id: "portfolio",
                 title: "Reading a Quote - What the Numbers Should Include",
                 sidebarTitle: "Reading a Quote",
-                content: "A portfolio showcases a contractorâ€™s skill and aesthetic approach. Reviewing past projects helps homeowners determine if a contractorâ€™s style aligns with their vision. Whether itâ€™s traditional post-and-beam construction or modern framing techniques, previous work reflects a contractorâ€™s ability to execute designs with precision.\n\nBeyond design, quality should be a top consideration. Examining past projects for clean cuts, tight joints, and sturdy construction reveals a contractorâ€™s attention to detail. A strong portfolio demonstrates consistency in craftsmanship, giving homeowners confidence in the professionalâ€™s ability to deliver high-quality results."
+                content: "A portfolio showcases a contractor’s skill and aesthetic approach. Reviewing past projects helps homeowners determine if a contractor’s style aligns with their vision. Whether it’s traditional post-and-beam construction or modern framing techniques, previous work reflects a contractor’s ability to execute designs with precision.\n\nBeyond design, quality should be a top consideration. Examining past projects for clean cuts, tight joints, and sturdy construction reveals a contractor’s attention to detail. A strong portfolio demonstrates consistency in craftsmanship, giving homeowners confidence in the professional’s ability to deliver high-quality results."
             },
             {
                 id: "contracts",
                 title: "The Contract: What Needs to Be In Writing",
                 sidebarTitle: "The Contract",
-                content: "A well-prepared estimate outlines every aspect of a project, from labor costs to material pricing. A detailed breakdown helps homeowners understand what theyâ€™re paying for and prevents unexpected expenses. Vague estimates can lead to disputes, so itâ€™s important to work with contractors who provide transparency in pricing.\n\nContracts protect both homeowners and contractors by setting clear expectations. A solid agreement includes timelines, payment schedules, and warranties for workmanship. Reviewing these details before signing ensures that everyone is on the same page, reducing the risk of disagreements later. An informed homeowner makes better financial decisions when choosing a contractor."
+                content: "A well-prepared estimate outlines every aspect of a project, from labor costs to material pricing. A detailed breakdown helps homeowners understand what they’re paying for and prevents unexpected expenses. Vague estimates can lead to disputes, so it’s important to work with contractors who provide transparency in pricing.\n\nContracts protect both homeowners and contractors by setting clear expectations. A solid agreement includes timelines, payment schedules, and warranties for workmanship. Reviewing these details before signing ensures that everyone is on the same page, reducing the risk of disagreements later. An informed homeowner makes better financial decisions when choosing a contractor."
             },
             {
                 id: "choose-us",
                 title: "Why We're Worth a Conversation",
                 sidebarTitle: "Why Setsquare",
-                content: "When it comes to building a strong and lasting structure, experience and attention to detail make all the difference. At Set Square Construction, we take pride in delivering top-quality craftsmanship, ensuring that every frame we build is sturdy, precise, and built to last. Whether you're starting a new project or upgrading an existing one, our skilled team brings expertise, professionalism, and a commitment to excellence that sets us apart. As a trusted framing contractor, we specialize in timber framing solutions that combine durability with superior design. Our reputation as a reliable framing company is built on years of experience, transparent communication, and a dedication to customer satisfaction. Donâ€™t settle for anything less than the bestâ€”contact us today to discuss your project and see how we can bring your vision to life."
+                content: "When it comes to building a strong and lasting structure, experience and attention to detail make all the difference. At Set Square Construction, we take pride in delivering top-quality craftsmanship, ensuring that every frame we build is sturdy, precise, and built to last. Whether you're starting a new project or upgrading an existing one, our skilled team brings expertise, professionalism, and a commitment to excellence that sets us apart. As a trusted framing contractor, we specialize in timber framing solutions that combine durability with superior design. Our reputation as a reliable framing company is built on years of experience, transparent communication, and a dedication to customer satisfaction. Don’t settle for anything less than the best—contact us today to discuss your project and see how we can bring your vision to life."
             }
         ],
         excerpt:
             "A solid structure starts with expert framing, yet many homeowners overlook just how important this step is. Whether building from the...",
         date: "Mar 16, 2025",
-        image: "/project-type-5.png",
+        image: "/project-type-assets/project-type-5.png",
         tags: ["Hiring", "Tips", "Contractors"],
         readTime: 3.0
     },
@@ -379,7 +379,7 @@
         excerpt:
             "The case for timber in multi-family construction has gone from theoretical to proven. Buildings are standing, tenants are living in them, and the economics are working in timber's favour.",
         date: "Mar 7, 2025",
-        image: "/project-type-6.png",
+        image: "/project-type-assets/project-type-6.png",
         tags: ["Multi-Family", "Sustainability", "CLT"],
         readTime: 5.0
     },
@@ -432,7 +432,7 @@
         excerpt:
             "There's something that happens when you spend time inside a well-built timber frame home. A sense of solidity, of warmth, of a building that feels considered rather than just assembled. This is the story behind that feeling.",
         date: "Feb 25, 2025",
-        image: "/project-type-7.png",
+        image: "/project-type-assets/project-type-7.png",
         tags: ["Timber Frame", "Design", "Vancouver"],
         readTime: 3.8
     },
@@ -442,20 +442,20 @@
         category: "Engineering",
         subtitle: "What structural strength actually means once the drywall goes up",
         intro: "Structural strength in a building is not visible after the walls are closed. That is both the challenge and the responsibility of framing work - everything done right or wrong during the frame phase will determine how that building performs for decades, even though nobody will see the frame again. This is what we think about when we talk about building with strength.",
-        highlightBox: "A professional framing company doesnâ€™t rely on guessworkâ€”each cut, joint, and connection is precisely measured and assembled for maximum strength.",
+        highlightBox: "A professional framing company doesn’t rely on guesswork—each cut, joint, and connection is precisely measured and assembled for maximum strength.",
         highlightTitle: "Permanent Decisions",
         contentSections: [
             {
                 id: "precision",
                 title: "Layout: Where Structural Quality Begins",
                 sidebarTitle: "Layout First",
-                content: "A professional framing company doesnâ€™t rely on guessworkâ€”each cut, joint, and connection is precisely measured and assembled for maximum strength. Unlike DIY builds, which often depend on general guidelines, professional framing follows detailed blueprints that ensure each beam and support is in the right place. This accuracy prevents weak points that could compromise the structureâ€™s stability.\n\nAdvanced tools and years of expertise allow professional builders to achieve tighter joints, straighter walls, and perfectly aligned frames. This precision eliminates common DIY errors, such as uneven surfaces or misaligned load points, which can lead to costly fixes down the road. A framing company focuses on durability and safety, ensuring every structure is built to last."
+                content: "A professional framing company doesn’t rely on guesswork—each cut, joint, and connection is precisely measured and assembled for maximum strength. Unlike DIY builds, which often depend on general guidelines, professional framing follows detailed blueprints that ensure each beam and support is in the right place. This accuracy prevents weak points that could compromise the structure’s stability.\n\nAdvanced tools and years of expertise allow professional builders to achieve tighter joints, straighter walls, and perfectly aligned frames. This precision eliminates common DIY errors, such as uneven surfaces or misaligned load points, which can lead to costly fixes down the road. A framing company focuses on durability and safety, ensuring every structure is built to last."
             },
             {
                 id: "techniques",
                 title: "What Plumb, Level, and Square Actually Mean for Your Building",
                 sidebarTitle: "Plumb, Level, Square",
-                content: "Not all timber framing techniques are the sameâ€”some methods significantly improve a structureâ€™s ability to handle weight and environmental stress. Traditional mortise-and-tenon joinery, for example, interlocks beams securely, reducing the need for excessive metal fasteners. This technique strengthens the frame while allowing the wood to expand and contract naturally with temperature changes.\n\nModern framing techniques also incorporate reinforced connections and engineered bracing to minimize movement over time. Properly spaced and supported beams ensure that walls stay straight and floors remain level. When a framing company applies these time-tested methods, the result is a stronger, longer-lasting structure that can withstand decades of wear and tear."
+                content: "Not all timber framing techniques are the same—some methods significantly improve a structure’s ability to handle weight and environmental stress. Traditional mortise-and-tenon joinery, for example, interlocks beams securely, reducing the need for excessive metal fasteners. This technique strengthens the frame while allowing the wood to expand and contract naturally with temperature changes.\n\nModern framing techniques also incorporate reinforced connections and engineered bracing to minimize movement over time. Properly spaced and supported beams ensure that walls stay straight and floors remain level. When a framing company applies these time-tested methods, the result is a stronger, longer-lasting structure that can withstand decades of wear and tear."
             },
             {
                 id: "calculations",
@@ -467,7 +467,7 @@
                 id: "craftsmanship",
                 title: "Shear Walls and Lateral Force: What Most People Do Not Know",
                 sidebarTitle: "Shear Walls",
-                content: "One of the biggest challenges in timber framing is preventing natural defects that weaken wood over time. A skilled framing company knows how to select high-quality materials and use proper techniques to reduce warping, splitting, and shrinkage. This expertise keeps structures stable, even as wood expands and contracts with seasonal changes.\n\nMeticulous craftsmanship also includes proper moisture control during construction. Wood that isnâ€™t dried or treated correctly can absorb excess humidity, causing it to twist or crack. By applying sealing techniques and precision cuts, expert framers ensure that timber framing remains strong and visually appealing long after the build is complete."
+                content: "One of the biggest challenges in timber framing is preventing natural defects that weaken wood over time. A skilled framing company knows how to select high-quality materials and use proper techniques to reduce warping, splitting, and shrinkage. This expertise keeps structures stable, even as wood expands and contracts with seasonal changes.\n\nMeticulous craftsmanship also includes proper moisture control during construction. Wood that isn’t dried or treated correctly can absorb excess humidity, causing it to twist or crack. By applying sealing techniques and precision cuts, expert framers ensure that timber framing remains strong and visually appealing long after the build is complete."
             },
             {
                 id: "materials",
@@ -485,25 +485,25 @@
                 id: "fasteners",
                 title: "Moisture Control During Construction: Not Optional",
                 sidebarTitle: "Moisture Control",
-                content: "A strong frame isnâ€™t just about the woodâ€”it also depends on the fasteners holding everything together. A framing company uses high-quality screws, bolts, and connectors designed for structural applications. These materials prevent loosening, splitting, and shifting, ensuring long-term stability.\n\nUnlike standard nails or screws, construction-grade hardware resists rust, corrosion, and shearing under heavy loads. Stainless steel brackets and galvanized connectors provide extra reinforcement, particularly in high-stress areas. Choosing the right fasteners is just as important as selecting the right wood, ensuring that every joint and beam stays firmly in place."
+                content: "A strong frame isn’t just about the wood—it also depends on the fasteners holding everything together. A framing company uses high-quality screws, bolts, and connectors designed for structural applications. These materials prevent loosening, splitting, and shifting, ensuring long-term stability.\n\nUnlike standard nails or screws, construction-grade hardware resists rust, corrosion, and shearing under heavy loads. Stainless steel brackets and galvanized connectors provide extra reinforcement, particularly in high-stress areas. Choosing the right fasteners is just as important as selecting the right wood, ensuring that every joint and beam stays firmly in place."
             },
             {
                 id: "custom",
                 title: "Inspections: The Accountability Moment",
                 sidebarTitle: "Inspections",
-                content: "Not every project follows a standard blueprint. Custom designs require specialized framing solutions to maintain both strength and visual appeal. Whether itâ€™s an open-concept layout or a complex roof structure, a framing company ensures that custom projects are built to withstand stress without compromising aesthetics.\n\nBy using advanced engineering techniques and expert craftsmanship, professional framers create customized solutions that enhance architectural beauty while reinforcing durability. Timber framing techniques are adapted to suit unique layouts, allowing for innovative designs without weakening the structure. Custom framing allows for creative freedom while maintaining the highest construction standards."
+                content: "Not every project follows a standard blueprint. Custom designs require specialized framing solutions to maintain both strength and visual appeal. Whether it’s an open-concept layout or a complex roof structure, a framing company ensures that custom projects are built to withstand stress without compromising aesthetics.\n\nBy using advanced engineering techniques and expert craftsmanship, professional framers create customized solutions that enhance architectural beauty while reinforcing durability. Timber framing techniques are adapted to suit unique layouts, allowing for innovative designs without weakening the structure. Custom framing allows for creative freedom while maintaining the highest construction standards."
             },
             {
                 id: "contact",
                 title: "What We Mean When We Say We Build with Strength",
                 sidebarTitle: "Our Approach",
-                content: "When it comes to building structures that last, experience, precision, and craftsmanship matter. Setsquare Construction brings expert timber framing solutions that go beyond just assembling beams and jointsâ€”we create strong, durable frames that stand the test of time. Every project we take on is backed by advanced engineering, high-quality materials, and proven construction techniques that ensure unmatched stability and performance.\n\nIf you want a construction team that values integrity, durability, and expert craftsmanship, Setsquare Construction is the name to trust. We take pride in delivering superior timber framing solutions designed to withstand the elements and support your projectâ€™s long-term success. Donâ€™t settle for weak structuresâ€”build with strength with Setsquare Construction. Contact us today to discuss your project and experience the difference between working with true professionals."
+                content: "When it comes to building structures that last, experience, precision, and craftsmanship matter. Setsquare Construction brings expert timber framing solutions that go beyond just assembling beams and joints—we create strong, durable frames that stand the test of time. Every project we take on is backed by advanced engineering, high-quality materials, and proven construction techniques that ensure unmatched stability and performance.\n\nIf you want a construction team that values integrity, durability, and expert craftsmanship, Setsquare Construction is the name to trust. We take pride in delivering superior timber framing solutions designed to withstand the elements and support your project’s long-term success. Don’t settle for weak structures—build with strength with Setsquare Construction. Contact us today to discuss your project and experience the difference between working with true professionals."
             }
         ],
         excerpt:
             "Structural strength is decided before the insulation goes in and the drywall goes up. Everything done right or wrong during the frame phase determines how that building performs for decades.",
         date: "Feb 18, 2025",
-        image: "/project-type-8.png",
+        image: "/project-type-assets/project-type-8.png",
         tags: ["Engineering", "Strength", "Durability"],
         readTime: 2.5
     },
@@ -512,7 +512,7 @@
         title: "When to Hire a Wood Framing Company",
         category: "Advisory",
         subtitle: "The moments in a project when the wrong decision costs the most",
-        intro: "Construction framing is the backbone of any building. Without a solid structure, walls can shift, floors can weaken, and the entire foundation of a home or commercial space can become unstable. Knowing when to bring in a wood framing company ensures your project starts off strong and stands the test of time. Whether you're constructing something new or reinforcing whatâ€™s already there, professional framers bring precision, speed, and expertise to the job.",
+        intro: "Construction framing is the backbone of any building. Without a solid structure, walls can shift, floors can weaken, and the entire foundation of a home or commercial space can become unstable. Knowing when to bring in a wood framing company ensures your project starts off strong and stands the test of time. Whether you're constructing something new or reinforcing what’s already there, professional framers bring precision, speed, and expertise to the job.",
         highlightBox: "Framing mistakes are expensive not because they are immediately visible but because they are almost always invisible until the damage is done - and by then they have been sealed inside your walls.",
         highlightTitle: "When the Cost is Highest",
         contentSections: [
@@ -520,19 +520,19 @@
                 id: "new-home",
                 title: "Starting a New Build From Scratch",
                 sidebarTitle: "New Builds",
-                content: "A new home starts with a well-built frame. Itâ€™s what holds everything together, from walls to ceilings to floors. Professional framers ensure thestructure is straight, level, and durable, preventing costly issues down the line. Using quality materials and precise measurements, they lay the groundwork for a house that will stand strong for generations. Without skilled framing, doors may not close properly, walls could bow, and the foundation might shift over time.\n\nHiring a wood framing company ensures the job gets done right the first time. Professionals understand load-bearing walls, roof trusses, and floor joists, creating a framework that meets local building codes. We work efficiently, keeping projects on schedule and avoiding structural errors. Whether itâ€™s a small home or a custom build, expert framers make sure everything is sturdy and secure before the next phase of construction begins."
+                content: "A new home starts with a well-built frame. It’s what holds everything together, from walls to ceilings to floors. Professional framers ensure thestructure is straight, level, and durable, preventing costly issues down the line. Using quality materials and precise measurements, they lay the groundwork for a house that will stand strong for generations. Without skilled framing, doors may not close properly, walls could bow, and the foundation might shift over time.\n\nHiring a wood framing company ensures the job gets done right the first time. Professionals understand load-bearing walls, roof trusses, and floor joists, creating a framework that meets local building codes. We work efficiently, keeping projects on schedule and avoiding structural errors. Whether it’s a small home or a custom build, expert framers make sure everything is sturdy and secure before the next phase of construction begins."
             },
             {
                 id: "additions",
                 title: "Adding On to an Existing Structure",
                 sidebarTitle: "Additions",
-                content: "Adding onto a home is exciting, but it needs to be done correctly to blend seamlessly with the existing structure. A framing company ensures that new rooms align perfectly, with strong, stable walls that connect properly to the main house. Precision is key when matching rooflines, ceilings, and floor levels to avoid uneven transitions.\n\nProfessionals also consider load distribution, making sure the addition doesnâ€™t weaken the rest of the home. Whether it's an extra bedroom, expanded kitchen, or second-story addition, expert framers create a solid framework that supports the new space without compromising structural integrity. Our craftsmanship keeps everything aligned, ensuring the addition looks and feels like a natural part of the house."
+                content: "Adding onto a home is exciting, but it needs to be done correctly to blend seamlessly with the existing structure. A framing company ensures that new rooms align perfectly, with strong, stable walls that connect properly to the main house. Precision is key when matching rooflines, ceilings, and floor levels to avoid uneven transitions.\n\nProfessionals also consider load distribution, making sure the addition doesn’t weaken the rest of the home. Whether it's an extra bedroom, expanded kitchen, or second-story addition, expert framers create a solid framework that supports the new space without compromising structural integrity. Our craftsmanship keeps everything aligned, ensuring the addition looks and feels like a natural part of the house."
             },
             {
                 id: "repairs",
                 title: "When You Suspect Structural Damage",
                 sidebarTitle: "Structural Damage",
-                content: "Over time, framing can weaken due to moisture, termites, or general aging. If left unchecked, damaged wood can lead to sagging floors, cracked drywall, and even unsafe living conditions. Replacing old or compromised framing ensures a home remains strong and safe for years to come.\n\nA professional framing team knows how to remove and replace structural components without affecting the rest of the building. We reinforce weak spots, install fresh materials, and make sure everything meets modern safety standards. Whether itâ€™s a full-frame replacement or targeted repairs, expert framers restore stability and keep a structure sound."
+                content: "Over time, framing can weaken due to moisture, termites, or general aging. If left unchecked, damaged wood can lead to sagging floors, cracked drywall, and even unsafe living conditions. Replacing old or compromised framing ensures a home remains strong and safe for years to come.\n\nA professional framing team knows how to remove and replace structural components without affecting the rest of the building. We reinforce weak spots, install fresh materials, and make sure everything meets modern safety standards. Whether it’s a full-frame replacement or targeted repairs, expert framers restore stability and keep a structure sound."
             },
             {
                 id: "commercial",
@@ -544,7 +544,7 @@
                 id: "custom",
                 title: "When the Architectural Design Is Complex",
                 sidebarTitle: "Complex Design",
-                content: "Not every building follows a standard layout. Custom homes and specialty framing projects require framing that fits unique designs, whether itâ€™s vaulted ceilings, curved walls, or large open spaces. A skilled framing company brings creativity and technical expertise to these challenges, ensuring the structure supports the vision.\n\nPrecision framing makes architectural features possible without sacrificing strength. Expert framers work closely with architects and builders to bring custom designs to life while maintaining proper load distribution. Whether itâ€™s intricate angles or oversized windows, our craftsmanship ensures a strong, visually stunning result."
+                content: "Not every building follows a standard layout. Custom homes and specialty framing projects require framing that fits unique designs, whether it’s vaulted ceilings, curved walls, or large open spaces. A skilled framing company brings creativity and technical expertise to these challenges, ensuring the structure supports the vision.\n\nPrecision framing makes architectural features possible without sacrificing strength. Expert framers work closely with architects and builders to bring custom designs to life while maintaining proper load distribution. Whether it’s intricate angles or oversized windows, our craftsmanship ensures a strong, visually stunning result."
             },
             {
                 id: "multi-story",
@@ -568,13 +568,13 @@
                 id: "contact",
                 title: "What Setsquare Brings to Each of These Situations",
                 sidebarTitle: "Contact Us",
-                content: "When it comes to framing, every detail matters. A strong, well-built structure ensures stability, durability, and the perfect foundation for your home or commercial space. At Setsquare Construction, our skilled team delivers precision craftsmanship with every project, whether youâ€™re building from the ground up, expanding your space, or reinforcing an existing structure. We take pride in creating framing that stands the test of time, with expert planning, high-quality materials, and an efficient approach that keeps your project on track. From custom designs to large-scale builds, we bring the experience and skill needed to get the job done right. Contact us today to discuss your project, and letâ€™s build something strong together."
+                content: "When it comes to framing, every detail matters. A strong, well-built structure ensures stability, durability, and the perfect foundation for your home or commercial space. At Setsquare Construction, our skilled team delivers precision craftsmanship with every project, whether you’re building from the ground up, expanding your space, or reinforcing an existing structure. We take pride in creating framing that stands the test of time, with expert planning, high-quality materials, and an efficient approach that keeps your project on track. From custom designs to large-scale builds, we bring the experience and skill needed to get the job done right. Contact us today to discuss your project, and let’s build something strong together."
             }
         ],
         excerpt:
             "There are specific moments in a construction project where the cost of getting framing wrong is significantly higher than everywhere else. Here is a direct look at those moments.",
         date: "Feb 7, 2025",
-        image: "/project-type-9.png",
+        image: "/project-type-assets/project-type-9.png",
         tags: ["Advice", "Planning", "Safety"],
         readTime: 3.1
     },
@@ -639,7 +639,7 @@
         excerpt:
             "The question used to be whether wood could perform in commercial construction. The question now is whether developers and their consultants know enough to specify it well.",
         date: "Jan 27, 2025",
-        image: "/project-type-10.png",
+        image: "/project-type-assets/project-type-10.png",
         tags: ["Commercial", "Wood Framing", "Trends"],
         readTime: 4.5
     },
@@ -654,7 +654,7 @@
         title: "Building Right, From the Ground Up",
         category: "Construction",
         subtitle: "wood framing project surrey",
-        intro: "Strong framing is the backbone of any successful construction project. Whether you're building a cozy single-family home or a sprawling community development, the right framing ensures durability, stability, and adaptability. But framing is more than just laying down a structureâ€”it's about craftsmanship, innovation, and tailoring solutions to meet diverse needs. Let's explore some key aspects of framing that go beyond the basics.",
+        intro: "Strong framing is the backbone of any successful construction project. Whether you're building a cozy single-family home or a sprawling community development, the right framing ensures durability, stability, and adaptability. But framing is more than just laying down a structure—it's about craftsmanship, innovation, and tailoring solutions to meet diverse needs. Let's explore some key aspects of framing that go beyond the basics.",
         highlightBox: "Properly executed wood framing not only ensures structural integrity but also accommodates changes like additional rooms or modern upgrades.",
         highlightTitle: "Built to Last",
         contentSections: [
@@ -716,7 +716,7 @@
         excerpt:
             "Strong framing is the backbone of any successful construction project. Whether you're building a cozy single-family home or a sprawling...",
         date: "Jan 9, 2025",
-        image: "/project-type-11.png",
+        image: "/project-type-assets/project-type-11.png",
         tags: ["Construction", "Framing", "Development"],
         readTime: 2.9
     },
@@ -726,13 +726,13 @@
         category: "Best Practices",
         subtitle: "Starting your project on the right foot.",
         excerpt:
-            "Strong framing is the backbone of any successful construction project. Whether youâ€™re building a cozy single-family home or a sprawling...",
+            "Strong framing is the backbone of any successful construction project. Whether you’re building a cozy single-family home or a sprawling...",
         date: "Jan 9, 2025",
         title: "Choose an Experienced Multi Family Wood Framing Company",
         category: "Advisory",
         subtitle: "Top 5 reasons to partner with seasoned professionals.",
         intro: "The construction industry is witnessing a significant shift towards sustainable and efficient building practices, with wood framing emerging as a preferred choice for multi family projects. As developers and builders navigate the complexities of modern construction, the expertise of seasoned wood framing companies becomes increasingly valuable. This article explores the top five reasons why partnering with an experienced multi family wood framing company can be a game-changer for your next project.",
-        highlightBox: "By choosing a veteran wood framing company, you're not just hiring a contractor â€“ you're investing in a partner who can help ensure the long-term success and value of your multi family development.",
+        highlightBox: "By choosing a veteran wood framing company, you're not just hiring a contractor – you're investing in a partner who can help ensure the long-term success and value of your multi family development.",
         highlightTitle: "Partner for Success",
         contentSections: [
             {
@@ -769,13 +769,13 @@
                 id: "conclusion",
                 title: "What the Decision Actually Comes Down To",
                 sidebarTitle: "The Decision",
-                content: "Partnering with an experienced multi family wood framing company offers numerous advantages that can significantly impact the success of your project. From their unparalleled expertise in engineered wood products to their mastery of complex building codes, efficient project management, superior quality control, and cost-effective approach, seasoned framers bring invaluable skills and knowledge to the table.\n\nBy choosing a veteran wood framing company, you're not just hiring a contractor â€“ you're investing in a partner who can help ensure the long-term success and value of your multi family development. Work with us - contact us today."
+                content: "Partnering with an experienced multi family wood framing company offers numerous advantages that can significantly impact the success of your project. From their unparalleled expertise in engineered wood products to their mastery of complex building codes, efficient project management, superior quality control, and cost-effective approach, seasoned framers bring invaluable skills and knowledge to the table.\n\nBy choosing a veteran wood framing company, you're not just hiring a contractor – you're investing in a partner who can help ensure the long-term success and value of your multi family development. Work with us - contact us today."
             }
         ],
         excerpt:
             "The construction industry is witnessing a significant shift towards sustainable and efficient building practices, with wood framing...",
         date: "Dec 30, 2024",
-        image: "/project-type-12.png",
+        image: "/project-type-assets/project-type-12.png",
         tags: ["Multi-Family", "Selection", "Expertise"],
         readTime: 4.2
     },
@@ -849,8 +849,8 @@
         title: "Proper Construction Standards 101",
         category: "Standards",
         subtitle: "timber frame surrey project",
-        intro: "Building a structure that lasts begins with understanding and adhering to proper construction standards. These guidelines ensure safety, durability, and efficiency, making every projectâ€”from single-family homes to sprawling mixed-use developmentsâ€”a successful one. While many people think construction standards are all about rules and codes, they also involve creative problem-solving and innovative techniques that bring blueprints to life. Let's explore some aspects of proper construction standards that make a world of difference in the building process.",
-        highlightBox: "These guidelines ensure safety, durability, and efficiency, making every projectâ€”from single-family homes to sprawling mixed-use developmentsâ€”a successful one.",
+        intro: "Building a structure that lasts begins with understanding and adhering to proper construction standards. These guidelines ensure safety, durability, and efficiency, making every project—from single-family homes to sprawling mixed-use developments—a successful one. While many people think construction standards are all about rules and codes, they also involve creative problem-solving and innovative techniques that bring blueprints to life. Let's explore some aspects of proper construction standards that make a world of difference in the building process.",
+        highlightBox: "These guidelines ensure safety, durability, and efficiency, making every project—from single-family homes to sprawling mixed-use developments—a successful one.",
         highlightTitle: "Standards Matter",
         contentSections: [
             {
@@ -903,7 +903,7 @@
             },
             {
                 id: "contact",
-                title: "Build with Confidence and Expertise â€“ Choose Setsquare Construction for Proper Construction Standards",
+                title: "Build with Confidence and Expertise – Choose Setsquare Construction for Proper Construction Standards",
                 sidebarTitle: "Our Approach",
                 content: "When it comes to proper construction standards, Setsquare Construction sets the bar high. From wood framing that ensures strength and stability to precision timber framing for large-scale projects, our team brings expertise and attention to detail to every build. Whether you're planning a new build, tackling a multi-unit construction project, or refining construction framing for renovations or mixed-use developments, Setsquare Construction is here to turn your vision into reality.\n\nDon't settle for shortcuts or subpar craftsmanship. With Setsquare Construction, you'll experience unmatched quality, innovative techniques, and sustainable solutions tailored to your needs. Ready to bring your project to life? Contact us today and let's build something extraordinary together."
             }

@@ -54,8 +54,8 @@ export default function ResidentialFraming() {
               </section>
 
               <section className="jll-image-gallery-grid">
-                <img src="/summerland-1.jpg" onError={(e) => e.target.src = '/project-type-6.png'} alt="Luxury Residential Framing" />
-                <img src="/troutlake-1.jpg" onError={(e) => e.target.src = '/project-type-2.png'} alt="Custom Home Construction" />
+                <img src="/summerland-1.jpg" onError={(e) => e.target.src = '/project-type-assets/project-type-6.png'} alt="Luxury Residential Framing" />
+                <img src="/troutlake-1.jpg" onError={(e) => e.target.src = '/project-type-assets/project-type-2.png'} alt="Custom Home Construction" />
               </section>
             </div>
 

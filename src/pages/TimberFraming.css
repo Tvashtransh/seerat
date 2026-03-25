@@ -12,7 +12,7 @@
 }
 
 .timber-hero h1 {
-  font-size: 56px;
+  font-size: clamp(36px, 5vw, 60px);
   line-height: 1.05;
   margin-bottom: 24px;
 }
@@ -22,8 +22,8 @@
 }
 
 .timber-hero p {
-  font-size: 24px;
-  line-height: 1.45;
+  font-size: 17px;
+  line-height: 1.7;
   color: var(--text-secondary);
 }
 
@@ -36,20 +36,20 @@
 }
 
 .timber-intro p {
-  font-size: 21px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.7;
   color: var(--text-primary);
 }
 
 /* Why Choose Grid */
 .timber-why {
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-color);
   padding: 120px 0;
 }
 
 .timber-why h2 {
   text-align: center;
-  font-size: 40px;
+  font-size: clamp(26px, 2.5vw, 36px);
   margin-bottom: 80px;
 }
 
@@ -87,7 +87,7 @@
 .slider-monitor {
   background: black;
   padding: 10px;
-  border-radius: 24px;
+  border-radius: var(--img-radius);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
@@ -155,7 +155,7 @@
 }
 
 .timber-process h2 {
-  font-size: 40px;
+  font-size: clamp(26px, 2.5vw, 36px);
   text-align: center;
   margin-bottom: 80px;
 }
@@ -186,12 +186,12 @@
 
 /* Who We Serve */
 .timber-serve {
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-color);
   padding: 120px 0;
 }
 
 .timber-serve h2 {
-  font-size: 40px;
+  font-size: clamp(26px, 2.5vw, 36px);
   text-align: center;
   margin-bottom: 80px;
 }
@@ -209,7 +209,7 @@
   text-align: center;
   background: var(--white);
   padding: 40px;
-  border-radius: 20px;
+  border-radius: var(--img-radius);
   box-shadow: var(--shadow-sm);
 }
 

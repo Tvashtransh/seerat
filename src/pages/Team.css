@@ -1,0 +1,244 @@
+.ss-team-page {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f6f5f0; /* elegant light tone from screenshot */
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-top: 80px; /* space for navbar */
+  font-family: inherit;
+}
+
+/* LEFT SIDE - TEXT */
+.ss-team-left {
+  position: absolute;
+  left: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+}
+
+.ss-team-title {
+  font-size: 7rem;
+  line-height: 1.1;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure the font looks elegant */
+.ss-team-title span.italic {
+  font-style: italic;
+  color: #b3ba9f; /* greenish/beige tone from screenshot */
+  font-weight: 300;
+}
+
+.ss-team-desc {
+  margin-top: auto;
+  position: absolute;
+  bottom: -20vh;
+  left: 0;
+  max-width: 250px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* RIGHT SIDE - CAROUSEL */
+.ss-team-carousel-container {
+  position: relative;
+  width: 400px; /* narrowed slightly so the image height is proportionally smaller */
+  height: 500px; /* reduced height to fit 13" laptops perfectly */
+  margin-left: 15%; /* offset from center */
+  margin-bottom: 150px; /* Reserve real page height for the absolutely positioned text */
+  perspective: 1000px;
+  z-index: 10;
+}
+
+.ss-team-cards-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.ss-team-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  transform-origin: center right;
+  will-change: transform, opacity;
+}
+
+.ss-team-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+}
+
+/* The card info (only visible on active card) */
+.ss-team-info {
+  position: absolute;
+  top: 100%; /* right below image */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding-top: 25px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.ss-team-card.active .ss-team-info {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s; /* wait for card to slide in */
+  pointer-events: auto;
+}
+
+.ss-team-info h3 {
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin: 0 0 15px 0;
+  color: #1a1a1a;
+  font-family: serif;
+}
+
+.ss-team-pills {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.ss-team-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #333;
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* CONTROLS (BOTTOM CENTER) */
+.ss-team-controls {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 30;
+}
+
+.ss-team-nav-btn {
+  width: 60px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid #1a1a1a;
+  background: rgba(246, 245, 240, 0.95);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ss-team-nav-btn:hover {
+  background: #1a1a1a;
+  color: #f6f5f0;
+}
+
+.ss-team-nav-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* COUNTER (BOTTOM RIGHT) */
+.ss-team-counter {
+  position: absolute;
+  bottom: 8%;
+  right: 8%;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  font-family: serif;
+  display: flex;
+  align-items: baseline;
+  z-index: 30;
+}
+
+.ss-team-counter span {
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin-left: 5px;
+  font-weight: 400;
+  font-family: sans-serif;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .ss-team-carousel-container {
+    width: 350px;
+    height: 450px;
+    margin-left: 25%;
+  }
+  .ss-team-title {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ss-team-page {
+    flex-direction: column;
+    padding-top: 120px;
+    padding-bottom: 200px;
+  }
+  .ss-team-left {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .ss-team-title {
+    font-size: 4rem;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .ss-team-desc {
+    position: relative;
+    bottom: 0;
+    margin-top: 20px;
+    max-width: 90%;
+  }
+  .ss-team-carousel-container {
+    margin-left: 0;
+    width: 300px;
+    height: 380px;
+  }
+}

@@ -6,7 +6,7 @@
 }
 
 .blog-post-header {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-color);
     /* Light grey/blue background from screenshot */
     padding: 80px 0 60px;
     width: 100%;
@@ -58,7 +58,7 @@
 }
 
 .blog-tag {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-color);
     /* Slightly darker than bg */
     color: var(--text-primary);
     padding: 6px 16px;
@@ -71,7 +71,7 @@
 /* Meta Divider */
 .blog-meta-divider {
     height: 1px;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-color);
     width: 100%;
     margin-bottom: 24px;
 }
@@ -108,7 +108,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    background: var(--bg-secondary);
+    background: var(--bg-color);
     /* Light button bg */
     border: 1px solid var(--bg-secondary);
     padding: 6px 14px;
@@ -121,7 +121,7 @@
 }
 
 .share-btn:hover {
-    background: var(--bg-secondary);
+    background: var(--bg-color);
 }
 
 /* Body Content */
@@ -215,7 +215,7 @@
 
 /* Value Highlight Box */
 .value-highlight-box {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-color);
     /* Light peach/beige */
     padding: 48px;
     border-radius: var(--img-radius);

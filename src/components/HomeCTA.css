@@ -1,6 +1,6 @@
 .ss-large-cta {
-  background-color: var(--bg-secondary);
-  /* Warm beige like the image */
+  background-color: var(--bg-color);
+  /* matches the background of the previous section, creating a single flowing layout */
   padding: 120px 0;
   width: 100%;
 }

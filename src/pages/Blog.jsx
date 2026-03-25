@@ -7,7 +7,7 @@ export default function Blog() {
     <div className="blog-page">
       <section
         className="page-hero animate-fade-in"
-        style={{ backgroundImage: 'url(/industry-multiplex.jpg)' }}
+        style={{ backgroundImage: 'url(/industry-assets/industry-multiplex.jpg)' }}
       >
         <div className="page-hero-content animate-fade-up delay-100">
           <h1>Our Blog</h1>
@@ -27,7 +27,7 @@ export default function Blog() {
                 <img
                   src={blog.image}
                   alt={blog.title}
-                  onError={(e) => e.target.src = '/project-type-2.png'}
+                  onError={(e) => e.target.src = '/project-type-assets/project-type-2.png'}
                 />
               </div>
 

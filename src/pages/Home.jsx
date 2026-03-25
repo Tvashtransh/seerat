@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import HomeCTA from "../components/HomeCTA";
+import TestimonialsSection from "../components/TestimonialsSection";
 import "./Home.css";
 
 export default function Home() {
@@ -79,23 +80,34 @@ export default function Home() {
     {
       id: 1,
       image: "/granary-assets/granary-1.jpg",
-      title: "TSAWWASSEN COMMUNITY DEVELOPMENT",
+      title: "The Granary",
       desc: "Setsquare framed The Granary, Southlands' hub, blending a concrete parkade, wood-framed floors, and a ground-floor Four Winds space. 35 residences above completed the vision.",
-      link: "/granary"
+      link: "/granary",
+      className: "bento-large"
     },
     {
       id: 2,
-      image: "/project-type-4.png",
-      title: "COQUITLAM COMMUNITY TOWNHOMES",
-      desc: "Nestled beside Cottonwood Park, Avana's 52 townhomes are a testament to thoughtful framing work, seamlessly woven into the fabric of the Burquitlam neighbourhood.",
-      link: "/avana-townhomes"
+      image: "/avana after/avana-aerial.jpg",
+      title: "Avana Townhomes",
+      desc: "Nestled beside Cottonwood Park, Avana's 52 townhomes are a testament to thoughtful framing work.",
+      link: "/avana-townhomes",
+      className: "bento-top-mid"
     },
     {
       id: 3,
-      image: "/project-type-3.png",
-      title: "100-MILE WATERFRONT SINGLE FAMILY HOME",
-      desc: "Perched by the water near 100-Mile House, our wood framing work takes centre stage in a grand residential build spanning over 5000 sq.ft.",
-      link: "/summerland-lakefront"
+      image: "/summerland-assets/summerland-2.jpg",
+      title: "Summerland Lakefront",
+      desc: "Perched by the water near 100-Mile House, our wood framing work takes centre stage in a grand build.",
+      link: "/summerland-lakefront",
+      className: "bento-top-right"
+    },
+    {
+      id: 4,
+      image: "/boundarybay-assets/boundarybay-1.jpg",
+      title: "Boundary Bay Beach",
+      desc: "Custom framing for a single-family home perfectly complementing the character of the Boundary Bay community.",
+      link: "/boundary-bay-beach",
+      className: "bento-bottom-wide"
     }
   ];
 
@@ -104,7 +116,7 @@ export default function Home() {
       id: "01",
       title: "Multi-Development Framing",
       description: "Tailored framing solutions for large-scale community developments and multi-unit projects across the Lower Mainland.",
-      image: "/project-type-14.png",
+      image: "/project-type-assets/project-type-14.png",
       hoverImage: "/culmena-assets/DJI_0950.JPG",
       link: "/multi-development-framing"
     },
@@ -112,7 +124,7 @@ export default function Home() {
       id: "02",
       title: "Residential Wood Framing",
       description: "Dependable and precise framing for single-family homes and custom residential builds throughout British Columbia.",
-      image: "/res1.jpg",
+      image: "/res-assets/res1.jpg",
       hoverImage: "/culmena-assets/DJI_0961.JPG",
       link: "/residential-framing"
     },
@@ -120,7 +132,7 @@ export default function Home() {
       id: "03",
       title: "Timber Framing",
       description: "Marrying traditional craftsmanship with modern engineering to create stunning exposed timber structures.",
-      image: "/timber1.jpg",
+      image: "/timber-assets/timber1.jpg",
       hoverImage: "/granary-assets/granary-1.jpg",
       link: "/timber-framing"
     },
@@ -128,7 +140,7 @@ export default function Home() {
       id: "04",
       title: "On-Site Prefab Services",
       description: "We specialize in delivering high-quality, efficient prefab solutions tailored to your needs. Our experienced team ensures a smooth installation process.",
-      image: "/project-type-14.png",
+      image: "/project-type-assets/project-type-14.png",
       hoverImage: "/culmena-assets/DJI_0953.JPG",
       link: "/on-site-prefab-services"
     }
@@ -139,13 +151,13 @@ export default function Home() {
       id: "01",
       title: "Custom Designs",
       description: "Our team of experts will work closely with you to create custom framing designs that reflect your style and preferences. From traditional to modern, we have the expertise to bring your ideas to reality, ensuring a unique and personalized touch to your home.",
-      image: "/res1.jpg",
+      image: "/res-assets/res1.jpg",
     },
     {
       id: "02",
       title: "Professional Installation",
       description: "At Setsquare Construction, we guarantee professional and reliable installation services for all your framing needs. Our skilled craftsmen pay attention to every detail, ensuring a flawless finish that enhances the beauty and structural integrity of your home.",
-      image: "/timber1.jpg",
+      image: "/timber-assets/timber1.jpg",
     },
     {
       id: "03",
@@ -266,32 +278,39 @@ export default function Home() {
       const windowHeight = window.innerHeight;
 
       // Calculate progress (0 to 1) across the first 100vh
-      const progress = Math.min(Math.max(scrollY / windowHeight, 0), 1);
+      const scrollProgress = scrollY / windowHeight;
+      const sizeProgress = Math.min(Math.max(scrollProgress, 0), 1);
+      
+      // Calculate fade progress (0 to 1) across the next 100vh
+      const fadeProgress = Math.min(Math.max(scrollProgress - 1, 0), 1);
 
       // Shrink video wrapper into a portrait shape
-      const insetY = progress * 10;
-      const insetX = progress * 32.5;
-      const radius = progress * 16; // up to 16px border radius
+      const insetY = sizeProgress * 10;
+      const insetX = sizeProgress * 32.5;
+      const radius = sizeProgress * 16; // up to 16px border radius
 
       heroVideoRef.current.style.clipPath = `inset(${insetY}vh ${insetX}vw round ${radius}px)`;
+      
+      // Apply opacity fade-out after the shrink is done (after progress > 1)
+      heroVideoRef.current.style.opacity = Math.max(1 - fadeProgress, 0);
 
       // Fade out foreground text
       if (heroContentRef.current) {
         // Fade out quickly in the first 30% of scroll
-        const textOpacity = Math.max(1 - (progress * 3), 0);
+        const textOpacity = Math.max(1 - (sizeProgress * 3), 0);
         heroContentRef.current.style.opacity = textOpacity;
       }
 
       // Fade out filter
       if (heroFilterRef.current) {
-        const filterOpacity = Math.max(1 - (progress * 4), 0);
+        const filterOpacity = Math.max(1 - (sizeProgress * 4), 0);
         heroFilterRef.current.style.opacity = filterOpacity;
       }
 
       // Reveal background text slowly (it's already behind, but we can add a slight parallax or fade)
       if (heroBgTextRef.current) {
         // Option to add subtle scale or just let it sit there
-        heroBgTextRef.current.style.transform = `scale(${1 + progress * 0.05})`;
+        heroBgTextRef.current.style.transform = `scale(${1 + sizeProgress * 0.05})`;
       }
     };
 
@@ -398,6 +417,19 @@ export default function Home() {
       <section className="ss-hero-scroll-container">
         <div className="ss-hero-premium ss-hero-sticky">
 
+          {/* Blueprint corner markers */}
+          <div className="ss-hero-corner-tl" />
+          <div className="ss-hero-corner-tr" />
+          <div className="ss-hero-corner-bl" />
+          <div className="ss-hero-corner-br" />
+
+          {/* Centre amber label — revealed behind video */}
+          <div className="ss-hero-centre-label">
+            <span>EST. 2004</span>
+            <span className="ss-hero-centre-dot">·</span>
+            <span>DELTA, BC</span>
+          </div>
+
           {/* Background Text (Revealed on scroll) */}
           <div className="jll-container ss-hero-bg-text-container" ref={heroBgTextRef}>
             <h1 className="ss-hero-bg-text">
@@ -474,6 +506,44 @@ export default function Home() {
         </div>
       </section>
 
+
+
+      {/* 3. What We Do — Expertise Grid */}
+      <section className="ss-expertise-section">
+        <div className="jll-container">
+          <div className="jll-grid-header">
+            <span className="ss-story-eyebrow">WHAT WE DO</span>
+            <h2 className="ss-story-heading">Specialized framing for every project scale.</h2>
+            <p className="ss-wwd-intro-homepage">
+              Setsquare Construction is a full-service structural framing company based in Delta, BC. For over two decades, we've delivered precision framing for residential, multi-family, and commercial developments across British Columbia — on time, on budget, and built to last.
+            </p>
+          </div>
+
+          <div className="ss-expertise-grid">
+            {expertiseData.map((item) => (
+              <div key={item.id} className="ss-expertise-card">
+                <div className="ss-expertise-img-wrap">
+                  <div className="ss-expertise-img-base">
+                    <img src={item.image} alt={item.title} className="ss-expertise-image" />
+                  </div>
+                  <div className="ss-expertise-img-hover">
+                    <img src={item.hoverImage} alt={`${item.title} Hover`} className="ss-expertise-image" />
+                  </div>
+                  <div className="ss-expertise-number">{item.id}</div>
+                </div>
+                <div className="ss-expertise-content">
+                  <h3 className="ss-expertise-title">{item.title}</h3>
+                  <p className="ss-expertise-body">{item.description}</p>
+                  <Link to={item.link} className="ss-expertise-link">
+                    Explore services <span>&rarr;</span>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="jll-explore-section">
         <div className="jll-container">
           <div className="jll-explore-grid">
@@ -526,181 +596,38 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="ss-about-message-section" style={{ backgroundImage: `url('/culmena-assets/DJI_0953.JPG')` }}>
-        <div className="ss-message-overlay"></div>
+      {/* Our Projects — Hover List */}
+      <section className="ss-our-projects-section">
         <div className="jll-container">
-          <div className="ss-message-content">
-            <h2 className="ss-message-title">A team of reliable and experienced Contractors</h2>
-            <div className="ss-message-body">
-              <span className="ss-quote-mark top-quote">"</span>
-              <p>
-                Setsquare Construction brings together decades of structural framing expertise and
-                unwavering commitment to quality. Our teams are composed of highly skilled
-                professionals who understand the complexities of large-scale wood frame
-                developments in British Columbia.
-              </p>
-              <span className="ss-quote-mark bottom-quote">"</span>
+          {/* Header row */}
+          <div className="ss-projects-section-header">
+            <div className="ss-projects-header-left">
+              <span className="ss-story-eyebrow">Our Projects</span>
+              <h2 className="ss-projects-main-heading">Work that speaks for itself.</h2>
             </div>
-            
-            <div className="ss-message-author">
-              <div className="ss-founders-row">
-                <div className="ss-author-info">
-                  <span className="ss-author-name">Narwinder Singh</span>
-                  <span className="ss-author-role">Co-Founder</span>
-                </div>
-                <div className="ss-author-info">
-                  <span className="ss-author-name">Gurpreet Singh</span>
-                  <span className="ss-author-role">Co-Founder</span>
-                </div>
-              </div>
-              <div className="ss-signature">
-                <span className="signature-text-light">N. Singh & G. Singh</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="ss-expertise-section">
-        <div className="jll-container">
-          <div className="jll-grid-header">
-            <span className="ss-story-eyebrow">OUR EXPERTISE</span>
-            <h2 className="ss-story-heading">Specialized framing for every project scale.</h2>
+            <Link to="/projects" className="ss-projects-view-all-btn">
+              View All Projects
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </Link>
           </div>
 
-          <div className="ss-expertise-grid">
-            {expertiseData.map((item) => (
-              <div key={item.id} className="ss-expertise-card">
-                <div className="ss-expertise-img-wrap">
-                  <div className="ss-expertise-img-base">
-                    <img src={item.image} alt={item.title} className="ss-expertise-image" />
+          {/* Main layout: Bento Grid */}
+          <div className="ss-projects-bento-grid">
+            {projects.map((project) => (
+              <Link key={project.id} to={project.link} className={`ss-bento-card ${project.className}`}>
+                  <img src={project.image} alt={project.title} />
+                  <div className="ss-bento-overlay">
+                      <h3 className="ss-bento-title">{project.title}</h3>
+                      <p className="ss-bento-desc">{project.desc}</p>
                   </div>
-                  <div className="ss-expertise-img-hover">
-                    <img src={item.hoverImage} alt={`${item.title} Hover`} className="ss-expertise-image" />
-                  </div>
-                  <div className="ss-expertise-number">{item.id}</div>
-                </div>
-                <div className="ss-expertise-content">
-                  <h3 className="ss-expertise-title">{item.title}</h3>
-                  <p className="ss-expertise-body">{item.description}</p>
-                  <Link to={item.link} className="ss-expertise-link">
-                    Explore services <span>&rarr;</span>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── THE SETSQUARE STANDARD REPLICA ── */}
-      <section className="tc-expertise-replica" ref={tcWorksRef}>
-        <div className="jll-container">
-          <div className="tc-header">
-            <h2 className="tc-heading">
-              <span className="tc-text-reveal">The Setsquare</span>
-            </h2>
-            <h2 className="tc-heading tc-italic">
-              <span className="tc-text-reveal">Standard</span>
-            </h2>
-          </div>
-          
-          <div className="tc-projects-list">
-            {standardsData.map((item) => (
-              <div className="tc-project-item ss-standard-row" key={item.id}>
-                <div className="ss-standard-layout">
-                  <div className="ss-standard-text-side">
-                    <div className="tc-project-number">
-                      <span className="tc-text-reveal">{item.id}</span>
-                    </div>
-                    <div className="tc-project-title-wrap">
-                      <h3 className="tc-project-title">
-                        <span className="tc-text-reveal">{item.title}</span>
-                      </h3>
-                    </div>
-                    <div className="tc-project-desc-wrap ss-standard-desc">
-                      <p className="tc-project-desc">
-                        <span className="tc-text-reveal">{item.description}</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div className="ss-standard-image-side">
-                    <div className="tc-project-image-wrap ss-standard-image-wrap">
-                      <div className="tc-project-image-inner">
-                         <img src={item.image} alt={item.title} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="ss-story-section">
-        <div className="jll-container">
-          <div className="ss-story-flex-layout" ref={storyRef}>
-            {/* Visual Aspect */}
-            <div className="ss-story-visual-side">
-              <div className="ss-story-image-main" ref={storyImgMain} style={{ willChange: 'transform', transition: 'transform 0.1s linear' }}>
-                <img src="/frame-of-mind.jpg" alt="Setsquare Legacy" />
-                <div className="ss-story-experience-chip" ref={storyChip} style={{ willChange: 'transform', transition: 'transform 0.12s linear' }}>
-                  <span className="chip-value">20+</span>
-                  <span className="chip-label">Years of <br />Expertise</span>
-                </div>
-              </div>
-              <div className="ss-story-image-offset" ref={storyImgOff} style={{ willChange: 'transform', transition: 'transform 0.15s linear' }}>
-                <img src="/whyus-about.jpg" alt="On-Site Detail" />
-              </div>
-            </div>
-
-            {/* Content Aspect */}
-            <div
-              className="ss-story-content-side"
-              ref={storyContent}
-              style={{ willChange: 'transform, opacity', transition: 'transform 0.1s linear, opacity 0.1s linear' }}
-            >
-              <span className="ss-story-eyebrow">OUR STORY</span>
-              <h2 className="ss-story-heading">Two decades of structural precision.</h2>
-
-              <div className="ss-story-punch-text">
-                <p>
-                  Founded in Delta, BC with a single crew and a vision for structural excellence,
-                  Setsquare has grown into BC's trusted framing partner.
-                </p>
-                <p>
-                  We don't just build structures; we frame the future of communities by partnering
-                  with the province's top developers to deliver quality at scale.
-                </p>
-              </div>
-
-              <div className="ss-story-stats-row">
-                <div className="ss-story-stat-card">
-                  <span className="stat-card-year">2004</span>
-                  <span className="stat-card-desc">Est. in Delta</span>
-                </div>
-                <div className="ss-story-stat-card">
-                  <span className="stat-card-year">500+</span>
-                  <span className="stat-card-desc">Units Framed</span>
-                </div>
-                <div className="ss-story-stat-card">
-                  <span className="stat-card-year">80+</span>
-                  <span className="stat-card-desc">Developments</span>
-                </div>
-              </div>
-
-              <Link to="/why-us" className="ss-story-modern-cta">
-                Discover Our Heritage
-                <div className="cta-icon-box">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </div>
               </Link>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
+
+      {/* 5. Reality (On-Site) (Moved Up) */}
       <section className="ss-horiz-section" ref={horizontalSectionRef}>
         <div className="ss-horiz-sticky">
           {/* Left Fixed Content */}
@@ -721,7 +648,6 @@ export default function Home() {
           {/* Right Scrolling Container */}
           <div className="ss-horiz-right-wrapper">
             <div className="ss-horiz-right" ref={horizontalScrollContainerRef}>
-              {/* Using project images for progress frames */}
               <div className="ss-horiz-card">
                 <img src="/1292 Rosenberg/dji_fly_20250306_160944_857_1741306346825_photo_optimized.jpg" alt="Site Progress 1" />
               </div>
@@ -732,64 +658,121 @@ export default function Home() {
                 <img src="/boundarybay-assets/boundarybay-1.jpg" alt="Site Progress 3" />
               </div>
               <div className="ss-horiz-card">
-                <img src="/project-type-4.png" alt="Site Progress 4" />
+                <img src="/project-type-assets/project-type-4.png" alt="Site Progress 4" />
               </div>
               <div className="ss-horiz-card">
                 <img src="/culmena-assets/DJI_0953.JPG" alt="Site Progress 5" />
               </div>
               <div className="ss-horiz-card">
-                <img src="/project-type-3.png" alt="Site Progress 6" />
+                <img src="/project-type-assets/project-type-3.png" alt="Site Progress 6" />
               </div>
-              {/* Added a spacer to ensure the last card easily reaches the center or left before scroll ends if desired */}
               <div style={{ width: '10vw', flexShrink: 0 }} />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="jll-featured-carousel">
-        <div className="jll-container">
-          <div className="jll-section-header flex-between">
-            <h2 className="jll-section-title-plain">More to explore</h2>
-            <div className="jll-carousel-nav">
-              <button onClick={prevProject} className="jll-nav-square">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-              </button>
-              <button onClick={nextProject} className="jll-nav-square">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-              </button>
-            </div>
-          </div>
-          <div className="jll-featured-card-split">
-            <div className="jll-featured-img">
-              <img src={currentProject.image} alt={currentProject.title} />
-            </div>
-            <div className="jll-featured-content-box">
-              <h3>{currentProject.title}</h3>
-              <p>{currentProject.desc}</p>
-              <Link to={currentProject.link} className="jll-arrow-link-plain">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </Link>
-            </div>
-          </div>
 
-          {/* Dot indicators */}
-          <div className="jll-carousel-dots">
-            {projects.map((_, i) => (
-              <button
-                key={i}
-                className={`jll-dot${i === currentProjectIndex ? " active" : ""}`}
-                onClick={() => {
-                  setDirection(i > currentProjectIndex ? "next" : "prev");
-                  setCurrentProjectIndex(i);
-                  startAutoSlide();
-                }}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
+      {/* 7. Combined (Legacy + Human Element) (Moved Down & Merged) */}
+      <div className="ss-combined-info-block">
+        <section className="ss-story-section">
+          <div className="jll-container">
+            <div className="ss-story-flex-layout" ref={storyRef}>
+              <div className="ss-story-visual-side">
+                <div className="ss-story-image-main" ref={storyImgMain} style={{ willChange: 'transform', transition: 'transform 0.1s linear' }}>
+                  <img src="/frame-of-mind.jpg" alt="Setsquare Legacy" />
+                  <div className="ss-story-experience-chip" ref={storyChip} style={{ willChange: 'transform', transition: 'transform 0.12s linear' }}>
+                    <span className="chip-value">20+</span>
+                    <span className="chip-label">Years of <br />Expertise</span>
+                  </div>
+                </div>
+                <div className="ss-story-image-offset" ref={storyImgOff} style={{ willChange: 'transform', transition: 'transform 0.15s linear' }}>
+                  <img src="/whyus-about.jpg" alt="On-Site Detail" />
+                </div>
+              </div>
+
+              <div
+                className="ss-story-content-side"
+                ref={storyContent}
+                style={{ willChange: 'transform, opacity', transition: 'transform 0.1s linear, opacity 0.1s linear' }}
+              >
+                <span className="ss-story-eyebrow">OUR STORY</span>
+                <h2 className="ss-story-heading">Two decades of structural precision.</h2>
+
+                <div className="ss-story-punch-text">
+                  <p>
+                    Founded in Delta, BC with a single crew and a vision for structural excellence,
+                    Setsquare has grown into BC's trusted framing partner.
+                  </p>
+                  <p>
+                    We don't just build structures; we frame the future of communities by partnering
+                    with the province's top developers to deliver quality at scale.
+                  </p>
+                </div>
+
+                <div className="ss-story-stats-row">
+                  <div className="ss-story-stat-card">
+                    <span className="stat-card-year">2004</span>
+                    <span className="stat-card-desc">Est. in Delta</span>
+                  </div>
+                  <div className="ss-story-stat-card">
+                    <span className="stat-card-year">500+</span>
+                    <span className="stat-card-desc">Units Framed</span>
+                  </div>
+                  <div className="ss-story-stat-card">
+                    <span className="stat-card-year">80+</span>
+                    <span className="stat-card-desc">Developments</span>
+                  </div>
+                </div>
+
+                <Link to="/why-us" className="ss-story-modern-cta">
+                  Discover Our Heritage
+                  <div className="cta-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </div>
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section className="ss-about-message-section" style={{ backgroundImage: `url('/culmena-assets/DJI_0953.JPG')` }}>
+          <div className="ss-message-overlay"></div>
+          <div className="jll-container">
+            <div className="ss-message-content">
+              <h2 className="ss-message-title">A team of reliable and experienced Contractors</h2>
+              <div className="ss-message-body">
+                <span className="ss-quote-mark top-quote">"</span>
+                <p>
+                  Setsquare Construction brings together decades of structural framing expertise and
+                  unwavering commitment to quality. Our teams are composed of highly skilled
+                  professionals who understand the complexities of large-scale wood frame
+                  developments in British Columbia.
+                </p>
+                <span className="ss-quote-mark bottom-quote">"</span>
+              </div>
+              
+              <div className="ss-message-author">
+                <div className="ss-founders-row">
+                  <div className="ss-author-info">
+                    <span className="ss-author-name">Narwinder Singh</span>
+                    <span className="ss-author-role">Co-Founder</span>
+                  </div>
+                  <div className="ss-author-info">
+                    <span className="ss-author-name">Gurpreet Singh</span>
+                    <span className="ss-author-role">Co-Founder</span>
+                  </div>
+                </div>
+                <div className="ss-signature">
+                  <span className="signature-text-light">N. Singh & G. Singh</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <TestimonialsSection />
 
       <HomeCTA />
     </div>

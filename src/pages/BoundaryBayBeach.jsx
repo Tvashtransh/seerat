@@ -1,97 +1,63 @@
-import React, { useEffect } from "react";
-import ProjectStackGallery from "../components/ProjectStackGallery";
-import "./ProjectDetail.css";
+import React from "react";
+import ProjectPage from "../components/ProjectPage";
 
 export default function BoundaryBayBeach() {
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div className="project-detail-page">
-
-      {/* Hero */}
-      <section
-        className="project-detail-hero animate-fade-up"
-        style={{ backgroundImage: 'url(/boundarybay-assets/boundarybay-1.jpg)' }}
-      >
-        <h1>BOUNDARY BAY RESIDENTIAL FRAMING</h1>
-        <span className="project-location-tag">Delta / Boundary Bay Beach, British Columbia</span>
-      </section>
-
-      {/* Section 1: The Task */}
-      <section className="project-content-section animate-fade-up delay-100">
-        <div className="project-text-block">
-          <h2>The Task</h2>
-          <span className="project-subtitle">Boundary Bay Residential Framing</span>
-          <p>
-            Setsquare Construction played a pivotal role in shaping a single-family home in the
-            charming neighbourhood of Boundary Bay, Delta.
-          </p>
-        </div>
-        <ProjectStackGallery 
-        images={[
-          "/boundarybay-assets/boundarybay-1.jpg",
-          "/boundarybay-assets/boundarybay-2.jpg",
-          "/boundarybay-assets/boundarybay-3.jpg",
-          "/boundarybay-assets/boundarybay-4.jpg"
-        ]}
-      />
-      </section>
-
-      {/* Section 2: Framing It Up */}
-      <section className="project-content-section reverse animate-fade-up delay-100">
-        <div className="project-text-block">
-          <h2>Framing It Up</h2>
-          <span className="project-subtitle">Boundary Bay Residential Framing</span>
-          <p>
-            Precision and attention to detail were key as we framed this custom home,
-            ensuring it complemented the unique character of the Boundary Bay community.
-          </p>
-        </div>
-        <div className="project-image-block">
-          <img src="/boundarybay-assets/boundarybay-2.jpg" alt="Framing It Up" />
-        </div>
-      </section>
-
-      {/* Section 3: Making Headway */}
-      <section className="project-content-section animate-fade-up delay-100">
-        <div className="project-text-block">
-          <h2>Making Headway</h2>
-          <span className="project-subtitle">Boundary Bay Residential Framing</span>
-          <p>
-            Progress was steady as the structure took form, setting the stage for a beautiful
-            residential addition to the area.
-          </p>
-        </div>
-        <div className="project-image-block">
-          <img src="/boundarybay-assets/boundarybay-3.jpg" alt="Making Headway" />
-        </div>
-      </section>
-
-      {/* Conclusion */}
-      <section className="project-conclusion animate-fade-up">
-        <h2>Completion</h2>
-        <span className="project-subtitle" style={{ display: 'block', marginBottom: '20px' }}>Boundary Bay Residential Framing</span>
-        <p>
-          We successfully completed the framing for the Boundary Bay project in Delta. The end result
-          is a structurally sound and aesthetically pleasing home that stands as a testament to our
-          commitment to quality residential construction.
-        </p>
-        
-      <ProjectStackGallery 
-        images={[
-          "/boundarybay-assets/boundarybay-1.jpg",
-          "/boundarybay-assets/boundarybay-2.jpg",
-          "/boundarybay-assets/boundarybay-3.jpg",
-          "/boundarybay-assets/boundarybay-4.jpg"
-        ]}
-      />
-    
-      </section>
-
-
-    </div>
+    <ProjectPage
+      heroImage="/boundarybay-assets/boundarybay-1.jpg"
+      title="Boundary Bay Residential"
+      location="Delta / Boundary Bay Beach, British Columbia"
+      meta={[
+        { label: "Project Type", value: "Single-Family Residential" },
+        { label: "Location",     value: "Delta, BC" },
+        { label: "Community",    value: "Boundary Bay" },
+        { label: "Framing",      value: "Custom Wood Framing" },
+      ]}
+      intro={{
+        eyebrow: "The Task",
+        heading: "A custom home in one of BC's most scenic communities.",
+        body: "Setsquare Construction played a pivotal role in shaping a single-family home in the charming neighbourhood of Boundary Bay, Delta. This build required sensitivity to the character of the area as much as structural precision.",
+      }}
+      galleryStrips={[
+        {
+          position: "afterIntro",
+          layout: "cols-2",
+          images: [
+            "/boundarybay-assets/boundarybay-1.jpg",
+            "/boundarybay-assets/boundarybay-2.jpg",
+          ],
+          heights: ["tall", "tall"],
+        },
+      ]}
+      sections={[
+        {
+          eyebrow: "Framing It Up",
+          heading: "Complementing the character of Boundary Bay.",
+          body: "Precision and attention to detail were key as we framed this custom home, ensuring it complemented the unique character of the Boundary Bay community. Our team worked closely with the architect's vision to produce a structure as refined as its surroundings.",
+          image: "/boundarybay-assets/boundarybay-2.jpg",
+        },
+        {
+          eyebrow: "Making Headway",
+          heading: "Structure set for a lifetime.",
+          body: "Progress was steady as the structure took form, setting the stage for a beautiful residential addition to the area. Each phase was completed with precision to ensure the foundation was rock-solid for every trade to follow.",
+          image: "/boundarybay-assets/boundarybay-3.jpg",
+          reverse: true,
+        },
+      ]}
+      conclusionText={{
+        eyebrow: "Completion",
+        heading: "A home that belongs in its landscape.",
+        body: [
+          "We successfully completed the framing for the Boundary Bay project in Delta. The end result is a structurally sound and aesthetically pleasing home that stands as a testament to our commitment to quality residential construction.",
+          "This project is a proud addition to Setsquare's growing portfolio of custom residential builds across the Lower Mainland.",
+        ],
+      }}
+      conclusionImages={[
+        "/boundarybay-assets/boundarybay-1.jpg",
+        "/boundarybay-assets/boundarybay-2.jpg",
+        "/boundarybay-assets/boundarybay-3.jpg",
+        "/boundarybay-assets/boundarybay-4.jpg",
+      ]}
+    />
   );
 }

@@ -71,15 +71,6 @@ export default function Contact() {
                 </div>
               </div>
             </section>
-
-            <section className="jll-hiring-block">
-              <h3>Join the Team</h3>
-              <p>
-                We are always looking for experienced carpenters and dedicated framers
-                to join our high-performance crews. (Min. 1 year experience required).
-              </p>
-              <p className="jll-hiring-note">Apply via the form and specify 'Employment' in your message.</p>
-            </section>
           </div>
 
           {/* Right: Contact Form */}

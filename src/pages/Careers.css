@@ -1,6 +1,6 @@
-/* Contact.css - JLL Premium Theme */
+/* Careers.css - JLL Premium Theme */
 
-.jll-contact-page {
+.jll-careers-page {
   font-family: var(--font-main);
   color: var(--text-primary);
   background-color: var(--bg-color);
@@ -13,10 +13,8 @@
   padding: 0 var(--site-margin);
 }
 
-/* HEADER - Standardized to .page-hero in index.css */
-
 /* LAYOUT */
-.jll-contact-layout {
+.jll-careers-layout {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 100px;
@@ -33,67 +31,42 @@
   margin-bottom: 16px;
 }
 
-.jll-info-block h3,
-.jll-hiring-block h3 {
+.jll-info-block h3 {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 24px;
 }
 
-.jll-address {
+.jll-careers-desc {
   font-size: 18px;
   line-height: 1.6;
   color: var(--text-secondary);
   margin-bottom: 40px;
 }
 
-.jll-contact-links {
+.jll-benefits-list {
+  list-style-type: none;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 16px;
 }
 
-.jll-label {
-  display: block;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.jll-contact-item a {
-  font-size: 20px;
-  font-weight: 700;
+.jll-benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
   color: var(--text-primary);
-  text-decoration: none;
-  transition: color 0.2s;
 }
 
-.jll-contact-item a:hover {
+.jll-benefits-list li svg {
   color: var(--accent-color);
 }
 
-.jll-hiring-block {
-  margin-top: 80px;
-  padding-top: 60px;
-  border-top: 1px solid var(--bg-secondary);
-}
-
-.jll-hiring-block p {
-  font-size: 17px;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  margin-bottom: 16px;
-}
-
-.jll-hiring-note {
-  font-weight: 600;
-  color: var(--text-primary) !important;
-}
-
 /* FORM SIDE */
-.jll-contact-form-container {
+.jll-careers-form-container {
   background: var(--bg-color);
 }
 
@@ -126,7 +99,7 @@
   font-size: 16px;
   border: 1px solid var(--bg-secondary);
   border-radius: 0;
-  /* Sharp JLL corners */
+  /* Sharp corners */
   background: var(--bg-color);
   font-family: inherit;
   transition: all 0.2s;
@@ -139,6 +112,13 @@
   border-color: var(--accent-color);
   background: var(--bg-color);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.jll-form-field input[type="file"] {
+  border: 1px dashed var(--text-secondary);
+  padding: 24px 16px;
+  background: var(--bg-color);
+  cursor: pointer;
 }
 
 .jll-submit-btn {
@@ -186,36 +166,14 @@
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-  .jll-contact-layout {
+  .jll-careers-layout {
     grid-template-columns: 1fr;
     gap: 60px;
-  }
-
-  .jll-hiring-block {
-    margin-top: 40px;
-    padding-top: 40px;
   }
 }
 
 @media (max-width: 768px) {
-  .jll-display-heading {
-    font-size: 40px;
-  }
-
   .jll-form-grid {
     grid-template-columns: 1fr;
   }
-
-  .jll-page-header {
-    padding: 60px 0;
-    text-align: center;
-  }
-
-  .jll-display-subheading {
-    margin: 0 auto;
-  }
 }
-
-
-
-

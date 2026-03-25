@@ -50,7 +50,6 @@ function Navbar() {
           <NavLink to="/" className="ss-nav-brand">
             <div className="ss-logo-wrapper">
               <img src="/logo.png" alt="Set Square Construction" className="ss-logo" />
-              <span className="ss-brand-name">SETSQUARE</span>
             </div>
           </NavLink>
 
@@ -70,6 +69,7 @@ function Navbar() {
               <NavLink to="/projects" className="ss-nav-link">PROJECTS</NavLink>
               <NavLink to="/gallery" className="ss-nav-link">GALLERY</NavLink>
               <NavLink to="/why-us" className="ss-nav-link">WHY US</NavLink>
+              <NavLink to="/team" className="ss-nav-link">TEAM</NavLink>
               <NavLink to="/blog" className="ss-nav-link">BLOG</NavLink>
             </div>
           </nav>

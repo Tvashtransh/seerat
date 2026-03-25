@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaXTwitter, FaWhatsapp } from "react-icons/fa6";
 import { FaEnvelope } from "react-icons/fa";
+import { Dock, DockIcon } from "./ui/dock";
 import "./Footer.css";
 
 export default function Footer() {
@@ -41,12 +42,24 @@ export default function Footer() {
               Subscribe now <span>&rarr;</span>
             </button>
 
-            <div className="jll-footer-socials">
-              <a href="#" className="jll-social-icon"><FaFacebookF /></a>
-              <a href="#" className="jll-social-icon"><FaInstagram /></a>
-              <a href="#" className="jll-social-icon"><FaXTwitter /></a>
-              <a href="#" className="jll-social-icon"><FaWhatsapp /></a>
-              <a href="mailto:info@setsquareconstruction.ca" className="jll-social-icon"><FaEnvelope /></a>
+            <div className="mt-4 flex justify-start">
+              <Dock direction="middle" className="mx-0 mt-0 bg-transparent border-0 backdrop-blur-none" distance={40} magnification={70}>
+                <DockIcon className="bg-gray-100 text-gray-800 hover:bg-gray-200">
+                  <a href="#" className="p-2"><FaFacebookF className="size-5" /></a>
+                </DockIcon>
+                <DockIcon className="bg-gray-100 text-gray-800 hover:bg-gray-200">
+                  <a href="#" className="p-2"><FaInstagram className="size-5" /></a>
+                </DockIcon>
+                <DockIcon className="bg-gray-100 text-gray-800 hover:bg-gray-200">
+                  <a href="#" className="p-2"><FaXTwitter className="size-5" /></a>
+                </DockIcon>
+                <DockIcon className="bg-gray-100 text-gray-800 hover:bg-gray-200">
+                  <a href="#" className="p-2"><FaWhatsapp className="size-5" /></a>
+                </DockIcon>
+                <DockIcon className="bg-gray-100 text-gray-800 hover:bg-gray-200">
+                  <a href="mailto:info@setsquareconstruction.ca" className="p-2"><FaEnvelope className="size-5" /></a>
+                </DockIcon>
+              </Dock>
             </div>
           </div>
 
@@ -66,9 +79,8 @@ export default function Footer() {
           <div className="jll-footer-col">
             <h4 className="jll-footer-heading">Join our team</h4>
             <ul className="jll-footer-links">
-              <li><NavLink to="/contact">Work at SetSquare</NavLink></li>
+              <li><NavLink to="/careers">Work at SetSquare</NavLink></li>
               <li><NavLink to="/why-us">Meet our people</NavLink></li>
-              <li><NavLink to="/contact">Subcontractor Opportunities</NavLink></li>
             </ul>
           </div>
 

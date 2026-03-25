@@ -41,7 +41,7 @@
 }
 
 .jll-section-title {
-  font-size: 36px;
+  font-size: clamp(26px, 2.5vw, 36px);
   font-weight: 700;
   margin-bottom: 24px;
   position: relative;
@@ -59,8 +59,8 @@
 }
 
 .jll-intro-text p {
-  font-size: 20px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.7;
   color: var(--jll-gray-dark);
 }
 
@@ -95,7 +95,7 @@
 /* --- SERVICES STACK SECTION --- */
 .jll-services-stack-section {
   padding: 100px 0 140px;
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-color);
   /* Warm Beige to match Expertise section */
 }
 
@@ -157,14 +157,14 @@
 }
 
 .jll-feature-heading {
-  font-size: 36px;
+  font-size: clamp(24px, 2.5vw, 34px);
   font-weight: 700;
   margin-bottom: 24px;
   line-height: 1.25;
 }
 
 .jll-feature-desc {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--jll-gray-medium);
   line-height: 1.7;
   margin-bottom: 30px;
@@ -174,7 +174,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-color);
   color: var(--text-primary);
   padding: 14px 24px;
   font-weight: 600;
@@ -207,8 +207,8 @@
 }
 
 .jll-values-title {
-  font-size: 42px;
-  font-weight: 800;
+  font-size: clamp(26px, 2.5vw, 36px);
+  font-weight: 700;
   margin-bottom: 40px;
 }
 
@@ -219,7 +219,7 @@
 }
 
 .jll-values-list li {
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.8;
   margin-bottom: 24px;
   padding-left: 24px;

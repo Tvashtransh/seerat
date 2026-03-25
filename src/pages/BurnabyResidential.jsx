@@ -1,97 +1,63 @@
-import React, { useEffect } from "react";
-import ProjectStackGallery from "../components/ProjectStackGallery";
-import "./ProjectDetail.css";
+import React from "react";
+import ProjectPage from "../components/ProjectPage";
 
 export default function BurnabyResidential() {
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <div className="project-detail-page">
-
-      {/* Hero */}
-      <section
-        className="project-detail-hero animate-fade-up"
-        style={{ backgroundImage: 'url(/burnaby-assets/burnaby-1.jpg)' }}
-      >
-        <h1>BURNABY RESIDENTIAL HOME</h1>
-        <span className="project-location-tag">Garden Village, Burnaby, British Columbia</span>
-      </section>
-
-      {/* Section 1: The Task */}
-      <section className="project-content-section animate-fade-up delay-100">
-        <div className="project-text-block">
-          <h2>The Task</h2>
-          <span className="project-subtitle">Single Family Residential Wood Framing</span>
-          <p>
-            Setsquare Construction is proud to have played a role in wood framing a residential home project
-            in the Garden Village community of Burnaby in collaboration with Wallmark Homes. We really
-            enjoyed framing up this beautiful home which integrates seamlessly into the warm Garden Village Community.
-          </p>
-        </div>
-        <ProjectStackGallery 
-        images={[
-          "/burnaby-assets/burnaby-1.jpg",
-          "/burnaby-assets/burnaby-2.jpg",
-          "/burnaby-assets/burnaby-3.jpg",
-          "/burnaby-assets/burnaby-4.jpg"
-        ]}
-      />
-      </section>
-
-      {/* Section 2: Framing It Up */}
-      <section className="project-content-section reverse animate-fade-up delay-100">
-        <div className="project-text-block">
-          <h2>Framing It Up</h2>
-          <span className="project-subtitle">Single Family Residential Wood Framing</span>
-          <p>
-            Our framing team focused on precision, quality craftsmanship, and structural integrity to
-            ensure the framing aligned with Wallmark Homes’ architectural vision.
-          </p>
-        </div>
-        <div className="project-image-block">
-          <img src="/burnaby-assets/burnaby-2.jpg" alt="Framing It Up" />
-        </div>
-      </section>
-
-      {/* Section 3: Making Headway */}
-      <section className="project-content-section animate-fade-up delay-100">
-        <div className="project-text-block">
-          <h2>Making Headway</h2>
-          <span className="project-subtitle">Single Family Residential Wood Framing</span>
-          <p>
-            As the project moved forward, the quality of the framing set a solid foundation for the rest of the build.
-          </p>
-        </div>
-        <div className="project-image-block">
-          <img src="/burnaby-assets/burnaby-3.jpg" alt="Making Headway" />
-        </div>
-      </section>
-
-      {/* Conclusion */}
-      <section className="project-conclusion animate-fade-up">
-        <h2>Completion</h2>
-        <span className="project-subtitle" style={{ display: 'block', marginBottom: '20px' }}>Single Family Residential Wood Framing</span>
-        <p>
-          We successfully concluded the wood framing of the Garden Village project, Burnaby, in collaboration
-          with Wallmark Homes. We're grateful to add this beautiful home to our portfolio, showcasing
-          our wood framing that aligned with the vision of Wallmark Homes.
-        </p>
-        
-      <ProjectStackGallery 
-        images={[
-          "/burnaby-assets/burnaby-1.jpg",
-          "/burnaby-assets/burnaby-2.jpg",
-          "/burnaby-assets/burnaby-3.jpg",
-          "/burnaby-assets/burnaby-4.jpg"
-        ]}
-      />
-    
-      </section>
-
-
-    </div>
+    <ProjectPage
+      heroImage="/burnaby-assets/burnaby-1.jpg"
+      title="Burnaby Residential Home"
+      location="Garden Village, Burnaby, British Columbia"
+      meta={[
+        { label: "Project Type", value: "Single-Family Residential" },
+        { label: "Developer",    value: "Wallmark Homes" },
+        { label: "Community",    value: "Garden Village, Burnaby" },
+        { label: "Framing",      value: "Custom Wood Framing" },
+      ]}
+      intro={{
+        eyebrow: "The Task",
+        heading: "Framing a beautiful home in Garden Village.",
+        body: "Setsquare Construction is proud to have played a role in wood framing a residential home project in the Garden Village community of Burnaby in collaboration with Wallmark Homes. We really enjoyed framing up this beautiful home which integrates seamlessly into the warm Garden Village community.",
+      }}
+      galleryStrips={[
+        {
+          position: "afterIntro",
+          layout: "cols-2",
+          images: [
+            "/burnaby-assets/burnaby-1.jpg",
+            "/burnaby-assets/burnaby-3.jpg",
+          ],
+          heights: ["tall", "tall"],
+        },
+      ]}
+      sections={[
+        {
+          eyebrow: "Framing It Up",
+          heading: "Precision aligned with Wallmark's vision.",
+          body: "Our framing team focused on precision, quality craftsmanship, and structural integrity to ensure the framing aligned with Wallmark Homes' architectural vision. Every truss and stud was placed with purpose.",
+          image: "/burnaby-assets/burnaby-2.jpg",
+        },
+        {
+          eyebrow: "Making Headway",
+          heading: "A solid foundation for every trade.",
+          body: "As the project moved forward, the quality of the framing set a solid foundation for the rest of the build. Our commitment to staying on schedule without compromising quality made us a trusted partner on this Wallmark development.",
+          image: "/burnaby-assets/burnaby-3.jpg",
+          reverse: true,
+        },
+      ]}
+      conclusionText={{
+        eyebrow: "Completion",
+        heading: "Proud to call this Wallmark home one of ours.",
+        body: [
+          "We successfully concluded the wood framing of the Garden Village project, Burnaby, in collaboration with Wallmark Homes. We're grateful to add this beautiful home to our portfolio.",
+          "This project showcases Setsquare's wood framing craftsmanship aligned with the high standards of Wallmark Homes — a relationship we're proud to carry forward.",
+        ],
+      }}
+      conclusionImages={[
+        "/burnaby-assets/burnaby-1.jpg",
+        "/burnaby-assets/burnaby-2.jpg",
+        "/burnaby-assets/burnaby-3.jpg",
+        "/burnaby-assets/burnaby-4.jpg",
+      ]}
+    />
   );
 }

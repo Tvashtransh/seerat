@@ -13,7 +13,7 @@ export default function CustomDesigns() {
 
       <header
         className="page-hero animate-fade-in"
-        style={{ backgroundImage: 'url(/res1.jpg)' }}
+        style={{ backgroundImage: 'url(/res-assets/res1.jpg)' }}
       >
         <div className="page-hero-content animate-fade-up delay-100">
           <div className="jll-breadcrumbs" style={{ color: 'rgba(255,255,255,0.8)', marginBottom: '16px' }}>

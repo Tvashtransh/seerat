@@ -25,7 +25,7 @@ export default function HomeIndustries() {
           <div className="industry-card">
             <div
               className="industry-image"
-              style={{ backgroundImage: "url(/industry-residential.jpg)" }}
+              style={{ backgroundImage: "url(/industry-assets/industry-residential.jpg)" }}
             ></div>
 
             <div className="industry-content">
@@ -54,7 +54,7 @@ export default function HomeIndustries() {
           <div className="industry-card reverse">
             <div
               className="industry-image"
-              style={{ backgroundImage: "url(/industry-commercial.jpg)" }}
+              style={{ backgroundImage: "url(/industry-assets/industry-commercial.jpg)" }}
             ></div>
 
             <div className="industry-content">
@@ -83,7 +83,7 @@ export default function HomeIndustries() {
           <div className="industry-card">
             <div
               className="industry-image"
-              style={{ backgroundImage: "url(/industry-multiplex.jpg)" }}
+              style={{ backgroundImage: "url(/industry-assets/industry-multiplex.jpg)" }}
             ></div>
 
             <div className="industry-content">

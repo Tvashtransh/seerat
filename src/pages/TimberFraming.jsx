@@ -54,8 +54,8 @@ export default function TimberFraming() {
               </section>
 
               <section className="jll-image-gallery-grid">
-                <img src="/granary-assets/granary-1.jpg" onError={(e) => e.target.src = '/project-type-2.png'} alt="Granary Timber Project" />
-                <img src="/timber1.jpg" onError={(e) => e.target.src = '/project-type-3.png'} alt="Exposed Wood Joinery" />
+                <img src="/granary-assets/granary-1.jpg" onError={(e) => e.target.src = '/project-type-assets/project-type-2.png'} alt="Granary Timber Project" />
+                <img src="/timber-assets/timber1.jpg" onError={(e) => e.target.src = '/project-type-assets/project-type-3.png'} alt="Exposed Wood Joinery" />
               </section>
             </div>
 

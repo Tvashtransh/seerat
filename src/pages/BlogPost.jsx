@@ -67,7 +67,7 @@ export default function BlogPost() {
 
                     {/* Main Hero Image */}
                     <div className="blog-image-hero">
-                        <img src={blog.image} alt={blog.title} onError={(e) => e.target.src = '/project-type-2.png'} />
+                        <img src={blog.image} alt={blog.title} onError={(e) => e.target.src = '/project-type-assets/project-type-2.png'} />
                     </div>
 
                     {/* Value Highlight Box - Optional */}

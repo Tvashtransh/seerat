@@ -9,7 +9,7 @@
   max-width: var(--container-width);
   width: 100%;
   background: var(--bg-color);
-  border-radius: 26px;
+  border-radius: var(--card-radius);
   display: grid;
   grid-template-columns: 420px 1fr;
   gap: 50px;
@@ -25,7 +25,7 @@
   background: linear-gradient(135deg,
       rgba(181, 142, 107, 0.08),
       rgba(181, 142, 107, 0.02));
-  border-radius: 20px;
+  border-radius: var(--img-radius);
 }
 
 .about-logo img {
@@ -33,7 +33,7 @@
   height: auto;
   padding: 30px;
   background: var(--bg-color);
-  border-radius: 16px;
+  border-radius: var(--img-radius);
   box-shadow: 0 20px 40px rgba(181, 142, 107, 0.25);
 }
 

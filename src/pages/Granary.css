@@ -148,7 +148,7 @@
 }
 
 .project-complete {
-  background: var(--bg-secondary);
+  background: var(--bg-color);
   padding: 50px;
   border-radius: var(--img-radius);
   text-align: center;

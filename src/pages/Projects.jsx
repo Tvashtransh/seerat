@@ -20,7 +20,7 @@ const initialProjectItems = [
     category: "Custom Residential",
     location: "Summerland, Interior, BC",
     filterLocation: "Interior, BC",
-    image: "/project-type-2.png",
+    image: "/project-type-assets/project-type-2.png",
     description: "A spacious lakeside home crafted in the heart of a newly subdivided community.",
     link: "/summerland-lakefront"
   },
@@ -30,7 +30,7 @@ const initialProjectItems = [
     category: "Timber Framing",
     location: "100-Mile House, Interior, BC",
     filterLocation: "Interior, BC",
-    image: "/project-type-3.png",
+    image: "/project-type-assets/project-type-3.png",
     description: "Grand residential build spanning over 5000 sq.ft perched by the water.",
     link: "/summerland-lakefront" // Linked to Summerland as per original code logic
   },
@@ -40,7 +40,7 @@ const initialProjectItems = [
     category: "Multi-Family",
     location: "Burquitlam, Coquitlam, BC",
     filterLocation: "Coquitlam",
-    image: "/project-type-4.png",
+    image: "/project-type-assets/project-type-4.png",
     description: "52 townhomes nestled beside Cottonwood Park, showcasing thoughtful framing work.",
     link: "/avana-townhomes"
   },
@@ -50,7 +50,7 @@ const initialProjectItems = [
     category: "Custom Residential",
     location: "Boundary Bay, Delta, BC",
     filterLocation: "Delta",
-    image: "/project-type-5.png",
+    image: "/project-type-assets/project-type-5.png",
     description: "Pivotal role in shaping a single-family home in the charming neighbourhood of Boundary Beach.",
     link: "/boundary-bay-beach" // Corrected link
   },
@@ -60,7 +60,7 @@ const initialProjectItems = [
     category: "Residential",
     location: "Burnaby, BC",
     filterLocation: "Burnaby",
-    image: "/project-type-6.png",
+    image: "/project-type-assets/project-type-6.png",
     description: "Welcoming home in the thriving Garden Village community of Burnaby.",
     link: "/burnaby-residential"
   },
@@ -70,7 +70,7 @@ const initialProjectItems = [
     category: "Townhouse Community",
     location: "1292 Rosenburg, Coquitlam, BC",
     filterLocation: "Coquitlam",
-    image: "/project-type-4.png",
+    image: "/project-type-assets/project-type-4.png",
     description: "Exciting new development featuring 107 modern townhome units at 1292 Rosenburg.",
     link: "/culmena"
   }
@@ -161,10 +161,7 @@ export default function Projects() {
         <div className="ss-proj-list">
           {filteredProjects.map((project) => (
             <div key={project.id} className="ss-proj-item">
-              <div className="ss-proj-tags">
-                <span className="ss-proj-tag-dark">SETSQUARE PROJECTS</span>
-                <span className="ss-proj-tag-outline">{project.category.toUpperCase()}</span>
-              </div>
+
               <div className="ss-proj-body">
                 <div className="ss-proj-img-wrap">
                   <Link to={project.link}>

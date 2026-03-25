@@ -54,8 +54,8 @@ export default function MultiDevelopmentFraming() {
               </section>
 
               <section className="jll-image-gallery-grid">
-                <img src="/culmena-assets/DJI_0961.JPG" onError={(e) => e.target.src = '/project-type-4.png'} alt="Culmena Multi-Family Site" />
-                <img src="/culmena-assets/DJI_0970.JPG" onError={(e) => e.target.src = '/project-type-10.png'} alt="Construction Progress" />
+                <img src="/culmena-assets/DJI_0961.JPG" onError={(e) => e.target.src = '/project-type-assets/project-type-4.png'} alt="Culmena Multi-Family Site" />
+                <img src="/culmena-assets/DJI_0970.JPG" onError={(e) => e.target.src = '/project-type-assets/project-type-10.png'} alt="Construction Progress" />
               </section>
             </div>
 

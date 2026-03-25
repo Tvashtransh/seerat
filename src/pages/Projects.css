@@ -161,7 +161,7 @@
   position: relative;
   overflow: hidden;
   height: 460px;
-  background: var(--bg-secondary);
+  background: var(--bg-color);
 }
 
 .ss-proj-img-wrap img {
@@ -188,9 +188,9 @@
 }
 
 .ss-proj-title a {
-  font-family: var(--font-display, "Times New Roman", serif);
-  font-size: 38px;
-  font-weight: 400;
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 600;
   color: var(--text-primary);
   text-decoration: none;
   line-height: 1.2;
@@ -201,11 +201,10 @@
 }
 
 .ss-proj-desc {
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.7;
   color: var(--text-secondary);
   margin-bottom: 40px;
-  font-weight: 300;
 }
 
 .ss-proj-btn {

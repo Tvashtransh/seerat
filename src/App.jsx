@@ -22,7 +22,8 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Culmena from "./pages/Culmena";
 import NotFound from "./pages/NotFound";
-
+import Careers from "./pages/Careers";
+import Team from "./pages/Team";
 import PrefabServices from "./pages/PrefabServices";
 import CustomDesigns from "./pages/CustomDesigns";
 import ProfessionalInstallation from "./pages/ProfessionalInstallation";
@@ -73,9 +74,11 @@ function App() {
         <Route path="/burnaby-residential" element={<BurnabyResidential />} />
         <Route path="/trout-lake-residential" element={<TroutLakeResidential />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/careers" element={<Careers />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPost />} />
         <Route path="/culmena" element={<Culmena />} />
+        <Route path="/team" element={<Team />} />
         
         <Route path="/on-site-prefab-services" element={<PrefabServices />} />
         <Route path="/custom-designs" element={<CustomDesigns />} />

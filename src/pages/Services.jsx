@@ -10,21 +10,21 @@ const servicesList = [
     title: "Multi-Development Framing",
     description: "Tailored framing solutions for large-scale community developments and multi-unit projects across the Lower Mainland.",
     link: "/multi-development-framing",
-    image: "/project-type-13.png"
+    image: "/project-type-assets/project-type-13.png"
   },
   {
     id: 2,
     title: "Residential Wood Framing",
     description: "Dependable and precise framing for single-family homes and custom residential builds throughout British Columbia.",
     link: "/residential-framing",
-    image: "/project-type-3.png"
+    image: "/project-type-assets/project-type-3.png"
   },
   {
     id: 3,
     title: "Timber Framing",
     description: "Marrying traditional craftsmanship with modern engineering to create stunning exposed timber structures.",
     link: "/timber-framing",
-    image: "/project-type-2.png"
+    image: "/project-type-assets/project-type-2.png"
   },
   {
     id: 4,
@@ -132,7 +132,7 @@ export default function Services() {
               </Link>
             </div>
             <div className="jll-values-image">
-              <img src="/project-type-3.png" alt="Team at Work" />
+              <img src="/project-type-assets/project-type-3.png" alt="Team at Work" />
             </div>
           </div>
         </div>
