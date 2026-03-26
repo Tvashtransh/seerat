@@ -18,10 +18,15 @@ dist-ssr
 # Large files
 zip/
 *.zip
+# Large files — exclude all videos by default
 *.MP4
 *.mp4
 *.MOV
 *.mov
+
+# Exception: hero videos needed for production
+!public/culmena-assets/latest 1.mp4
+!public/culmena-assets/latest 2.mp4
 *.HEIC
 *.heic
 *.AVI
