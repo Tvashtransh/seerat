@@ -41,8 +41,7 @@ export default function Home() {
   }, []);
 
   const heroVideos = [
-    "/culmena-assets/latest 1.mp4",
-    "/culmena-assets/latest 2.mp4"
+    "/culmena-assets/latest%202.mp4"
   ];
 
   const heroSlides = [
@@ -167,13 +166,15 @@ export default function Home() {
     }
   ];
 
-  // Auto-rotate Hero
+  // Auto-rotate Hero (Disabled as per request to use single video)
+  /*
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentHeroIndex(prev => (prev + 1) % 2); // Cycle between the 2 latest videos
     }, 8000); // 8 seconds per video
     return () => clearInterval(timer);
   }, []);
+  */
 
   // ── Casino counter animation ──────────────────────────────────────
   useEffect(() => {

@@ -9,7 +9,7 @@ export default function HomeAbout() {
 
         {/* Logo */}
         <div className="about-logo">
-          <img src="/logo.png" alt="Setsquare Construction Logo" />
+          <img src="/logo_old.png" alt="Setsquare Construction Logo" />
         </div>
 
         {/* Content */}

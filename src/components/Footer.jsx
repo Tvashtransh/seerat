@@ -18,7 +18,7 @@ export default function Footer() {
       {/* 1. TOP HEADER: Logo + Tagline + Scroll Top */}
       <div className="jll-footer-header">
         <div className="jll-footer-brand">
-          <img src="/logo.png" alt="Set Square" className="jll-footer-logo" />
+          <img src="/logo_old.png" alt="Set Square" className="jll-footer-logo" />
           <span className="jll-footer-tagline">PRECISION FRAMING EXPERTS</span>
         </div>
         <button onClick={scrollToTop} className="jll-scroll-top-btn">

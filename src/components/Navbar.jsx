@@ -49,7 +49,7 @@ function Navbar() {
           {/* BRANDING */}
           <NavLink to="/" className="ss-nav-brand">
             <div className="ss-logo-wrapper">
-              <img src="/logo.png" alt="Set Square Construction" className="ss-logo" />
+              <img src="/logo_old.png" alt="Set Square Construction" className="ss-logo" />
             </div>
           </NavLink>
 
