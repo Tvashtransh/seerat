@@ -434,3 +434,6 @@ img {
     padding: 60px 0;
   }
 }
+
+/* ── Mobile Responsive Overrides ── */
+@import "./mobile.css";

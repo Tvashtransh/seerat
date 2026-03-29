@@ -1,0 +1,842 @@
+/* ============================================================
+   MOBILE RESPONSIVE OVERRIDES — Set Square Construction
+   All rules here fire only on mobile. Desktop version intact.
+   Breakpoints: 768px (tablet/phone) | 480px (small phone)
+   ============================================================ */
+
+/* ────────────────────────────────────────────
+   GLOBAL — page containers & shared elements
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --site-margin: 20px;
+    --section-padding: 70px;
+  }
+
+  .jll-container,
+  .ss-container,
+  .tc-container {
+    padding: 0 20px !important;
+  }
+
+  /* iOS fix: background-attachment: fixed doesn't work on iOS Safari */
+  .ss-about-message-section,
+  .jll-cta-strip::before {
+    background-attachment: scroll !important;
+  }
+
+  /* Generic page hero (shared across all pages) */
+  .page-hero {
+    padding: 60px 20px 50px !important;
+    min-height: unset !important;
+    height: auto !important;
+  }
+
+  .page-hero-title {
+    font-size: clamp(28px, 8vw, 42px) !important;
+    line-height: 1.1 !important;
+  }
+
+  .page-hero-subtitle {
+    font-size: 15px !important;
+    margin-top: 12px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   NAVBAR
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ss-navbar {
+    height: 70px !important;
+  }
+
+  .ss-logo {
+    height: 48px !important;
+  }
+
+  .scrolled .ss-logo {
+    height: 40px !important;
+  }
+
+  .ss-main-nav {
+    top: 70px !important;
+  }
+
+  .ss-main-nav.active {
+    height: calc(100vh - 70px) !important;
+  }
+
+  .ss-nav-links {
+    gap: 20px !important;
+    padding: 30px 20px !important;
+  }
+
+  .ss-nav-link {
+    font-size: 20px !important;
+  }
+
+  .ss-nav-cta {
+    display: none !important;
+  }
+
+  .ss-menu-toggle {
+    display: block !important;
+  }
+
+  /* Burger strokes visible on transparent navbar */
+  .ss-burger,
+  .ss-burger::before,
+  .ss-burger::after {
+    background: var(--white) !important;
+  }
+
+  .scrolled .ss-burger,
+  .scrolled .ss-burger::before,
+  .scrolled .ss-burger::after {
+    background: var(--text-primary) !important;
+  }
+
+  /* when open, the middle bar must be transparent */
+  .ss-burger.open {
+    background: transparent !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   HOME — HERO SECTION
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Reduce the 300vh scroll tunnel to just 160vh on mobile */
+  .ss-hero-scroll-container {
+    height: 160vh !important;
+  }
+
+  /* Hero main title */
+  .ss-hero-main-title {
+    font-size: clamp(44px, 14vw, 80px) !important;
+  }
+
+  /* Background text letters — hide on mobile, they're distracting */
+  .ss-hero-bg-text-container {
+    display: none !important;
+  }
+
+  /* Filter pill: stack to vertical on mobile */
+  .ss-hero-bottom-filter {
+    display: block !important;
+    bottom: 24px !important;
+    width: calc(100% - 40px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .ss-filter-pill {
+    flex-direction: column !important;
+    border-radius: 20px !important;
+    padding: 16px !important;
+    gap: 8px !important;
+  }
+
+  .ss-filter-item {
+    padding: 10px 16px !important;
+    flex: unset !important;
+    width: 100% !important;
+  }
+
+  .ss-filter-divider {
+    width: 100% !important;
+    height: 1px !important;
+  }
+
+  .ss-filter-search-btn {
+    width: 100% !important;
+    margin-left: 0 !important;
+    border-radius: 10px !important;
+    padding: 14px 20px !important;
+  }
+
+  /* Hero location tag at top */
+  .ss-hero-location-tag {
+    display: none !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   HOME — STATS / EXPLORE SECTION
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .jll-explore-section {
+    padding: 70px 0 !important;
+  }
+
+  .jll-explore-title {
+    font-size: 26px !important;
+  }
+
+  .jll-explore-desc {
+    font-size: 16px !important;
+  }
+
+  .jll-stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+  }
+
+  .jll-stat-number {
+    font-size: 32px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   HOME — WHAT WE DO
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ss-what-we-do-section {
+    padding: 60px 0 !important;
+  }
+
+  .ss-wwd-heading {
+    font-size: 26px !important;
+  }
+
+  .ss-wwd-intro {
+    font-size: 15px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   HOME — OUR STORY
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ss-story-section {
+    padding: 60px 0 !important;
+  }
+
+  .ss-story-visual-side {
+    padding-bottom: 60px !important;
+  }
+
+  .ss-story-image-main {
+    height: 280px !important;
+    width: 100% !important;
+  }
+
+  .ss-story-image-offset {
+    height: 160px !important;
+    bottom: -20px !important;
+  }
+
+  .ss-story-experience-chip {
+    left: 10px !important;
+    top: -20px !important;
+    padding: 16px 20px !important;
+  }
+
+  .chip-value {
+    font-size: 26px !important;
+  }
+
+  .ss-story-stats-row {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .jll-grid-header {
+    margin-bottom: 40px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   HOME — ABOUT MESSAGE (CEO SECTION)
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ss-about-message-section {
+    padding: 70px 0 !important;
+    margin: 0 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .ss-message-body {
+    padding: 30px 20px !important;
+    font-size: 15px !important;
+    text-align: left !important;
+  }
+
+  .ss-message-title {
+    font-size: 22px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .ss-founders-row {
+    gap: 30px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .ss-quote-mark {
+    font-size: 60px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   HOME — HORIZONTAL SCROLL (ON-SITE PROGRESS)
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Disable the 350vh scroll tunnel on mobile */
+  .ss-horiz-section {
+    height: auto !important;
+  }
+
+  .ss-horiz-sticky {
+    position: relative !important;
+    height: auto !important;
+    flex-direction: column !important;
+    padding: 60px 0 !important;
+    overflow: visible !important;
+    align-items: flex-start !important;
+  }
+
+  .ss-horiz-left {
+    width: 100% !important;
+    padding: 0 20px !important;
+    margin-bottom: 32px !important;
+  }
+
+  .ss-horiz-title {
+    font-size: 32px !important;
+  }
+
+  .ss-horiz-right-wrapper {
+    width: 100% !important;
+    height: auto !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .ss-horiz-right {
+    /* Don't use JS-animated translate on mobile — let user swipe */
+    transform: none !important;
+    padding: 0 20px 20px !important;
+    gap: 16px !important;
+  }
+
+  .ss-horiz-card {
+    width: 75vw !important;
+    height: 50vw !important;
+    min-height: 200px !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   HOME — PROJECTS BENTO GRID
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ss-our-projects-section {
+    padding: 60px 0 !important;
+  }
+
+  .ss-projects-section-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    margin-bottom: 40px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .ss-projects-main-heading {
+    font-size: 28px !important;
+  }
+
+  .ss-bento-title {
+    font-size: 18px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   HOME — CTA STRIP
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .jll-cta-strip {
+    padding: 70px 0 !important;
+  }
+
+  .jll-cta-strip h2 {
+    font-size: 28px !important;
+    margin-bottom: 32px !important;
+  }
+
+  .jll-btn-white {
+    padding: 18px 30px !important;
+    font-size: 14px !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   HOME — TESTIMONIALS
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 70px 0 !important;
+  }
+
+  .testimonials-marquee-wrapper {
+    height: 480px !important;
+    padding: 0 20px !important;
+  }
+
+  .testimonials-title {
+    font-size: clamp(26px, 8vw, 38px) !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   HOME — WHAT WE DO (TC EXPERTISE)
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .tc-expertise-replica {
+    padding: 60px 0 !important;
+  }
+
+  .tc-header {
+    margin-bottom: 40px !important;
+  }
+
+  .tc-heading {
+    font-size: clamp(32px, 9vw, 48px) !important;
+  }
+
+  .tc-heading.tc-italic {
+    padding-left: 8% !important;
+  }
+
+  .tc-projects-list {
+    gap: 60px !important;
+  }
+
+  .tc-project-info {
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   FOOTER
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .jll-footer {
+    padding-top: 60px !important;
+  }
+
+  .jll-footer-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+    padding: 0 20px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .jll-footer-logo {
+    height: 80px !important;
+  }
+
+  .jll-footer-container {
+    padding: 0 20px !important;
+  }
+
+  .jll-footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 40px !important;
+    margin-bottom: 50px !important;
+  }
+
+  .jll-interest-strip {
+    padding: 0 20px !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .jll-interest-links {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .jll-footer-bottom-container {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    padding: 0 20px !important;
+  }
+
+  .jll-bottom-links {
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+  }
+
+  .jll-region-select-small {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .jll-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   GALLERY PAGE
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .jll-case-studies {
+    padding: 60px 0 !important;
+  }
+
+  .jll-case-study,
+  .jll-case-study.reverse {
+    gap: 30px !important;
+    margin-bottom: 80px !important;
+  }
+
+  .jll-case-title {
+    font-size: 24px !important;
+  }
+
+  .jll-gallery-grid-section {
+    padding: 60px 0 !important;
+  }
+
+  .jll-gallery-masonry {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .jll-gallery-item {
+    height: 260px !important;
+  }
+
+  .jll-gallery-cta {
+    padding: 60px 0 !important;
+  }
+
+  .jll-cta-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .jll-cta-buttons .jll-btn-primary,
+  .jll-cta-buttons .jll-btn-outline {
+    text-align: center !important;
+    width: 100% !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   WHY US PAGE
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .jll-narrative-section {
+    padding: 60px 0 !important;
+  }
+
+  .jll-narrative-text h2 {
+    font-size: 24px !important;
+  }
+
+  .jll-quote {
+    font-size: 18px !important;
+  }
+
+  .ss-fom-section {
+    padding: 60px 0 !important;
+  }
+
+  .ss-fom-left {
+    position: static !important;
+  }
+
+  .ss-fom-heading {
+    font-size: 26px !important;
+  }
+
+  .ss-fom-item {
+    gap: 16px !important;
+    padding: 24px 0 !important;
+  }
+
+  .ss-fom-item-text h3 {
+    font-size: 18px !important;
+  }
+
+  .jll-partners-section {
+    padding: 60px 0 !important;
+  }
+
+  .jll-split-header h2 {
+    font-size: 22px !important;
+  }
+
+  .jll-cta-band {
+    padding: 60px 0 !important;
+  }
+
+  .jll-cta-band h2 {
+    font-size: 22px !important;
+    margin-bottom: 24px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   CONTACT PAGE
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .jll-contact-page {
+    padding-bottom: 60px !important;
+  }
+
+  .jll-contact-layout {
+    gap: 40px !important;
+  }
+
+  .jll-info-block h3,
+  .jll-hiring-block h3 {
+    font-size: 22px !important;
+  }
+
+  .jll-address {
+    font-size: 16px !important;
+  }
+
+  .jll-contact-item a {
+    font-size: 18px !important;
+  }
+
+  .jll-hiring-block {
+    margin-top: 40px !important;
+    padding-top: 40px !important;
+  }
+
+  .jll-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   SERVICES PAGE
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ss-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .ss-services-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .jll-services-layout {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   PROJECTS PAGE
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ss-projects-hero-content h1 {
+    font-size: clamp(28px, 8vw, 42px) !important;
+  }
+
+  .ss-projects-filter-bar {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .ss-projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   TEAM PAGE
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ss-team-layout {
+    flex-direction: column !important;
+    gap: 40px !important;
+    padding: 0 20px !important;
+  }
+
+  .ss-team-left {
+    width: 100% !important;
+    top: auto !important;
+    position: relative !important;
+  }
+
+  .ss-team-carousel-container {
+    width: 100% !important;
+    max-width: 360px !important;
+    height: 420px !important;
+    margin: 0 auto !important;
+    margin-bottom: 80px !important;
+  }
+
+  .ss-team-info-card {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+  }
+
+  .ss-team-info-name {
+    color: var(--text-primary) !important;
+    font-size: 22px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   PROJECT DETAIL / SUBPAGES
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .jll-project-detail-hero {
+    height: 50vh !important;
+    min-height: 300px !important;
+  }
+
+  .jll-project-detail-hero h1 {
+    font-size: 28px !important;
+  }
+
+  .jll-project-content {
+    grid-template-columns: 1fr !important;
+  }
+
+  .jll-project-gallery-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   BLOG PAGE
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .blog-featured {
+    flex-direction: column !important;
+  }
+
+  .blog-featured-image {
+    height: 240px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   RESIDENTIAL / SERVICE SUBPAGES
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ss-residential-hero-content h1,
+  .ss-service-hero h1 {
+    font-size: 28px !important;
+  }
+
+  .ss-residential-grid,
+  .ss-res-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .ss-res-split-layout,
+  .ss-service-split {
+    flex-direction: column !important;
+    gap: 30px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   CAREERS PAGE
+   ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .careers-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .careers-header h1 {
+    font-size: 28px !important;
+  }
+}
+
+/* ────────────────────────────────────────────
+   SMALL PHONE EXTRAS (@480px)
+   ──────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .ss-hero-main-title {
+    font-size: clamp(36px, 12vw, 56px) !important;
+  }
+
+  .ss-hero-brand-eyebrow {
+    font-size: 11px !important;
+    letter-spacing: 0.15em !important;
+  }
+
+  .ss-hero-sub-minimal {
+    font-size: 11px !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  .jll-stat-number {
+    font-size: 28px !important;
+  }
+
+  .ss-story-stats-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ss-story-image-main {
+    height: 240px !important;
+  }
+
+  .ss-story-image-offset {
+    display: none !important;
+  }
+
+  .ss-horiz-card {
+    width: 85vw !important;
+  }
+
+  .jll-footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .jll-bottom-links {
+    gap: 12px !important;
+  }
+
+  .jll-bottom-links a {
+    font-size: 11px !important;
+  }
+
+  .testimonials-title {
+    font-size: 26px !important;
+  }
+
+  .testimonials-marquee-wrapper {
+    height: 360px !important;
+  }
+}
